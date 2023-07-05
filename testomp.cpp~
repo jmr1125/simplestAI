@@ -1,0 +1,10 @@
+#include"omp.h"
+#include<iostream>
+using namespace std;
+int main(){
+  int  i=1;
+#pragma omp parallel
+  {
+    cout<<i<<endl;
+  }
+}
