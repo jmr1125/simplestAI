@@ -41,4 +41,4 @@ endif()
 
 add_executable(test1 testomp.cpp)
 target_link_libraries(test1 OpenMP::OpenMP_CXX)
-add_executable(test2 test2.cpp matrix.cpp layer.cpp)
+add_executable(test2 test2.cpp matrix.cpp layer.cpp network.cpp)

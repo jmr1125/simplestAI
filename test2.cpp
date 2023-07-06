@@ -1,5 +1,6 @@
 #include "layer.h"
 #include "main.h"
+#include "network.h"
 #include <iostream>
 using namespace std;
 int main() {
@@ -26,15 +27,15 @@ int main() {
   //======TEST.LAYER======
   layer l1;
   l1.w = m1;
-  l1.Func = [](valT v) { return v * 2; };
-  l1.deFunc = [](valT v) -> valT { return 2; };
+  l1.Func() = [](valT v) { return v * 2; };
+  l1.deFunc() = [](valT v) -> valT { return 2; };
   l1.basis = {1, 2};
   {
     matrix tmp;
     tmp = l1.getV(vec1);
     cout << "l1(vec1): " << tmp << endl;
-    l1.Func = [](valT v) -> valT { return v * v; };
-    l1.deFunc = [](valT v) { return v * 2; };
+    l1.Func() = [](valT v) -> valT { return v * v; };
+    l1.deFunc() = [](valT v) { return v * 2; };
     tmp = l1.getV(vec1);
     cout << "l1(vec1): " << tmp << endl;
     tmp = l1.getVdb(vec1);
@@ -43,13 +44,52 @@ int main() {
   {
     auto ttmp = l1.getVdWi(vec1);
     cout << "l1(vec1) Vdwi [" << endl;
-    for(const auto & i : ttmp){
-      cout<<"[ ";
-      for(const auto & j : i){
-	cout<<j<<' ';
+    for (const auto &i : ttmp) {
+      cout << "[ ";
+      for (const auto &j : i) {
+        cout << j << ' ';
       }
-      cout<<"]"<<endl;
+      cout << "]" << endl;
     }
-    cout<<"]"<<endl;
+    cout << "]" << endl;
+  }
+  //===NO.ARG===
+  cout << "call no args" << endl;
+  {
+    matrix tmp;
+    l1.setInput(vec1);
+    l1.Func() = [](valT v) -> valT { return v * v; };
+    l1.deFunc() = [](valT v) { return v * 2; };
+    tmp = l1.getV();
+    cout << "l1(vec1): " << tmp << endl;
+    tmp = l1.getVdb();
+    cout << "l1(vec1) Vdb" << tmp << endl;
+  }
+  {
+    auto ttmp = l1.getVdWi();
+    cout << "l1(vec1) Vdwi [" << endl;
+    for (const auto &i : ttmp) {
+      cout << "[ ";
+      for (const auto &j : i) {
+        cout << j << ' ';
+      }
+      cout << "]" << endl;
+    }
+    cout << "]" << endl;
+  }
+  cout << "====TEST.NETWORK====" << endl;
+  {
+    network n1(
+        {3, 2, 2, 3}, [](valT v) { return (0 < v) ? v : 0; },
+        [](valT v) -> valT { return (0 < v) ? 1 : 0; });
+    for (int i = 0; i < 3; ++i) {
+      cout << i << "->" << n1.layers.at(i).w.getn() << ","
+           << n1.layers.at(i).w.getm() << endl;
+    }
+      n1.getV({1,2,3});
+      cout<<"n1.vVdV="<<endl;
+      for(const auto& x:n1.vVdV){
+          cout<<x<<endl;
+      }
   }
 }

@@ -1,0 +1,14 @@
+#include "layer.h"
+#include <vector>
+using std::vector;
+struct network {
+  vector<VvalT> getVdWi(const VvalT &intput, int i);
+  VvalT getVdbi(const VvalT &intput, int i);
+  VvalT getV(const VvalT &input);
+  vector<VvalT> getVdWi(int i);
+  VvalT getVdbi(int i);
+  void getV();
+  void setInput(const VvalT &in);
+  VvalT in;
+  vector<layer> layers;
+};

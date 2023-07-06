@@ -1,3 +1,4 @@
+#pragma once
 #include "main.h"
 #include <algorithm>
 #include <ostream>
@@ -16,10 +17,10 @@ struct matrix {
   matrix(const matrix &) = default;
   matrix(matrix &&) = default;
   // matrix(const matrix &&) = default;
-  void setn(int n);
-  void setm(int m);
-  int getn() const;
-  int getm() const;
+  void setn(size_t n);
+  void setm(size_t m);
+  size_t getn() const;
+  size_t getm() const;
   void swap(matrix&);
   matrix operator*(const matrix &) const;
   vector<valT> operator*(const vector<valT> &) const;
@@ -37,3 +38,4 @@ struct matrix {
   vector<vector<valT>> m;
 };
 ostream &operator<<(ostream &ost, const matrix &);
+matrix i(int);

@@ -12,11 +12,11 @@ const char *dimension_error::what() const throw() {
   return std::runtime_error::what();
 }
 
-void matrix::setn(int n) {
+void matrix::setn(size_t n) {
   m.resize(n);
   for_each(this->m.begin(), this->m.end(), [](vector<valT> &v) { v.clear(); });
 };
-void matrix::setm(int m) {
+void matrix::setm(size_t m) {
   for_each(this->m.begin(), this->m.end(), [m](vector<valT> &v) {
     v.clear();
     v.resize(m);
@@ -24,8 +24,8 @@ void matrix::setm(int m) {
 }
 valT matrix::operator()(size_t x, size_t y) const { return m.at(x).at(y); }
 valT &matrix::operator()(size_t x, size_t y) { return m.at(x).at(y); }
-int matrix::getn() const { return m.size(); }
-int matrix::getm() const { return m[0].size(); }
+size_t matrix::getn() const { return m.size(); }
+size_t matrix::getm() const { return m[0].size(); }
 void matrix::swap(matrix &tmp) { m.swap(tmp.m); }
 matrix matrix::operator*(const matrix &m1) const {
   if (getm() != m1.getn()) {
@@ -154,4 +154,16 @@ ostream &operator<<(ostream &ost, const matrix &m) {
   }
   ost << "]";
   return ost;
+}
+matrix i(int dimensions){
+  matrix res;
+  res.setm(dimensions);
+  res.setn(dimensions);
+  for(int i=0;i<dimensions;++i){
+    for(int j=0;j<dimensions;++j){
+      res(i,j)=0;
+    }
+    res(i,i)=1;
+  }
+  return std::move(res);
 }
