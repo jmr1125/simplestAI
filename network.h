@@ -1,18 +1,18 @@
+#pragma once
 #include "layer.h"
 #include "main.h"
+#include "matrix.h"
+#include <cstddef>
 #include <vector>
 using std::vector;
 struct network {
   network() = delete;
   network(const vector<int> &sizes, funcT Func, funcT deFunc);
-  VvalT getV(const VvalT &input);
-  vector<VvalT> getVdWi();
-  vector<VvalT> getVdbi();
-  vector<matrix> getvVdV1();
+  matrix getVdWij(size_t l, int j) const;
+  matrix getVdbi(size_t i) const;
+  matrix getVdVi(size_t i) const;
   void getV();
   void setInput(const VvalT &in);
   VvalT output;
-  bool computed;
   vector<layer> layers;
-  vector<matrix> vVdV;
 };

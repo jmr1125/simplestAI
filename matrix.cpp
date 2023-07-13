@@ -12,15 +12,23 @@ const char *dimension_error::what() const throw() {
   return std::runtime_error::what();
 }
 
-void matrix::setn(size_t n) {
-  m.resize(n);
-  for_each(this->m.begin(), this->m.end(), [](vector<valT> &v) { v.clear(); });
-};
-void matrix::setm(size_t m) {
-  for_each(this->m.begin(), this->m.end(), [m](vector<valT> &v) {
+void makemat(vector<vector<valT>> &v, size_t n, size_t m) {
+  if (n == -1 || m == -1) {
+    return;
+  }
+  v.resize(n);
+  for_each(v.begin(), v.end(), [=](vector<valT> &v) {
     v.clear();
     v.resize(m);
   });
+}
+void matrix::setn(size_t n) {
+  N = n;
+  makemat(this->m, N, M);
+};
+void matrix::setm(size_t m) {
+  M = m;
+  makemat(this->m, N, M);
 }
 valT matrix::operator()(size_t x, size_t y) const { return m.at(x).at(y); }
 valT &matrix::operator()(size_t x, size_t y) { return m.at(x).at(y); }
@@ -70,6 +78,8 @@ matrix matrix::operator*(const valT v) const {
     }
   }
   matrix M;
+  M.setm(1);
+  M.setn(this->getn());
   M.m = m;
   return M;
 }
@@ -118,6 +128,8 @@ matrix matrix::operator+(const vector<valT> &vec) const {
 }
 const matrix &matrix::operator=(const matrix &m1) {
   m = m1.m;
+  N = m1.N;
+  M = m1.M;
   return std::move(m1);
 }
 const matrix &matrix::operator=(const vector<valT> &vec) {
@@ -128,8 +140,10 @@ const matrix &matrix::operator=(const vector<valT> &vec) {
   }
   return *this;
 }
-const matrix &&matrix::operator=(matrix &&m1) {
+matrix matrix::operator=(matrix &&m1) {
   m = std::move(m1.m);
+  N = m1.N;
+  M = m1.M;
   return std::move(m1);
 }
 vector<valT> matrix::getvec() const {
@@ -155,15 +169,15 @@ ostream &operator<<(ostream &ost, const matrix &m) {
   ost << "]";
   return ost;
 }
-matrix i(int dimensions){
+matrix i(size_t dimensions) {
   matrix res;
   res.setm(dimensions);
   res.setn(dimensions);
-  for(int i=0;i<dimensions;++i){
-    for(int j=0;j<dimensions;++j){
-      res(i,j)=0;
+  for (int i = 0; i < dimensions; ++i) {
+    for (int j = 0; j < dimensions; ++j) {
+      res(i, j) = 0;
     }
-    res(i,i)=1;
+    res(i, i) = 1;
   }
   return std::move(res);
 }

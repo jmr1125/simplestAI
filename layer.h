@@ -5,23 +5,24 @@
 using std::vector;
 using VvalT = vector<valT>;
 struct layer {
+  void setn(int n);
+  void setm(int m);
   VvalT getV(const VvalT &);
-  vector<VvalT> getVdWi(const VvalT &);
-  VvalT getVdb(const VvalT &); 
-  matrix getSum(const VvalT &in);
-  VvalT getV();
-  VvalT getVdb();
-  vector<VvalT> getVdV();//output[i]d input[j] = vec[i][j]
-  matrix getSum();
-  vector<VvalT> getVdWi();//output[i]d W[i][j] = vec[i][j]
+  matrix getSum(const VvalT &in)const;
+  VvalT getV()const;
+  matrix getVdVi(int i)const;
+  matrix getVdV()const;
+  valT getVdWij(int i,int j)const;
+  matrix getVdb()const;
+  matrix getSum()const;
   funcT Funcv()const;
   funcT deFuncv()const;
   funcT& Func();
   funcT& deFunc();
   void setInput(const VvalT &);
-  bool computed;
-  VvalT input;
+  // bool computed;
+  VvalT input{};
   funcT Funct, deFunct;
   matrix w;
-  matrix basis;
+  matrix b;
 };

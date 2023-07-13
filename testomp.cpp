@@ -1,6 +1,7 @@
 #include <iostream>
 #include <omp.h>
 #include <stdio.h>
+#include <sys/_types/_clock_t.h>
 #include <time.h>
 #include <unistd.h>
 #define clock (clock() / CLOCKS_PER_SEC)
@@ -50,8 +51,10 @@ int main() {
     }
   }
   pi = s * dx;
+  clock_t now;
   cout << "pi: " << pi << endl
-       << "now: " << clock << endl; //<<"time: "<<clock-now<<endl;
+       << "now: " << (now = clock) / omp_get_max_threads()
+       << endl; //<<"time: "<<clock-now<<endl;
   // now = clock;
   pi = s = 0;
   {
@@ -63,5 +66,5 @@ int main() {
   }
   pi = s * dx;
   cout << "pi: " << pi << endl
-       << "now: " << clock << endl; // << "time: " << clock - now << endl;
+       << "now: " << clock - now << endl; // << "time: " << clock - now << endl;
 }

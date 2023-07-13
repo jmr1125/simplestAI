@@ -1,4 +1,8 @@
 /Users/jiang/Desktop/myAI/build/CMakeFiles/test1.dir
 /Users/jiang/Desktop/myAI/build/CMakeFiles/test2.dir
+/Users/jiang/Desktop/myAI/build/CMakeFiles/train.dir
+/Users/jiang/Desktop/myAI/build/CMakeFiles/test4.dir
+/Users/jiang/Desktop/myAI/build/CMakeFiles/drawdata.dir
+/Users/jiang/Desktop/myAI/build/CMakeFiles/test3.dir
 /Users/jiang/Desktop/myAI/build/CMakeFiles/ALL_BUILD.dir
 /Users/jiang/Desktop/myAI/build/CMakeFiles/ZERO_CHECK.dir

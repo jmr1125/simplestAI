@@ -1,55 +1,46 @@
 #include "network.h"
+#include "layer.h"
+#include "matrix.h"
+#include <cstddef>
 
 network::network(const vector<int> &sizes, funcT Func, funcT deFunc) {
   layers.resize(sizes.size() - 1);
-    for(int i=0;i<layers.size();++i){
-        layers[i].w.setn(sizes[i+1]);
-        layers[i].w.setm(sizes[i]);
-    }
+  for (int i = 0; i < layers.size(); ++i) {
+    layers[i].setn(sizes[i + 1]);
+    layers[i].setm(sizes[i]);
+  }
   for (auto &x : layers) {
     x.Func() = Func;
     x.deFunc() = deFunc;
-    x.basis.setn(x.w.getn());
-      x.basis.setm(1);
-    x.computed = false;
+    // x.basis.setn(x.w.getn());
+    // x.basis.setm(1);
+    // x.computed = false;
   }
-  computed = false;
 }
-vector<VvalT> network::getVdWi() {}
-vector<VvalT> network::getVdbi() {
-  const vector<matrix> &v=getvVdV1();
-  vector<VvalT> res;
-  res.reserve(layers.size());
-  for (int i=0;i<layers.size();++i) {
-    res.push_back(v[i]*layers[i].getVdb());
+matrix network::getVdVi(size_t I) const {
+  matrix res = i(layers[layers.size() - 1].w.getn());
+  for (size_t x = layers.size() - 1; x > I; --x) {
+    res = res * layers[x].getVdV();
   }
   return res;
 }
-vector<matrix> network::getvVdV1() {
-  static vector<matrix> vVdV1;
-  if (!computed) {
-    vVdV1.resize(layers.size());
-    vVdV1[layers.size() - 1] = i(layers[layers.size() - 1].w.getn());
-    for (size_t i = layers.size() - 2; i >= 0; --i) {
-      vVdV1[i] = vVdV1[i + 1] * vVdV[i];
-    }
+matrix network::getVdWij(size_t l, int j) const {
+  matrix tmp;
+  tmp.setn(layers[l].w.getn());
+  tmp.setm(1);
+  for (int i = 0; i < layers[l].w.getn(); ++i) {
+    tmp(i, 0) = layers[l].getVdWij(i, j);
   }
-  return vVdV1;
+  return getVdVi(l) * tmp;
+}
+matrix network::getVdbi(size_t i) const {
+  const matrix &&tmp = getVdVi(i);
+  return tmp * layers[i].getVdb();
 }
 void network::getV() {
-    for(int i=1;i<layers.size();++i){
-        layers[i].setInput(layers[i-1].getV());
-    }
-  output = layers[layers.size() - 1].getV();
-  vVdV.resize(layers.size());
-  for (int i = 0; i < layers.size(); ++i) {
-    matrix &m = vVdV[i];
-    m.m = layers[i].getVdV();
+  for (int i = 1; i < layers.size(); ++i) {
+    layers[i].setInput(layers[i - 1].getV());
   }
-}
-VvalT network::getV(const VvalT &input) {
-  setInput(input);
-    getV();
-  return output;
+  output = layers[layers.size() - 1].getV();
 }
 void network::setInput(const VvalT &in) { layers[0].setInput(in); }
