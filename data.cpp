@@ -12,14 +12,10 @@ char pic[16][16];
 int main(int argc, char *argv[]) {
   initscr(), noecho();
   intrflush(stdscr, FALSE), keypad(stdscr, TRUE);
-  // nodelay(stdscr, TRUE);
   mousemask(ALL_MOUSE_EVENTS | REPORT_MOUSE_POSITION, NULL);
-  // printf("\033[?251\n");
   printf("\033[?1003h\n");
   mouseinterval(1);
-  // printf("\033[?1002h\n");
   mvprintw(0, 0, "train %s", argv[1]);
-  // nodelay(stdscr,TRUE);
   mouseinterval(0);
   bool quit = false;
   while (!quit) {
@@ -45,28 +41,6 @@ int main(int argc, char *argv[]) {
           mvprintw(2, 1, "0x%08x %d %d", evt.bstate, evt.x, evt.y);
           clrtoeol();
           int x = min(max(0, evt.x - 3), 15), y = min(max(0, evt.y - 3), 15);
-          // if (evt.bstate == BUTTON1_PRESSED) {
-          //   mvprintw(2, 20, "BUTTON1_PRESSED");
-          //   clrtoeol();
-          //   mousestatus = true;
-          //   mousecolor = true;
-          // } else if (evt.bstate == BUTTON1_RELEASED) {
-          //   mvprintw(2, 20, "BUTTON1_RELEASED");
-          //   clrtoeol();
-          //   mousestatus = false;
-          //   mousecolor = true;
-          // }
-          // if (evt.bstate == BUTTON3_PRESSED) {
-          //   mvprintw(2, 20, "BUTTON3_PRESSED");
-          //   clrtoeol();
-          //   mousestatus = true;
-          //   mousecolor = false;
-          // } else if (evt.bstate == BUTTON3_RELEASED) {
-          //   mvprintw(2, 20, "BUTTON3_RELEASED");
-          //   clrtoeol();
-          //   mousestatus = false;
-          //   mousecolor = false;
-          // }
           if (evt.bstate == 0x080000) {
             mousestatus = true;
           }
@@ -76,7 +50,6 @@ int main(int argc, char *argv[]) {
           if (evt.bstate == BUTTON3_PRESSED) {
             mvprintw(2, 20, "BUTTON3_PRESSED");
             clrtoeol();
-            // mousestatus = true;
           }
           if (evt.bstate == BUTTON3_RELEASED || evt.bstate == BUTTON3_CLICKED) {
             mvprintw(2, 20, "BUTTON3_RELEASED");
@@ -84,8 +57,6 @@ int main(int argc, char *argv[]) {
             // mousestatus = false;
           }
           if (evt.bstate == BUTTON1_DOUBLE_CLICKED) {
-            // mvprintw(2, 20, "BUTTON1_DOUBLE_CLICKED");
-            // clrtoeol();
             break;
           }
           if (mousestatus) {
@@ -96,9 +67,9 @@ int main(int argc, char *argv[]) {
       for (int i = 0; i < 16; ++i) {
         for (int j = 0; j < 16; ++j) {
           if (pic[i][j]) {
-            mvaddch(i + 3, j + 3, '.' | A_REVERSE);
+            mvaddch(i + 3, j + 3, '#' | A_REVERSE);
           } else {
-            mvaddch(i + 3, j + 3, ' ' | A_NORMAL);
+            mvaddch(i + 3, j + 3, '.' | A_NORMAL);
           }
         }
       }
@@ -118,8 +89,6 @@ int main(int argc, char *argv[]) {
     }
     if (!empty) {
       ofstream ost(argv[1], std::ios_base::app);
-      // std::cout << "'" << argv[1] << "'" << std::endl;
-      //  ost << "'" << argv[1] << "'" << std::endl;
       for (int i = 0; i < 16; ++i) {
         for (int j = 0; j < 16; ++j) {
           ost << (bool)pic[i][j];

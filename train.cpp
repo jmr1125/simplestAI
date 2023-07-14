@@ -4,9 +4,12 @@
 #include "matrix.h"
 #include <cstddef>
 #include <iostream>
+#ifdef USE_OMP
+// #warning omp
+#include <omp.h>
+#endif
 #include <vector>
 void train(network &net, const VvalT &input, const VvalT &expect) {
-  // cout<<tmp<<endl;
   net.setInput(input);
   net.getV();
   // delta d? = delta dv v d? = 2(delta-v)*vd?
@@ -19,7 +22,9 @@ void train(network &net, const VvalT &input, const VvalT &expect) {
     netVw[i] = net.layers[i].w;
     netVb[i] = net.layers[i].b;
   }
+#ifdef USE_OMP
 #pragma omp parallel for
+#endif
   for (size_t i = 0; i < net.output.size(); ++i) {
     valT v = (net.output[i] - expect[i]) * 2; //(V_i-e)^2 d? = 2(V_i-e)*V_i d ?
     v /= 100000;
@@ -38,25 +43,6 @@ void train(network &net, const VvalT &input, const VvalT &expect) {
     net.layers[i].w = netVw[i];
     net.layers[i].b = netVb[i];
   }
-
-  // for (int i = 0; i < net.layers.size(); ++i) {
-  //   auto &b = net.layers[i].b;
-  //   valT v = 2 * delta;
-  //   const matrix &&vdb = net.getVdbi(i);
-  //   assert(vdb.getm() == 1);
-  //   // assert(vdb.getn() == b.getn());
-  //   // assert(vdb.getn() == net.output.size());
-  //   for (int j = 0; j < net.output.size(); ++j) {
-  //     b(j, 0) -= v * vdb(j, 0);
-  //   }
-  //   auto &w = net.layers[i].w;
-  //   for (int j = 0; j < w.getm(); ++j) {
-  //     const matrix &&vdw = net.getVdWij(i, j);
-  //     for (int k = 0; j < w.getn(); ++j) {
-  //       w(k, j) -= v * vdw(k, 0);
-  //     }
-  //   }
-  // }
 }
 
 valT genvalT() {

@@ -3,7 +3,11 @@
 #include "main.h"
 #include "matrix.h"
 #include <cstddef>
+#include <istream>
+#include <ostream>
 #include <vector>
+using std::istream;
+using std::ostream;
 using std::vector;
 struct network {
   network() = delete;
@@ -13,6 +17,8 @@ struct network {
   matrix getVdVi(size_t i) const;
   void getV();
   void setInput(const VvalT &in);
+  void save( ostream &);
+  void load( istream &);
   VvalT output;
   vector<layer> layers;
 };

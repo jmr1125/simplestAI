@@ -12,11 +12,12 @@ void test(network net) {
     a = b = c = 0;
     for (int i = 1; i <= 100; ++i) {
       auto x = genvalT() * 10;
-      VvalT in{x};
+      auto y = genvalT() * 10;
+      VvalT in{x, y};
       net.setInput(in);
       net.getV();
-      valT delta = net.output[0] - x * 11.25;
-      delta *= delta;
+      valT delta = (net.output[0] - x * 11.25) * (net.output[0] - x * 11.25) +
+                   (net.output[1] - x - y) * (net.output[1] - x - y);
       // cout << delta << ' ';
       if (fabs(delta) < 1e-9) {
         ++a;
@@ -38,7 +39,7 @@ void test(network net) {
 }
 int main() {
   network net(
-      {1, 2, 3, 2, 1}, [](valT v) { return v; },
+      {2, 2, 3, 2, 2}, [](valT v) { return v; },
       [](valT) -> valT { return 1; });
   /*randomize net*/
   for (layer &x : net.layers) {
@@ -54,6 +55,7 @@ int main() {
     }
   }
   valT delta = 1;
+  long long tot = 0;
   cout << "\033[?1049h";
   int i = 0;
   while ([delta, &i, &net]() {
@@ -79,11 +81,12 @@ int main() {
     return true;
   }()) {
     valT x = genvalT() * 10;
-    VvalT in{x};
+    valT y = genvalT() * 10;
+    VvalT in{x, y};
     net.setInput(in);
     net.getV();
-    delta = net.output[0] - x * 11.25;
-    delta *= delta;
+    delta = (net.output[0] - x * 11.25) * (net.output[0] - x * 11.25) +
+            (net.output[1] - x - y) * (net.output[1] - x - y);
     cout << "\033[Hdelta: ";
     if (delta < 1e-6) {
       cout << "\033[32;1m";
@@ -93,7 +96,8 @@ int main() {
       cout << "\033[0m";
     }
     cout << "     \r";
-    VvalT expect{x * 11.25};
+    VvalT expect{x * 11.25, x + y};
+    cout << "\033[1;30Htrain: " << tot++ << " times";
     train(net, in, expect);
   }
 
