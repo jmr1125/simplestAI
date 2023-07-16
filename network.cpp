@@ -1,6 +1,7 @@
 #include "network.h"
 #include "layer.h"
 #include "matrix.h"
+#include <cassert>
 #include <cstddef>
 #include <fstream>
 
@@ -21,14 +22,12 @@ network::network(const vector<int> &sizes, funcT Func, funcT deFunc) {
     // x.computed = false;
   }
 }
-matrix network::getVdVi(size_t I) const {
-  matrix res = i(layers[layers.size() - 1].w.getn());
-  for (size_t x = layers.size() - 1; x > I; --x) {
-    res = res * layers[x].getVdV();
-  }
-  return res;
+const matrix &network::getVdVi(size_t I) const {
+  assert(computed);
+  return VdVi[I];
 }
 matrix network::getVdWij(size_t l, int j) const {
+  assert(computed);
   matrix tmp;
   tmp.setn(layers[l].w.getn());
   tmp.setm(1);
@@ -38,7 +37,8 @@ matrix network::getVdWij(size_t l, int j) const {
   return getVdVi(l) * tmp;
 }
 matrix network::getVdbi(size_t i) const {
-  const matrix &&tmp = getVdVi(i);
+  assert(computed);
+  const matrix &tmp = getVdVi(i);
   return tmp * layers[i].getVdb();
 }
 void network::getV() {
@@ -46,9 +46,21 @@ void network::getV() {
     layers[i].setInput(layers[i - 1].getV());
   }
   output = layers[layers.size() - 1].getV();
+
+  VdVi.resize(layers.size());
+  matrix res = i(layers[layers.size() - 1].w.getn());
+  // VdVi[layers.size()-1]=res;
+  for (size_t x = layers.size() - 1; /*x >= 0*/ x != -1; --x) {
+    VdVi[x] = res;
+    res = res * layers[x].getVdV();
+  }
+  computed = true;
 }
-void network::setInput(const VvalT &in) { layers[0].setInput(in); }
-void network::save(ostream &fp) {
+void network::setInput(const VvalT &in) {
+  layers[0].setInput(in);
+  computed = false;
+}
+void network::save(ostream &fp) const {
   fp << layers.size() << "\n";
   for (const layer &x : layers) {
     fp << x.w.getn() << ' ' << x.w.getm() << "\n";

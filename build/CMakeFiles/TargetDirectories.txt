@@ -5,5 +5,5 @@
 /Users/jiang/Desktop/myAI/build/CMakeFiles/test1.dir
 /Users/jiang/Desktop/myAI/build/CMakeFiles/train.dir
 /Users/jiang/Desktop/myAI/build/CMakeFiles/drawdata.dir
-/Users/jiang/Desktop/myAI/build/CMakeFiles/ALL_BUILD.dir
-/Users/jiang/Desktop/myAI/build/CMakeFiles/ZERO_CHECK.dir
+/Users/jiang/Desktop/myAI/build/CMakeFiles/edit_cache.dir
+/Users/jiang/Desktop/myAI/build/CMakeFiles/rebuild_cache.dir
