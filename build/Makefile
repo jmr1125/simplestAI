@@ -169,6 +169,19 @@ test5/fast:
 .PHONY : test5/fast
 
 #=============================================================================
+# Target rules for targets named readdata
+
+# Build rule for target.
+readdata: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 readdata
+.PHONY : readdata
+
+# fast build rule for target.
+readdata/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/readdata.dir/build.make CMakeFiles/readdata.dir/build
+.PHONY : readdata/fast
+
+#=============================================================================
 # Target rules for targets named test1
 
 # Build rule for target.
@@ -193,6 +206,19 @@ train: cmake_check_build_system
 train/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/train.dir/build.make CMakeFiles/train.dir/build
 .PHONY : train/fast
+
+#=============================================================================
+# Target rules for targets named trainmnist
+
+# Build rule for target.
+trainmnist: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 trainmnist
+.PHONY : trainmnist
+
+# fast build rule for target.
+trainmnist/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/build
+.PHONY : trainmnist/fast
 
 #=============================================================================
 # Target rules for targets named drawdata
@@ -240,6 +266,7 @@ layer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test4.dir/build.make CMakeFiles/test4.dir/layer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test5.dir/build.make CMakeFiles/test5.dir/layer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/train.dir/build.make CMakeFiles/train.dir/layer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/layer.cpp.o
 .PHONY : layer.cpp.o
 
 layer.i: layer.cpp.i
@@ -251,6 +278,7 @@ layer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test4.dir/build.make CMakeFiles/test4.dir/layer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test5.dir/build.make CMakeFiles/test5.dir/layer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/train.dir/build.make CMakeFiles/train.dir/layer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/layer.cpp.i
 .PHONY : layer.cpp.i
 
 layer.s: layer.cpp.s
@@ -262,6 +290,7 @@ layer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test4.dir/build.make CMakeFiles/test4.dir/layer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test5.dir/build.make CMakeFiles/test5.dir/layer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/train.dir/build.make CMakeFiles/train.dir/layer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/layer.cpp.s
 .PHONY : layer.cpp.s
 
 matrix.o: matrix.cpp.o
@@ -273,6 +302,7 @@ matrix.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test4.dir/build.make CMakeFiles/test4.dir/matrix.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test5.dir/build.make CMakeFiles/test5.dir/matrix.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/train.dir/build.make CMakeFiles/train.dir/matrix.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/matrix.cpp.o
 .PHONY : matrix.cpp.o
 
 matrix.i: matrix.cpp.i
@@ -284,6 +314,7 @@ matrix.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test4.dir/build.make CMakeFiles/test4.dir/matrix.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test5.dir/build.make CMakeFiles/test5.dir/matrix.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/train.dir/build.make CMakeFiles/train.dir/matrix.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/matrix.cpp.i
 .PHONY : matrix.cpp.i
 
 matrix.s: matrix.cpp.s
@@ -295,6 +326,7 @@ matrix.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test4.dir/build.make CMakeFiles/test4.dir/matrix.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test5.dir/build.make CMakeFiles/test5.dir/matrix.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/train.dir/build.make CMakeFiles/train.dir/matrix.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/matrix.cpp.s
 .PHONY : matrix.cpp.s
 
 network.o: network.cpp.o
@@ -306,6 +338,7 @@ network.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test4.dir/build.make CMakeFiles/test4.dir/network.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test5.dir/build.make CMakeFiles/test5.dir/network.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/train.dir/build.make CMakeFiles/train.dir/network.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/network.cpp.o
 .PHONY : network.cpp.o
 
 network.i: network.cpp.i
@@ -317,6 +350,7 @@ network.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test4.dir/build.make CMakeFiles/test4.dir/network.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test5.dir/build.make CMakeFiles/test5.dir/network.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/train.dir/build.make CMakeFiles/train.dir/network.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/network.cpp.i
 .PHONY : network.cpp.i
 
 network.s: network.cpp.s
@@ -328,7 +362,32 @@ network.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test4.dir/build.make CMakeFiles/test4.dir/network.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test5.dir/build.make CMakeFiles/test5.dir/network.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/train.dir/build.make CMakeFiles/train.dir/network.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/network.cpp.s
 .PHONY : network.cpp.s
+
+readmnist.o: readmnist.cpp.o
+.PHONY : readmnist.o
+
+# target to build an object file
+readmnist.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/readdata.dir/build.make CMakeFiles/readdata.dir/readmnist.cpp.o
+.PHONY : readmnist.cpp.o
+
+readmnist.i: readmnist.cpp.i
+.PHONY : readmnist.i
+
+# target to preprocess a source file
+readmnist.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/readdata.dir/build.make CMakeFiles/readdata.dir/readmnist.cpp.i
+.PHONY : readmnist.cpp.i
+
+readmnist.s: readmnist.cpp.s
+.PHONY : readmnist.s
+
+# target to generate assembly for a file
+readmnist.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/readdata.dir/build.make CMakeFiles/readdata.dir/readmnist.cpp.s
+.PHONY : readmnist.cpp.s
 
 test2.o: test2.cpp.o
 .PHONY : test2.o
@@ -457,6 +516,7 @@ train.o: train.cpp.o
 train.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test4.dir/build.make CMakeFiles/test4.dir/train.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/train.dir/build.make CMakeFiles/train.dir/train.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/train.cpp.o
 .PHONY : train.cpp.o
 
 train.i: train.cpp.i
@@ -466,6 +526,7 @@ train.i: train.cpp.i
 train.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test4.dir/build.make CMakeFiles/test4.dir/train.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/train.dir/build.make CMakeFiles/train.dir/train.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/train.cpp.i
 .PHONY : train.cpp.i
 
 train.s: train.cpp.s
@@ -475,6 +536,7 @@ train.s: train.cpp.s
 train.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test4.dir/build.make CMakeFiles/test4.dir/train.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/train.dir/build.make CMakeFiles/train.dir/train.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/train.cpp.s
 .PHONY : train.cpp.s
 
 train1.o: train1.cpp.o
@@ -501,6 +563,30 @@ train1.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/train.dir/build.make CMakeFiles/train.dir/train1.cpp.s
 .PHONY : train1.cpp.s
 
+train2.o: train2.cpp.o
+.PHONY : train2.o
+
+# target to build an object file
+train2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/train2.cpp.o
+.PHONY : train2.cpp.o
+
+train2.i: train2.cpp.i
+.PHONY : train2.i
+
+# target to preprocess a source file
+train2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/train2.cpp.i
+.PHONY : train2.cpp.i
+
+train2.s: train2.cpp.s
+.PHONY : train2.s
+
+# target to generate assembly for a file
+train2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/train2.cpp.s
+.PHONY : train2.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -510,12 +596,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... drawdata"
+	@echo "... readdata"
 	@echo "... test1"
 	@echo "... test2"
 	@echo "... test3"
 	@echo "... test4"
 	@echo "... test5"
 	@echo "... train"
+	@echo "... trainmnist"
 	@echo "... data.o"
 	@echo "... data.i"
 	@echo "... data.s"
@@ -528,6 +616,9 @@ help:
 	@echo "... network.o"
 	@echo "... network.i"
 	@echo "... network.s"
+	@echo "... readmnist.o"
+	@echo "... readmnist.i"
+	@echo "... readmnist.s"
 	@echo "... test2.o"
 	@echo "... test2.i"
 	@echo "... test2.s"
@@ -549,6 +640,9 @@ help:
 	@echo "... train1.o"
 	@echo "... train1.i"
 	@echo "... train1.s"
+	@echo "... train2.o"
+	@echo "... train2.i"
+	@echo "... train2.s"
 .PHONY : help
 
 

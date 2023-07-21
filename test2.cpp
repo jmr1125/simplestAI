@@ -65,8 +65,8 @@ int main() {
   cout << "====NETWORK====" << endl;
   {
     network n1(
-        {2, 3}, [](valT v) { return max((double)0, v); },
-        [](valT v) { return double(v > 0 ? 1 : 0); });
+        {2, 3}, [](valT v) { return max((valT)0, v); },
+        [](valT v) { return valT(v > 0 ? 1 : 0); });
     n1.setInput({1, 2});
     n1.layers[0].w.m[0] = vector<valT>({0, 1});
     n1.layers[0].w.m[1] = vector<valT>({1, 1});
@@ -86,7 +86,7 @@ int main() {
       cout << "Vdb" << i << " = " << n1.getVdbi(i) << endl;
     }
     for (int j = 0; j < n1.layers[0].w.getm(); ++j) {
-      cout << "VdW"<<j<<" = " << n1.getVdWij(0, j) << endl;
+      cout << "VdW" << j << " = " << n1.getVdWij(0, j) << endl;
     }
   }
 }

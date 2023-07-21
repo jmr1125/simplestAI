@@ -17,9 +17,6 @@ network::network(const vector<int> &sizes, funcT Func, funcT deFunc) {
   for (auto &x : layers) {
     x.Func() = Func;
     x.deFunc() = deFunc;
-    // x.basis.setn(x.w.getn());
-    // x.basis.setm(1);
-    // x.computed = false;
   }
 }
 const matrix &network::getVdVi(size_t I) const {
@@ -49,7 +46,6 @@ void network::getV() {
 
   VdVi.resize(layers.size());
   matrix res = i(layers[layers.size() - 1].w.getn());
-  // VdVi[layers.size()-1]=res;
   for (size_t x = layers.size() - 1; /*x >= 0*/ x != -1; --x) {
     VdVi[x] = res;
     res = res * layers[x].getVdV();
