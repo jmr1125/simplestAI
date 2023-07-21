@@ -9,12 +9,10 @@ using namespace std;
 int main() {
   long long i = 1;
   ios::sync_with_stdio(true);
-  // cout<<"thread count:
-  // "<<omp_get_num_threads()<<"/"<<omp_get_max_threads()<<endl;
   cout << "thread count: " << omp_get_num_threads() << "/"
        << omp_get_max_threads() << endl;
 #pragma omp parallel
-  { // cout << omp_get_thread_num() <<' '<< i << endl;
+  {
 #pragma omp atomic
     i++;
     printf("thread count: %d / %d\n", omp_get_num_threads(),
@@ -34,8 +32,6 @@ int main() {
   }
   cout << "done." << endl;
   cout << "sleep 1s and calculate Pi" << endl;
-  // clock_t now=clock;
-  // cout<<"now: "<<now<<endl;
   sleep(1);
   cout << "now: " << clock << endl;
   long steps = 10000000000;
@@ -55,7 +51,6 @@ int main() {
   cout << "pi: " << pi << endl
        << "now: " << (now = clock) / omp_get_max_threads()
        << endl; //<<"time: "<<clock-now<<endl;
-  // now = clock;
   pi = s = 0;
   {
     double x;
@@ -66,5 +61,5 @@ int main() {
   }
   pi = s * dx;
   cout << "pi: " << pi << endl
-       << "now: " << clock - now << endl; // << "time: " << clock - now << endl;
+       << "now: " << clock - now << endl;
 }

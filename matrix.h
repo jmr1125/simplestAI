@@ -4,7 +4,6 @@
 #include <ostream>
 #include <stdexcept>
 #include <string>
-#include <sys/_types/_size_t.h>
 #include <vector>
 using std::ostream;
 using std::string;
@@ -22,7 +21,7 @@ struct matrix {
   void setm(size_t m);
   size_t getn() const;
   size_t getm() const;
-  void swap(matrix&);
+  void swap(matrix &);
   matrix operator*(const matrix &) const;
   vector<valT> operator*(const vector<valT> &) const;
   matrix operator*(const valT) const;
@@ -37,7 +36,7 @@ struct matrix {
   valT operator()(size_t x, size_t y) const;
   valT &operator()(size_t x, size_t y);
   vector<vector<valT>> m;
-  size_t M=0,N=0;
+  size_t M = 0, N = 0;
 };
 ostream &operator<<(ostream &ost, const matrix &);
 matrix i(size_t);

@@ -1,6 +1,7 @@
 #include "main.h"
 #include "network.h"
 #include "train.h"
+#include <cmath>
 #include <iostream>
 #include <ostream>
 using namespace std;
@@ -24,17 +25,24 @@ void train(network &net, const VvalT &input, const VvalT &expect) {
   for (size_t i = 0; i < net.output.size(); ++i) {
     valT v = (net.output[i] - expect[i]) * 2; //(V_i-e)^2 d? = 2(V_i-e)*V_i d ?
                                               // v /= 100;
-    v /= 50000;
+    // v /= 50000;
+    // v /= 1000000000;2 2 3 2 2 2+3+2+2+2*2+2*3+3*2+2*2=29
+    // 1000*NumberOfVarible
+    v /= 29000;
 #ifdef USE_OMP
 #pragma omp parallel for
 #endif
     for (size_t l = 0; l < net.layers.size(); ++l) {
       const matrix vdb = net.getVdbi(l);
       valT delta_b = vdb(i, 0) * v;
+      // valT delta_b = v / vdb(i, 0);
+      // delta_b *= fabs(delta_b);
       netVb[l](i, 0) -= delta_b;
       for (int j = 0; j < net.layers[l].w.getm(); ++j) {
         const matrix &&vdw = net.getVdWij(l, j);
         valT delta_w = vdw(i, 0) * v;
+        // valT delta_w = v / vdw(i, 0);
+        //  delta_w *= fabs(delta_w);
         netVw[l](i, j) -= delta_w;
       }
     }
