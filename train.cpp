@@ -17,6 +17,10 @@ void train(network &net, const VvalT &input, const VvalT &expect, valT scale) {
 }
 void trainn(network &net, const vector<VvalT> &input,
             const vector<VvalT> &expect, valT scale) {
+  trainn(net, input, expect, scale, NULL);
+}
+void trainn(network &net, const vector<VvalT> &input,
+            const vector<VvalT> &expect, valT scale, valT *progress) {
   assert(input.size() == expect.size());
   int n = input.size(); //=expect.size();
 
@@ -35,6 +39,9 @@ void trainn(network &net, const vector<VvalT> &input,
     assert(net.layers[i].b.getm() == 1);
   }
   for (int i = 0; i < n; ++i) {
+    if (progress) {
+      *progress = (valT)i / n;
+    }
     delta_network d = getdelta_network(net, input[i], expect[i], scale);
 #ifdef USE_OMP
 #pragma omp parallel for

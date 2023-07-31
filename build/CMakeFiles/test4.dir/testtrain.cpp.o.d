@@ -1,7 +1,6 @@
-CMakeFiles/test4.dir/testtrain.cpp.o: \
-  /Users/jiang/Desktop/myAI/testtrain.cpp \
-  /Users/jiang/Desktop/myAI/main.h /Users/jiang/Desktop/myAI/network.h \
-  /Users/jiang/Desktop/myAI/layer.h /Users/jiang/Desktop/myAI/matrix.h \
+CMakeFiles/test4.dir/testtrain.cpp.o: /Users/jiang/myAI/testtrain.cpp \
+  /Users/jiang/myAI/main.h /Users/jiang/myAI/network.h \
+  /Users/jiang/myAI/layer.h /Users/jiang/myAI/matrix.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/algorithm \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__assert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__config \
@@ -732,7 +731,7 @@ CMakeFiles/test4.dir/testtrain.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/_types/_nl_item.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/istream \
-  /Users/jiang/Desktop/myAI/train.h \
+  /Users/jiang/myAI/train.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/random \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__random/bernoulli_distribution.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__random/uniform_real_distribution.h \

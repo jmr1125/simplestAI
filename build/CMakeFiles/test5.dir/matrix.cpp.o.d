@@ -1,5 +1,5 @@
-CMakeFiles/test5.dir/matrix.cpp.o: /Users/jiang/Desktop/myAI/matrix.cpp \
-  /Users/jiang/Desktop/myAI/matrix.h /Users/jiang/Desktop/myAI/main.h \
+CMakeFiles/test5.dir/matrix.cpp.o: /Users/jiang/myAI/matrix.cpp \
+  /Users/jiang/myAI/matrix.h /Users/jiang/myAI/main.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/algorithm \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__assert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__config \

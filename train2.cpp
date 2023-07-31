@@ -9,7 +9,6 @@
 #include <fstream>
 #include <iostream>
 #include <ncurses.h>
-#include <nl_types.h>
 #include <stdexcept>
 #ifdef USE_OMP
 #include <omp.h>
@@ -66,7 +65,8 @@ void Readall(istream &in) {
       break;
     } catch (const runtime_error &a) {
       cerr << "runtime error : " << a.what() << endl;
-      if (!(inputs.at(59999).size() == 28 * 28 && outputs.at(59999).size())) {
+      if (!(inputs.at(59999).size() == 28 * 28 &&
+            outputs.at(59999).size() == 10)) {
         throw;
       } else {
         cerr << "ignore" << endl;
@@ -80,16 +80,10 @@ int main() {
   // omp_set_nested(1);
   omp_set_max_active_levels(5);
 #endif
-  // network net(
-  //     {28 * 28, 32, 32, 16, 10},
-  //     [](valT x) -> valT { return std::max(x, (valT)0); },
-  //     [](valT x) -> valT { return (x >= 0) ? 1 : 0; });
   network net({}, NULL, NULL);
   int id;
   {
     ifstream in("handwritemnist.net");
-    // funcT func = [](valT v) { return max((valT)0, v); };
-    // funcT defunc = [](valT v) -> valT { return (v >= 0 ? 1 : 0); };
     funcT func = funcof(tanh);
     funcT defunc = defuncof(tanh);
     if (in) {
@@ -129,7 +123,7 @@ int main() {
   {
     ifstream in("traindata.txt");
     Readall(in);
-    int batch_size = 4;
+    int batch_size = 10;
 
 #ifdef gui
     for (; getch() != 'q';) {
@@ -140,7 +134,7 @@ int main() {
       vector<VvalT> exps;
       pics.resize(batch_size);
       exps.resize(batch_size);
-      for (int i = 0; i < batch_size; ++i, ++id) {
+      for (int i = 0; i < batch_size; ++i, ++id, id %= inputs.size()) {
         pics[i] = inputs[id];
         exps[i] = outputs[id];
 
@@ -155,6 +149,7 @@ int main() {
           delta += (net.output[x] - exps[i][x]) * (net.output[x] - exps[i][x]);
 #ifdef gui
           printw("%Lf ", net.output[x]);
+          clrtoeol();
 #else
           printf("%Lf ", net.output[x]);
 #endif
@@ -169,16 +164,10 @@ int main() {
         }
 #ifdef gui
         clrtoeol();
-        mvprintw(2 + i * 3 + /*1*/ 2, 2, "%d : delta : %f", i, delta);
+        mvprintw(2 + i * 3 + 2, 2, "%d : delta : %f", i, delta);
         clrtoeol();
-        // mvprintw(2 + i * 3 + 2, 2, "%d : expect: %c", i, expect);
-        // clrtoeol();
-        mvaddch(2 + i * 3 + /*3*/ 3, 2,
-                loadingstr[(loadingi = (loadingi + 1) % 4)]);
+        mvaddch(2 + i * 3 + 3, 2, loadingstr[(loadingi = (loadingi + 1) % 4)]);
         mvprintw(1, 20, "id = %d", id);
-        // box(stdscr, ACS_VLINE, ACS_HLINE);
-        // wborder(stdscr, ACS_VLINE, ACS_VLINE, ACS_HLINE, ACS_HLINE,
-        //         ACS_ULCORNER, ACS_URCORNER, ACS_LLCORNER, ACS_LRCORNER);
         wborder(stdscr, '|', '|', '-', '-', '+', '+', '+', '+');
         refresh();
 #else
@@ -188,15 +177,17 @@ int main() {
         fflush(stdout);
 #endif
       }
+      valT progress;
       auto a = [&]() {
         trainn(net, pics, exps,
                (valT)1 / ((16 + 16 + 16 + 10 + 28 * 28 * 16 + 16 * 16 +
-                           16 * 16 + 16 * 10) *
-                          1000));
+                           16 * 16 + 16 * 10) * // number of varibles
+                          1000),
+               &progress);
       };
 #ifdef USE_OMP
       int ok = 0;
-#pragma omp parallel num_threads(2) shared(ok)
+#pragma omp parallel num_threads(2) shared(ok, progress)
       {
         if (omp_get_thread_num() == 1) {
           omp_set_num_threads(omp_get_max_threads());
@@ -211,8 +202,7 @@ int main() {
             t = omp_get_wtime();
             mvaddch(2 + (batch_size - 1) * 3 + 3, 2,
                     loadingstr[(loadingi = (loadingi + 1) % 4)]);
-            printw(" %Lf ", omp_get_wtime() - T);
-            // clrtoeol();
+            printw(" %Lf ; %Lf%% ", omp_get_wtime() - T, progress * 100);
             refresh();
           }
         }
@@ -224,15 +214,16 @@ int main() {
         a();
         ok = true;
       });
-      // while (!ok) {
-      //   mvaddch(2 + (batch_size - 1) * 3 + 3, 2,
-      //           loadingstr[(loadingi = (loadingi + 1) % 4)]);
-      //   refresh();
-      //   auto t = clock();
-      //   mvprintw(2 + (batch_size - 1) * 3 + 3, 4," %Lf", valT(t - T) /
-      //   CLOCKS_PER_SEC); while (clock() - t <= CLOCKS_PER_SEC*0.2) {
-      //   }
-      // }
+      while (!ok) {
+        mvaddch(2 + (batch_size - 1) * 3 + 3, 2,
+                loadingstr[(loadingi = (loadingi + 1) % 4)]);
+        refresh();
+        auto t = clock();
+        mvprintw(2 + (batch_size - 1) * 3 + 3, 4, " %Lf ; %Lf%% ",
+                 valT(t - T) / CLOCKS_PER_SEC, progress * 100);
+        while (clock() - t <= CLOCKS_PER_SEC * 0.2) {
+        }
+      }
       th1.join();
 #endif
     }

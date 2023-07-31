@@ -10,6 +10,8 @@ using delta_network =
 void train(network &net, const VvalT &input, const VvalT &expect, valT scale);
 void trainn(network &net, const vector<VvalT> &input,
             const vector<VvalT> &expect, valT scale);
+void trainn(network &net, const vector<VvalT> &input,
+            const vector<VvalT> &expect, valT scale, valT *progress);
 delta_network getdelta_network(network net, const VvalT &input,
                                const VvalT &expect, valT scale);
 

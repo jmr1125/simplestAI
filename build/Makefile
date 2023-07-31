@@ -57,10 +57,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/jiang/Desktop/myAI
+CMAKE_SOURCE_DIR = /Users/jiang/myAI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/jiang/Desktop/myAI/build
+CMAKE_BINARY_DIR = /Users/jiang/myAI/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jiang/Desktop/myAI/build/CMakeFiles /Users/jiang/Desktop/myAI/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jiang/myAI/build/CMakeFiles /Users/jiang/myAI/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jiang/Desktop/myAI/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jiang/myAI/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -180,19 +180,6 @@ readdata: cmake_check_build_system
 readdata/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/readdata.dir/build.make CMakeFiles/readdata.dir/build
 .PHONY : readdata/fast
-
-#=============================================================================
-# Target rules for targets named test1
-
-# Build rule for target.
-test1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test1
-.PHONY : test1
-
-# fast build rule for target.
-test1/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/build
-.PHONY : test1/fast
 
 #=============================================================================
 # Target rules for targets named train
@@ -437,30 +424,6 @@ testmouse.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test3.dir/build.make CMakeFiles/test3.dir/testmouse.cpp.s
 .PHONY : testmouse.cpp.s
 
-testomp.o: testomp.cpp.o
-.PHONY : testomp.o
-
-# target to build an object file
-testomp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/testomp.cpp.o
-.PHONY : testomp.cpp.o
-
-testomp.i: testomp.cpp.i
-.PHONY : testomp.i
-
-# target to preprocess a source file
-testomp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/testomp.cpp.i
-.PHONY : testomp.cpp.i
-
-testomp.s: testomp.cpp.s
-.PHONY : testomp.s
-
-# target to generate assembly for a file
-testomp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/testomp.cpp.s
-.PHONY : testomp.cpp.s
-
 testsave.o: testsave.cpp.o
 .PHONY : testsave.o
 
@@ -597,7 +560,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... drawdata"
 	@echo "... readdata"
-	@echo "... test1"
 	@echo "... test2"
 	@echo "... test3"
 	@echo "... test4"
@@ -625,9 +587,6 @@ help:
 	@echo "... testmouse.o"
 	@echo "... testmouse.i"
 	@echo "... testmouse.s"
-	@echo "... testomp.o"
-	@echo "... testomp.i"
-	@echo "... testomp.s"
 	@echo "... testsave.o"
 	@echo "... testsave.i"
 	@echo "... testsave.s"
