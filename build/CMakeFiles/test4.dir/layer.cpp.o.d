@@ -1,6 +1,6 @@
-CMakeFiles/test4.dir/layer.cpp.o: /Users/jiang/Desktop/myAI/layer.cpp \
-  /Users/jiang/Desktop/myAI/layer.h /Users/jiang/Desktop/myAI/main.h \
-  /Users/jiang/Desktop/myAI/matrix.h \
+CMakeFiles/test4.dir/layer.cpp.o: /Users/jiang/myAI/layer.cpp \
+  /Users/jiang/myAI/layer.h /Users/jiang/myAI/main.h \
+  /Users/jiang/myAI/matrix.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/algorithm \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__assert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__config \

@@ -1,6 +1,6 @@
-CMakeFiles/test2.dir/test2.cpp.o: /Users/jiang/Desktop/myAI/test2.cpp \
-  /Users/jiang/Desktop/myAI/layer.h /Users/jiang/Desktop/myAI/main.h \
-  /Users/jiang/Desktop/myAI/matrix.h \
+CMakeFiles/test2.dir/test2.cpp.o: /Users/jiang/myAI/test2.cpp \
+  /Users/jiang/myAI/layer.h /Users/jiang/myAI/main.h \
+  /Users/jiang/myAI/matrix.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/algorithm \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__assert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__config \
@@ -730,6 +730,6 @@ CMakeFiles/test2.dir/test2.cpp.o: /Users/jiang/Desktop/myAI/test2.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/_types/_nl_item.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
-  /Users/jiang/Desktop/myAI/network.h \
+  /Users/jiang/myAI/network.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/istream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/iostream

@@ -28,7 +28,7 @@ void train(network &net, const VvalT &input, const VvalT &expect) {
     // v /= 50000;
     // v /= 1000000000;2 2 3 2 2 2+3+2+2+2*2+2*3+3*2+2*2=29
     // 1000*NumberOfVarible
-    v /= 29000;
+    v /= 14500;
 #ifdef USE_OMP
 #pragma omp parallel for
 #endif
@@ -38,9 +38,11 @@ void train(network &net, const VvalT &input, const VvalT &expect) {
       // valT delta_b = v / vdb(i, 0);
       // delta_b *= fabs(delta_b);
       netVb[l](i, 0) -= delta_b;
+      net.getV();
       for (int j = 0; j < net.layers[l].w.getm(); ++j) {
         const matrix &&vdw = net.getVdWij(l, j);
         valT delta_w = vdw(i, 0) * v;
+        net.getV();
         // valT delta_w = v / vdw(i, 0);
         //  delta_w *= fabs(delta_w);
         netVw[l](i, j) -= delta_w;

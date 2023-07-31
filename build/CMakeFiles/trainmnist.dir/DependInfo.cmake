@@ -8,11 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/jiang/Desktop/myAI/layer.cpp" "CMakeFiles/trainmnist.dir/layer.cpp.o" "gcc" "CMakeFiles/trainmnist.dir/layer.cpp.o.d"
-  "/Users/jiang/Desktop/myAI/matrix.cpp" "CMakeFiles/trainmnist.dir/matrix.cpp.o" "gcc" "CMakeFiles/trainmnist.dir/matrix.cpp.o.d"
-  "/Users/jiang/Desktop/myAI/network.cpp" "CMakeFiles/trainmnist.dir/network.cpp.o" "gcc" "CMakeFiles/trainmnist.dir/network.cpp.o.d"
-  "/Users/jiang/Desktop/myAI/train.cpp" "CMakeFiles/trainmnist.dir/train.cpp.o" "gcc" "CMakeFiles/trainmnist.dir/train.cpp.o.d"
-  "/Users/jiang/Desktop/myAI/train2.cpp" "CMakeFiles/trainmnist.dir/train2.cpp.o" "gcc" "CMakeFiles/trainmnist.dir/train2.cpp.o.d"
+  "/Users/jiang/myAI/layer.cpp" "CMakeFiles/trainmnist.dir/layer.cpp.o" "gcc" "CMakeFiles/trainmnist.dir/layer.cpp.o.d"
+  "/Users/jiang/myAI/matrix.cpp" "CMakeFiles/trainmnist.dir/matrix.cpp.o" "gcc" "CMakeFiles/trainmnist.dir/matrix.cpp.o.d"
+  "/Users/jiang/myAI/network.cpp" "CMakeFiles/trainmnist.dir/network.cpp.o" "gcc" "CMakeFiles/trainmnist.dir/network.cpp.o.d"
+  "/Users/jiang/myAI/train.cpp" "CMakeFiles/trainmnist.dir/train.cpp.o" "gcc" "CMakeFiles/trainmnist.dir/train.cpp.o.d"
+  "/Users/jiang/myAI/train2.cpp" "CMakeFiles/trainmnist.dir/train2.cpp.o" "gcc" "CMakeFiles/trainmnist.dir/train2.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/jiang/Desktop/myAI/layer.cpp" "CMakeFiles/test5.dir/layer.cpp.o" "gcc" "CMakeFiles/test5.dir/layer.cpp.o.d"
-  "/Users/jiang/Desktop/myAI/matrix.cpp" "CMakeFiles/test5.dir/matrix.cpp.o" "gcc" "CMakeFiles/test5.dir/matrix.cpp.o.d"
-  "/Users/jiang/Desktop/myAI/network.cpp" "CMakeFiles/test5.dir/network.cpp.o" "gcc" "CMakeFiles/test5.dir/network.cpp.o.d"
-  "/Users/jiang/Desktop/myAI/testsave.cpp" "CMakeFiles/test5.dir/testsave.cpp.o" "gcc" "CMakeFiles/test5.dir/testsave.cpp.o.d"
+  "/Users/jiang/myAI/layer.cpp" "CMakeFiles/test5.dir/layer.cpp.o" "gcc" "CMakeFiles/test5.dir/layer.cpp.o.d"
+  "/Users/jiang/myAI/matrix.cpp" "CMakeFiles/test5.dir/matrix.cpp.o" "gcc" "CMakeFiles/test5.dir/matrix.cpp.o.d"
+  "/Users/jiang/myAI/network.cpp" "CMakeFiles/test5.dir/network.cpp.o" "gcc" "CMakeFiles/test5.dir/network.cpp.o.d"
+  "/Users/jiang/myAI/testsave.cpp" "CMakeFiles/test5.dir/testsave.cpp.o" "gcc" "CMakeFiles/test5.dir/testsave.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

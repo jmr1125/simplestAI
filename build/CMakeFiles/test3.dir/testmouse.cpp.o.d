@@ -1,5 +1,4 @@
-CMakeFiles/test3.dir/testmouse.cpp.o: \
-  /Users/jiang/Desktop/myAI/testmouse.cpp \
+CMakeFiles/test3.dir/testmouse.cpp.o: /Users/jiang/myAI/testmouse.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/curses.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/ncurses_dll.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/stdio.h \

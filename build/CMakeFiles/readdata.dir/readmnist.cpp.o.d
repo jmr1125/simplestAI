@@ -1,5 +1,4 @@
-CMakeFiles/readdata.dir/readmnist.cpp.o: \
-  /Users/jiang/Desktop/myAI/readmnist.cpp \
+CMakeFiles/readdata.dir/readmnist.cpp.o: /Users/jiang/myAI/readmnist.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/assert.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/sys/cdefs.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/sys/_symbol_aliasing.h \
