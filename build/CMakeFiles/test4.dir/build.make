@@ -83,24 +83,10 @@ CMakeFiles/test4.dir/testtrain.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test4.dir/testtrain.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiang/myAI/testtrain.cpp -o CMakeFiles/test4.dir/testtrain.cpp.s
 
-CMakeFiles/test4.dir/train.cpp.o: CMakeFiles/test4.dir/flags.make
-CMakeFiles/test4.dir/train.cpp.o: /Users/jiang/myAI/train.cpp
-CMakeFiles/test4.dir/train.cpp.o: CMakeFiles/test4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jiang/myAI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test4.dir/train.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test4.dir/train.cpp.o -MF CMakeFiles/test4.dir/train.cpp.o.d -o CMakeFiles/test4.dir/train.cpp.o -c /Users/jiang/myAI/train.cpp
-
-CMakeFiles/test4.dir/train.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test4.dir/train.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jiang/myAI/train.cpp > CMakeFiles/test4.dir/train.cpp.i
-
-CMakeFiles/test4.dir/train.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test4.dir/train.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jiang/myAI/train.cpp -o CMakeFiles/test4.dir/train.cpp.s
-
 CMakeFiles/test4.dir/matrix.cpp.o: CMakeFiles/test4.dir/flags.make
 CMakeFiles/test4.dir/matrix.cpp.o: /Users/jiang/myAI/matrix.cpp
 CMakeFiles/test4.dir/matrix.cpp.o: CMakeFiles/test4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jiang/myAI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test4.dir/matrix.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jiang/myAI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test4.dir/matrix.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test4.dir/matrix.cpp.o -MF CMakeFiles/test4.dir/matrix.cpp.o.d -o CMakeFiles/test4.dir/matrix.cpp.o -c /Users/jiang/myAI/matrix.cpp
 
 CMakeFiles/test4.dir/matrix.cpp.i: cmake_force
@@ -114,7 +100,7 @@ CMakeFiles/test4.dir/matrix.cpp.s: cmake_force
 CMakeFiles/test4.dir/layer.cpp.o: CMakeFiles/test4.dir/flags.make
 CMakeFiles/test4.dir/layer.cpp.o: /Users/jiang/myAI/layer.cpp
 CMakeFiles/test4.dir/layer.cpp.o: CMakeFiles/test4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jiang/myAI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test4.dir/layer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jiang/myAI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test4.dir/layer.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test4.dir/layer.cpp.o -MF CMakeFiles/test4.dir/layer.cpp.o.d -o CMakeFiles/test4.dir/layer.cpp.o -c /Users/jiang/myAI/layer.cpp
 
 CMakeFiles/test4.dir/layer.cpp.i: cmake_force
@@ -128,7 +114,7 @@ CMakeFiles/test4.dir/layer.cpp.s: cmake_force
 CMakeFiles/test4.dir/network.cpp.o: CMakeFiles/test4.dir/flags.make
 CMakeFiles/test4.dir/network.cpp.o: /Users/jiang/myAI/network.cpp
 CMakeFiles/test4.dir/network.cpp.o: CMakeFiles/test4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jiang/myAI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test4.dir/network.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jiang/myAI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test4.dir/network.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test4.dir/network.cpp.o -MF CMakeFiles/test4.dir/network.cpp.o.d -o CMakeFiles/test4.dir/network.cpp.o -c /Users/jiang/myAI/network.cpp
 
 CMakeFiles/test4.dir/network.cpp.i: cmake_force
@@ -142,7 +128,6 @@ CMakeFiles/test4.dir/network.cpp.s: cmake_force
 # Object files for target test4
 test4_OBJECTS = \
 "CMakeFiles/test4.dir/testtrain.cpp.o" \
-"CMakeFiles/test4.dir/train.cpp.o" \
 "CMakeFiles/test4.dir/matrix.cpp.o" \
 "CMakeFiles/test4.dir/layer.cpp.o" \
 "CMakeFiles/test4.dir/network.cpp.o"
@@ -151,13 +136,12 @@ test4_OBJECTS = \
 test4_EXTERNAL_OBJECTS =
 
 test4: CMakeFiles/test4.dir/testtrain.cpp.o
-test4: CMakeFiles/test4.dir/train.cpp.o
 test4: CMakeFiles/test4.dir/matrix.cpp.o
 test4: CMakeFiles/test4.dir/layer.cpp.o
 test4: CMakeFiles/test4.dir/network.cpp.o
 test4: CMakeFiles/test4.dir/build.make
 test4: CMakeFiles/test4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jiang/myAI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable test4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jiang/myAI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable test4"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test4.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

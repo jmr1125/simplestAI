@@ -10,99 +10,58 @@
 #include <omp.h>
 #endif
 #include <vector>
-void train(network &net, const VvalT &input, const VvalT &expect, valT scale) {
-  vector<VvalT> vinput{input};
-  vector<VvalT> vexpect{expect};
-  trainn(net, vinput, vexpect, scale);
-}
-void trainn(network &net, const vector<VvalT> &input,
-            const vector<VvalT> &expect, valT scale) {
-  trainn(net, input, expect, scale, NULL);
-}
-void trainn(network &net, const vector<VvalT> &input,
-            const vector<VvalT> &expect, valT scale, valT *progress) {
-  assert(input.size() == expect.size());
-  int n = input.size(); //=expect.size();
-
-  vector<matrix> delVw;
-  vector<matrix> delVb;
-  delVw.resize(net.layers.size());
-  delVb.resize(net.layers.size());
-#ifdef USE_OMP
-#pragma parallel for
-#endif
-  for (int i = 0; i < net.layers.size(); ++i) { // init delta
-    delVw[i].setn(net.layers[i].w.getn());
-    delVw[i].setm(net.layers[i].w.getm());
-    delVb[i].setn(net.layers[i].b.getn());
-    delVb[i].setm(net.layers[i].b.getm());
-    assert(net.layers[i].b.getm() == 1);
-  }
-  for (int i = 0; i < n; ++i) {
-    if (progress) {
-      *progress = (valT)i / n;
-    }
-    delta_network d = getdelta_network(net, input[i], expect[i], scale);
-#ifdef USE_OMP
-#pragma omp parallel for
-#endif
-    for (int l = 0; l < net.layers.size(); ++l) {
-      delVw[l] = delVw[l] + d.first[l] * ((valT)1 / n);
-      delVb[l] = delVb[l] + d.second[l] * ((valT)1 / n);
-    }
-  }
-
-  for (int i = 0; i < net.layers.size(); ++i) {
-    net.layers[i].w = delVw[i] + net.layers[i].w;
-    net.layers[i].b = delVb[i] + net.layers[i].b;
-  }
-}
-delta_network getdelta_network(network net, const VvalT &input,
-                               const VvalT &expect, valT scale) {
+void train(network &net, const VvalT &input, const VvalT &expect,
+           const valT scale, valT *progress) {
   net.setInput(input);
   net.getV();
   // delta d? = delta dv v d? = 2(delta-v)*vd?
   // modify it
-  delta_network delta;
-  vector<matrix> &netVw = delta.first;
-  vector<matrix> &netVb = delta.second;
-  netVw.resize(net.layers.size());
-  netVb.resize(net.layers.size());
-#ifdef USE_OMP
-#pragma omp parallel for
-#endif
-  for (int i = 0; i < net.layers.size(); ++i) { // init delta
-    netVw[i].setn(net.layers[i].w.getn());
-    netVw[i].setm(net.layers[i].w.getm());
-    netVb[i].setn(net.layers[i].b.getn());
-    netVb[i].setm(net.layers[i].b.getm());
-    assert(net.layers[i].b.getm() == 1);
+  vector<matrix> netVw;
+  vector<matrix> netVb;
+  netVw.reserve(net.layers.size());
+  netVb.reserve(net.layers.size());
+  for (int i = 0; i < net.layers.size(); ++i) {
+    netVw[i] = net.layers[i].w;
+    netVb[i] = net.layers[i].b;
   }
 #ifdef USE_OMP
 #pragma omp parallel for
 #endif
+  valT total = [&]() -> valT {
+    valT a = 0;
+    for (size_t l = 0; l < net.layers.size(); ++l) {
+      a += net.layers[l].w.getm() + 1;
+    }
+    return net.output.size() * a;
+  }();
+  valT done = 0;
   for (size_t i = 0; i < net.output.size(); ++i) {
     valT v = (net.output[i] - expect[i]) * 2; //(V_i-e)^2 d? = 2(V_i-e)*V_i d ?
     v *= scale;
-#ifdef USE_OMP
-#pragma omp parallel for
-#endif
     for (size_t l = 0; l < net.layers.size(); ++l) {
       const matrix vdb = net.getVdbi(l);
-      valT delta_b = vdb(i, 0) * v;
-      netVb[l](i, 0) = -delta_b;
-#ifdef USE_OMP
-#pragma omp parallel for
-#endif
+      const valT delta_b = vdb(i, 0) * v;
+      netVb[l](i, 0) -= delta_b;
+      net.getV();
+      if (progress)
+        ++done, *progress = done / total;
       for (int j = 0; j < net.layers[l].w.getm(); ++j) {
         const matrix &&vdw = net.getVdWij(l, j);
-        valT delta_w = vdw(i, 0) * v;
-        netVw[l](i, j) = -delta_w;
+        const valT delta_w = vdw(i, 0) * v;
+        netVb[l](i, 0) -= delta_b;
+        net.getV();
+        if (progress)
+          ++done, *progress = done / total;
+        netVw[l](i, j) -= delta_w;
       }
     }
   }
-  return std::move(delta);
-};
+  for (int i = 0; i < net.layers.size(); ++i) {
+    net.layers[i].w = netVw[i];
+    net.layers[i].b = netVb[i];
+  }
+}
+
 valT genvalT() {
   static std::random_device rd;
   valT v = rd();

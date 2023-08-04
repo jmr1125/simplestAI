@@ -477,7 +477,6 @@ train.o: train.cpp.o
 
 # target to build an object file
 train.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test4.dir/build.make CMakeFiles/test4.dir/train.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/train.dir/build.make CMakeFiles/train.dir/train.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/train.cpp.o
 .PHONY : train.cpp.o
@@ -487,7 +486,6 @@ train.i: train.cpp.i
 
 # target to preprocess a source file
 train.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test4.dir/build.make CMakeFiles/test4.dir/train.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/train.dir/build.make CMakeFiles/train.dir/train.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/train.cpp.i
 .PHONY : train.cpp.i
@@ -497,7 +495,6 @@ train.s: train.cpp.s
 
 # target to generate assembly for a file
 train.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test4.dir/build.make CMakeFiles/test4.dir/train.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/train.dir/build.make CMakeFiles/train.dir/train.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trainmnist.dir/build.make CMakeFiles/trainmnist.dir/train.cpp.s
 .PHONY : train.cpp.s
