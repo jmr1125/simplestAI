@@ -4,25 +4,10 @@
 #include "network.h"
 #include <random>
 #include <utility>
-using std::pair;
-using delta_network =
-    pair<vector<matrix>, vector<matrix>>; // first = W ; second = b
-void train(network &net, const VvalT &input, const VvalT &expect, valT scale);
-void trainn(network &net, const vector<VvalT> &input,
-            const vector<VvalT> &expect, valT scale);
-void trainn(network &net, const vector<VvalT> &input,
-            const vector<VvalT> &expect, valT scale, valT *progress);
-delta_network getdelta_network(network net, const VvalT &input,
-                               const VvalT &expect, valT scale);
+void train(network &net, const VvalT &input, const VvalT &expect,
+           const valT scale, valT *progress);
 
 valT genvalT();
-// #define F_x [](valT x) { return x; }, [](valT x) { return 1; }
-// // #define F_01 [](valT x) { return x<0?0:1; }, [](valT x) { return
-// x!=0?0:inf;
-// // }
-// #define F_tanh [](valT x) { return x; }, [](valT x) { return 1; }
-// #define F_sigma [](valT x) { return 1/(1+); }, [](valT x) { return 1; }
-
 valT func_x(valT x);
 valT defunc_x(valT);
 valT func_sigma(valT x);

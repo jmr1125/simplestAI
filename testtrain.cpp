@@ -1,4 +1,6 @@
+#include "layer.h"
 #include "main.h"
+#include "matrix.h"
 #include "network.h"
 #include "train.h"
 #include <cmath>
@@ -9,52 +11,38 @@ using namespace std;
 void train(network &net, const VvalT &input, const VvalT &expect) {
   net.setInput(input);
   net.getV();
-  // delta d? = delta dv v d? = 2(delta-v)*vd?
-  // modify it
-  vector<matrix> netVw;
-  vector<matrix> netVb;
-  netVw.reserve(net.layers.size());
-  netVb.reserve(net.layers.size());
-  for (int i = 0; i < net.layers.size(); ++i) {
-    netVw[i] = net.layers[i].w;
-    netVb[i] = net.layers[i].b;
-  }
-#ifdef USE_OMP
-#pragma omp parallel for
-#endif
-  for (size_t i = 0; i < net.output.size(); ++i) {
-    valT v = (net.output[i] - expect[i]) * 2; //(V_i-e)^2 d? = 2(V_i-e)*V_i d ?
-                                              // v /= 100;
-    // v /= 50000;
-    // v /= 1000000000;2 2 3 2 2 2+3+2+2+2*2+2*3+3*2+2*2=29
-    // 1000*NumberOfVarible
-    v /= 14500;
-#ifdef USE_OMP
-#pragma omp parallel for
-#endif
-    for (size_t l = 0; l < net.layers.size(); ++l) {
-      const matrix vdb = net.getVdbi(l);
-      valT delta_b = vdb(i, 0) * v;
-      // valT delta_b = v / vdb(i, 0);
-      // delta_b *= fabs(delta_b);
-      netVb[l](i, 0) -= delta_b;
-      net.getV();
-      for (int j = 0; j < net.layers[l].w.getm(); ++j) {
-        const matrix &&vdw = net.getVdWij(l, j);
-        valT delta_w = vdw(i, 0) * v;
-        net.getV();
-        // valT delta_w = v / vdw(i, 0);
-        //  delta_w *= fabs(delta_w);
-        netVw[l](i, j) -= delta_w;
+  for (int i = 0; i < net.output.size(); ++i) {
+    valT DeltadVi = 2 * (net.output[i] - expect[i]);
+    vector<pair<matrix, matrix>> deWAndB;
+    VvalT deL1;
+    deWAndB.resize(net.layers.size());
+    deL1.resize(net.layers.size());
+    for (int i = 0; i < net.layers.size(); ++i) {
+      deWAndB[i].first.setn(net.layers[i].w.getn());
+      deWAndB[i].first.setm(net.layers[i].w.getm());
+      deWAndB[i].second.setn(net.layers[i].b.getn());
+      deWAndB[i].second.setm(net.layers[i].b.getm());
+    }
+    for (int l = net.layers.size() - 1; l >= 0; --l) {
+      for (int i = 0; i < deWAndB[i].first.getn(); ++i) {
+        for (int j = 0; j < deWAndB[j].first.getm(); ++j) {
+          deWAndB[l].first(i, j) =
+              net.layers[l - 1].getV()[j] *
+              (net.layers[l - 1].deFuncv()(net.layers[l - 1].getSum()(i, 0)));
+        }
+        deWAndB[l].second(i, 0) = net.layers[l - 1].deFuncv()(net.layers[l - 1].getSum()(i, 0);
       }
     }
   }
-  for (int i = 0; i < net.layers.size(); ++i) {
-    net.layers[i].w = netVw[i];
-    net.layers[i].b = netVb[i];
-  }
 }
 
+valT genvalT() {
+  static std::random_device rd;
+  valT v = rd();
+  v -= rd.min();
+  v /= (rd.max() - rd.min());
+  return v;
+}
 void test(network net) {
   cout << "\033[5;1Hrun 10*100 times and calculate " << endl;
   for (int i = 0; i < 10; ++i) {

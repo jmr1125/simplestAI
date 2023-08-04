@@ -38,6 +38,26 @@ matrix network::getVdbi(size_t i) const {
   const matrix &tmp = getVdVi(i);
   return tmp * layers[i].getVdb();
 }
+valT network::getVdWij(size_t l, int i, int j) const {
+  assert(computed);
+  valT res = 0;
+  const matrix &tmpp = getVdVi(l);
+  for (int k = 0; k < tmpp.getn(); ++k) {
+    res += tmpp(i, k) * layers[l].getVdWij(k, j);
+  }
+  return res;
+}
+valT network::getVdbi(size_t l, int i) const {
+  assert(computed);
+  const VvalT &tmp = getVdVi(l).m[i];
+  const VvalT &tmpp = layers[l].getVdb().m[0];
+  assert(tmp.size() == tmpp.size());
+  valT res = 0;
+  for (int i = 0; i < tmp.size(); ++i) {
+    res += tmp[i] * tmpp[i];
+  }
+  return res;
+}
 void network::getV() {
   for (int i = 1; i < layers.size(); ++i) {
     layers[i].setInput(layers[i - 1].getV());

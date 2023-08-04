@@ -7,10 +7,12 @@
 #include <ctime>
 #include <curses.h>
 #include <fstream>
+#include <functional>
 #include <iomanip>
 #include <iostream>
 #include <ncurses.h>
 #include <string>
+#include <thread>
 // #include <unistd.h>
 #include <utility>
 #ifdef USE_OMP
@@ -115,8 +117,6 @@ int main(int argc, char *argv[]) { // blr?blur?...k
   nodelay(stdscr, TRUE);
   int t = 0;
   valT scale = 100;
-  int batch_size = 1;
-  int batch_size1 = 1;
   for (int epoch = 0; [&t]() {
          string s{};
          mvprintw(0, 0, "again?(Y/n/r)");
@@ -147,34 +147,24 @@ int main(int argc, char *argv[]) { // blr?blur?...k
        ++epoch) {
     //====EPOCH.FOR.LOOP====
     mvprintw(0, 0, "epoch: %d\n", epoch);
-    batch_size = batch_size1;
     clrtoeol();
     {
       random_device rd;
       shuffle(data.begin(), data.end(), rd);
     }
-    for (size_t i = 0; i < data.size(); i += batch_size) {
+    {
       //====DATA====
-      vector<VvalT> pics;
-      vector<VvalT> vexpects;
-      vexpects.reserve(batch_size);
-      pics.reserve(batch_size);
-      for (int off = 0; off < batch_size && batch_size - 1 + i < data.size();
-           ++off) {
-        int x = off * 4;
-        auto [pic, expect] = data.at(i + off);
-        VvalT vexpect(10, 1);
-        vexpect[expect] = 2;
-        vexpects.push_back(vexpect);
-        pics.push_back(pic);
+      for (int i = 0; i < data.size(); ++i) {
+        auto [pic, Expect] = data.at(i);
         valT delta = 0;
         net.setInput(pic);
         net.getV();
-        assert(net.output.size() == vexpect.size() && vexpect.size() == 10);
+        VvalT expect(10, -2);
+        expect[Expect] = 2;
         for (int i = 0; i < 10; ++i) {
-          delta += (net.output[i] - vexpect[i]) * (net.output[i] - vexpect[i]);
+          delta += (net.output[i] - expect[i]) * (net.output[i] - expect[i]);
         }
-        mvprintw(x + 1, 0, "%d/%d : delta:", i + off, data.size());
+        mvprintw(1, 0, "%d/%d : delta:", i, data.size());
         clrtoeol();
         attr_t att;
         if (delta > 1) {
@@ -188,88 +178,76 @@ int main(int argc, char *argv[]) { // blr?blur?...k
         printw("%8f", delta);
         attroff(att);
         printw(" time:%9f\n", clock() - start);
-        {
-          const auto &output = net.output;
-          mvprintw(x + 2, 0, "output: ");
-          for (const auto &x : output) {
-            printw("%10f ", x);
+        const auto &output = net.output;
+        mvprintw(2, 0, "output: ");
+        for (const auto &x : output) {
+          printw("%10f ", x);
+        }
+        mvprintw(3, 0, "expect: ");
+        for (const auto &x : expect) {
+          if (x == 2) {
+            attron(A_BOLD);
           }
-          mvprintw(x + 3, 0, "expect: ");
-          for (const auto &x : vexpect) {
-            if (x == 2) {
-              attron(A_BOLD);
-            }
-            printw("%10f ", x);
-            if (x == 2) {
-              attroff(A_BOLD);
-            }
+          printw("%10f ", x);
+          if (x == 2) {
+            attroff(A_BOLD);
           }
-          // for (int i = 0; i < 16; ++i) {
-          //   for (int j = 0; j < 16; ++j) {
-          //     mvaddch(i + 10, 80 + j, (pic[i * 16 + j] == 1) ? ('1') :
-          //     ('0'));
-          //   }
-          // }
           wrefresh(stdscr);
-          // sleep(1);
         }
-      }
-      clrtoeol();
-
-      wrefresh(stdscr);
-      //==SETTING==
-      move(0, 20);
-      clrtoeol();
-      int c = getch();
-      if (c == 's') {
-        for (; c != 'q';) {
-          mvprintw(0, 20, "Setting(q/s/m/S)");
-          clrtoeol();
-          move(0, 40);
-          getchardelay(c);
-          if (c == 's') {
-            save(net);
-          } else if (c == 'm') {
-            for (; c != 'q';) {
-              mvprintw(0, 20, "Setting minibatch(q/j/k) ");
-              getchardelay(c);
-              if (c == 'j') {
-                ++batch_size1;
-              } else if (c == 'k') {
-                --batch_size1;
+        {
+          bool ok = false;
+          valT progress = 0;
+          thread th(
+              [&](const VvalT &pic) {
+                train(net, pic, expect, (valT)1 / scale, &progress);
+                ok = true;
+              },
+              pic);
+          while (!ok) {
+            mvprintw(4, 1, "progress: %f%%   ", progress * 100);
+            refresh();
+          }
+          th.join();
+        }
+        clrtoeol();
+        wrefresh(stdscr);
+        //==SETTING==
+        move(0, 20);
+        clrtoeol();
+        int c = getch();
+        if (c == 's') {
+          for (; c != 'q';) {
+            mvprintw(0, 20, "Setting(q/s/m/S)");
+            clrtoeol();
+            move(0, 40);
+            getchardelay(c);
+            if (c == 's') {
+              save(net);
+            } else if (c == 'S') {
+              for (; c != 'q';) {
+                mvprintw(0, 20, "Setting scale(q/j/J/k/K)");
+                getchardelay(c);
+                if (c == 'j') {
+                  scale += 1;
+                } else if (c == 'J') {
+                  scale += 100;
+                } else if (c == 'k') {
+                  scale -= 1;
+                } else if (c == 'K') {
+                  scale -= 100;
+                }
+                scale = max((valT)1, scale);
+                mvprintw(0, 60, "scale: 1/%f", scale);
+                clrtoeol();
               }
-              batch_size1 = max(1, batch_size1);
-              mvprintw(0, 60, "batch size: %d", batch_size1);
-              clrtoeol();
+              c = 0;
             }
-            while (data.size() % batch_size1) {
-              --batch_size1;
-            }
-            c = 0;
-          } else if (c == 'S') {
-            for (; c != 'q';) {
-              mvprintw(0, 20, "Setting scale(q/j/J/k/K)");
-              getchardelay(c);
-              if (c == 'j') {
-                scale += 1;
-              } else if (c == 'J') {
-                scale += 100;
-              } else if (c == 'k') {
-                scale -= 1;
-              } else if (c == 'K') {
-                scale -= 100;
-              }
-              scale = max((valT)1, scale);
-              mvprintw(0, 60, "scale: 1/%f", scale);
-              clrtoeol();
-            }
-            c = 0;
           }
         }
       }
-      trainn(net, pics, vexpects, (valT)1 / scale);
+      // end loop
     }
+    save(net);
+    endwin();
   }
-  save(net);
-  endwin();
 }

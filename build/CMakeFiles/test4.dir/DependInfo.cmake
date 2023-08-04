@@ -12,7 +12,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/jiang/myAI/matrix.cpp" "CMakeFiles/test4.dir/matrix.cpp.o" "gcc" "CMakeFiles/test4.dir/matrix.cpp.o.d"
   "/Users/jiang/myAI/network.cpp" "CMakeFiles/test4.dir/network.cpp.o" "gcc" "CMakeFiles/test4.dir/network.cpp.o.d"
   "/Users/jiang/myAI/testtrain.cpp" "CMakeFiles/test4.dir/testtrain.cpp.o" "gcc" "CMakeFiles/test4.dir/testtrain.cpp.o.d"
-  "/Users/jiang/myAI/train.cpp" "CMakeFiles/test4.dir/train.cpp.o" "gcc" "CMakeFiles/test4.dir/train.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

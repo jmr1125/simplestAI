@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = 
 
-CXX_FLAGSarm64 =  -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
+CXX_FLAGSarm64 =  -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
 
-CXX_FLAGS =  -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
+CXX_FLAGS =  -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
 

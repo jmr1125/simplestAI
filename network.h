@@ -13,8 +13,10 @@ struct network {
   network() = delete;
   network(const vector<int> &sizes, funcT Func, funcT deFunc);
   matrix getVdWij(size_t l, int j) const;
+  valT getVdWij(size_t l, int i, int j) const;
   matrix getVdbi(size_t i) const;
-  const matrix& getVdVi(size_t i) const;
+  valT getVdbi(size_t l, int i) const;
+  const matrix &getVdVi(size_t i) const;
   void getV();
   void setInput(const VvalT &in);
   void save(ostream &) const;

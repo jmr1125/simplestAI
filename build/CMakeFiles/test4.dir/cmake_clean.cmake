@@ -7,8 +7,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/test4.dir/network.cpp.o.d"
   "CMakeFiles/test4.dir/testtrain.cpp.o"
   "CMakeFiles/test4.dir/testtrain.cpp.o.d"
-  "CMakeFiles/test4.dir/train.cpp.o"
-  "CMakeFiles/test4.dir/train.cpp.o.d"
   "test4"
   "test4.pdb"
 )
