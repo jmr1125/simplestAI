@@ -181,3 +181,14 @@ matrix i(size_t dimensions) {
   }
   return std::move(res);
 }
+matrix matrix::T() const {
+  matrix res;
+  res.setm(getn());
+  res.setn(getm());
+  for (int i = 0; i < this->N; ++i) {
+    for (int j = 0; j < this->M; ++j) {
+      res(j, i) = this->operator()(i, j);
+    }
+  }
+  return std::move(res);
+}

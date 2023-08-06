@@ -19,63 +19,6 @@ network::network(const vector<int> &sizes, funcT Func, funcT deFunc) {
     x.deFunc() = deFunc;
   }
 }
-const matrix &network::getVdVi(size_t I) const {
-  assert(computed);
-  return VdVi[I];
-}
-matrix network::getVdWij(size_t l, int j) const {
-  assert(computed);
-  matrix tmp;
-  tmp.setn(layers[l].w.getn());
-  tmp.setm(1);
-  for (int i = 0; i < layers[l].w.getn(); ++i) {
-    tmp(i, 0) = layers[l].getVdWij(i, j);
-  }
-  return getVdVi(l) * tmp;
-}
-matrix network::getVdbi(size_t i) const {
-  assert(computed);
-  const matrix &tmp = getVdVi(i);
-  return tmp * layers[i].getVdb();
-}
-valT network::getVdWij(size_t l, int i, int j) const {
-  assert(computed);
-  valT res = 0;
-  const matrix &tmpp = getVdVi(l);
-  for (int k = 0; k < tmpp.getn(); ++k) {
-    res += tmpp(i, k) * layers[l].getVdWij(k, j);
-  }
-  return res;
-}
-valT network::getVdbi(size_t l, int i) const {
-  assert(computed);
-  const VvalT &tmp = getVdVi(l).m[i];
-  const VvalT &tmpp = layers[l].getVdb().m[0];
-  assert(tmp.size() == tmpp.size());
-  valT res = 0;
-  for (int i = 0; i < tmp.size(); ++i) {
-    res += tmp[i] * tmpp[i];
-  }
-  return res;
-}
-void network::getV() {
-  for (int i = 1; i < layers.size(); ++i) {
-    layers[i].setInput(layers[i - 1].getV());
-  }
-  output = layers[layers.size() - 1].getV();
-
-  VdVi.resize(layers.size());
-  matrix res = i(layers[layers.size() - 1].w.getn());
-  for (size_t x = layers.size() - 1; /*x >= 0*/ x != -1; --x) {
-    VdVi[x] = res;
-    res = res * layers[x].getVdV();
-  }
-  computed = true;
-}
-void network::setInput(const VvalT &in) {
-  layers[0].setInput(in);
-  computed = false;
-}
 void network::save(ostream &fp) const {
   fp << layers.size() << "\n";
   for (const layer &x : layers) {
@@ -112,6 +55,75 @@ void network::load(istream &fp) {
     }
     for (int i = 0; i < x.w.getn(); ++i) {
       fp >> x.b(i, 0);
+    }
+  }
+}
+matrix network::feed_forward(matrix input) {
+  for (auto &x : layers) {
+    input = x.activate(input);
+  }
+  return input;
+}
+/*
+ *\delta^{(L)} = \nabla_a J \odot \sigma'(z^{(L)})
+ *\delta^{(h)} = ((W^{(h+1)})^T \cdot \delta^{(h+1)}) \odot \sigma'(z^{(h)})
+ *\nabla W^{(h)} = \delta^{(h)} \cdot (a^{(h-1)})^T
+ *a^{(h)} = \sigma(z^{(h)})
+ *\nabla b^{(h)} = \delta^{(h)}
+ */
+void network::backpropagation(matrix input, VvalT expect, valT rate) {
+  vector<matrix> delta;
+  vector<VvalT> dF;
+  delta.resize(layers.size());
+  dF.resize(layers.size());
+  matrix output = feed_forward(input);
+  for (int i = layers.size() - 1; i >= 0; --i) {
+    if (i == layers.size() - 1) {
+      delta.at(i).setn(layers[i].w.getn());
+      delta.at(i).setm(1);
+      for (int j = 0; j < layers[i].w.getn(); ++j) {
+        delta.at(i)(j, 0) = -(expect[j] - output(j, 0));
+      }
+    } else {
+      delta.at(i) = layers[i + 1].w.T() * delta[i + 1];
+      assert(delta[i].getm() == 1);
+    }
+  }
+#ifdef USE_OMP
+#pragma omp parallel for
+#endif
+  for (int i = 0; i < layers.size(); ++i) {
+    dF[i].resize(layers[i].w.getn());
+    for (int j = 0; j < layers[i].w.getn(); ++j) {
+      dF[i][j] = layers[i].deFuncv()(layers[i].z(j, 0));
+    }
+  }
+  assert(layers.size() == dF.size());
+#ifdef USE_OMP
+#pragma parallel for
+#endif
+  for (int i = 0; i < layers.size(); ++i) {
+    assert(dF[i].size() == delta[i].getn());
+    for (int j = 0; j < layers[i].w.getn(); ++j) {
+      delta[i](j, 0) *= dF[i][j];
+    }
+  }
+  for (int i = 0; i < delta.size(); ++i) {
+    matrix prev;
+    if (i == 0) {
+      prev = input;
+    } else {
+      prev = layers[i - 1].output;
+      assert(layers[i - 1].output.getm() == 1);
+    }
+#ifdef USE_OMP
+#pragma paralle for
+#endif
+    for (int j = 0; j < delta[i].getn(); ++j) {
+      for (int k = 0; k < prev.getn(); ++k) {
+        layers[i].w(j, k) -= rate * delta[i](j, 0) * prev(k, 0);
+      }
+      layers[i].b(j, 0) -= rate * delta[i](j, 0);
     }
   }
 }

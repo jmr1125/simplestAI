@@ -28,7 +28,6 @@ struct matrix {
   matrix operator+(const matrix &) const;
   matrix operator+(const valT) const;
   matrix operator+(const vector<valT> &) const;
-  matrix &operator=(matrix &) = default;
   const matrix &operator=(const matrix &);
   const matrix &operator=(const vector<valT> &);
   matrix operator=(matrix &&);
@@ -36,7 +35,8 @@ struct matrix {
   valT operator()(size_t x, size_t y) const;
   valT &operator()(size_t x, size_t y);
   vector<vector<valT>> m;
-  size_t M = 0, N = 0;
+  matrix T() const;
+  size_t M = -1, N = -1;
 };
 ostream &operator<<(ostream &ost, const matrix &);
 matrix i(size_t);
