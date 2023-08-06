@@ -1,9 +1,10 @@
+#include "function.h"
 #include "layer.h"
 #include "main.h"
 #include "matrix.h"
 #include "network.h"
-#include "train.h"
 #include <algorithm>
+#include <cstdio>
 #include <ctime>
 #include <curses.h>
 #include <fstream>
@@ -71,18 +72,18 @@ int main(int argc, char *argv[]) { // blr?blur?...k
       for (layer &x : net.layers) {
         for (auto &x : x.w.m) { // rand matrix
           for (auto &x : x) {
-            x = (genvalT() - 0.5) * 5;
+            x = (genvalT() - 0.5);
           }
         }
         for (auto &x : x.b.m) { // rand basis
           for (auto &x : x) {
-            x = (genvalT() - 0.5) * 5;
+            x = (genvalT() - 0.5);
           }
         }
       }
     }
   }
-  vector<pair<VvalT, int>> data;
+  vector<pair<matrix, VvalT>> data;
   for (int i = 1; i < argc; ++i) {
     ifstream ist(argv[i]);
     int count = 0;
@@ -95,13 +96,16 @@ int main(int argc, char *argv[]) { // blr?blur?...k
       pic += s;
       count = (count + 1) % 16;
       if (count == 0) {
-        VvalT tmp;
+        matrix tmp;
         assert(pic.size() == 256);
-        tmp.resize(256);
+        tmp.setn(256);
+        tmp.setm(1);
         for (int i = 0; i < 256; ++i) {
-          tmp[i] = pic[i] - '0';
+          tmp(i, 0) = pic[i] - '0';
         }
-        data.push_back(make_pair(tmp, stoi(argv[i])));
+        VvalT tmp1(10, 0);
+        tmp1[stoi(argv[i])] = 2;
+        data.push_back(make_pair(tmp, tmp1));
         pic = "";
       }
     }
@@ -124,7 +128,7 @@ int main(int argc, char *argv[]) { // blr?blur?...k
          if (t) {
            printw(" y");
            clrtoeol();
-           t = (t + 1) % 10;
+           t = (t + 1) % 100;
            mvprintw(4, 0, "  r:%d", t);
            clrtoeol();
            return true;
@@ -152,102 +156,32 @@ int main(int argc, char *argv[]) { // blr?blur?...k
       random_device rd;
       shuffle(data.begin(), data.end(), rd);
     }
-    {
-      //====DATA====
-      for (int i = 0; i < data.size(); ++i) {
-        auto [pic, Expect] = data.at(i);
-        valT delta = 0;
-        net.setInput(pic);
-        net.getV();
-        VvalT expect(10, -2);
-        expect[Expect] = 2;
-        for (int i = 0; i < 10; ++i) {
-          delta += (net.output[i] - expect[i]) * (net.output[i] - expect[i]);
-        }
-        mvprintw(1, 0, "%d/%d : delta:", i, data.size());
-        clrtoeol();
-        attr_t att;
-        if (delta > 1) {
-          att = COLOR_PAIR(2);
-        } else if (fabs(delta - 0.8) == 0.1) {
-          att = COLOR_PAIR(1) | A_BOLD;
-        } else {
-          att = COLOR_PAIR(3);
-        }
-        attron(att);
-        printw("%8f", delta);
-        attroff(att);
-        printw(" time:%9f\n", clock() - start);
-        const auto &output = net.output;
-        mvprintw(2, 0, "output: ");
-        for (const auto &x : output) {
-          printw("%10f ", x);
-        }
-        mvprintw(3, 0, "expect: ");
-        for (const auto &x : expect) {
-          if (x == 2) {
-            attron(A_BOLD);
-          }
-          printw("%10f ", x);
-          if (x == 2) {
-            attroff(A_BOLD);
-          }
-          wrefresh(stdscr);
-        }
-        {
-          bool ok = false;
-          valT progress = 0;
-          thread th(
-              [&](const VvalT &pic) {
-                train(net, pic, expect, (valT)1 / scale, &progress);
-                ok = true;
-              },
-              pic);
-          while (!ok) {
-            mvprintw(4, 1, "progress: %f%%   ", progress * 100);
-            refresh();
-          }
-          th.join();
-        }
-        clrtoeol();
-        wrefresh(stdscr);
-        //==SETTING==
-        move(0, 20);
-        clrtoeol();
-        int c = getch();
-        if (c == 's') {
-          for (; c != 'q';) {
-            mvprintw(0, 20, "Setting(q/s/m/S)");
-            clrtoeol();
-            move(0, 40);
-            getchardelay(c);
-            if (c == 's') {
-              save(net);
-            } else if (c == 'S') {
-              for (; c != 'q';) {
-                mvprintw(0, 20, "Setting scale(q/j/J/k/K)");
-                getchardelay(c);
-                if (c == 'j') {
-                  scale += 1;
-                } else if (c == 'J') {
-                  scale += 100;
-                } else if (c == 'k') {
-                  scale -= 1;
-                } else if (c == 'K') {
-                  scale -= 100;
-                }
-                scale = max((valT)1, scale);
-                mvprintw(0, 60, "scale: 1/%f", scale);
-                clrtoeol();
-              }
-              c = 0;
-            }
-          }
-        }
+    for (const auto &data : data) {
+      auto output = net.feed_forward(data.first);
+      assert(output.getm() == 1);
+      valT delta = 0;
+      for (int i = 0; i < output.getn(); ++i) {
+        delta +=
+            (data.second[i] - output(i, 0)) * (data.second[i] - output(i, 0));
       }
-      // end loop
+      mvprintw(1, 1, "delta: %f", delta);
+      move(2, 1);
+      for (int i = 0; i < output.getn(); ++i) {
+        printw("%f ", output(i, 0));
+      }
+      move(3, 1);
+      for (int i = 0; i < data.second.size(); ++i) {
+        printw("%f ", data.second[i]);
+      }
+      net.backpropagation(data.first, data.second, 0.0001);
+      refresh();
+      // char c;
+      // getchartime(c, 1);
+      // if (c == 'q') {
+      //   break;
+      // }
     }
     save(net);
-    endwin();
   }
+  endwin();
 }

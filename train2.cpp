@@ -1,13 +1,16 @@
+#include "function.h"
 #include "layer.h"
 #include "main.h"
+#include "matrix.h"
 #include "network.h"
-#include "train.h"
 #include <algorithm>
 #include <atomic>
+#include <cmath>
 #include <ctime>
 #include <curses.h>
 #include <fstream>
 #include <iostream>
+#include <limits>
 #include <ncurses.h>
 #include <stdexcept>
 #ifdef USE_OMP
@@ -15,17 +18,15 @@
 #else
 #include <thread>
 #endif
-#define gui
 using namespace std;
-const char loadingstr[]{"/-\\|/-\\|"};
-int loadingi = 0;
-vector<VvalT> inputs;
+vector<matrix> inputs;
 vector<VvalT> outputs;
+const valT IT_IS = 2, IT_ISNT = 0.5;
 void Readall(istream &in) {
-  pair<VvalT, VvalT> (*Read)(istream &) =
-      [](istream &in) -> pair<VvalT, VvalT> {
+  pair<matrix, VvalT> (*Read)(istream &) =
+      [](istream &in) -> pair<matrix, VvalT> {
     VvalT input;
-    VvalT output(10, -0.5);
+    VvalT output(10, IT_ISNT);
     input.reserve(28 * 28);
     for (int i = 0; i < 28; ++i) {
       for (int j = 0; j < 28; ++j) {
@@ -50,22 +51,34 @@ void Readall(istream &in) {
     char expect;
     in >> expect;
     assert('0' <= expect && expect <= '9');
-    output[expect - '0'] = 0.5;
-    return make_pair(input, output);
+    output[expect - '0'] = IT_IS;
+    matrix tmp;
+    tmp.setn(28 * 28);
+    tmp.setm(1);
+    for (int i = 0; i < 28 * 28; ++i) {
+      tmp(i, 0) = input[i];
+    }
+    return make_pair(tmp, output);
   };
+  int id = 0;
   while (in) {
     try {
       auto [a, b] = (*Read)(in);
-      assert(a.size() == 28 * 28);
+      assert(a.getn() == 28 * 28);
+      assert(a.getm() == 1);
       assert(b.size() == 10);
       inputs.push_back(std::move(a));
       outputs.push_back(std::move(b));
+      if (id % 6000 == 0) {
+        cout << (valT)id / 60000 * 100 << "%" << endl;
+      }
+      ++id;
     } catch (int a) {
       assert(a == 1);
       break;
     } catch (const runtime_error &a) {
       cerr << "runtime error : " << a.what() << endl;
-      if (!(inputs.at(59999).size() == 28 * 28 &&
+      if (!(inputs.at(59999).getn() == 28 * 28 &&
             outputs.at(59999).size() == 10)) {
         throw;
       } else {
@@ -84,8 +97,8 @@ int main() {
   int id;
   {
     ifstream in("handwritemnist.net");
-    funcT func = funcof(tanh);
-    funcT defunc = defuncof(tanh);
+    funcT func = funcof(ReLU);
+    funcT defunc = defuncof(ReLU);
     if (in) {
       net.load(in);
       for (layer &x : net.layers) {
@@ -97,102 +110,100 @@ int main() {
       in >> id;
       cout << "id = " << id << endl;
     } else {
-      net = network({28 * 28, 16, 16, 10}, pair_tanh);
+      // net = network({28 * 28, 16, 16, 16, 10}, pair_ReLU);
+      net = network({28 * 28, 64, 10}, pair_ReLU);
       /*randomize net*/
-      for (layer &x : net.layers) {
-        for (auto &x : x.w.m) { // rand matrix
+      for (layer &l : net.layers) {
+        for (auto &x : l.w.m) { // rand matrix
           for (auto &x : x) {
-            x = (genvalT() - 0.5) * 5;
+            x = (genvalT() - 0.5) * 2 * (1 / sqrt(l.w.getm()));
           }
         }
-        for (auto &x : x.b.m) { // rand basis
+        for (auto &x : l.b.m) { // rand basis
           for (auto &x : x) {
-            x = (genvalT() - 0.5) * 5;
+            x = (genvalT() - 0.5) * 2 * (1 / sqrt(l.b.getn()));
           }
         }
       }
       id = 0;
     }
   }
-#ifdef gui
+  ifstream in("traindata.txt");
+  Readall(in);
   initscr();
   box(stdscr, ACS_VLINE, ACS_HLINE);
   nodelay(stdscr, TRUE);
-#endif
   mvprintw(1, 1, "starting..");
-  {
-    ifstream in("traindata.txt");
-    Readall(in);
-
-#ifdef gui
-    for (; getch() != 'q';) {
-#else
-    for (; printf("(q?)") && getchar() != 'q';) {
-#endif
-      {
-
-        net.setInput(inputs[id]);
-        net.getV();
-        valT delta = 0;
-#ifdef gui
-        move(2, 2);
-        printw("%d : output: ", id);
-#endif
-        for (int x = 0; x < 10; ++x) {
-          delta += (net.output[x] - outputs[id][x]) *
-                   (net.output[x] - outputs[id][x]);
-#ifdef gui
-          printw("%Lf ", net.output[x]);
-          clrtoeol();
-#else
-          printf("%Lf ", net.output[x]);
-#endif
-        }
-        mvprintw(3, 2, "%d : expect: ", id);
-        for (int x = 0; x < 10; ++x) {
-#ifdef gui
-          printw("%Lf ", outputs[id][x]);
-#else
-          printf("%Lf ", outputs[id][x]);
-#endif
-        }
-#ifdef gui
-        clrtoeol();
-        mvprintw(4, 2, "%d : delta : %f", id, delta);
-        clrtoeol();
-        mvaddch(5, 2, loadingstr[(loadingi = (loadingi + 1) % 4)]);
-        mvprintw(1, 20, "id = %d", id);
-        wborder(stdscr, '|', '|', '-', '-', '+', '+', '+', '+');
-        refresh();
-#else
-        printf("\n");
-        printf("%d : delta: %Lf\n", i, delta);
-        printf("%d : expect: %c\n", i, expect);
-        fflush(stdout);
-#endif
-      }
-      valT progress;
-      bool ok = false;
-      auto a = [&]() {
-        train(net, inputs[id], outputs[id],
-              (valT)1 / ((16 + 16 + 16 + 10 + 28 * 28 * 16 + 16 * 16 + 16 * 16 +
-                          16 * 10) * // number of varibles
-                         1000),
-              &progress);
-        ok = true;
-      };
-      thread th(a);
-      while (!ok) {
-        mvprintw(5, 1, "progress: %f%%", progress * 100);
-        clrtoeol();
-        refresh();
-      }
-      th.join();
+  vector<valT> deltas(100, 0);
+  int deltasI = 0;
+  for (; getch() != 'q'; ++id, id %= 60000) {
+    const auto &a = inputs.at(id);
+    const auto &b = outputs.at(id);
+    const auto o = net.feed_forward(a);
+    valT delta = 0;
+    for (int i = 0; i < 10; ++i) {
+      delta += (b[i] - o(i, 0)) * (b[i] - o(i, 0));
     }
-  }
-#ifdef gui
-  endwin();
+    mvprintw(1, 1, "delta= %f  id= %d", delta, id);
+    clrtoeol();
+    move(2, 1);
+    clrtoeol();
+    for (int i = 0; i < 10; ++i) {
+      printw("%f ", o(i, 0));
+    }
+    move(3, 1);
+    clrtoeol();
+    for (int i = 0; i < 10; ++i) {
+      printw("%f ", b[i]);
+    }
+    {
+      deltas[deltasI] = delta;
+      ++deltasI;
+      deltasI %= deltas.size();
+      valT Min = numeric_limits<valT>::max();
+      valT Max = numeric_limits<valT>::min();
+#ifdef USE_OMP
+#pragma parallel for
 #endif
+      valT sum = 0;
+      for (auto x : deltas) {
+        Min = min(Min, x);
+        Max = max(Max, x);
+        sum += x;
+      }
+      Max = (valT)ceil(Max * 2) / 2;
+      Min = (valT)floor(Min * 2) / 2;
+      int x1 = 5, y1 = 1, x2 = 25, y2 = y1 + deltas.size();
+      vector<vector<char>> ch(x2 - x1 + 1, vector<char>(100, ' '));
+#ifdef USE_OMP
+#pragma parallel for
+#endif
+      for (int i = 0; i < deltas.size(); ++i) {
+        valT percent = (deltas[i] - Min) / (Max - Min);
+        // valT percent = min(valT(1), deltas[i] / 2);
+        int x = (x2 - x1) * percent;
+        ch.at(x).at(i) = '#';
+      }
+      mvprintw(x1 - 1, 2, "%f", Min);
+      mvprintw(x2 + 1, 2, "%f", Max);
+      for (int i = 0; i < x2 - x1; ++i) {
+        for (int j = 0; j < 100; ++j) {
+          mvaddch(i + x1, 8 + j + y1, ch.at(i).at(j));
+        }
+      }
+      mvprintw(x1 + (x2 - x1) * (sum / deltas.size() - Min) / (Max - Min), 9,
+               "==AVG== %f", sum / deltas.size());
+    }
+    box(stdscr, '|', '-');
+    refresh();
+    net.backpropagation(a, b, 0.000001);
+    // {
+    //   clock_t now = clock();
+    //   while (clock() - now <= CLOCKS_PER_SEC * 0.0001) {
+    //   }
+    // }
+  }
+  endwin();
   {
     ofstream out("handwritemnist.net");
     net.save(out);
