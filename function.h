@@ -4,8 +4,6 @@
 #include "network.h"
 #include <random>
 #include <utility>
-void train(network &net, const VvalT &input, const VvalT &expect,
-           const valT scale, valT *progress);
 
 valT genvalT();
 valT func_x(valT x);
