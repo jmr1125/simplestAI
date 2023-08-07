@@ -1,6 +1,7 @@
 #pragma once
 #include "main.h"
 #include "matrix.h"
+#include <assert.h>
 #include <vector>
 using std::vector;
 using VvalT = vector<valT>;
