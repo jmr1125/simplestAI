@@ -48,6 +48,28 @@ int main(int argc, char *argv[]) {
       mvprintw(1, 1, "press: 0x%08lx release: 0x%08lx", BUTTON1_PRESSED,
                BUTTON1_RELEASED);
       ch = getch();
+      {
+        matrix input;
+        input.setn(28 * 28);
+        input.setm(1);
+        for (int i = 0; i < 28; ++i) {
+          for (int j = 0; j < 18; ++j) {
+            input(i * 28 + j, 0) = pic[i][j];
+          }
+        }
+        auto o = net.feed_forward(input);
+        move(3, 32);
+        valT max = std::numeric_limits<valT>::min();
+        int maxid = 0;
+        for (int i = 0; i < 10; ++i) {
+          printw("%f ", o(i, 0));
+          if (o(i, 0) > max) {
+            max = o(i, 0);
+            maxid = i;
+          }
+        }
+        mvprintw(5, 32, "it is %d %f", maxid, max);
+      }
       if (ch == 'c') {
         mousecolor = !mousecolor;
       } else if (ch == '\n') {
@@ -119,26 +141,6 @@ int main(int argc, char *argv[]) {
       }
     }
     if (!empty) {
-      matrix input;
-      input.setn(28 * 28);
-      input.setm(1);
-      for (int i = 0; i < 28; ++i) {
-        for (int j = 0; j < 18; ++j) {
-          input(i * 28 + j, 0) = pic[i][j];
-        }
-      }
-      auto o = net.feed_forward(input);
-      move(3, 32);
-      valT max = std::numeric_limits<valT>::min();
-      int maxid = 0;
-      for (int i = 0; i < 10; ++i) {
-        printw("%f ", o(i, 0));
-        if (o(i, 0) > max) {
-          max = o(i, 0);
-          maxid = i;
-        }
-      }
-      mvprintw(5, 32, "it is %d %f", maxid, max);
     } else {
       mvprintw(2, 20, "pic is empty");
     }
