@@ -50,11 +50,11 @@ int main(int argc, char *argv[]) {
       ch = getch();
       {
         matrix input;
-        input.setn(28 * 28);
+        input.setn(maxx * maxy);
         input.setm(1);
-        for (int i = 0; i < 28; ++i) {
-          for (int j = 0; j < 18; ++j) {
-            input(i * 28 + j, 0) = pic[i][j];
+        for (int i = 0; i < maxx; ++i) {
+          for (int j = 0; j < maxy; ++j) {
+            input(i * maxy + j, 0) = pic[i][j];
           }
         }
         auto o = net.feed_forward(input);
