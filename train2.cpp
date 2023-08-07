@@ -196,7 +196,7 @@ int main() {
     }
     box(stdscr, '|', '-');
     refresh();
-    net.backpropagation(a, b, 0.000001);
+    net.backpropagation(a, b, 0.01);
     // {
     //   clock_t now = clock();
     //   while (clock() - now <= CLOCKS_PER_SEC * 0.0001) {
