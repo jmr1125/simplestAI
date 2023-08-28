@@ -3,7 +3,7 @@ all:
 all1:
 	$(MAKE) Release
 	$(MAKE) Debug
-	$(MAKE) RelWithDebInfo
+	# $(MAKE) RelWithDebInfo
 Release:
 	cd build&&ninja -f build-Release.ninja
 Debug:

@@ -85,7 +85,7 @@ void network::backpropagation(matrix input, VvalT expect, valT rate) {
         delta.at(i)(j, 0) = -(expect[j] - output(j, 0));
       }
     } else {
-      delta.at(i) = layers[i + 1].w.T() * delta[i + 1];
+      delta.at(i) = layers[i + 1].w.T() * delta.at(i + 1);
       assert(delta[i].getm() == 1);
     }
   }

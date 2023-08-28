@@ -1,5 +1,6 @@
 #include <assert.h>
 #include <cstdio>
+#include <cstring>
 #include <stdio.h>
 #include <string>
 #include <vector>
@@ -23,18 +24,23 @@ int32_t reverse8(int8_t x) {
   const int16_t x2 = (x & 0xFF00) >> 8;
   return x1 << 8 | x2;
 }
+bool swapFlag = false;
 void process_label(FILE *fp, vector<int8_t> &v) {
   int32_t num;
   fread(&num, 1, sizeof num, fp);
   num = reverse32(num);
   printf("-- %d labels\n", num);
   v.reserve(num);
+  int l = 100, r = -100;
   for (int i = 0; i < num; ++i) {
     int8_t x;
     fread(&x, 1, sizeof x, fp);
-    assert(0 <= x && x <= 9);
+    // assert(0 <= x && x <= 9);
     v.push_back(x);
+    l = min(l, (int)x);
+    r = max(r, (int)x);
   }
+  printf("-- range: %d ~ %d\n", l, r);
 }
 void process_image(FILE *fp, vector<vector<vector<int8_t>>> &v) {
   int32_t num;
@@ -50,7 +56,11 @@ void process_image(FILE *fp, vector<vector<vector<int8_t>>> &v) {
       for (int j = 0; j < rows; ++j) {
         int8_t x;
         freadint8_t(x, fp);
-        v[n][i][j] = x;
+        if (!swapFlag) {
+          v[n][i][j] = x;
+        } else {
+          v[n][j][i] = x;
+        }
       }
     }
   }
@@ -59,6 +69,10 @@ void process_file(string filename, vector<vector<vector<int8_t>>> &pics,
                   vector<int8_t> &labels) {
   int32_t magicnumber;
   FILE *fp = fopen(filename.c_str(), "rb");
+  if (!fp) {
+    fprintf(stderr, "== can't open %s", filename.c_str());
+    exit(1);
+  }
   fread(&magicnumber, 1, sizeof magicnumber, fp);
   magicnumber = reverse32(magicnumber);
   printf("magicnumber: %x\n", magicnumber);
@@ -77,9 +91,13 @@ void process_file(string filename, vector<vector<vector<int8_t>>> &pics,
 vector<vector<vector<int8_t>>> pics;
 vector<int8_t> labels;
 int main(int argc, char *argv[]) {
-  if (argc != 3) {
-    fprintf(stderr, "usage: %s <file-image> <file-label>\n", argv[0]);
+  if (argc < 3) {
+    fprintf(stderr, "usage: %s <file-image> <file-label> [--swap]\n", argv[0]);
     return 1;
+  }
+  if (argc == 4 && !strcmp(argv[3], "--swap")) {
+    swapFlag = true;
+    printf("-- swap xy\n");
   }
   process_file(argv[1], pics, labels);
   process_file(argv[2], pics, labels);

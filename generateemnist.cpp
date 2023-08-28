@@ -16,9 +16,9 @@ char pic[maxx][maxy];
 int main(int argc, char *argv[]) {
   network net({}, NULL, NULL);
   {
-    ifstream in("handwritemnist.net");
+    ifstream in("handwriteemnist.net");
     if (!in) {
-      std::cerr << "handwritemnist.net NOT found\nrun trainmnist first"
+      std::cerr << "handwritemnist.net NOT found\nrun trainemnist first"
                 << std::endl;
       return 1;
     }
@@ -61,7 +61,7 @@ int main(int argc, char *argv[]) {
         move(3, 32);
         valT max = std::numeric_limits<valT>::min();
         int maxid = 0;
-        for (int i = 0; i < 10; ++i) {
+        for (int i = 0; i < 47; ++i) {
           printw("%f ", o(i, 0));
           if (o(i, 0) > max) {
             max = o(i, 0);
