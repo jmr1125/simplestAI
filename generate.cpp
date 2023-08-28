@@ -68,7 +68,12 @@ int main(int argc, char *argv[]) {
             maxid = i;
           }
         }
-        mvprintw(5, 32, "it is %d %f", maxid, max);
+        // mvprintw(5, 32, "it is %d %f", maxid, max);
+        mvprintw(5, 32, "it is ");
+        attron(A_BOLD);
+        printw("%d ", maxid);
+        attroff(A_BOLD);
+        printw("%f", max);
       }
       if (ch == 'c') {
         mousecolor = !mousecolor;
