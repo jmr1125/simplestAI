@@ -13,6 +13,10 @@ using std::max;
 using std::min;
 const int maxx = 28, maxy = 28;
 char pic[maxx][maxy];
+string name[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B",
+                 "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
+                 "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+                 "a", "b", "d", "e", "f", "g", "h", "n", "q", "R", "T"};
 int main(int argc, char *argv[]) {
   network net({}, NULL, NULL);
   {
@@ -72,6 +76,7 @@ int main(int argc, char *argv[]) {
         mvprintw(5, 32, "it is ");
         attron(A_BOLD);
         printw("%d ", maxid);
+        printw("%s ", name[maxid].c_str());
         attroff(A_BOLD);
         printw("%f", max);
       }

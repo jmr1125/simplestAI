@@ -224,7 +224,7 @@ CURSES_INCLUDE_PATH:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/Ma
 CURSES_NCURSES_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libncurses.tbd
 
 //ON
-ENABLE_OMP:BOOL=ON
+ENABLE_OMP:BOOL=OFF
 
 //Arguments to supply to pkg-config
 PKG_CONFIG_ARGN:STRING=

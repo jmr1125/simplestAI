@@ -44,7 +44,7 @@ include CMakeFiles/common.ninja
 build cmake_object_order_depends_target_readdata_RELEASE: phony || CMakeFiles/readdata.dir
 
 build CMakeFiles/readdata.dir/Release/readmnist.cpp.o: CXX_COMPILER__readdata_unscanned_Release /Users/jiang/myAI/readmnist.cpp || cmake_object_order_depends_target_readdata_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/readdata.dir/Release/readmnist.cpp.o.d
   FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/readdata.dir/Release
@@ -77,37 +77,37 @@ build Release/readdata: CXX_EXECUTABLE_LINKER__readdata_Release CMakeFiles/readd
 build cmake_object_order_depends_target_train_RELEASE: phony || CMakeFiles/train.dir
 
 build CMakeFiles/train.dir/Release/train1.cpp.o: CXX_COMPILER__train_unscanned_Release /Users/jiang/myAI/train1.cpp || cmake_object_order_depends_target_train_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/train.dir/Release/train1.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/train.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Release
 
 build CMakeFiles/train.dir/Release/matrix.cpp.o: CXX_COMPILER__train_unscanned_Release /Users/jiang/myAI/matrix.cpp || cmake_object_order_depends_target_train_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/train.dir/Release/matrix.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/train.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Release
 
 build CMakeFiles/train.dir/Release/layer.cpp.o: CXX_COMPILER__train_unscanned_Release /Users/jiang/myAI/layer.cpp || cmake_object_order_depends_target_train_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/train.dir/Release/layer.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/train.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Release
 
 build CMakeFiles/train.dir/Release/network.cpp.o: CXX_COMPILER__train_unscanned_Release /Users/jiang/myAI/network.cpp || cmake_object_order_depends_target_train_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/train.dir/Release/network.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/train.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Release
 
 build CMakeFiles/train.dir/Release/function.cpp.o: CXX_COMPILER__train_unscanned_Release /Users/jiang/myAI/function.cpp || cmake_object_order_depends_target_train_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/train.dir/Release/function.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/train.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Release
 
@@ -119,10 +119,10 @@ build CMakeFiles/train.dir/Release/function.cpp.o: CXX_COMPILER__train_unscanned
 #############################################
 # Link the executable Release/train
 
-build Release/train: CXX_EXECUTABLE_LINKER__train_Release CMakeFiles/train.dir/Release/train1.cpp.o CMakeFiles/train.dir/Release/matrix.cpp.o CMakeFiles/train.dir/Release/layer.cpp.o CMakeFiles/train.dir/Release/network.cpp.o CMakeFiles/train.dir/Release/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd /opt/homebrew/opt/libomp/lib/libomp.dylib
+build Release/train: CXX_EXECUTABLE_LINKER__train_Release CMakeFiles/train.dir/Release/train1.cpp.o CMakeFiles/train.dir/Release/matrix.cpp.o CMakeFiles/train.dir/Release/layer.cpp.o CMakeFiles/train.dir/Release/network.cpp.o CMakeFiles/train.dir/Release/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd  /opt/homebrew/opt/libomp/lib/libomp.dylib
+  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/train.dir/Release
   POST_BUILD = :
   PRE_LINK = :
@@ -139,7 +139,7 @@ build Release/train: CXX_EXECUTABLE_LINKER__train_Release CMakeFiles/train.dir/R
 build cmake_object_order_depends_target_drawdata_RELEASE: phony || CMakeFiles/drawdata.dir
 
 build CMakeFiles/drawdata.dir/Release/data.cpp.o: CXX_COMPILER__drawdata_unscanned_Release /Users/jiang/myAI/data.cpp || cmake_object_order_depends_target_drawdata_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/drawdata.dir/Release/data.cpp.o.d
   FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/drawdata.dir/Release
@@ -173,37 +173,37 @@ build Release/drawdata: CXX_EXECUTABLE_LINKER__drawdata_Release CMakeFiles/drawd
 build cmake_object_order_depends_target_trainmnist_RELEASE: phony || CMakeFiles/trainmnist.dir
 
 build CMakeFiles/trainmnist.dir/Release/train2.cpp.o: CXX_COMPILER__trainmnist_unscanned_Release /Users/jiang/myAI/train2.cpp || cmake_object_order_depends_target_trainmnist_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainmnist.dir/Release/train2.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainmnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Release
 
 build CMakeFiles/trainmnist.dir/Release/matrix.cpp.o: CXX_COMPILER__trainmnist_unscanned_Release /Users/jiang/myAI/matrix.cpp || cmake_object_order_depends_target_trainmnist_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainmnist.dir/Release/matrix.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainmnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Release
 
 build CMakeFiles/trainmnist.dir/Release/layer.cpp.o: CXX_COMPILER__trainmnist_unscanned_Release /Users/jiang/myAI/layer.cpp || cmake_object_order_depends_target_trainmnist_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainmnist.dir/Release/layer.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainmnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Release
 
 build CMakeFiles/trainmnist.dir/Release/network.cpp.o: CXX_COMPILER__trainmnist_unscanned_Release /Users/jiang/myAI/network.cpp || cmake_object_order_depends_target_trainmnist_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainmnist.dir/Release/network.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainmnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Release
 
 build CMakeFiles/trainmnist.dir/Release/function.cpp.o: CXX_COMPILER__trainmnist_unscanned_Release /Users/jiang/myAI/function.cpp || cmake_object_order_depends_target_trainmnist_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainmnist.dir/Release/function.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainmnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Release
 
@@ -215,10 +215,10 @@ build CMakeFiles/trainmnist.dir/Release/function.cpp.o: CXX_COMPILER__trainmnist
 #############################################
 # Link the executable Release/trainmnist
 
-build Release/trainmnist: CXX_EXECUTABLE_LINKER__trainmnist_Release CMakeFiles/trainmnist.dir/Release/train2.cpp.o CMakeFiles/trainmnist.dir/Release/matrix.cpp.o CMakeFiles/trainmnist.dir/Release/layer.cpp.o CMakeFiles/trainmnist.dir/Release/network.cpp.o CMakeFiles/trainmnist.dir/Release/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd /opt/homebrew/opt/libomp/lib/libomp.dylib
+build Release/trainmnist: CXX_EXECUTABLE_LINKER__trainmnist_Release CMakeFiles/trainmnist.dir/Release/train2.cpp.o CMakeFiles/trainmnist.dir/Release/matrix.cpp.o CMakeFiles/trainmnist.dir/Release/layer.cpp.o CMakeFiles/trainmnist.dir/Release/network.cpp.o CMakeFiles/trainmnist.dir/Release/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd  /opt/homebrew/opt/libomp/lib/libomp.dylib
+  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/trainmnist.dir/Release
   POST_BUILD = :
   PRE_LINK = :
@@ -235,37 +235,37 @@ build Release/trainmnist: CXX_EXECUTABLE_LINKER__trainmnist_Release CMakeFiles/t
 build cmake_object_order_depends_target_generate_RELEASE: phony || CMakeFiles/generate.dir
 
 build CMakeFiles/generate.dir/Release/generate.cpp.o: CXX_COMPILER__generate_unscanned_Release /Users/jiang/myAI/generate.cpp || cmake_object_order_depends_target_generate_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generate.dir/Release/generate.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generate.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Release
 
 build CMakeFiles/generate.dir/Release/matrix.cpp.o: CXX_COMPILER__generate_unscanned_Release /Users/jiang/myAI/matrix.cpp || cmake_object_order_depends_target_generate_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generate.dir/Release/matrix.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generate.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Release
 
 build CMakeFiles/generate.dir/Release/layer.cpp.o: CXX_COMPILER__generate_unscanned_Release /Users/jiang/myAI/layer.cpp || cmake_object_order_depends_target_generate_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generate.dir/Release/layer.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generate.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Release
 
 build CMakeFiles/generate.dir/Release/network.cpp.o: CXX_COMPILER__generate_unscanned_Release /Users/jiang/myAI/network.cpp || cmake_object_order_depends_target_generate_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generate.dir/Release/network.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generate.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Release
 
 build CMakeFiles/generate.dir/Release/function.cpp.o: CXX_COMPILER__generate_unscanned_Release /Users/jiang/myAI/function.cpp || cmake_object_order_depends_target_generate_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generate.dir/Release/function.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generate.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Release
 
@@ -277,10 +277,10 @@ build CMakeFiles/generate.dir/Release/function.cpp.o: CXX_COMPILER__generate_uns
 #############################################
 # Link the executable Release/generate
 
-build Release/generate: CXX_EXECUTABLE_LINKER__generate_Release CMakeFiles/generate.dir/Release/generate.cpp.o CMakeFiles/generate.dir/Release/matrix.cpp.o CMakeFiles/generate.dir/Release/layer.cpp.o CMakeFiles/generate.dir/Release/network.cpp.o CMakeFiles/generate.dir/Release/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd /opt/homebrew/opt/libomp/lib/libomp.dylib
+build Release/generate: CXX_EXECUTABLE_LINKER__generate_Release CMakeFiles/generate.dir/Release/generate.cpp.o CMakeFiles/generate.dir/Release/matrix.cpp.o CMakeFiles/generate.dir/Release/layer.cpp.o CMakeFiles/generate.dir/Release/network.cpp.o CMakeFiles/generate.dir/Release/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd  /opt/homebrew/opt/libomp/lib/libomp.dylib
+  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/generate.dir/Release
   POST_BUILD = :
   PRE_LINK = :
@@ -297,37 +297,37 @@ build Release/generate: CXX_EXECUTABLE_LINKER__generate_Release CMakeFiles/gener
 build cmake_object_order_depends_target_trainemnist_RELEASE: phony || CMakeFiles/trainemnist.dir
 
 build CMakeFiles/trainemnist.dir/Release/trainemnist.cpp.o: CXX_COMPILER__trainemnist_unscanned_Release /Users/jiang/myAI/trainemnist.cpp || cmake_object_order_depends_target_trainemnist_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Release/trainemnist.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Release
 
 build CMakeFiles/trainemnist.dir/Release/matrix.cpp.o: CXX_COMPILER__trainemnist_unscanned_Release /Users/jiang/myAI/matrix.cpp || cmake_object_order_depends_target_trainemnist_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Release/matrix.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Release
 
 build CMakeFiles/trainemnist.dir/Release/layer.cpp.o: CXX_COMPILER__trainemnist_unscanned_Release /Users/jiang/myAI/layer.cpp || cmake_object_order_depends_target_trainemnist_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Release/layer.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Release
 
 build CMakeFiles/trainemnist.dir/Release/network.cpp.o: CXX_COMPILER__trainemnist_unscanned_Release /Users/jiang/myAI/network.cpp || cmake_object_order_depends_target_trainemnist_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Release/network.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Release
 
 build CMakeFiles/trainemnist.dir/Release/function.cpp.o: CXX_COMPILER__trainemnist_unscanned_Release /Users/jiang/myAI/function.cpp || cmake_object_order_depends_target_trainemnist_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Release/function.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Release
 
@@ -339,10 +339,10 @@ build CMakeFiles/trainemnist.dir/Release/function.cpp.o: CXX_COMPILER__trainemni
 #############################################
 # Link the executable Release/trainemnist
 
-build Release/trainemnist: CXX_EXECUTABLE_LINKER__trainemnist_Release CMakeFiles/trainemnist.dir/Release/trainemnist.cpp.o CMakeFiles/trainemnist.dir/Release/matrix.cpp.o CMakeFiles/trainemnist.dir/Release/layer.cpp.o CMakeFiles/trainemnist.dir/Release/network.cpp.o CMakeFiles/trainemnist.dir/Release/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd /opt/homebrew/opt/libomp/lib/libomp.dylib
+build Release/trainemnist: CXX_EXECUTABLE_LINKER__trainemnist_Release CMakeFiles/trainemnist.dir/Release/trainemnist.cpp.o CMakeFiles/trainemnist.dir/Release/matrix.cpp.o CMakeFiles/trainemnist.dir/Release/layer.cpp.o CMakeFiles/trainemnist.dir/Release/network.cpp.o CMakeFiles/trainemnist.dir/Release/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd  /opt/homebrew/opt/libomp/lib/libomp.dylib
+  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Release
   POST_BUILD = :
   PRE_LINK = :
@@ -359,37 +359,37 @@ build Release/trainemnist: CXX_EXECUTABLE_LINKER__trainemnist_Release CMakeFiles
 build cmake_object_order_depends_target_generateemnist_RELEASE: phony || CMakeFiles/generateemnist.dir
 
 build CMakeFiles/generateemnist.dir/Release/generateemnist.cpp.o: CXX_COMPILER__generateemnist_unscanned_Release /Users/jiang/myAI/generateemnist.cpp || cmake_object_order_depends_target_generateemnist_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Release/generateemnist.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Release
 
 build CMakeFiles/generateemnist.dir/Release/matrix.cpp.o: CXX_COMPILER__generateemnist_unscanned_Release /Users/jiang/myAI/matrix.cpp || cmake_object_order_depends_target_generateemnist_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Release/matrix.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Release
 
 build CMakeFiles/generateemnist.dir/Release/layer.cpp.o: CXX_COMPILER__generateemnist_unscanned_Release /Users/jiang/myAI/layer.cpp || cmake_object_order_depends_target_generateemnist_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Release/layer.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Release
 
 build CMakeFiles/generateemnist.dir/Release/network.cpp.o: CXX_COMPILER__generateemnist_unscanned_Release /Users/jiang/myAI/network.cpp || cmake_object_order_depends_target_generateemnist_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Release/network.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Release
 
 build CMakeFiles/generateemnist.dir/Release/function.cpp.o: CXX_COMPILER__generateemnist_unscanned_Release /Users/jiang/myAI/function.cpp || cmake_object_order_depends_target_generateemnist_RELEASE
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Release\"
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Release/function.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Release
 
@@ -401,10 +401,10 @@ build CMakeFiles/generateemnist.dir/Release/function.cpp.o: CXX_COMPILER__genera
 #############################################
 # Link the executable Release/generateemnist
 
-build Release/generateemnist: CXX_EXECUTABLE_LINKER__generateemnist_Release CMakeFiles/generateemnist.dir/Release/generateemnist.cpp.o CMakeFiles/generateemnist.dir/Release/matrix.cpp.o CMakeFiles/generateemnist.dir/Release/layer.cpp.o CMakeFiles/generateemnist.dir/Release/network.cpp.o CMakeFiles/generateemnist.dir/Release/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd /opt/homebrew/opt/libomp/lib/libomp.dylib
+build Release/generateemnist: CXX_EXECUTABLE_LINKER__generateemnist_Release CMakeFiles/generateemnist.dir/Release/generateemnist.cpp.o CMakeFiles/generateemnist.dir/Release/matrix.cpp.o CMakeFiles/generateemnist.dir/Release/layer.cpp.o CMakeFiles/generateemnist.dir/Release/network.cpp.o CMakeFiles/generateemnist.dir/Release/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd  /opt/homebrew/opt/libomp/lib/libomp.dylib
+  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Release
   POST_BUILD = :
   PRE_LINK = :
