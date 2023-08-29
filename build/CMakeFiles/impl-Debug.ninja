@@ -44,7 +44,7 @@ include CMakeFiles/common.ninja
 build cmake_object_order_depends_target_readdata_DEBUG: phony || CMakeFiles/readdata.dir
 
 build CMakeFiles/readdata.dir/Debug/readmnist.cpp.o: CXX_COMPILER__readdata_unscanned_Debug /Users/jiang/myAI/readmnist.cpp || cmake_object_order_depends_target_readdata_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/readdata.dir/Debug/readmnist.cpp.o.d
   FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/readdata.dir/Debug
@@ -77,37 +77,37 @@ build Debug/readdata: CXX_EXECUTABLE_LINKER__readdata_Debug CMakeFiles/readdata.
 build cmake_object_order_depends_target_train_DEBUG: phony || CMakeFiles/train.dir
 
 build CMakeFiles/train.dir/Debug/train1.cpp.o: CXX_COMPILER__train_unscanned_Debug /Users/jiang/myAI/train1.cpp || cmake_object_order_depends_target_train_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/train.dir/Debug/train1.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/train.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Debug
 
 build CMakeFiles/train.dir/Debug/matrix.cpp.o: CXX_COMPILER__train_unscanned_Debug /Users/jiang/myAI/matrix.cpp || cmake_object_order_depends_target_train_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/train.dir/Debug/matrix.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/train.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Debug
 
 build CMakeFiles/train.dir/Debug/layer.cpp.o: CXX_COMPILER__train_unscanned_Debug /Users/jiang/myAI/layer.cpp || cmake_object_order_depends_target_train_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/train.dir/Debug/layer.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/train.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Debug
 
 build CMakeFiles/train.dir/Debug/network.cpp.o: CXX_COMPILER__train_unscanned_Debug /Users/jiang/myAI/network.cpp || cmake_object_order_depends_target_train_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/train.dir/Debug/network.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/train.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Debug
 
 build CMakeFiles/train.dir/Debug/function.cpp.o: CXX_COMPILER__train_unscanned_Debug /Users/jiang/myAI/function.cpp || cmake_object_order_depends_target_train_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/train.dir/Debug/function.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/train.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Debug
 
@@ -119,10 +119,10 @@ build CMakeFiles/train.dir/Debug/function.cpp.o: CXX_COMPILER__train_unscanned_D
 #############################################
 # Link the executable Debug/train
 
-build Debug/train: CXX_EXECUTABLE_LINKER__train_Debug CMakeFiles/train.dir/Debug/train1.cpp.o CMakeFiles/train.dir/Debug/matrix.cpp.o CMakeFiles/train.dir/Debug/layer.cpp.o CMakeFiles/train.dir/Debug/network.cpp.o CMakeFiles/train.dir/Debug/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd /opt/homebrew/opt/libomp/lib/libomp.dylib
+build Debug/train: CXX_EXECUTABLE_LINKER__train_Debug CMakeFiles/train.dir/Debug/train1.cpp.o CMakeFiles/train.dir/Debug/matrix.cpp.o CMakeFiles/train.dir/Debug/layer.cpp.o CMakeFiles/train.dir/Debug/network.cpp.o CMakeFiles/train.dir/Debug/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd  /opt/homebrew/opt/libomp/lib/libomp.dylib
+  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/train.dir/Debug
   POST_BUILD = :
   PRE_LINK = :
@@ -139,7 +139,7 @@ build Debug/train: CXX_EXECUTABLE_LINKER__train_Debug CMakeFiles/train.dir/Debug
 build cmake_object_order_depends_target_drawdata_DEBUG: phony || CMakeFiles/drawdata.dir
 
 build CMakeFiles/drawdata.dir/Debug/data.cpp.o: CXX_COMPILER__drawdata_unscanned_Debug /Users/jiang/myAI/data.cpp || cmake_object_order_depends_target_drawdata_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/drawdata.dir/Debug/data.cpp.o.d
   FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/drawdata.dir/Debug
@@ -173,37 +173,37 @@ build Debug/drawdata: CXX_EXECUTABLE_LINKER__drawdata_Debug CMakeFiles/drawdata.
 build cmake_object_order_depends_target_trainmnist_DEBUG: phony || CMakeFiles/trainmnist.dir
 
 build CMakeFiles/trainmnist.dir/Debug/train2.cpp.o: CXX_COMPILER__trainmnist_unscanned_Debug /Users/jiang/myAI/train2.cpp || cmake_object_order_depends_target_trainmnist_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainmnist.dir/Debug/train2.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainmnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Debug
 
 build CMakeFiles/trainmnist.dir/Debug/matrix.cpp.o: CXX_COMPILER__trainmnist_unscanned_Debug /Users/jiang/myAI/matrix.cpp || cmake_object_order_depends_target_trainmnist_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainmnist.dir/Debug/matrix.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainmnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Debug
 
 build CMakeFiles/trainmnist.dir/Debug/layer.cpp.o: CXX_COMPILER__trainmnist_unscanned_Debug /Users/jiang/myAI/layer.cpp || cmake_object_order_depends_target_trainmnist_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainmnist.dir/Debug/layer.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainmnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Debug
 
 build CMakeFiles/trainmnist.dir/Debug/network.cpp.o: CXX_COMPILER__trainmnist_unscanned_Debug /Users/jiang/myAI/network.cpp || cmake_object_order_depends_target_trainmnist_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainmnist.dir/Debug/network.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainmnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Debug
 
 build CMakeFiles/trainmnist.dir/Debug/function.cpp.o: CXX_COMPILER__trainmnist_unscanned_Debug /Users/jiang/myAI/function.cpp || cmake_object_order_depends_target_trainmnist_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainmnist.dir/Debug/function.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainmnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Debug
 
@@ -215,10 +215,10 @@ build CMakeFiles/trainmnist.dir/Debug/function.cpp.o: CXX_COMPILER__trainmnist_u
 #############################################
 # Link the executable Debug/trainmnist
 
-build Debug/trainmnist: CXX_EXECUTABLE_LINKER__trainmnist_Debug CMakeFiles/trainmnist.dir/Debug/train2.cpp.o CMakeFiles/trainmnist.dir/Debug/matrix.cpp.o CMakeFiles/trainmnist.dir/Debug/layer.cpp.o CMakeFiles/trainmnist.dir/Debug/network.cpp.o CMakeFiles/trainmnist.dir/Debug/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd /opt/homebrew/opt/libomp/lib/libomp.dylib
+build Debug/trainmnist: CXX_EXECUTABLE_LINKER__trainmnist_Debug CMakeFiles/trainmnist.dir/Debug/train2.cpp.o CMakeFiles/trainmnist.dir/Debug/matrix.cpp.o CMakeFiles/trainmnist.dir/Debug/layer.cpp.o CMakeFiles/trainmnist.dir/Debug/network.cpp.o CMakeFiles/trainmnist.dir/Debug/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd  /opt/homebrew/opt/libomp/lib/libomp.dylib
+  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/trainmnist.dir/Debug
   POST_BUILD = :
   PRE_LINK = :
@@ -235,37 +235,37 @@ build Debug/trainmnist: CXX_EXECUTABLE_LINKER__trainmnist_Debug CMakeFiles/train
 build cmake_object_order_depends_target_generate_DEBUG: phony || CMakeFiles/generate.dir
 
 build CMakeFiles/generate.dir/Debug/generate.cpp.o: CXX_COMPILER__generate_unscanned_Debug /Users/jiang/myAI/generate.cpp || cmake_object_order_depends_target_generate_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generate.dir/Debug/generate.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generate.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Debug
 
 build CMakeFiles/generate.dir/Debug/matrix.cpp.o: CXX_COMPILER__generate_unscanned_Debug /Users/jiang/myAI/matrix.cpp || cmake_object_order_depends_target_generate_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generate.dir/Debug/matrix.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generate.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Debug
 
 build CMakeFiles/generate.dir/Debug/layer.cpp.o: CXX_COMPILER__generate_unscanned_Debug /Users/jiang/myAI/layer.cpp || cmake_object_order_depends_target_generate_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generate.dir/Debug/layer.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generate.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Debug
 
 build CMakeFiles/generate.dir/Debug/network.cpp.o: CXX_COMPILER__generate_unscanned_Debug /Users/jiang/myAI/network.cpp || cmake_object_order_depends_target_generate_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generate.dir/Debug/network.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generate.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Debug
 
 build CMakeFiles/generate.dir/Debug/function.cpp.o: CXX_COMPILER__generate_unscanned_Debug /Users/jiang/myAI/function.cpp || cmake_object_order_depends_target_generate_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generate.dir/Debug/function.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generate.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Debug
 
@@ -277,10 +277,10 @@ build CMakeFiles/generate.dir/Debug/function.cpp.o: CXX_COMPILER__generate_unsca
 #############################################
 # Link the executable Debug/generate
 
-build Debug/generate: CXX_EXECUTABLE_LINKER__generate_Debug CMakeFiles/generate.dir/Debug/generate.cpp.o CMakeFiles/generate.dir/Debug/matrix.cpp.o CMakeFiles/generate.dir/Debug/layer.cpp.o CMakeFiles/generate.dir/Debug/network.cpp.o CMakeFiles/generate.dir/Debug/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd /opt/homebrew/opt/libomp/lib/libomp.dylib
+build Debug/generate: CXX_EXECUTABLE_LINKER__generate_Debug CMakeFiles/generate.dir/Debug/generate.cpp.o CMakeFiles/generate.dir/Debug/matrix.cpp.o CMakeFiles/generate.dir/Debug/layer.cpp.o CMakeFiles/generate.dir/Debug/network.cpp.o CMakeFiles/generate.dir/Debug/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd  /opt/homebrew/opt/libomp/lib/libomp.dylib
+  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/generate.dir/Debug
   POST_BUILD = :
   PRE_LINK = :
@@ -297,37 +297,37 @@ build Debug/generate: CXX_EXECUTABLE_LINKER__generate_Debug CMakeFiles/generate.
 build cmake_object_order_depends_target_trainemnist_DEBUG: phony || CMakeFiles/trainemnist.dir
 
 build CMakeFiles/trainemnist.dir/Debug/trainemnist.cpp.o: CXX_COMPILER__trainemnist_unscanned_Debug /Users/jiang/myAI/trainemnist.cpp || cmake_object_order_depends_target_trainemnist_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Debug/trainemnist.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Debug
 
 build CMakeFiles/trainemnist.dir/Debug/matrix.cpp.o: CXX_COMPILER__trainemnist_unscanned_Debug /Users/jiang/myAI/matrix.cpp || cmake_object_order_depends_target_trainemnist_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Debug/matrix.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Debug
 
 build CMakeFiles/trainemnist.dir/Debug/layer.cpp.o: CXX_COMPILER__trainemnist_unscanned_Debug /Users/jiang/myAI/layer.cpp || cmake_object_order_depends_target_trainemnist_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Debug/layer.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Debug
 
 build CMakeFiles/trainemnist.dir/Debug/network.cpp.o: CXX_COMPILER__trainemnist_unscanned_Debug /Users/jiang/myAI/network.cpp || cmake_object_order_depends_target_trainemnist_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Debug/network.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Debug
 
 build CMakeFiles/trainemnist.dir/Debug/function.cpp.o: CXX_COMPILER__trainemnist_unscanned_Debug /Users/jiang/myAI/function.cpp || cmake_object_order_depends_target_trainemnist_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Debug/function.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Debug
 
@@ -339,10 +339,10 @@ build CMakeFiles/trainemnist.dir/Debug/function.cpp.o: CXX_COMPILER__trainemnist
 #############################################
 # Link the executable Debug/trainemnist
 
-build Debug/trainemnist: CXX_EXECUTABLE_LINKER__trainemnist_Debug CMakeFiles/trainemnist.dir/Debug/trainemnist.cpp.o CMakeFiles/trainemnist.dir/Debug/matrix.cpp.o CMakeFiles/trainemnist.dir/Debug/layer.cpp.o CMakeFiles/trainemnist.dir/Debug/network.cpp.o CMakeFiles/trainemnist.dir/Debug/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd /opt/homebrew/opt/libomp/lib/libomp.dylib
+build Debug/trainemnist: CXX_EXECUTABLE_LINKER__trainemnist_Debug CMakeFiles/trainemnist.dir/Debug/trainemnist.cpp.o CMakeFiles/trainemnist.dir/Debug/matrix.cpp.o CMakeFiles/trainemnist.dir/Debug/layer.cpp.o CMakeFiles/trainemnist.dir/Debug/network.cpp.o CMakeFiles/trainemnist.dir/Debug/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd  /opt/homebrew/opt/libomp/lib/libomp.dylib
+  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Debug
   POST_BUILD = :
   PRE_LINK = :
@@ -359,37 +359,37 @@ build Debug/trainemnist: CXX_EXECUTABLE_LINKER__trainemnist_Debug CMakeFiles/tra
 build cmake_object_order_depends_target_generateemnist_DEBUG: phony || CMakeFiles/generateemnist.dir
 
 build CMakeFiles/generateemnist.dir/Debug/generateemnist.cpp.o: CXX_COMPILER__generateemnist_unscanned_Debug /Users/jiang/myAI/generateemnist.cpp || cmake_object_order_depends_target_generateemnist_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Debug/generateemnist.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Debug
 
 build CMakeFiles/generateemnist.dir/Debug/matrix.cpp.o: CXX_COMPILER__generateemnist_unscanned_Debug /Users/jiang/myAI/matrix.cpp || cmake_object_order_depends_target_generateemnist_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Debug/matrix.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Debug
 
 build CMakeFiles/generateemnist.dir/Debug/layer.cpp.o: CXX_COMPILER__generateemnist_unscanned_Debug /Users/jiang/myAI/layer.cpp || cmake_object_order_depends_target_generateemnist_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Debug/layer.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Debug
 
 build CMakeFiles/generateemnist.dir/Debug/network.cpp.o: CXX_COMPILER__generateemnist_unscanned_Debug /Users/jiang/myAI/network.cpp || cmake_object_order_depends_target_generateemnist_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Debug/network.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Debug
 
 build CMakeFiles/generateemnist.dir/Debug/function.cpp.o: CXX_COMPILER__generateemnist_unscanned_Debug /Users/jiang/myAI/function.cpp || cmake_object_order_depends_target_generateemnist_DEBUG
-  DEFINES = -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Debug/function.cpp.o.d
-  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Debug
 
@@ -401,10 +401,10 @@ build CMakeFiles/generateemnist.dir/Debug/function.cpp.o: CXX_COMPILER__generate
 #############################################
 # Link the executable Debug/generateemnist
 
-build Debug/generateemnist: CXX_EXECUTABLE_LINKER__generateemnist_Debug CMakeFiles/generateemnist.dir/Debug/generateemnist.cpp.o CMakeFiles/generateemnist.dir/Debug/matrix.cpp.o CMakeFiles/generateemnist.dir/Debug/layer.cpp.o CMakeFiles/generateemnist.dir/Debug/network.cpp.o CMakeFiles/generateemnist.dir/Debug/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd /opt/homebrew/opt/libomp/lib/libomp.dylib
+build Debug/generateemnist: CXX_EXECUTABLE_LINKER__generateemnist_Debug CMakeFiles/generateemnist.dir/Debug/generateemnist.cpp.o CMakeFiles/generateemnist.dir/Debug/matrix.cpp.o CMakeFiles/generateemnist.dir/Debug/layer.cpp.o CMakeFiles/generateemnist.dir/Debug/network.cpp.o CMakeFiles/generateemnist.dir/Debug/function.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd  /opt/homebrew/opt/libomp/lib/libomp.dylib
+  LINK_LIBRARIES = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Debug
   POST_BUILD = :
   PRE_LINK = :
