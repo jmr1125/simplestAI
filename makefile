@@ -1,9 +1,10 @@
 all:
-	$(MAKE) all1 -j3
+	ninja -Cbuild
+#	$(MAKE) all1 -j3
 all1:
 	$(MAKE) Release
 	$(MAKE) Debug
-	# $(MAKE) RelWithDebInfo
+# $(MAKE) RelWithDebInfo
 Release:
 	cd build&&ninja -f build-Release.ninja
 Debug:

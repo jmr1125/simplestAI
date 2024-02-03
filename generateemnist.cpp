@@ -38,9 +38,9 @@ int main(int argc, char *argv[]) {
   intrflush(stdscr, FALSE), keypad(stdscr, TRUE);
   mousemask(ALL_MOUSE_EVENTS | REPORT_MOUSE_POSITION, NULL);
   printf("\033[?1003h\n");
-  mouseinterval(1);
+  // mouseinterval(1);
   mvprintw(0, 0, "train %s", argv[1]);
-  mouseinterval(0);
+  // mouseinterval(0);
   bool quit = false;
   while (!quit) {
     bool mousestatus = false;
@@ -90,26 +90,18 @@ int main(int argc, char *argv[]) {
       } else if (KEY_MOUSE == ch) {
         MEVENT evt;
         if (getmouse(&evt) == OK) {
-          mvprintw(2, 1, "0x%08x %d %d", evt.bstate, evt.x, evt.y);
+          mvprintw(2, 1, "0x%08x %d %d status=%d", evt.bstate, evt.x, evt.y,
+                   mousestatus);
           clrtoeol();
           int x = min(max(0, evt.x - 3), maxx - 1),
               y = min(max(0, evt.y - 3), maxy - 1);
-          if (evt.bstate == 0x080000) {
+          if (evt.bstate == BUTTON1_PRESSED) {
             mousestatus = true;
           }
-          if (evt.bstate == 0x040000) {
+          if (evt.bstate == BUTTON1_RELEASED) {
             mousestatus = false;
           }
-          if (evt.bstate == BUTTON3_PRESSED) {
-            mvprintw(2, 20, "BUTTON3_PRESSED");
-            clrtoeol();
-          }
-          if (evt.bstate == BUTTON3_RELEASED || evt.bstate == BUTTON3_CLICKED) {
-            mvprintw(2, 20, "BUTTON3_RELEASED");
-            clrtoeol();
-            // mousestatus = false;
-          }
-          if (evt.bstate == BUTTON1_DOUBLE_CLICKED) {
+          if (evt.bstate & BUTTON1_DOUBLE_CLICKED) {
             break;
           }
           if (mousestatus) {
