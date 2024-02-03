@@ -96,7 +96,7 @@ int main() {
 #endif
   network net({}, NULL, NULL);
   int id;
-  int epoch = 0;
+  int epoch;
   {
     ifstream in("handwriteemnist.net");
     funcT func = funcof(ReLU);
@@ -114,7 +114,7 @@ int main() {
       in >> epoch;
       cout << "id = " << id << endl << "epoch = " << epoch << endl;
     } else {
-      net = network({28 * 28, 150, OUTPUTSIZE}, pair_ReLU);
+      net = network({28 * 28, 128, 64, OUTPUTSIZE}, pair_ReLU);
       /*randomize net*/
       for (layer &l : net.layers) {
         for (auto &x : l.w.m) { // rand matrix
@@ -129,7 +129,7 @@ int main() {
         }
       }
       id = 0;
-      epoch = 0;
+      epoch = -1;
     }
   }
   ifstream in("traindata.txt");
@@ -146,7 +146,7 @@ int main() {
       ++epoch;
     }
     if (id == 0 || lr == 0) {
-      lr = 0.001 * pow(0.95, epoch);
+      lr = 0.004 * pow(0.95, epoch);
     }
     const auto &a = inputs.at(id);
     const auto &b = outputs.at(id);

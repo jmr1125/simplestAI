@@ -89,10 +89,10 @@ int main(int argc, char *argv[]) {
           clrtoeol();
           int x = min(max(0, evt.x - 3), maxx - 1),
               y = min(max(0, evt.y - 3), maxy - 1);
-          if (evt.bstate == 0x080000) {
+          if (evt.bstate == BUTTON1_PRESSED) {
             mousestatus = true;
           }
-          if (evt.bstate == 0x040000) {
+          if (evt.bstate == BUTTON1_RELEASED) {
             mousestatus = false;
           }
           if (evt.bstate == BUTTON3_PRESSED) {
