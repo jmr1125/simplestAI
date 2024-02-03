@@ -1,7 +1,7 @@
-#include "layer.h"
-#include "main.h"
-#include "matrix.h"
-#include "network.h"
+#include "layer.hpp"
+#include "main.hpp"
+#include "matrix.hpp"
+#include "network.hpp"
 #include <random>
 #include <utility>
 

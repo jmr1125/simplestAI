@@ -1,6 +1,6 @@
-#include "network.h"
-#include "layer.h"
-#include "matrix.h"
+#include "network.hpp"
+#include "layer.hpp"
+#include "matrix.hpp"
 #include <cassert>
 #include <cstddef>
 #include <fstream>
