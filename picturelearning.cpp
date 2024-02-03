@@ -4,6 +4,7 @@
 #include <X11/Xatom.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
+#include <cmath>
 #include <fstream>
 #include <iostream>
 #include <thread>
@@ -15,35 +16,47 @@ using namespace std;
 
 network net({}, NULL, NULL);
 
-int w = 64, h = 64;
-int getgen(int x, int y) {
+int W = 128, w = W * 2, h = 128;
+valT picture(int x, int y) {
+  // return (((x + 8) / 16) % 2 && ((y + 8) / 16) % 2) ? 1.0 : 0.5;
+  return (20 < x && x < 108 && 20 < y && y < 90) ? 1 : 0;
+}
+matrix getInput(int x, int y) {
   matrix input;
-  input.setn(2);
+  input.setn(15);
   input.setm(1);
-  input(0, 0) = (valT)x / h;
-  input(1, 0) = (valT)y / w;
+  int i = 0;
+  input(i++, 0) = 1;
+  input(i++, 0) = sin(x);
+  input(i++, 0) = cos(x);
+  input(i++, 0) = sin(2 * x);
+  input(i++, 0) = cos(2 * x);
+  input(i++, 0) = sin(3 * x);
+  input(i++, 0) = cos(3 * x);
+  input(i++, 0) = sin(y);
+  input(i++, 0) = cos(y);
+  input(i++, 0) = sin(2 * y);
+  input(i++, 0) = cos(2 * y);
+  input(i++, 0) = sin(3 * y);
+  input(i++, 0) = cos(3 * y);
+  input(i++, 0) = x;
+  input(i++, 0) = y;
+  return input;
+}
+valT getgen(int x, int y) {
+  auto input = getInput(x, y);
   auto v = net.feed_forward(input);
-  return (int)(v(0, 0) * 256) | ((int)(v(1, 0) * 256) << 8) |
-         ((int)(v(2, 0) * 256) << 16);
+  return v(0, 0);
 }
 void train() {
-  matrix input;
-  input.setn(2);
-  input.setm(1);
 #ifdef USE_OMP
 #pragma omp for
 #endif
   for (int x = 0; x < h; ++x) {
-    for (int y = 0; y < w; ++y) {
-      input(0, 0) = (valT)x / h;
-      input(1, 0) = (valT)y / w;
-      VvalT expect;
-      if (x % 4 && y % 4) {
-        expect = {1, 1, 1};
-      } else {
-        expect = {0, 0, 0};
-      }
-      net.backpropagation(input, expect, 0.00001);
+    for (int y = 0; y < W; ++y) {
+      auto input = getInput(x, y);
+      VvalT expect{picture(x, y)};
+      net.backpropagation(input, expect, 10e-5);
     }
   }
 }
@@ -53,13 +66,13 @@ void initnet() {
   if (fin) {
     net.load(fin);
     for (layer &l : net.layers) {
-      l.Func() = funcof(ReLU);
-      l.deFunc() = defuncof(ReLU);
+      l.Func() = funcof(sigma);
+      l.deFunc() = defuncof(sigma);
     }
     if (!fin)
       cerr << "not good file: picture.net" << endl;
   } else {
-    net = network({2, 128, 3}, pair_ReLU);
+    net = network({15, 16, 64, 1}, pair_sigma);
     /*randomize net*/
 #ifdef USE_OMP
 #pragma omp for
@@ -67,18 +80,19 @@ void initnet() {
     for (layer &l : net.layers) {
       for (auto &x : l.w.m) { // rand matrix
         for (auto &x : x) {
-          x = (genvalT() - 0.5) * 2 * (1 / sqrt(l.w.getm()));
+          x = 1 * (genvalT() - 0.5) * 2 * (1 / sqrt(l.w.getm()));
         }
       }
       for (auto &x : l.b.m) { // rand basis
         for (auto &x : x) {
-          x = (genvalT() - 0.5) * 2 * (1 / sqrt(l.b.getn()));
+          x = 1 * (genvalT() - 0.5) * 2 * (1 / sqrt(l.b.getn()));
         }
       }
     }
   }
 }
 
+double result[512][512];
 int main() {
 #ifdef USE_OMP
   omp_set_dynamic(1);
@@ -102,7 +116,7 @@ int main() {
   winattr.colormap = XCreateColormap(d, root, visinfo.visual, AllocNone);
   auto attrmask = CWBackPixel | CWColormap | CWEventMask;
   Window window =
-      XCreateWindow(d, root, 0, 0, w+20, h+20, 0, visinfo.depth, InputOutput,
+      XCreateWindow(d, root, 0, 0, w, h, 0, visinfo.depth, InputOutput,
                     visinfo.visual, attrmask, &winattr);
   if (!window) {
     cerr << "can't create window" << endl;
@@ -133,31 +147,43 @@ int main() {
     char *mem = (char *)malloc(windowBufferSize);
     int t = 0;
 
-    XImage *xWindowBuffer = XCreateImage(d, visinfo.visual, visinfo.depth,
-                                         ZPixmap, 0, mem, w, h, pixelBits, 0);
+    XImage *xWindowBuffer =
+        XCreateImage(d, visinfo.visual, visinfo.depth, ZPixmap, 0, mem, w, h,
+                     pixelBits, w * 4);
     int pitch = w * pixelBytes;
     initnet();
     while (!stop) {
-      cout << ++t << " copy ";
       cout.flush();
       for (int x = 0; x < h; ++x) {
-        // cout << x << ": ";
-        for (int y = 0; y < w; ++y) {
-          unsigned int *px = (unsigned int *)(mem + x * pitch + y * pixelBytes);
-          *px = getgen(x, y);
-          // cout << *px << ' ';
+        for (int y = 0; y < W; ++y) {
+          result[x][y] = getgen(x, y);
         }
-        // cout << endl;
       }
-      cout << "train ";
-      cout.flush();
+      for (int x = 0; x < h; ++x) {
+        for (int y = 0; y < W; ++y) {
+          unsigned int *px = (unsigned int *)(mem + x * pitch + y * pixelBytes);
+          int p = result[x][y] * 255;
+          *px = ((p << 16) | (p << 8) | p);
+        }
+        for (int y = 0; y < W; ++y) {
+          unsigned int *px =
+              (unsigned int *)(mem + x * pitch + (y + W) * pixelBytes);
+          int p = picture(x, y) * 255;
+          *px = ((p << 16) | (p << 8) | p);
+        }
+      }
       train();
-      cout << "show";
-      cout.flush();
+      valT delta = 0;
+      for (int x = 0; x <= h; ++x) {
+        for (int y = 0; y <= W; ++y) {
+          delta +=
+              (picture(x, y) - result[x][y]) * (picture(x, y) - result[x][y]);
+        }
+      }
+      cout << ++t << " : delta: " << delta << "  \r";
       usleep(1);
       XPutImage(d, window, pen, xWindowBuffer, 0, 0, 0, 0, w, h);
       XFlush(d);
-      cout << endl;
     }
   });
   while (!stop) {

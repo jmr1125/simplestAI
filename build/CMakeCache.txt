@@ -678,6 +678,8 @@ pkgcfg_lib_PKG_FONTCONFIG_freetype:FILEPATH=/opt/homebrew/opt/freetype/lib/libfr
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
 CMAKE_AR-ADVANCED:INTERNAL=1
+//MODIFIED property for variable: CMAKE_BUILD_TYPE
+CMAKE_BUILD_TYPE-MODIFIED:INTERNAL=ON
 //This is the directory where this CMakeCache.txt was created
 CMAKE_CACHEFILE_DIR:INTERNAL=/Users/jiang/Desktop/myAI/build
 //Major version of cmake used to create the current loaded cache
