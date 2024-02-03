@@ -1,7 +1,7 @@
 #pragma once
-#include "layer.h"
-#include "main.h"
-#include "matrix.h"
+#include "layer.hpp"
+#include "main.hpp"
+#include "matrix.hpp"
 #include <cstddef>
 #include <istream>
 #include <ostream>

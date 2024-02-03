@@ -1,7 +1,7 @@
-#include "function.h"
-#include "layer.h"
-#include "main.h"
-#include "matrix.h"
+#include "function.hpp"
+#include "layer.hpp"
+#include "main.hpp"
+#include "matrix.hpp"
 #include <cassert>
 #include <cstddef>
 #include <iostream>

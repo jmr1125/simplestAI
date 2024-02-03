@@ -1,5 +1,5 @@
-#include "function.h"
-#include "network.h"
+#include "function.hpp"
+#include "network.hpp"
 #include <algorithm>
 #include <cmath>
 #include <curses.h>

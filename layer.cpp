@@ -1,5 +1,5 @@
-#include "layer.h"
-#include "matrix.h"
+#include "layer.hpp"
+#include "matrix.hpp"
 #include <algorithm>
 #include <cstdio>
 void layer::setn(int n) {
