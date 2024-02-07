@@ -40,25 +40,27 @@ size_t x=get_global_id(0),
        y=get_global_id(1);
 if(x>=n){return;}
 if(y>=m){return;}
-float res=0;
+float res=0.0f;
 for(unsigned int i=0;i<k;++i){
 res+=a[y*k+i]*b[i*n+x];
+//res+=a[y][i]*b[i][x];
 }
-c[y*m+x]=res;
+c[y*n+x]=res;
+//1;
 }
 )";
-using std::chrono::system_clock;
-auto t = system_clock::now();
+using std::chrono::high_resolution_clock;
+auto t = high_resolution_clock::now();
 // auto t1 = t;
 //  #define time_get() (-(t - (t1 = system_clock::now())).count(), t = t1)
 auto timeget() {
-  auto t1 = system_clock::now();
+  auto t1 = high_resolution_clock::now();
   auto T = t1 - t;
   t = t1;
-  return (double)T.count() / 1000000;
+  return (double)T.count() / 1000000000;
 }
-const int n = 10000, m = 10000, k = 10000;
-float a[m][k], b[k][n], c[m][n];
+const int n = 100, m = 100, k = 100;
+float a[m][k], b[k][n], c[m][n], c1[m][n];
 int main() {
   cout << timeget() << " start" << endl;
   cl_int ret;
@@ -83,7 +85,6 @@ int main() {
   ret =
       clGetDeviceIDs(default_platform, CL_DEVICE_TYPE_GPU, 1, &device_id, NULL);
   right("get device");
-  size_t local[3];
   {
     size_t len;
     clGetDeviceInfo(device_id, CL_DEVICE_MAX_WORK_ITEM_SIZES, 0, NULL, &len);
@@ -93,9 +94,6 @@ int main() {
     for (int i = 0; i < len / 8; ++i) {
       cout << sizes[i] << ' ';
     }
-    local[0] = sizes[0] / 2;
-    local[1] = sizes[1] / 2;
-    local[2] = sizes[2] / 2;
     cout << dec << endl;
   }
   cl_context context = clCreateContext(0, 1, &device_id, NULL, NULL, &ret);
@@ -194,8 +192,7 @@ int main() {
   global[0] = n;
   global[1] = m;
   cout << "[" << timeget() << "] set args and get group info" << endl;
-  local[0] = local[1] = 16;
-  ret = clEnqueueNDRangeKernel(command, kernel, 1, NULL, global, NULL, 0, NULL,
+  ret = clEnqueueNDRangeKernel(command, kernel, 2, NULL, global, NULL, 0, NULL,
                                NULL);
   right("run");
   clFinish(command);
@@ -203,6 +200,21 @@ int main() {
   ret = clEnqueueReadBuffer(command, out, CL_TRUE, 0, sizeof(float) * n * m, c,
                             0, NULL, NULL);
   cout << "[" << timeget() << "] copy done" << endl;
+  cout << "[" << timeget() << "] run normal way and check" << endl;
+  bool different = false;
+  for (int x = 0; x < n; ++x) { // a:m*k b:k*n
+    for (int y = 0; y < m; ++y) {
+      float res = 0;
+      for (unsigned int i = 0; i < k; ++i) {
+        res += a[y][i] * b[i][x];
+      }
+      c1[y][x] = res;
+      if (c[y][x] != c1[y][x])
+        different = true;
+    }
+  }
+  cout << "[" << timeget() << "] done" << endl
+       << "different: " << different << endl;
   clReleaseMemObject(in_a);
   clReleaseMemObject(in_b);
   clReleaseMemObject(out);

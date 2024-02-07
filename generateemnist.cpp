@@ -42,6 +42,7 @@ int main(int argc, char *argv[]) {
   mvprintw(0, 0, "train %s", argv[1]);
   // mouseinterval(0);
   bool quit = false;
+  string res = "";
   while (!quit) {
     bool mousestatus = false;
     bool mousecolor = true;
@@ -52,6 +53,7 @@ int main(int argc, char *argv[]) {
       mvprintw(1, 1, "press: 0x%08lx release: 0x%08lx", BUTTON1_PRESSED,
                BUTTON1_RELEASED);
       ch = getch();
+      int maxid = 0;
       {
         matrix input;
         input.setn(maxx * maxy);
@@ -64,7 +66,6 @@ int main(int argc, char *argv[]) {
         auto o = net.feed_forward(input);
         move(3, 32);
         valT max = std::numeric_limits<valT>::min();
-        int maxid = 0;
         for (int i = 0; i < 47; ++i) {
           printw("%f ", o(i, 0));
           if (o(i, 0) > max) {
@@ -79,6 +80,7 @@ int main(int argc, char *argv[]) {
         printw("%s ", name[maxid].c_str());
         attroff(A_BOLD);
         printw("%f", max);
+        mvprintw(7, 40, "Result: %s", res.c_str());
       }
       if (ch == 'c') {
         mousecolor = !mousecolor;
@@ -87,6 +89,8 @@ int main(int argc, char *argv[]) {
       } else if (ch == 'q') {
         quit = true;
         break;
+      } else if (ch == ' ') {
+        res += ' ';
       } else if (KEY_MOUSE == ch) {
         MEVENT evt;
         if (getmouse(&evt) == OK) {
@@ -102,6 +106,7 @@ int main(int argc, char *argv[]) {
             mousestatus = false;
           }
           if (evt.bstate & BUTTON1_DOUBLE_CLICKED) {
+            res += name[maxid];
             break;
           }
           if (mousestatus) {
