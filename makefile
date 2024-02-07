@@ -1,5 +1,6 @@
 all:
 	ninja -Cbuild -k 0
+	$(MAKE) Release
 #	$(MAKE) all1 -j3
 all1:
 	$(MAKE) Release
