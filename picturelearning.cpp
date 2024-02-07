@@ -6,6 +6,7 @@
 #include <X11/Xutil.h>
 #include <cmath>
 #include <fstream>
+#include <iomanip>
 #include <iostream>
 #include <thread>
 #include <unistd.h>
@@ -17,30 +18,27 @@ using namespace std;
 network net({}, NULL, NULL);
 
 int W = 128, w = W * 2, h = 128;
+int o = 64;
+valT learnrate = 1e-3;
 valT picture(int x, int y) {
-  // return (((x + 8) / 16) % 2 && ((y + 8) / 16) % 2) ? 1.0 : 0.5;
-  return (20 < x && x < 108 && 20 < y && y < 90) ? 1 : 0;
+  return (((x + 8) / 16) % 2 && ((y + 8) / 16) % 2) ? 1.0 : 0.5;
+  // return (20 < x && x < 108 && 20 < y && y < 90) ? 1 : 0;
 }
 matrix getInput(int x, int y) {
   matrix input;
-  input.setn(15);
+  input.setn(o * 4 - 2);
   input.setm(1);
-  int i = 0;
-  input(i++, 0) = 1;
-  input(i++, 0) = sin(x);
-  input(i++, 0) = cos(x);
-  input(i++, 0) = sin(2 * x);
-  input(i++, 0) = cos(2 * x);
-  input(i++, 0) = sin(3 * x);
-  input(i++, 0) = cos(3 * x);
-  input(i++, 0) = sin(y);
-  input(i++, 0) = cos(y);
-  input(i++, 0) = sin(2 * y);
-  input(i++, 0) = cos(2 * y);
-  input(i++, 0) = sin(3 * y);
-  input(i++, 0) = cos(3 * y);
-  input(i++, 0) = x;
-  input(i++, 0) = y;
+  int id = 0;
+  for (int i = 1; i < o; ++i) { //(o-1)*2*2+2
+    input(id++, 0) = sin(i * x);
+    input(id++, 0) = cos(i * x);
+  }
+  for (int i = 1; i < o; ++i) {
+    input(id++, 0) = sin(i * y);
+    input(id++, 0) = cos(i * y);
+  }
+  input(id++, 0) = x;
+  input(id++, 0) = y;
   return input;
 }
 valT getgen(int x, int y) {
@@ -49,14 +47,14 @@ valT getgen(int x, int y) {
   return v(0, 0);
 }
 void train() {
-#ifdef USE_OMP
-#pragma omp for
-#endif
+  auto lr = learnrate;
   for (int x = 0; x < h; ++x) {
+    cout << setw(5) << x * 100 / h << "% \033[7D";
+    cout.flush();
     for (int y = 0; y < W; ++y) {
       auto input = getInput(x, y);
       VvalT expect{picture(x, y)};
-      net.backpropagation(input, expect, 10e-5);
+      net.backpropagation(input, expect, lr);
     }
   }
 }
@@ -65,18 +63,20 @@ void initnet() {
   ifstream fin("picture.net");
   if (fin) {
     net.load(fin);
+    cout << "loading..." << endl;
     for (layer &l : net.layers) {
       l.Func() = funcof(sigma);
       l.deFunc() = defuncof(sigma);
+      // l.Func() = funcof(ReLU);
+      // l.deFunc() = defuncof(ReLU);
     }
     if (!fin)
       cerr << "not good file: picture.net" << endl;
   } else {
-    net = network({15, 16, 64, 1}, pair_sigma);
+    net = network({o * 4 - 2, // 16,
+                   64, 1},
+                  pair_sigma);
     /*randomize net*/
-#ifdef USE_OMP
-#pragma omp for
-#endif
     for (layer &l : net.layers) {
       for (auto &x : l.w.m) { // rand matrix
         for (auto &x : x) {
@@ -97,6 +97,8 @@ int main() {
 #ifdef USE_OMP
   omp_set_dynamic(1);
 #endif
+  cout << "learn rate? : ";
+  cin >> learnrate;
   Display *d = XOpenDisplay(0);
   if (!d) {
     cerr << "no display" << endl;
@@ -172,6 +174,7 @@ int main() {
           *px = ((p << 16) | (p << 8) | p);
         }
       }
+      cout << "\r";
       train();
       valT delta = 0;
       for (int x = 0; x <= h; ++x) {
@@ -180,7 +183,7 @@ int main() {
               (picture(x, y) - result[x][y]) * (picture(x, y) - result[x][y]);
         }
       }
-      cout << ++t << " : delta: " << delta << "  \r";
+      cout << "       " << ++t << " : delta: " << delta;
       usleep(1);
       XPutImage(d, window, pen, xWindowBuffer, 0, 0, 0, 0, w, h);
       XFlush(d);
@@ -202,6 +205,13 @@ int main() {
         cout << "len: " << len << endl << "press: " << str << endl;
         if (str[0] == 'q')
           stop = true;
+        else if (str[0] == 'j') {
+          learnrate *= 10;
+          cout << "rate: " << learnrate << endl;
+        } else if (str[0] == 'k') {
+          learnrate /= 10;
+          cout << "rate: " << learnrate << endl;
+        }
         break;
       }
       case ConfigureNotify: {
@@ -214,5 +224,8 @@ int main() {
     }
   }
   th.join();
+  cout << endl << "saving..." << endl;
+  ofstream ost("picture.net");
+  net.save(ost);
   return 0;
 }

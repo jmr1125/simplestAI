@@ -94,6 +94,9 @@ void network::backpropagation(matrix input, VvalT expect, valT rate) {
 #endif
   for (int i = 0; i < layers.size(); ++i) {
     dF[i].resize(layers[i].w.getn());
+#ifdef USE_OMP
+#pragma omp parallel for
+#endif
     for (int j = 0; j < layers[i].w.getn(); ++j) {
       dF[i][j] = layers[i].deFuncv()(layers[i].z(j, 0));
     }
@@ -104,6 +107,9 @@ void network::backpropagation(matrix input, VvalT expect, valT rate) {
 #endif
   for (int i = 0; i < layers.size(); ++i) {
     assert(dF[i].size() == delta[i].getn());
+#ifdef USE_OMP
+#pragma omp parallel for
+#endif
     for (int j = 0; j < layers[i].w.getn(); ++j) {
       delta[i](j, 0) *= dF[i][j];
     }
@@ -120,6 +126,9 @@ void network::backpropagation(matrix input, VvalT expect, valT rate) {
 #pragma paralle for
 #endif
     for (int j = 0; j < delta[i].getn(); ++j) {
+#ifdef USE_OMP
+#pragma omp parallel for
+#endif
       for (int k = 0; k < prev.getn(); ++k) {
         layers[i].w(j, k) -= rate * delta[i](j, 0) * prev(k, 0);
       }

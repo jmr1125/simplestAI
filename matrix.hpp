@@ -30,7 +30,7 @@ struct matrix {
   matrix operator+(const vector<valT> &) const;
   const matrix &operator=(const matrix &);
   const matrix &operator=(const vector<valT> &);
-  matrix operator=(matrix &&);
+  //matrix operator=(matrix &&);
   vector<valT> getvec() const;
   valT operator()(size_t x, size_t y) const;
   valT &operator()(size_t x, size_t y);

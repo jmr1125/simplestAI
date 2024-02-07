@@ -2,7 +2,10 @@ cmake_minimum_required(VERSION 3.6)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(ENABLE_PICTURE ON)
+set(ENABLE_OPENCL ON)
 project(myAI)
+
+# finding OpenMP
 if(APPLE)
   execute_process( COMMAND brew --prefix libomp
     OUTPUT_VARIABLE HOMEBREW_LIBOMP_PREFIX
@@ -47,7 +50,9 @@ else()
   message(STATUS "no omp")
   set(USE_OMP OFF)
 endif()
+# end OpenMP
 
+#find ncurses
 find_package(Curses REQUIRED)
 if(${CURSES_FOUND})
   message(STATUS "has ncurses")
@@ -57,15 +62,34 @@ if(${CURSES_FOUND})
 else()
   message(FATAL_ERROR "has NO ncurses")
 endif()
+#end ncurses
+
+set(STANDARD_CPPS "matrix.cpp;layer.cpp;network.cpp;function.cpp")
+
+#find OpenCL
+find_package(OpenCL)
+message(STATUS "OpenCL: ${OpenCL_FOUND}")
+message(STATUS "dirs: ${OpenCL_INCLUDE_DIRS}")
+message(STATUS "libs: ${OpenCL_LIBRARIES}")
+message(STATUS "dir: ${OpenCL_INCLUDE_DIR}")
+message(STATUS "lib: ${OpenCL_LIBRARY}")
+if(${OpenCL_FOUND})
+  include_directories(${OpenCL_INCLUDE_DIRS})
+  link_libraries(${OpenCL_LIBRARY})
+  list(APPEND STANDARD_CPPS "clGetErrorString.cpp")
+  add_executable(test-cl-matrix test-cl-matrix.cpp clGetErrorString.cpp)
+  target_link_libraries(test-cl-matrix ${OpenCL_LIBRARY})
+endif()
+#end OpenCL
 
 
 add_executable(readdata readmnist.cpp)
-add_executable(train train1.cpp matrix.cpp layer.cpp network.cpp function.cpp)
+add_executable(train train1.cpp ${STANDARD_CPPS})
 add_executable(drawdata data.cpp)
-add_executable(trainmnist train2.cpp matrix.cpp layer.cpp network.cpp function.cpp)
-add_executable(generate generate.cpp matrix.cpp layer.cpp network.cpp function.cpp)
-add_executable(trainemnist trainemnist.cpp matrix.cpp layer.cpp network.cpp function.cpp)
-add_executable(generateemnist generateemnist.cpp matrix.cpp layer.cpp network.cpp function.cpp)
+add_executable(trainmnist train2.cpp ${STANDARD_CPPS})
+add_executable(generate generate.cpp ${STANDARD_CPPS})
+add_executable(trainemnist trainemnist.cpp ${STANDARD_CPPS})
+add_executable(generateemnist generateemnist.cpp ${STANDARD_CPPS})
 
 message(STATUS "picture:")
 if(${ENABLE_PICTURE})
@@ -73,7 +97,7 @@ if(${ENABLE_PICTURE})
   find_package(X11 REQUIRED)
   link_libraries(${X11_LIBRARIES})
   include_directories(${X11_INCLUDE_DIR})
-  add_executable(learnpicture picturelearning matrix.cpp layer.cpp network.cpp function.cpp)
+  add_executable(learnpicture picturelearning ${STANDARD_CPPS})
 else()
   message(STATUS "disable picture")
 endif()
