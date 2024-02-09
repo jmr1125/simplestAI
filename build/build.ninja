@@ -25,7 +25,7 @@ build trainmnist: phony Debug/trainmnist
 
 
 #############################################
-# Folder: /Users/jiang/Desktop/myAI/build
+# Folder: /Users/jiang/Desktop/myai/build
 
 build all: phony all$:Debug
 
