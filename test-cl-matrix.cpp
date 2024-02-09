@@ -59,7 +59,7 @@ auto timeget() {
   t = t1;
   return (double)T.count() / 1000000000;
 }
-const int n = 100, m = 100, k = 100;
+const int n = 100000, m = 10000, k = 10000;
 float a[m][k], b[k][n], c[m][n], c1[m][n];
 int main() {
   cout << timeget() << " start" << endl;
