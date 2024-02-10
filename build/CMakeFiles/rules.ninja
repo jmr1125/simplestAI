@@ -536,7 +536,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /Applications/CMake.app/Contents/bin/cmake --regenerate-during-build -S/Users/jiang/Desktop/myai -B/Users/jiang/Desktop/myai/build
+  command = /Applications/CMake.app/Contents/bin/cmake --regenerate-during-build -S/Users/jiang/Desktop/myAI -B/Users/jiang/Desktop/myAI/build
   description = Re-running CMake...
   generator = 1
 

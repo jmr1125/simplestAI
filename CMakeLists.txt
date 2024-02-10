@@ -68,14 +68,26 @@ endif()
 
 set(STANDARD_CPPS "matrix.cpp;layer.cpp;network.cpp;function.cpp")
 
+
+set(USE_OpenclICD ON)
+if(USE_OpenclICD)
+  find_package(OpenCLHeaders REQUIRED)
+  find_package(OpenCLICDLoader REQUIRED)
+  list(APPEND STANDARD_CPPS "clGetErrorString.cpp")
+  list(APPEND CMAKE_BUILD_RPATH "./OpenCL-ICD-Loader/build")
+  add_executable(test-cl-matrix test-cl-matrix.cpp clGetErrorString.cpp)
+  target_link_libraries(test-cl-matrix PRIVATE OpenCL::Headers OpenCL::OpenCL)
+endif()
+
+set(USE_Opencl OFF)
 #find OpenCL
-find_package(OpenCL)
-message(STATUS "OpenCL: ${OpenCL_FOUND}")
-message(STATUS "dirs: ${OpenCL_INCLUDE_DIRS}")
-message(STATUS "libs: ${OpenCL_LIBRARIES}")
-message(STATUS "dir: ${OpenCL_INCLUDE_DIR}")
-message(STATUS "lib: ${OpenCL_LIBRARY}")
-if(${OpenCL_FOUND})
+if(USE_Opencl)
+  find_package(OpenCL)
+  message(STATUS "OpenCL: ${OpenCL_FOUND}")
+  message(STATUS "dirs: ${OpenCL_INCLUDE_DIRS}")
+  message(STATUS "libs: ${OpenCL_LIBRARIES}")
+  message(STATUS "dir: ${OpenCL_INCLUDE_DIR}")
+  message(STATUS "lib: ${OpenCL_LIBRARY}")
   include_directories(${OpenCL_INCLUDE_DIRS})
   link_libraries(${OpenCL_LIBRARY})
   list(APPEND STANDARD_CPPS "clGetErrorString.cpp")
@@ -83,6 +95,8 @@ if(${OpenCL_FOUND})
   target_link_libraries(test-cl-matrix ${OpenCL_LIBRARY})
 endif()
 #end OpenCL
+
+#it crashes when running ^^^^
 
 
 add_executable(readdata readmnist.cpp)

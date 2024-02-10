@@ -3,7 +3,7 @@ all:
 	$(MAKE) Release
 #	$(MAKE) all1 -j3
 config:
-	cmake -S. -Bbuild -G"Ninja Multi-Config"
+	cmake -S. -Bbuild -G "Ninja Multi-Config" -D CMAKE_PREFIX_PATH="./OpenCL-Headers/install;OpenCL-ICD-LOADER/install"
 all1:
 	$(MAKE) Release
 	$(MAKE) Debug
