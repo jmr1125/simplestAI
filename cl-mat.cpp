@@ -49,19 +49,27 @@ c[y*m+x]=res;
   if (ret != CL_SUCCESS) {                                                     \
     printf("ERR: " #s " : %s (%d)", clGetErrorString(ret), ret);               \
   }
+cl_kernel k_mul_mat, k_mul_vec;
+
+cl_context context;
+cl_command_queue command;
+cl_program program;
 void init() {
   cl_int ret;
   vector<cl_platform_id> platforms;
   platforms.resize(100);
   cl_uint platform_count;
   ret = clGetPlatformIDs(1, platforms.data(), &platform_count);
+  right("get platform");
   cl_platform_id default_platform = platforms[0];
   cl_device_id device_id;
   ret =
       clGetDeviceIDs(default_platform, CL_DEVICE_TYPE_GPU, 1, &device_id, NULL);
-  cl_context context = clCreateContext(0, 1, &device_id, NULL, NULL, &ret);
-  cl_command_queue command = clCreateCommandQueue(context, device_id, 0, &ret);
-  cl_program program;
+  right("get device");
+  context = clCreateContext(0, 1, &device_id, NULL, NULL, &ret);
+  right("create context");
+  command = clCreateCommandQueue(context, device_id, 0, &ret);
+  right("create command");
   {
     const char *p[2] = {Program.data(), NULL};
     size_t l[2] = {Program.length(), 0};
@@ -78,4 +86,16 @@ void init() {
                           msg.data(), NULL);
     right(msg);
   }
+  // create kernels
+
+  k_mul_mat = clCreateKernel(program, "mul_mat", &ret);
+  right("create kernel mat");
+  k_mul_vec = clCreateKernel(program, "mul_vec", &ret);
+  right("create kernel vec");
+}
+void teardown() {
+  clReleaseKernel(k_mul_mat);
+  clReleaseProgram(program);
+  clReleaseCommandQueue(command);
+  clReleaseContext(context);
 }
