@@ -20,7 +20,7 @@ if(APPLE)
   set(${OpenMP_C_INCLUDE_DIR} "${HOMEBREW_LIBOMP_PREFIX}/include")
   set(${OpenMP_CXX_INCLUDE_DIR} "${HOMEBREW_LIBOMP_PREFIX}/include")
 
-  set(CMAKE_MACOSX_RPATH 1)
+  # set(CMAKE_MACOSX_RPATH 1)
 endif()
 find_package(OpenMP)
 
@@ -69,7 +69,7 @@ endif()
 set(STANDARD_CPPS "matrix.cpp;layer.cpp;network.cpp;function.cpp")
 
 
-set(USE_OpenclICD ON)
+set(USE_OpenclICD OFF)
 if(USE_OpenclICD)
   find_package(OpenCLHeaders REQUIRED)
   find_package(OpenCLICDLoader REQUIRED)
@@ -79,10 +79,10 @@ if(USE_OpenclICD)
   target_link_libraries(test-cl-matrix PRIVATE OpenCL::Headers OpenCL::OpenCL)
 endif()
 
-set(USE_Opencl OFF)
+set(USE_Opencl ON)
 #find OpenCL
 if(USE_Opencl)
-  find_package(OpenCL)
+  find_package(OpenCL REQUIRED)
   message(STATUS "OpenCL: ${OpenCL_FOUND}")
   message(STATUS "dirs: ${OpenCL_INCLUDE_DIRS}")
   message(STATUS "libs: ${OpenCL_LIBRARIES}")

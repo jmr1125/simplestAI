@@ -1,5 +1,6 @@
 #include <OpenCL/OpenCL.h>
 #include <cstddef>
+#include <cstdlib>
 #include <ctime>
 #include <iostream>
 #include <stdexcept>
@@ -12,6 +13,7 @@
 #include <chrono>
 
 #include "clGetErrorString.hpp"
+#include <random>
 
 #define right(s)                                                               \
   if (ret != CL_SUCCESS) {                                                     \
@@ -50,16 +52,24 @@ c[y*n+x]=res;
 }
 )";
 using std::chrono::high_resolution_clock;
-auto t = high_resolution_clock::now();
+// using std::chrono::system_clock;
+// #define now() system_clock::now();
+#define now() high_resolution_clock::now();
+auto t = now();
 // auto t1 = t;
 //  #define time_get() (-(t - (t1 = system_clock::now())).count(), t = t1)
 auto timeget() {
-  auto t1 = high_resolution_clock::now();
+  auto t1 = now();
   auto T = t1 - t;
   t = t1;
   return (double)T.count() / 1000000000;
 }
-const int n = 100000, m = 10000, k = 10000;
+auto rand01() {
+  static default_random_engine generator;
+  uniform_real_distribution<float> dis(0, 1);
+  return dis(generator);
+}
+const int n = 2, m = 3, k = 4;
 float a[m][k], b[k][n], c[m][n], c1[m][n];
 int main() {
   cout << timeget() << " start" << endl;
@@ -143,30 +153,30 @@ int main() {
   cl_mem in_a, in_b, out;
   for (int i = 0; i < m; ++i) {
     for (int j = 0; j < k; ++j) {
-      a[i][j] = (float)rand() / 32768;
+      a[i][j] = rand01();
     }
   }
   for (int i = 0; i < k; ++i) {
     for (int j = 0; j < n; ++j) {
-      b[i][j] = (float)rand() / 32768;
+      b[i][j] = rand01();
     }
   }
   cout << "[" << timeget() << "] ====randomize done=====" << endl;
   // create args buf
-  in_a = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(float) * n * m, NULL,
+  in_a = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(float) * m * k, NULL,
                         &ret);
   right("create buf a");
-  in_b = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(float) * k * m, NULL,
+  in_b = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(float) * k * n, NULL,
                         &ret);
   right("create buf b");
-  out = clCreateBuffer(context, CL_MEM_READ_WRITE, sizeof(float) * n * k, NULL,
+  out = clCreateBuffer(context, CL_MEM_READ_WRITE, sizeof(float) * m * n, NULL,
                        &ret);
   right("create buf out");
   // write buf
   ret = clEnqueueWriteBuffer(command, in_a, CL_TRUE, 0, sizeof(float) * m * k,
                              a, 0, NULL, NULL);
   right("write a");
-  ret = clEnqueueWriteBuffer(command, in_b, CL_TRUE, 0, sizeof(float) * m * k,
+  ret = clEnqueueWriteBuffer(command, in_b, CL_TRUE, 0, sizeof(float) * k * n,
                              b, 0, NULL, NULL);
   right("write b");
   cout << "[" << timeget() << "] create copy buffer" << endl;
@@ -189,21 +199,25 @@ int main() {
                                  sizeof(kernelsize), &kernelsize, NULL);
   right("get group info");
   cout << "group size: " << kernelsize << endl;
-  global[0] = n;
-  global[1] = m;
+  global[0] = m;
+  global[1] = n;
   cout << "[" << timeget() << "] set args and get group info" << endl;
   ret = clEnqueueNDRangeKernel(command, kernel, 2, NULL, global, NULL, 0, NULL,
                                NULL);
   right("run");
   clFinish(command);
   cout << "[" << timeget() << "] done" << endl;
-  ret = clEnqueueReadBuffer(command, out, CL_TRUE, 0, sizeof(float) * n * m, c,
+  ret = clEnqueueReadBuffer(command, out, CL_TRUE, 0, sizeof(float) * m * n, c,
                             0, NULL, NULL);
   cout << "[" << timeget() << "] copy done" << endl;
   cout << "[" << timeget() << "] run normal way and check" << endl;
   bool different = false;
-  for (int x = 0; x < n; ++x) { // a:m*k b:k*n
-    for (int y = 0; y < m; ++y) {
+  for (int x = 0; x < m; ++x) { // a:m*k b:k*n
+    if (x * 100 % m == 0) {
+      cout << x * 100 / m << "%";
+      cout.flush();
+    }
+    for (int y = 0; y < n; ++y) {
       float res = 0;
       for (unsigned int i = 0; i < k; ++i) {
         res += a[y][i] * b[i][x];
@@ -215,6 +229,39 @@ int main() {
   }
   cout << "[" << timeget() << "] done" << endl
        << "different: " << different << endl;
+  if (m < 10 && n < 10) {
+    cout << "a: " << m << "*" << k << endl;
+    cout << "b: " << k << "*" << n << endl;
+    cout << "c: " << m << "*" << n << endl;
+    cout << "a = " << endl;
+    for (int i = 0; i < m; ++i) {
+      for (int j = 0; j < k; ++j) {
+        cout << a[i][j] << ' ';
+      }
+      cout << endl;
+    }
+    cout << "b = " << endl;
+    for (int i = 0; i < k; ++i) {
+      for (int j = 0; j < n; ++j) {
+        cout << b[i][j] << ' ';
+      }
+      cout << endl;
+    }
+    cout << "c = " << endl;
+    for (int i = 0; i < m; ++i) {
+      for (int j = 0; j < n; ++j) {
+        cout << c[i][j] << ' ';
+      }
+      cout << endl;
+    }
+    cout << "c1 = " << endl;
+    for (int i = 0; i < m; ++i) {
+      for (int j = 0; j < n; ++j) {
+        cout << c1[i][j] << ' ';
+      }
+      cout << endl;
+    }
+  }
   clReleaseMemObject(in_a);
   clReleaseMemObject(in_b);
   clReleaseMemObject(out);
