@@ -75,6 +75,8 @@ if(USE_OpenclICD)
   find_package(OpenCLICDLoader REQUIRED)
   list(APPEND STANDARD_CPPS "clGetErrorString.cpp")
   list(APPEND CMAKE_BUILD_RPATH "./OpenCL-ICD-Loader/build")
+  list(APPEND STANDARD_CPPS "clGetErrorString.cpp")
+  list(APPEND STANDARD_CPPS "cl-mat.cpp")
   add_executable(test-cl-matrix test-cl-matrix.cpp clGetErrorString.cpp)
   target_link_libraries(test-cl-matrix PRIVATE OpenCL::Headers OpenCL::OpenCL)
 endif()
@@ -91,12 +93,11 @@ if(USE_Opencl)
   include_directories(${OpenCL_INCLUDE_DIRS})
   link_libraries(${OpenCL_LIBRARY})
   list(APPEND STANDARD_CPPS "clGetErrorString.cpp")
-  add_executable(test-cl-matrix test-cl-matrix.cpp clGetErrorString.cpp)
+  list(APPEND STANDARD_CPPS "cl-mat.cpp")
+  add_executable(test-cl-matrix test-cl-matrix.cpp ${STANDARD_CPPS})
   target_link_libraries(test-cl-matrix ${OpenCL_LIBRARY})
 endif()
 #end OpenCL
-
-#it crashes when running ^^^^
 
 
 add_executable(readdata readmnist.cpp)

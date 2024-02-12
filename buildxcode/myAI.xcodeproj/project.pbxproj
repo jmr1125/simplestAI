@@ -1,0 +1,2584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		3C8AFF6999F74C7E956EFE2F /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 42633F8D628A4B129EA37DC1 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				7FF8A6A9E8790272AB32C7BB /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				755776F670D4479F93985AB1 /* PBXTargetDependency */,
+				2E5F83254B114C8EB2D2045D /* PBXTargetDependency */,
+				18671F1945B142F0BB6519A1 /* PBXTargetDependency */,
+				A5923551581E4397AB85B881 /* PBXTargetDependency */,
+				250F3458D44C45A3B30E6010 /* PBXTargetDependency */,
+				EB099E65D2DD41EA9C84B1F8 /* PBXTargetDependency */,
+				9AC2AF81B0284DF091A13C07 /* PBXTargetDependency */,
+				840840C84ABF49F594CA4898 /* PBXTargetDependency */,
+				BC31B2BDF2D5474A991D4065 /* PBXTargetDependency */,
+				9666450874FD4A1185FC49C6 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		8837ED7989E7467080DD5CAB /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DC5210C1B903472CB3400461 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				C2CAF6D5AA95821FE6B18A29 /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		00B44797879A400DBDEEDBC7 /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = F63C1C6A1786447E98C5989E /* /Users/jiang/Desktop/myai/CMakeLists.txt */; };
+		010B5BB9E7F842F68D3CED98 /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = A1DBA1D712B545569FBBC402 /* /Users/jiang/Desktop/myai/CMakeLists.txt */; };
+		0C83A29D4C594ECA9F2B4069 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */ = {isa = PBXBuildFile; fileRef = 1084F7EB4D42421E98A987C4 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */; };
+		0D26204B31674440A9137DFA /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 61B51951447D4F0FB99DC7B4 /* /Users/jiang/Desktop/myai/CMakeLists.txt */; };
+		1420A796B14A47A2B0B88F8F /* /Users/jiang/Desktop/myai/cl-mat.cpp */ = {isa = PBXBuildFile; fileRef = B322746F50C94D6885F7CDC9 /* /Users/jiang/Desktop/myai/cl-mat.cpp */; };
+		160698F316454FDEB9AFB337 /* /Users/jiang/Desktop/myai/layer.cpp */ = {isa = PBXBuildFile; fileRef = F8F032070F4A4DF680C83772 /* /Users/jiang/Desktop/myai/layer.cpp */; };
+		19F32C28C6E849BF96410770 /* /Users/jiang/Desktop/myai/generate.cpp */ = {isa = PBXBuildFile; fileRef = 4A2EAC13D4FB462183EB54C5 /* /Users/jiang/Desktop/myai/generate.cpp */; };
+		1BF1C251113749248D41BCEE /* /Users/jiang/Desktop/myai/function.cpp */ = {isa = PBXBuildFile; fileRef = F2C79047E5CC48279B8DF709 /* /Users/jiang/Desktop/myai/function.cpp */; };
+		21FAAF48F3C64DCFA21EEBA0 /* /Users/jiang/Desktop/myai/cl-mat.cpp */ = {isa = PBXBuildFile; fileRef = 45D05D02C05F46FB967DC100 /* /Users/jiang/Desktop/myai/cl-mat.cpp */; };
+		2217AF414C3D418F963F7AE0 /* /Users/jiang/Desktop/myai/layer.cpp */ = {isa = PBXBuildFile; fileRef = C60C4D8F4DAD464FA0FD2408 /* /Users/jiang/Desktop/myai/layer.cpp */; };
+		23FABB50338647D5B56BA861 /* /Users/jiang/Desktop/myai/network.cpp */ = {isa = PBXBuildFile; fileRef = 8658421C2BD8480C9DEA1587 /* /Users/jiang/Desktop/myai/network.cpp */; };
+		2F6ADB5EF89F4823B32409E9 /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 17B56D0B30AA4108A0FEFCD3 /* /Users/jiang/Desktop/myai/CMakeLists.txt */; };
+		3158702BF803464CAC753F33 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/OpenCL.framework */ = {isa = PBXBuildFile; fileRef = 59ECFFBB2D174089BA293A51 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/OpenCL.framework */; };
+		350DB6B5A0ED49B18DB9FF9E /* /Users/jiang/Desktop/myai/layer.cpp */ = {isa = PBXBuildFile; fileRef = 3F8C6CB2CA9940A7AFD39EF7 /* /Users/jiang/Desktop/myai/layer.cpp */; };
+		48B1A86C7FAA4455886C519D /* /Users/jiang/Desktop/myai/cl-mat.cpp */ = {isa = PBXBuildFile; fileRef = E17C1F5F771F45BFB17419D4 /* /Users/jiang/Desktop/myai/cl-mat.cpp */; };
+		49A2720B32EF45D89B72C5B7 /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 3034ED8125DC4DB294A97F12 /* /Users/jiang/Desktop/myai/CMakeLists.txt */; };
+		4F5432352E184E3CA03AB8A9 /* /Users/jiang/Desktop/myai/train2.cpp */ = {isa = PBXBuildFile; fileRef = 1D73338966174F8EAEB9AC53 /* /Users/jiang/Desktop/myai/train2.cpp */; };
+		507162A036654EBA9C9FB36C /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 91D95B5CB2904D71BCBD9F86 /* /Users/jiang/Desktop/myai/CMakeLists.txt */; };
+		52B09100F94A4CB9A4CDA172 /* /Users/jiang/Desktop/myai/test-cl-matrix.cpp */ = {isa = PBXBuildFile; fileRef = 84914451212E4E009A1E1B39 /* /Users/jiang/Desktop/myai/test-cl-matrix.cpp */; };
+		53145EDBE1EA4723A342377A /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 322035180CCE4E838F5C2CCC /* /Users/jiang/Desktop/myai/CMakeLists.txt */; };
+		5443DB2936CD45EF9B502B5E /* /Users/jiang/Desktop/myai/network.cpp */ = {isa = PBXBuildFile; fileRef = BB8FE465D6834E6996D50B31 /* /Users/jiang/Desktop/myai/network.cpp */; };
+		5AE5AFCA234044018D49431D /* /Users/jiang/Desktop/myai/matrix.cpp */ = {isa = PBXBuildFile; fileRef = 486E58E898654BECAA4A22A9 /* /Users/jiang/Desktop/myai/matrix.cpp */; };
+		6745FC50F5354DC39E77EB7B /* /Users/jiang/Desktop/myai/layer.cpp */ = {isa = PBXBuildFile; fileRef = 0B752940F6CE471096D1176D /* /Users/jiang/Desktop/myai/layer.cpp */; };
+		6839BF8CA4404697968B7EEC /* /Users/jiang/Desktop/myai/data.cpp */ = {isa = PBXBuildFile; fileRef = 7D31E85C1DAA48BEA04168D4 /* /Users/jiang/Desktop/myai/data.cpp */; };
+		693ABDB3153545918CF38189 /* /Users/jiang/Desktop/myai/readmnist.cpp */ = {isa = PBXBuildFile; fileRef = C48FE661D6604ECF96F98FF7 /* /Users/jiang/Desktop/myai/readmnist.cpp */; };
+		6C4B31B9250F44F0A164408E /* /Users/jiang/Desktop/myai/cl-mat.cpp */ = {isa = PBXBuildFile; fileRef = 12F25364A7F04552AEAD0BF9 /* /Users/jiang/Desktop/myai/cl-mat.cpp */; };
+		70A8BAF59CC344138D112D3A /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */ = {isa = PBXBuildFile; fileRef = 1CE7ACD538CF4092AE7E5084 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */; };
+		774AAC55EBBF4738970FAE19 /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = D3A7D371DCDD4162B5F09DA3 /* /Users/jiang/Desktop/myai/CMakeLists.txt */; };
+		7822447A66FB4CFB995657CE /* /Users/jiang/Desktop/myai/function.cpp */ = {isa = PBXBuildFile; fileRef = 30C028188D5E4D6B8B7648C2 /* /Users/jiang/Desktop/myai/function.cpp */; };
+		7945FA91538F4285905F42E8 /* /Users/jiang/Desktop/myai/matrix.cpp */ = {isa = PBXBuildFile; fileRef = 85EFD72715F740C3834C04CA /* /Users/jiang/Desktop/myai/matrix.cpp */; };
+		7E3C86F737E249448EBBA593 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */ = {isa = PBXBuildFile; fileRef = 1C00D90BAB7D42199F8C49C3 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */; };
+		89921E4035A64F71B39B6C81 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */ = {isa = PBXBuildFile; fileRef = 88FE40874B2D440097F63A7D /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */; };
+		8B149258B2694A58A46544F4 /* /Users/jiang/Desktop/myai/cl-mat.cpp */ = {isa = PBXBuildFile; fileRef = 1E9BA3AC3B024A6FBBCF7290 /* /Users/jiang/Desktop/myai/cl-mat.cpp */; };
+		8D3D3DCBC3814EF8A213ECF2 /* /Users/jiang/Desktop/myai/function.cpp */ = {isa = PBXBuildFile; fileRef = 529D9B18C60C4888A3C51423 /* /Users/jiang/Desktop/myai/function.cpp */; };
+		8E2ABC26A9B24DF4AC82E4F8 /* /Users/jiang/Desktop/myai/layer.cpp */ = {isa = PBXBuildFile; fileRef = C7906FD7A9A04A7D866EE1CD /* /Users/jiang/Desktop/myai/layer.cpp */; };
+		9360172E6CC044919B99FAC3 /* /Users/jiang/Desktop/myai/generateemnist.cpp */ = {isa = PBXBuildFile; fileRef = 9AE9691C79A44D5F8B0785B4 /* /Users/jiang/Desktop/myai/generateemnist.cpp */; };
+		955A3D7BF37844A497291940 /* /Users/jiang/Desktop/myai/function.cpp */ = {isa = PBXBuildFile; fileRef = E99BCF3D0455479FA33FFBCF /* /Users/jiang/Desktop/myai/function.cpp */; };
+		99F3557378B74A689EADD976 /* /Users/jiang/Desktop/myai/picturelearning.cpp */ = {isa = PBXBuildFile; fileRef = D4791A62006049CF96A3F3E4 /* /Users/jiang/Desktop/myai/picturelearning.cpp */; };
+		9EC21AC8E44040B6A4CE5D1E /* /Users/jiang/Desktop/myai/function.cpp */ = {isa = PBXBuildFile; fileRef = E141F3FA2B2D42188186BE2D /* /Users/jiang/Desktop/myai/function.cpp */; };
+		AA2D6D7CC54B440285698B3D /* /Users/jiang/Desktop/myai/cl-mat.cpp */ = {isa = PBXBuildFile; fileRef = 6E63AB1F90544DD9ACAFF68F /* /Users/jiang/Desktop/myai/cl-mat.cpp */; };
+		ABBDAA179ECF42F799F21555 /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = C3A17BE71401434BA67E1E40 /* /Users/jiang/Desktop/myai/CMakeLists.txt */; };
+		AE7D92881F534AC889806312 /* /Users/jiang/Desktop/myai/trainemnist.cpp */ = {isa = PBXBuildFile; fileRef = E65577B4BF7645EFAEF55F68 /* /Users/jiang/Desktop/myai/trainemnist.cpp */; };
+		B0D45729467740698ABBFA49 /* /Users/jiang/Desktop/myai/cl-mat.cpp */ = {isa = PBXBuildFile; fileRef = DE3B2322AE9E4708B8206F3A /* /Users/jiang/Desktop/myai/cl-mat.cpp */; };
+		BA25301E89BA4895833499E5 /* /Users/jiang/Desktop/myai/network.cpp */ = {isa = PBXBuildFile; fileRef = 1BCD66CB91F0441CA3A194CD /* /Users/jiang/Desktop/myai/network.cpp */; };
+		BA73EB16CA9C4366BA509A41 /* /Users/jiang/Desktop/myai/layer.cpp */ = {isa = PBXBuildFile; fileRef = EB548BAA4FBC4C5E8EB72571 /* /Users/jiang/Desktop/myai/layer.cpp */; };
+		C7982EAA55214496AD0D2EA7 /* /Users/jiang/Desktop/myai/network.cpp */ = {isa = PBXBuildFile; fileRef = 8D5966AD9561415890AEB074 /* /Users/jiang/Desktop/myai/network.cpp */; };
+		C7AE7EA41E444165984BC5D3 /* /Users/jiang/Desktop/myai/matrix.cpp */ = {isa = PBXBuildFile; fileRef = 5D981FCE887A4D93BE7BB28D /* /Users/jiang/Desktop/myai/matrix.cpp */; };
+		CABBB8D678754B0180E9F284 /* /Users/jiang/Desktop/myai/network.cpp */ = {isa = PBXBuildFile; fileRef = 05085EA8517C431499FC30A4 /* /Users/jiang/Desktop/myai/network.cpp */; };
+		CD1E5886354740D0814643AB /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */ = {isa = PBXBuildFile; fileRef = 3CAB7C7EC61E4A60A8D8CF28 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */; };
+		D0244A863F414B5DB0FE4FC4 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */ = {isa = PBXBuildFile; fileRef = 1B8BBDA5D65D453C97580F1A /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */; };
+		D0B0DE9A205345BA9CE7CD7F /* /Users/jiang/Desktop/myai/matrix.cpp */ = {isa = PBXBuildFile; fileRef = 335A329CEE9E4D58B15C66E9 /* /Users/jiang/Desktop/myai/matrix.cpp */; };
+		DA18C5A5DB68431EAB36DBA8 /* /Users/jiang/Desktop/myai/train1.cpp */ = {isa = PBXBuildFile; fileRef = 60A2EB72EDDE4641BE3B3E8F /* /Users/jiang/Desktop/myai/train1.cpp */; };
+		E03068F4021141F08D1B2692 /* /Users/jiang/Desktop/myai/layer.cpp */ = {isa = PBXBuildFile; fileRef = 6DEE3966FD7F40168FB08EEF /* /Users/jiang/Desktop/myai/layer.cpp */; };
+		E3F6089DF6A3478FA254DE19 /* /Users/jiang/Desktop/myai/network.cpp */ = {isa = PBXBuildFile; fileRef = E76EDBF7492A41E4A698C8FE /* /Users/jiang/Desktop/myai/network.cpp */; };
+		E96FCEFE378D4E3E9090FA69 /* /Users/jiang/Desktop/myai/matrix.cpp */ = {isa = PBXBuildFile; fileRef = 693C25B61C294803BDBFB743 /* /Users/jiang/Desktop/myai/matrix.cpp */; };
+		EA2C336B3D3E4944869F7410 /* /Users/jiang/Desktop/myai/matrix.cpp */ = {isa = PBXBuildFile; fileRef = 38E94CD0FE674DFB8D1CDEB4 /* /Users/jiang/Desktop/myai/matrix.cpp */; };
+		EF95518F402549E48C8E2644 /* /Users/jiang/Desktop/myai/matrix.cpp */ = {isa = PBXBuildFile; fileRef = A949D6E8C3904D6AA91E8346 /* /Users/jiang/Desktop/myai/matrix.cpp */; };
+		F03F2AE5A5194D59B55D1C11 /* /Users/jiang/Desktop/myai/network.cpp */ = {isa = PBXBuildFile; fileRef = 12C083131D334951A5B8CE77 /* /Users/jiang/Desktop/myai/network.cpp */; };
+		F196E02B6EB84A81BC6AD9D3 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */ = {isa = PBXBuildFile; fileRef = 0AF992A706654A05AF57AAFB /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */; };
+		FDF6B62C6DF74425812290DA /* /Users/jiang/Desktop/myai/function.cpp */ = {isa = PBXBuildFile; fileRef = D274DE9F96714C318058C4B0 /* /Users/jiang/Desktop/myai/function.cpp */; };
+		FE250178753742768BC301B7 /* /Users/jiang/Desktop/myai/function.cpp */ = {isa = PBXBuildFile; fileRef = 8FF3359AB06E4FE2882A000F /* /Users/jiang/Desktop/myai/function.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		56880FBDA4BD4ACC8C20C328 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		59229432DC6446459388CB44 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		6F95291EC8854D2FBDCCA32E /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		BBF7EB8B547644938B83F33C /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		089B7E530B704877A6E861F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFB31FD580604281834B9C36;
+			remoteInfo = "test-cl-matrix";
+		};
+		08F345F277184DF0AD5B862F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8837ED7989E7467080DD5CAB;
+			remoteInfo = ZERO_CHECK;
+		};
+		12F3935086D544B2AC7B46EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8837ED7989E7467080DD5CAB;
+			remoteInfo = ZERO_CHECK;
+		};
+		16C41F34FA5047C69FA0FC4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8837ED7989E7467080DD5CAB;
+			remoteInfo = ZERO_CHECK;
+		};
+		1B3CC84FA22E45AF8C9ACA7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F43CB328A67B4B8DA5A0E449;
+			remoteInfo = learnpicture;
+		};
+		1B9856096CCE42F1937208DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8837ED7989E7467080DD5CAB;
+			remoteInfo = ZERO_CHECK;
+		};
+		22BD6F88130A42B1A5010EB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E4E0D97ABEE49BC847E164B;
+			remoteInfo = readdata;
+		};
+		4F69A92169914E688CDA72F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8837ED7989E7467080DD5CAB;
+			remoteInfo = ZERO_CHECK;
+		};
+		62FB244092EF4DDCA873C6E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BA49B9E28A840288CF7E956;
+			remoteInfo = trainemnist;
+		};
+		79077558AEDD421A98823FC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8837ED7989E7467080DD5CAB;
+			remoteInfo = ZERO_CHECK;
+		};
+		8387557B22094EC8B6707557 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8837ED7989E7467080DD5CAB;
+			remoteInfo = ZERO_CHECK;
+		};
+		A57ACB0460CB484D819DF0C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 359CB96B6BA044CFB35354E8;
+			remoteInfo = train;
+		};
+		C2DE0F46ACDD4CB39016D1B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B646CDF68BCF40F0878EF2BA;
+			remoteInfo = trainmnist;
+		};
+		C595C1274C1845BD8C4CA249 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8837ED7989E7467080DD5CAB;
+			remoteInfo = ZERO_CHECK;
+		};
+		D0F94480979445018532879B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F7FE7A04569432BAA2BC9C2;
+			remoteInfo = generateemnist;
+		};
+		DD771599A4BF48EBABF6B5D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8837ED7989E7467080DD5CAB;
+			remoteInfo = ZERO_CHECK;
+		};
+		F16A239D81104A62BBB92C06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B409D0321FDB4E9B9A88F185;
+			remoteInfo = drawdata;
+		};
+		F5231FE352D6432EAB35145A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8837ED7989E7467080DD5CAB;
+			remoteInfo = ZERO_CHECK;
+		};
+		F54E620F1FD54135A72B807A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51EC4008A1334039905CA18A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C6515A53F25453992B6AA44;
+			remoteInfo = generate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05085EA8517C431499FC30A4 /* /Users/jiang/Desktop/myai/network.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = network.cpp; path = network.cpp; sourceTree = SOURCE_ROOT; };
+		0AF992A706654A05AF57AAFB /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = clGetErrorString.cpp; path = clGetErrorString.cpp; sourceTree = SOURCE_ROOT; };
+		0B752940F6CE471096D1176D /* /Users/jiang/Desktop/myai/layer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = layer.cpp; path = layer.cpp; sourceTree = SOURCE_ROOT; };
+		0ED16198599B467DA5B7BB9B /* generate */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = generate; sourceTree = BUILT_PRODUCTS_DIR; };
+		1084F7EB4D42421E98A987C4 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = clGetErrorString.cpp; path = clGetErrorString.cpp; sourceTree = SOURCE_ROOT; };
+		12C083131D334951A5B8CE77 /* /Users/jiang/Desktop/myai/network.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = network.cpp; path = network.cpp; sourceTree = SOURCE_ROOT; };
+		12F25364A7F04552AEAD0BF9 /* /Users/jiang/Desktop/myai/cl-mat.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = "cl-mat.cpp"; path = "cl-mat.cpp"; sourceTree = SOURCE_ROOT; };
+		17B56D0B30AA4108A0FEFCD3 /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		1B8BBDA5D65D453C97580F1A /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = clGetErrorString.cpp; path = clGetErrorString.cpp; sourceTree = SOURCE_ROOT; };
+		1BCD66CB91F0441CA3A194CD /* /Users/jiang/Desktop/myai/network.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = network.cpp; path = network.cpp; sourceTree = SOURCE_ROOT; };
+		1C00D90BAB7D42199F8C49C3 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = clGetErrorString.cpp; path = clGetErrorString.cpp; sourceTree = SOURCE_ROOT; };
+		1CE7ACD538CF4092AE7E5084 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = clGetErrorString.cpp; path = clGetErrorString.cpp; sourceTree = SOURCE_ROOT; };
+		1D73338966174F8EAEB9AC53 /* /Users/jiang/Desktop/myai/train2.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = train2.cpp; path = train2.cpp; sourceTree = SOURCE_ROOT; };
+		1E9BA3AC3B024A6FBBCF7290 /* /Users/jiang/Desktop/myai/cl-mat.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = "cl-mat.cpp"; path = "cl-mat.cpp"; sourceTree = SOURCE_ROOT; };
+		1F148EF6DCE14451B9EF1E14 /* trainmnist */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = trainmnist; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D0873D8349141C09AE129F2 /* generateemnist */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = generateemnist; sourceTree = BUILT_PRODUCTS_DIR; };
+		3034ED8125DC4DB294A97F12 /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		30C028188D5E4D6B8B7648C2 /* /Users/jiang/Desktop/myai/function.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = function.cpp; path = function.cpp; sourceTree = SOURCE_ROOT; };
+		322035180CCE4E838F5C2CCC /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		335A329CEE9E4D58B15C66E9 /* /Users/jiang/Desktop/myai/matrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = matrix.cpp; path = matrix.cpp; sourceTree = SOURCE_ROOT; };
+		38E94CD0FE674DFB8D1CDEB4 /* /Users/jiang/Desktop/myai/matrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = matrix.cpp; path = matrix.cpp; sourceTree = SOURCE_ROOT; };
+		3CAB7C7EC61E4A60A8D8CF28 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = clGetErrorString.cpp; path = clGetErrorString.cpp; sourceTree = SOURCE_ROOT; };
+		3F8C6CB2CA9940A7AFD39EF7 /* /Users/jiang/Desktop/myai/layer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = layer.cpp; path = layer.cpp; sourceTree = SOURCE_ROOT; };
+		45D05D02C05F46FB967DC100 /* /Users/jiang/Desktop/myai/cl-mat.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = "cl-mat.cpp"; path = "cl-mat.cpp"; sourceTree = SOURCE_ROOT; };
+		486E58E898654BECAA4A22A9 /* /Users/jiang/Desktop/myai/matrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = matrix.cpp; path = matrix.cpp; sourceTree = SOURCE_ROOT; };
+		4A2EAC13D4FB462183EB54C5 /* /Users/jiang/Desktop/myai/generate.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = generate.cpp; path = generate.cpp; sourceTree = SOURCE_ROOT; };
+		529D9B18C60C4888A3C51423 /* /Users/jiang/Desktop/myai/function.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = function.cpp; path = function.cpp; sourceTree = SOURCE_ROOT; };
+		563B46CAB23F417E9816F1B4 /* drawdata */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = drawdata; sourceTree = BUILT_PRODUCTS_DIR; };
+		581BA9FD69154767AD7394CE /* learnpicture */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = learnpicture; sourceTree = BUILT_PRODUCTS_DIR; };
+		59ECFFBB2D174089BA293A51 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/OpenCL.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/OpenCL.framework; sourceTree = "<absolute>"; };
+		5D981FCE887A4D93BE7BB28D /* /Users/jiang/Desktop/myai/matrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = matrix.cpp; path = matrix.cpp; sourceTree = SOURCE_ROOT; };
+		60A2EB72EDDE4641BE3B3E8F /* /Users/jiang/Desktop/myai/train1.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = train1.cpp; path = train1.cpp; sourceTree = SOURCE_ROOT; };
+		61B51951447D4F0FB99DC7B4 /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		693C25B61C294803BDBFB743 /* /Users/jiang/Desktop/myai/matrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = matrix.cpp; path = matrix.cpp; sourceTree = SOURCE_ROOT; };
+		6DEE3966FD7F40168FB08EEF /* /Users/jiang/Desktop/myai/layer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = layer.cpp; path = layer.cpp; sourceTree = SOURCE_ROOT; };
+		6E63AB1F90544DD9ACAFF68F /* /Users/jiang/Desktop/myai/cl-mat.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = "cl-mat.cpp"; path = "cl-mat.cpp"; sourceTree = SOURCE_ROOT; };
+		715AEAB5AD624FAA89A31057 /* test-cl-matrix */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "test-cl-matrix"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D31E85C1DAA48BEA04168D4 /* /Users/jiang/Desktop/myai/data.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = data.cpp; path = data.cpp; sourceTree = SOURCE_ROOT; };
+		84914451212E4E009A1E1B39 /* /Users/jiang/Desktop/myai/test-cl-matrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = "test-cl-matrix.cpp"; path = "test-cl-matrix.cpp"; sourceTree = SOURCE_ROOT; };
+		85EFD72715F740C3834C04CA /* /Users/jiang/Desktop/myai/matrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = matrix.cpp; path = matrix.cpp; sourceTree = SOURCE_ROOT; };
+		8658421C2BD8480C9DEA1587 /* /Users/jiang/Desktop/myai/network.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = network.cpp; path = network.cpp; sourceTree = SOURCE_ROOT; };
+		88FE40874B2D440097F63A7D /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = clGetErrorString.cpp; path = clGetErrorString.cpp; sourceTree = SOURCE_ROOT; };
+		8D5966AD9561415890AEB074 /* /Users/jiang/Desktop/myai/network.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = network.cpp; path = network.cpp; sourceTree = SOURCE_ROOT; };
+		8FF3359AB06E4FE2882A000F /* /Users/jiang/Desktop/myai/function.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = function.cpp; path = function.cpp; sourceTree = SOURCE_ROOT; };
+		91D95B5CB2904D71BCBD9F86 /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		99B0525436A44CC0804CFB9A /* trainemnist */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = trainemnist; sourceTree = BUILT_PRODUCTS_DIR; };
+		99B2C4D468554644B561944B /* readdata */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = readdata; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AE9691C79A44D5F8B0785B4 /* /Users/jiang/Desktop/myai/generateemnist.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = generateemnist.cpp; path = generateemnist.cpp; sourceTree = SOURCE_ROOT; };
+		A1DBA1D712B545569FBBC402 /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		A57EE570870F471193342C04 /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		A949D6E8C3904D6AA91E8346 /* /Users/jiang/Desktop/myai/matrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = matrix.cpp; path = matrix.cpp; sourceTree = SOURCE_ROOT; };
+		AFFF53D384944FD09AFFAE0E /* train */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = train; sourceTree = BUILT_PRODUCTS_DIR; };
+		B322746F50C94D6885F7CDC9 /* /Users/jiang/Desktop/myai/cl-mat.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = "cl-mat.cpp"; path = "cl-mat.cpp"; sourceTree = SOURCE_ROOT; };
+		BB8FE465D6834E6996D50B31 /* /Users/jiang/Desktop/myai/network.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = network.cpp; path = network.cpp; sourceTree = SOURCE_ROOT; };
+		C3A17BE71401434BA67E1E40 /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		C48FE661D6604ECF96F98FF7 /* /Users/jiang/Desktop/myai/readmnist.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = readmnist.cpp; path = readmnist.cpp; sourceTree = SOURCE_ROOT; };
+		C60C4D8F4DAD464FA0FD2408 /* /Users/jiang/Desktop/myai/layer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = layer.cpp; path = layer.cpp; sourceTree = SOURCE_ROOT; };
+		C7906FD7A9A04A7D866EE1CD /* /Users/jiang/Desktop/myai/layer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = layer.cpp; path = layer.cpp; sourceTree = SOURCE_ROOT; };
+		D274DE9F96714C318058C4B0 /* /Users/jiang/Desktop/myai/function.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = function.cpp; path = function.cpp; sourceTree = SOURCE_ROOT; };
+		D3A7D371DCDD4162B5F09DA3 /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		D4791A62006049CF96A3F3E4 /* /Users/jiang/Desktop/myai/picturelearning.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = picturelearning.cpp; path = picturelearning.cpp; sourceTree = SOURCE_ROOT; };
+		DE3B2322AE9E4708B8206F3A /* /Users/jiang/Desktop/myai/cl-mat.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = "cl-mat.cpp"; path = "cl-mat.cpp"; sourceTree = SOURCE_ROOT; };
+		E141F3FA2B2D42188186BE2D /* /Users/jiang/Desktop/myai/function.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = function.cpp; path = function.cpp; sourceTree = SOURCE_ROOT; };
+		E17C1F5F771F45BFB17419D4 /* /Users/jiang/Desktop/myai/cl-mat.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = "cl-mat.cpp"; path = "cl-mat.cpp"; sourceTree = SOURCE_ROOT; };
+		E65577B4BF7645EFAEF55F68 /* /Users/jiang/Desktop/myai/trainemnist.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = trainemnist.cpp; path = trainemnist.cpp; sourceTree = SOURCE_ROOT; };
+		E76EDBF7492A41E4A698C8FE /* /Users/jiang/Desktop/myai/network.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = network.cpp; path = network.cpp; sourceTree = SOURCE_ROOT; };
+		E99BCF3D0455479FA33FFBCF /* /Users/jiang/Desktop/myai/function.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = function.cpp; path = function.cpp; sourceTree = SOURCE_ROOT; };
+		EB548BAA4FBC4C5E8EB72571 /* /Users/jiang/Desktop/myai/layer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = layer.cpp; path = layer.cpp; sourceTree = SOURCE_ROOT; };
+		F2C79047E5CC48279B8DF709 /* /Users/jiang/Desktop/myai/function.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = function.cpp; path = function.cpp; sourceTree = SOURCE_ROOT; };
+		F63C1C6A1786447E98C5989E /* /Users/jiang/Desktop/myai/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		F8F032070F4A4DF680C83772 /* /Users/jiang/Desktop/myai/layer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = layer.cpp; path = layer.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		12C819EFF1BB4AD8B7C621E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14F801F5B61340FBA3363CA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		559539419DC443799771F84D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F4A06CD69A643D1BFCA91E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		663D46D4B529492B8082AAB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73FBA1FB3E254AC1AD1A2397 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A816AC87DB94C4B84744A75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7CC931E4C9D4308B6182E7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4B57E99A019494B8F64BC31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0274036F16B04F0E9B70977B /* generateemnist */ = {
+			isa = PBXGroup;
+			children = (
+				6AB352DC5C6C4076B81A581D /* Source Files */,
+				3034ED8125DC4DB294A97F12 /* /Users/jiang/Desktop/myai/CMakeLists.txt */,
+			);
+			name = generateemnist;
+			sourceTree = "<group>";
+		};
+		0930DC9728404CFFA396F56D /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE3B2322AE9E4708B8206F3A /* /Users/jiang/Desktop/myai/cl-mat.cpp */,
+				88FE40874B2D440097F63A7D /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */,
+				D274DE9F96714C318058C4B0 /* /Users/jiang/Desktop/myai/function.cpp */,
+				EB548BAA4FBC4C5E8EB72571 /* /Users/jiang/Desktop/myai/layer.cpp */,
+				85EFD72715F740C3834C04CA /* /Users/jiang/Desktop/myai/matrix.cpp */,
+				05085EA8517C431499FC30A4 /* /Users/jiang/Desktop/myai/network.cpp */,
+				E65577B4BF7645EFAEF55F68 /* /Users/jiang/Desktop/myai/trainemnist.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		0B089B8D044E427284AB4302 /* generate */ = {
+			isa = PBXGroup;
+			children = (
+				A6E860FD10734508BAAD2873 /* Source Files */,
+				91D95B5CB2904D71BCBD9F86 /* /Users/jiang/Desktop/myai/CMakeLists.txt */,
+			);
+			name = generate;
+			sourceTree = "<group>";
+		};
+		0F6C9B8842FF4EDDAD1A3C76 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				B322746F50C94D6885F7CDC9 /* /Users/jiang/Desktop/myai/cl-mat.cpp */,
+				1C00D90BAB7D42199F8C49C3 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */,
+				E141F3FA2B2D42188186BE2D /* /Users/jiang/Desktop/myai/function.cpp */,
+				6DEE3966FD7F40168FB08EEF /* /Users/jiang/Desktop/myai/layer.cpp */,
+				693C25B61C294803BDBFB743 /* /Users/jiang/Desktop/myai/matrix.cpp */,
+				8658421C2BD8480C9DEA1587 /* /Users/jiang/Desktop/myai/network.cpp */,
+				60A2EB72EDDE4641BE3B3E8F /* /Users/jiang/Desktop/myai/train1.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		19FD127D0F6C45C9B4BDC2CC /* readdata */ = {
+			isa = PBXGroup;
+			children = (
+				8265A6F095D74C8784A7BE64 /* Source Files */,
+				C3A17BE71401434BA67E1E40 /* /Users/jiang/Desktop/myai/CMakeLists.txt */,
+			);
+			name = readdata;
+			sourceTree = "<group>";
+		};
+		34B2EF433D3E408EABF22EC6 /* trainmnist */ = {
+			isa = PBXGroup;
+			children = (
+				BBD9BA7625C948C5B4A1D4C2 /* Source Files */,
+				61B51951447D4F0FB99DC7B4 /* /Users/jiang/Desktop/myai/CMakeLists.txt */,
+			);
+			name = trainmnist;
+			sourceTree = "<group>";
+		};
+		3D0909EC3BF84C67A747C5D2 /* drawdata */ = {
+			isa = PBXGroup;
+			children = (
+				F410564D5AA948DCB9145258 /* Source Files */,
+				322035180CCE4E838F5C2CCC /* /Users/jiang/Desktop/myai/CMakeLists.txt */,
+			);
+			name = drawdata;
+			sourceTree = "<group>";
+		};
+		449E6ECF8F384A9D8E8044D6 /* trainemnist */ = {
+			isa = PBXGroup;
+			children = (
+				0930DC9728404CFFA396F56D /* Source Files */,
+				A1DBA1D712B545569FBBC402 /* /Users/jiang/Desktop/myai/CMakeLists.txt */,
+			);
+			name = trainemnist;
+			sourceTree = "<group>";
+		};
+		48C5E5F96D2443278EC5EB7D /* test-cl-matrix */ = {
+			isa = PBXGroup;
+			children = (
+				6D481B2C9D8A4D0B941171CA /* Source Files */,
+				D3A7D371DCDD4162B5F09DA3 /* /Users/jiang/Desktop/myai/CMakeLists.txt */,
+			);
+			name = "test-cl-matrix";
+			sourceTree = "<group>";
+		};
+		4ED7C8FBEFC94F36BEFD023D /* train */ = {
+			isa = PBXGroup;
+			children = (
+				0F6C9B8842FF4EDDAD1A3C76 /* Source Files */,
+				17B56D0B30AA4108A0FEFCD3 /* /Users/jiang/Desktop/myai/CMakeLists.txt */,
+			);
+			name = train;
+			sourceTree = "<group>";
+		};
+		5E98380595744A4FA96BAD63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				563B46CAB23F417E9816F1B4 /* drawdata */,
+				0ED16198599B467DA5B7BB9B /* generate */,
+				2D0873D8349141C09AE129F2 /* generateemnist */,
+				581BA9FD69154767AD7394CE /* learnpicture */,
+				99B2C4D468554644B561944B /* readdata */,
+				715AEAB5AD624FAA89A31057 /* test-cl-matrix */,
+				AFFF53D384944FD09AFFAE0E /* train */,
+				99B0525436A44CC0804CFB9A /* trainemnist */,
+				1F148EF6DCE14451B9EF1E14 /* trainmnist */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6AB352DC5C6C4076B81A581D /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				12F25364A7F04552AEAD0BF9 /* /Users/jiang/Desktop/myai/cl-mat.cpp */,
+				3CAB7C7EC61E4A60A8D8CF28 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */,
+				F2C79047E5CC48279B8DF709 /* /Users/jiang/Desktop/myai/function.cpp */,
+				9AE9691C79A44D5F8B0785B4 /* /Users/jiang/Desktop/myai/generateemnist.cpp */,
+				F8F032070F4A4DF680C83772 /* /Users/jiang/Desktop/myai/layer.cpp */,
+				38E94CD0FE674DFB8D1CDEB4 /* /Users/jiang/Desktop/myai/matrix.cpp */,
+				BB8FE465D6834E6996D50B31 /* /Users/jiang/Desktop/myai/network.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		6D481B2C9D8A4D0B941171CA /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				45D05D02C05F46FB967DC100 /* /Users/jiang/Desktop/myai/cl-mat.cpp */,
+				1B8BBDA5D65D453C97580F1A /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */,
+				8FF3359AB06E4FE2882A000F /* /Users/jiang/Desktop/myai/function.cpp */,
+				C60C4D8F4DAD464FA0FD2408 /* /Users/jiang/Desktop/myai/layer.cpp */,
+				A949D6E8C3904D6AA91E8346 /* /Users/jiang/Desktop/myai/matrix.cpp */,
+				12C083131D334951A5B8CE77 /* /Users/jiang/Desktop/myai/network.cpp */,
+				84914451212E4E009A1E1B39 /* /Users/jiang/Desktop/myai/test-cl-matrix.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		7E75BA1851CF46CCAE0F3E1D /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				93B3034DD15841A49382FCD5 /* CMake Rules */,
+				A57EE570870F471193342C04 /* /Users/jiang/Desktop/myai/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		8265A6F095D74C8784A7BE64 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				C48FE661D6604ECF96F98FF7 /* /Users/jiang/Desktop/myai/readmnist.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		8926EB90D1A142DB84C81B86 /* learnpicture */ = {
+			isa = PBXGroup;
+			children = (
+				D1FB1CB8EB2C419D84759CFC /* Source Files */,
+				F63C1C6A1786447E98C5989E /* /Users/jiang/Desktop/myai/CMakeLists.txt */,
+			);
+			name = learnpicture;
+			sourceTree = "<group>";
+		};
+		90B3092F23494546B331178D = {
+			isa = PBXGroup;
+			children = (
+				48C5E5F96D2443278EC5EB7D /* test-cl-matrix */,
+				19FD127D0F6C45C9B4BDC2CC /* readdata */,
+				4ED7C8FBEFC94F36BEFD023D /* train */,
+				3D0909EC3BF84C67A747C5D2 /* drawdata */,
+				34B2EF433D3E408EABF22EC6 /* trainmnist */,
+				0B089B8D044E427284AB4302 /* generate */,
+				449E6ECF8F384A9D8E8044D6 /* trainemnist */,
+				0274036F16B04F0E9B70977B /* generateemnist */,
+				8926EB90D1A142DB84C81B86 /* learnpicture */,
+				7E75BA1851CF46CCAE0F3E1D /* ALL_BUILD */,
+				5E98380595744A4FA96BAD63 /* Products */,
+				A38E3548F728419791075ABE /* Frameworks */,
+				F9994112F97C47E38994FB81 /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		93B3034DD15841A49382FCD5 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		A38E3548F728419791075ABE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59ECFFBB2D174089BA293A51 /* /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/OpenCL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A6E860FD10734508BAAD2873 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				E17C1F5F771F45BFB17419D4 /* /Users/jiang/Desktop/myai/cl-mat.cpp */,
+				1084F7EB4D42421E98A987C4 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */,
+				E99BCF3D0455479FA33FFBCF /* /Users/jiang/Desktop/myai/function.cpp */,
+				4A2EAC13D4FB462183EB54C5 /* /Users/jiang/Desktop/myai/generate.cpp */,
+				0B752940F6CE471096D1176D /* /Users/jiang/Desktop/myai/layer.cpp */,
+				486E58E898654BECAA4A22A9 /* /Users/jiang/Desktop/myai/matrix.cpp */,
+				E76EDBF7492A41E4A698C8FE /* /Users/jiang/Desktop/myai/network.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		BBD9BA7625C948C5B4A1D4C2 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E63AB1F90544DD9ACAFF68F /* /Users/jiang/Desktop/myai/cl-mat.cpp */,
+				1CE7ACD538CF4092AE7E5084 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */,
+				30C028188D5E4D6B8B7648C2 /* /Users/jiang/Desktop/myai/function.cpp */,
+				3F8C6CB2CA9940A7AFD39EF7 /* /Users/jiang/Desktop/myai/layer.cpp */,
+				5D981FCE887A4D93BE7BB28D /* /Users/jiang/Desktop/myai/matrix.cpp */,
+				8D5966AD9561415890AEB074 /* /Users/jiang/Desktop/myai/network.cpp */,
+				1D73338966174F8EAEB9AC53 /* /Users/jiang/Desktop/myai/train2.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		D1FB1CB8EB2C419D84759CFC /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				1E9BA3AC3B024A6FBBCF7290 /* /Users/jiang/Desktop/myai/cl-mat.cpp */,
+				0AF992A706654A05AF57AAFB /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */,
+				529D9B18C60C4888A3C51423 /* /Users/jiang/Desktop/myai/function.cpp */,
+				C7906FD7A9A04A7D866EE1CD /* /Users/jiang/Desktop/myai/layer.cpp */,
+				335A329CEE9E4D58B15C66E9 /* /Users/jiang/Desktop/myai/matrix.cpp */,
+				1BCD66CB91F0441CA3A194CD /* /Users/jiang/Desktop/myai/network.cpp */,
+				D4791A62006049CF96A3F3E4 /* /Users/jiang/Desktop/myai/picturelearning.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		F410564D5AA948DCB9145258 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D31E85C1DAA48BEA04168D4 /* /Users/jiang/Desktop/myai/data.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		F9994112F97C47E38994FB81 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2F7FE7A04569432BAA2BC9C2 /* generateemnist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B56ED337A4F6431CB5BAD770 /* Build configuration list for PBXNativeTarget "generateemnist" */;
+			buildPhases = (
+				52D9082B87C54610BC107758 /* Sources */,
+				663D46D4B529492B8082AAB6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B57B3BCAE3ED42C195E555C3 /* PBXTargetDependency */,
+			);
+			name = generateemnist;
+			productName = generateemnist;
+			productReference = 2D0873D8349141C09AE129F2 /* generateemnist */;
+			productType = "com.apple.product-type.tool";
+		};
+		359CB96B6BA044CFB35354E8 /* train */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A41C3F18CB74485BC4D8EF4 /* Build configuration list for PBXNativeTarget "train" */;
+			buildPhases = (
+				2F7F32EB387B4DF9A69105A4 /* Sources */,
+				5F4A06CD69A643D1BFCA91E0 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0CE431CF1B054DEE8D0389CA /* PBXTargetDependency */,
+			);
+			name = train;
+			productName = train;
+			productReference = AFFF53D384944FD09AFFAE0E /* train */;
+			productType = "com.apple.product-type.tool";
+		};
+		3BA49B9E28A840288CF7E956 /* trainemnist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C70168BCB0E14B129A88C9B6 /* Build configuration list for PBXNativeTarget "trainemnist" */;
+			buildPhases = (
+				801E240A7E6E49E2BDFA2337 /* Sources */,
+				559539419DC443799771F84D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				429573D7D4A94DE9ACE2838E /* PBXTargetDependency */,
+			);
+			name = trainemnist;
+			productName = trainemnist;
+			productReference = 99B0525436A44CC0804CFB9A /* trainemnist */;
+			productType = "com.apple.product-type.tool";
+		};
+		4C6515A53F25453992B6AA44 /* generate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A0325DFB85E416D9961D623 /* Build configuration list for PBXNativeTarget "generate" */;
+			buildPhases = (
+				EC4B8A70BA9241A7A80BD703 /* Sources */,
+				D4B57E99A019494B8F64BC31 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5A9F8C8F65249E38C7B94F9 /* PBXTargetDependency */,
+			);
+			name = generate;
+			productName = generate;
+			productReference = 0ED16198599B467DA5B7BB9B /* generate */;
+			productType = "com.apple.product-type.tool";
+		};
+		5E4E0D97ABEE49BC847E164B /* readdata */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 487690BDAB5A4D568FDDF787 /* Build configuration list for PBXNativeTarget "readdata" */;
+			buildPhases = (
+				C5D34581CB97402D84EE8407 /* Sources */,
+				A7CC931E4C9D4308B6182E7F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F503970FC06E4823A3BCD401 /* PBXTargetDependency */,
+			);
+			name = readdata;
+			productName = readdata;
+			productReference = 99B2C4D468554644B561944B /* readdata */;
+			productType = "com.apple.product-type.tool";
+		};
+		B409D0321FDB4E9B9A88F185 /* drawdata */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DABF2416BE774269902B3B99 /* Build configuration list for PBXNativeTarget "drawdata" */;
+			buildPhases = (
+				749510728CFA4E0998AA5C70 /* Sources */,
+				14F801F5B61340FBA3363CA9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF9A138893F3403A8F10C750 /* PBXTargetDependency */,
+			);
+			name = drawdata;
+			productName = drawdata;
+			productReference = 563B46CAB23F417E9816F1B4 /* drawdata */;
+			productType = "com.apple.product-type.tool";
+		};
+		B646CDF68BCF40F0878EF2BA /* trainmnist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B9346AC87884D9AB4FA286D /* Build configuration list for PBXNativeTarget "trainmnist" */;
+			buildPhases = (
+				1EE8239A8C9443108B90F844 /* Sources */,
+				12C819EFF1BB4AD8B7C621E8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				635D072ABD914688A65BF1C3 /* PBXTargetDependency */,
+			);
+			name = trainmnist;
+			productName = trainmnist;
+			productReference = 1F148EF6DCE14451B9EF1E14 /* trainmnist */;
+			productType = "com.apple.product-type.tool";
+		};
+		DFB31FD580604281834B9C36 /* test-cl-matrix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCE0F1728FDB41C49F41F6CE /* Build configuration list for PBXNativeTarget "test-cl-matrix" */;
+			buildPhases = (
+				90381F06B4B24943B31DE19A /* Sources */,
+				8A816AC87DB94C4B84744A75 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6379DD620B7D4790BD814333 /* PBXTargetDependency */,
+			);
+			name = "test-cl-matrix";
+			productName = "test-cl-matrix";
+			productReference = 715AEAB5AD624FAA89A31057 /* test-cl-matrix */;
+			productType = "com.apple.product-type.tool";
+		};
+		F43CB328A67B4B8DA5A0E449 /* learnpicture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53502D420630445380EAC2D8 /* Build configuration list for PBXNativeTarget "learnpicture" */;
+			buildPhases = (
+				9ABBA64BEA074B0FBE601592 /* Sources */,
+				73FBA1FB3E254AC1AD1A2397 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				568AB768F0CD4274A1FADDDA /* PBXTargetDependency */,
+			);
+			name = learnpicture;
+			productName = learnpicture;
+			productReference = 581BA9FD69154767AD7394CE /* learnpicture */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		51EC4008A1334039905CA18A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1520;
+			};
+			buildConfigurationList = 9D726DC9CC224273A4E96342 /* Build configuration list for PBXProject "myAI" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				59229432DC6446459388CB44 /* Debug */,
+				BBF7EB8B547644938B83F33C /* Release */,
+				6F95291EC8854D2FBDCCA32E /* MinSizeRel */,
+				56880FBDA4BD4ACC8C20C328 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 90B3092F23494546B331178D;
+			projectDirPath = /Users/jiang/Desktop/myai;
+			projectRoot = "";
+			targets = (
+				3C8AFF6999F74C7E956EFE2F /* ALL_BUILD */,
+				8837ED7989E7467080DD5CAB /* ZERO_CHECK */,
+				B409D0321FDB4E9B9A88F185 /* drawdata */,
+				4C6515A53F25453992B6AA44 /* generate */,
+				2F7FE7A04569432BAA2BC9C2 /* generateemnist */,
+				F43CB328A67B4B8DA5A0E449 /* learnpicture */,
+				5E4E0D97ABEE49BC847E164B /* readdata */,
+				DFB31FD580604281834B9C36 /* test-cl-matrix */,
+				359CB96B6BA044CFB35354E8 /* train */,
+				3BA49B9E28A840288CF7E956 /* trainemnist */,
+				B646CDF68BCF40F0878EF2BA /* trainmnist */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C0110FC8322DE7E50886E21 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		7FF8A6A9E8790272AB32C7BB /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+/Users/jiang/Desktop/myai/buildxcode/CMakeFiles/ALL_BUILD			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/jiang/Desktop/myai/buildxcode
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/jiang/Desktop/myai/buildxcode
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/jiang/Desktop/myai/buildxcode
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/jiang/Desktop/myai/buildxcode
+  echo Build\\ all\\ projects
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		9B50530E35CC49C82C2FACCF = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		C2CAF6D5AA95821FE6B18A29 /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+/Users/jiang/Desktop/myai/buildxcode/CMakeFiles/ZERO_CHECK			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/jiang/Desktop/myai/buildxcode
+  make -f /Users/jiang/Desktop/myai/buildxcode/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/jiang/Desktop/myai/buildxcode
+  make -f /Users/jiang/Desktop/myai/buildxcode/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/jiang/Desktop/myai/buildxcode
+  make -f /Users/jiang/Desktop/myai/buildxcode/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/jiang/Desktop/myai/buildxcode
+  make -f /Users/jiang/Desktop/myai/buildxcode/CMakeScripts/ReRunCMake.make
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1EE8239A8C9443108B90F844 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA2D6D7CC54B440285698B3D /* /Users/jiang/Desktop/myai/cl-mat.cpp */,
+				70A8BAF59CC344138D112D3A /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */,
+				7822447A66FB4CFB995657CE /* /Users/jiang/Desktop/myai/function.cpp */,
+				350DB6B5A0ED49B18DB9FF9E /* /Users/jiang/Desktop/myai/layer.cpp */,
+				C7AE7EA41E444165984BC5D3 /* /Users/jiang/Desktop/myai/matrix.cpp */,
+				C7982EAA55214496AD0D2EA7 /* /Users/jiang/Desktop/myai/network.cpp */,
+				4F5432352E184E3CA03AB8A9 /* /Users/jiang/Desktop/myai/train2.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F7F32EB387B4DF9A69105A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1420A796B14A47A2B0B88F8F /* /Users/jiang/Desktop/myai/cl-mat.cpp */,
+				7E3C86F737E249448EBBA593 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */,
+				9EC21AC8E44040B6A4CE5D1E /* /Users/jiang/Desktop/myai/function.cpp */,
+				E03068F4021141F08D1B2692 /* /Users/jiang/Desktop/myai/layer.cpp */,
+				E96FCEFE378D4E3E9090FA69 /* /Users/jiang/Desktop/myai/matrix.cpp */,
+				23FABB50338647D5B56BA861 /* /Users/jiang/Desktop/myai/network.cpp */,
+				DA18C5A5DB68431EAB36DBA8 /* /Users/jiang/Desktop/myai/train1.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52D9082B87C54610BC107758 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C4B31B9250F44F0A164408E /* /Users/jiang/Desktop/myai/cl-mat.cpp */,
+				CD1E5886354740D0814643AB /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */,
+				1BF1C251113749248D41BCEE /* /Users/jiang/Desktop/myai/function.cpp */,
+				9360172E6CC044919B99FAC3 /* /Users/jiang/Desktop/myai/generateemnist.cpp */,
+				160698F316454FDEB9AFB337 /* /Users/jiang/Desktop/myai/layer.cpp */,
+				EA2C336B3D3E4944869F7410 /* /Users/jiang/Desktop/myai/matrix.cpp */,
+				5443DB2936CD45EF9B502B5E /* /Users/jiang/Desktop/myai/network.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		749510728CFA4E0998AA5C70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6839BF8CA4404697968B7EEC /* /Users/jiang/Desktop/myai/data.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		801E240A7E6E49E2BDFA2337 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0D45729467740698ABBFA49 /* /Users/jiang/Desktop/myai/cl-mat.cpp */,
+				89921E4035A64F71B39B6C81 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */,
+				FDF6B62C6DF74425812290DA /* /Users/jiang/Desktop/myai/function.cpp */,
+				BA73EB16CA9C4366BA509A41 /* /Users/jiang/Desktop/myai/layer.cpp */,
+				7945FA91538F4285905F42E8 /* /Users/jiang/Desktop/myai/matrix.cpp */,
+				CABBB8D678754B0180E9F284 /* /Users/jiang/Desktop/myai/network.cpp */,
+				AE7D92881F534AC889806312 /* /Users/jiang/Desktop/myai/trainemnist.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90381F06B4B24943B31DE19A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21FAAF48F3C64DCFA21EEBA0 /* /Users/jiang/Desktop/myai/cl-mat.cpp */,
+				D0244A863F414B5DB0FE4FC4 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */,
+				FE250178753742768BC301B7 /* /Users/jiang/Desktop/myai/function.cpp */,
+				2217AF414C3D418F963F7AE0 /* /Users/jiang/Desktop/myai/layer.cpp */,
+				EF95518F402549E48C8E2644 /* /Users/jiang/Desktop/myai/matrix.cpp */,
+				F03F2AE5A5194D59B55D1C11 /* /Users/jiang/Desktop/myai/network.cpp */,
+				52B09100F94A4CB9A4CDA172 /* /Users/jiang/Desktop/myai/test-cl-matrix.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ABBA64BEA074B0FBE601592 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B149258B2694A58A46544F4 /* /Users/jiang/Desktop/myai/cl-mat.cpp */,
+				F196E02B6EB84A81BC6AD9D3 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */,
+				8D3D3DCBC3814EF8A213ECF2 /* /Users/jiang/Desktop/myai/function.cpp */,
+				8E2ABC26A9B24DF4AC82E4F8 /* /Users/jiang/Desktop/myai/layer.cpp */,
+				D0B0DE9A205345BA9CE7CD7F /* /Users/jiang/Desktop/myai/matrix.cpp */,
+				BA25301E89BA4895833499E5 /* /Users/jiang/Desktop/myai/network.cpp */,
+				99F3557378B74A689EADD976 /* /Users/jiang/Desktop/myai/picturelearning.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5D34581CB97402D84EE8407 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				693ABDB3153545918CF38189 /* /Users/jiang/Desktop/myai/readmnist.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC4B8A70BA9241A7A80BD703 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48B1A86C7FAA4455886C519D /* /Users/jiang/Desktop/myai/cl-mat.cpp */,
+				0C83A29D4C594ECA9F2B4069 /* /Users/jiang/Desktop/myai/clGetErrorString.cpp */,
+				955A3D7BF37844A497291940 /* /Users/jiang/Desktop/myai/function.cpp */,
+				19F32C28C6E849BF96410770 /* /Users/jiang/Desktop/myai/generate.cpp */,
+				6745FC50F5354DC39E77EB7B /* /Users/jiang/Desktop/myai/layer.cpp */,
+				5AE5AFCA234044018D49431D /* /Users/jiang/Desktop/myai/matrix.cpp */,
+				E3F6089DF6A3478FA254DE19 /* /Users/jiang/Desktop/myai/network.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0CE431CF1B054DEE8D0389CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8837ED7989E7467080DD5CAB /* ZERO_CHECK */;
+			targetProxy = C595C1274C1845BD8C4CA249 /* PBXContainerItemProxy */;
+		};
+		18671F1945B142F0BB6519A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C6515A53F25453992B6AA44 /* generate */;
+			targetProxy = F54E620F1FD54135A72B807A /* PBXContainerItemProxy */;
+		};
+		250F3458D44C45A3B30E6010 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F7FE7A04569432BAA2BC9C2 /* generateemnist */;
+			targetProxy = D0F94480979445018532879B /* PBXContainerItemProxy */;
+		};
+		2E5F83254B114C8EB2D2045D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 359CB96B6BA044CFB35354E8 /* train */;
+			targetProxy = A57ACB0460CB484D819DF0C2 /* PBXContainerItemProxy */;
+		};
+		429573D7D4A94DE9ACE2838E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8837ED7989E7467080DD5CAB /* ZERO_CHECK */;
+			targetProxy = 16C41F34FA5047C69FA0FC4A /* PBXContainerItemProxy */;
+		};
+		568AB768F0CD4274A1FADDDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8837ED7989E7467080DD5CAB /* ZERO_CHECK */;
+			targetProxy = 12F3935086D544B2AC7B46EF /* PBXContainerItemProxy */;
+		};
+		635D072ABD914688A65BF1C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8837ED7989E7467080DD5CAB /* ZERO_CHECK */;
+			targetProxy = F5231FE352D6432EAB35145A /* PBXContainerItemProxy */;
+		};
+		6379DD620B7D4790BD814333 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8837ED7989E7467080DD5CAB /* ZERO_CHECK */;
+			targetProxy = 8387557B22094EC8B6707557 /* PBXContainerItemProxy */;
+		};
+		755776F670D4479F93985AB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E4E0D97ABEE49BC847E164B /* readdata */;
+			targetProxy = 22BD6F88130A42B1A5010EB0 /* PBXContainerItemProxy */;
+		};
+		840840C84ABF49F594CA4898 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B646CDF68BCF40F0878EF2BA /* trainmnist */;
+			targetProxy = C2DE0F46ACDD4CB39016D1B7 /* PBXContainerItemProxy */;
+		};
+		9666450874FD4A1185FC49C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFB31FD580604281834B9C36 /* test-cl-matrix */;
+			targetProxy = 089B7E530B704877A6E861F9 /* PBXContainerItemProxy */;
+		};
+		9AC2AF81B0284DF091A13C07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B409D0321FDB4E9B9A88F185 /* drawdata */;
+			targetProxy = F16A239D81104A62BBB92C06 /* PBXContainerItemProxy */;
+		};
+		A5923551581E4397AB85B881 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BA49B9E28A840288CF7E956 /* trainemnist */;
+			targetProxy = 62FB244092EF4DDCA873C6E8 /* PBXContainerItemProxy */;
+		};
+		B57B3BCAE3ED42C195E555C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8837ED7989E7467080DD5CAB /* ZERO_CHECK */;
+			targetProxy = 79077558AEDD421A98823FC3 /* PBXContainerItemProxy */;
+		};
+		BC31B2BDF2D5474A991D4065 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8837ED7989E7467080DD5CAB /* ZERO_CHECK */;
+			targetProxy = 1B9856096CCE42F1937208DC /* PBXContainerItemProxy */;
+		};
+		BF9A138893F3403A8F10C750 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8837ED7989E7467080DD5CAB /* ZERO_CHECK */;
+			targetProxy = 08F345F277184DF0AD5B862F /* PBXContainerItemProxy */;
+		};
+		E5A9F8C8F65249E38C7B94F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8837ED7989E7467080DD5CAB /* ZERO_CHECK */;
+			targetProxy = DD771599A4BF48EBABF6B5D4 /* PBXContainerItemProxy */;
+		};
+		EB099E65D2DD41EA9C84B1F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F43CB328A67B4B8DA5A0E449 /* learnpicture */;
+			targetProxy = 1B3CC84FA22E45AF8C9ACA7F /* PBXContainerItemProxy */;
+		};
+		F503970FC06E4823A3BCD401 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8837ED7989E7467080DD5CAB /* ZERO_CHECK */;
+			targetProxy = 4F69A92169914E688CDA72F5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		004659A8D33B4027BFF2B1D8 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = generateemnist;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/generateemnist.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		03D90CBB66A149A286BF3F1B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = generate;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/generate.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		05A379BE28A844D9A865FE68 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		05FD1B15F9E6412787DCE302 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = train;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/train.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		08829283AFC24FB79C4999D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/    '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = trainemnist;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/trainemnist.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		0C20925734564864B5D21207 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/opt/homebrew/lib/libSM.dylib,/opt/homebrew/lib/libICE.dylib,/opt/homebrew/lib/libX11.dylib,/opt/homebrew/lib/libXext.dylib,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = learnpicture;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/learnpicture.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		0C2C13A4C850471E9175F91C /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/        -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/opt/homebrew/lib/libSM.dylib,/opt/homebrew/lib/libICE.dylib,/opt/homebrew/lib/libX11.dylib,/opt/homebrew/lib/libXext.dylib,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = learnpicture;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/learnpicture.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		0D559D0823B5459CA25FE3BA /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/        -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = train;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/train.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		116C357C268040959AF595A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = generateemnist;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/generateemnist.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		1863A44B89FF4D54A6566F19 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/jiang/Desktop/myai/buildxcode/build;
+			};
+			name = MinSizeRel;
+		};
+		2A4DA6739CEB4C378C9E52BA /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/        -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = drawdata;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/drawdata.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		3368029A732742E895D9099A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		343213CB5CDD454CAD6FCB1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = drawdata;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/drawdata.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		35FB94DC425F4A1A98965EAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/jiang/Desktop/myai/buildxcode/build;
+			};
+			name = Release;
+		};
+		36252FF834C8459BB030E05D /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		3FC8EE05AE4749F99327E56C /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = drawdata;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/drawdata.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		43E862F78EFA46928A6AFAA7 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/        -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = trainemnist;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/trainemnist.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		4E32E96EAA904CBBBC5ECD21 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/        -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = generate;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/generate.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		54EB9D92C21B4311B5D95A9F /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/        -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = trainmnist;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/trainmnist.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		581EB5ED9C694BEFAA7B6FB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		5CDE582483A54AD9B04931CB /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		6CE3A8B9B9D44222BB161D6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/    '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = drawdata;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/drawdata.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		719FE6720EC147B4A5A5317B /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/        -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = generateemnist;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/generateemnist.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		7D213729A9B34DC4B91F7C14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		7FDC23E067A64A65853F4A99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = train;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/train.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		7FF3789E64D54BF6AAE8C1D7 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/        -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL","-framework OpenCL","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-cl-matrix";
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/test-cl-matrix.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		8311C343844B474D853210F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = generate;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/generate.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		83E92297C876458F9D7788F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		8E5FB4F5C703499789E9F869 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = readdata;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/readdata.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		94817A07075B410392A71E5D /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/jiang/Desktop/myai/buildxcode/build;
+			};
+			name = RelWithDebInfo;
+		};
+		A5E38E978138431A9FA64EEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/    '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = generate;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/generate.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		AA3F775A4F85467CB2B5CDEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/    '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = trainmnist;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/trainmnist.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		AEA555955ECE400BB4A20ADE /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/        -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = readdata;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/readdata.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		B564C85BC7844B90A7846029 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = trainemnist;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/trainemnist.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		BBFDC640E94C4D8FBCEADC5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/    '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL","-framework OpenCL","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-cl-matrix";
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/test-cl-matrix.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		C1D339E06D0643F2B80CBFE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL","-framework OpenCL","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-cl-matrix";
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/test-cl-matrix.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		CFF9B2F1587D43449583CFC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/    '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = generateemnist;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/generateemnist.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		D07C018BB130426AB6C2EE6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/    '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = train;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/train.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		D1FEEA2C126B44B78CE1CABE /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = trainmnist;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/trainmnist.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		D37FEB4BE87E45FB9A039EE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk;
+				SYMROOT = /Users/jiang/Desktop/myai/buildxcode/build;
+			};
+			name = Debug;
+		};
+		DC609346C54D49E983A194EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/    '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/opt/homebrew/lib/libSM.dylib,/opt/homebrew/lib/libICE.dylib,/opt/homebrew/lib/libX11.dylib,/opt/homebrew/lib/libXext.dylib,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = learnpicture;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/learnpicture.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		DFC20FCB642B47579208B42E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/opt/homebrew/lib/libSM.dylib,/opt/homebrew/lib/libICE.dylib,/opt/homebrew/lib/libX11.dylib,/opt/homebrew/lib/libXext.dylib,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = learnpicture;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/learnpicture.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		E0A745D2D9044EF4B343434E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = trainemnist;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/trainemnist.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		E81E497C65EB4DA5BB15ACB6 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		EFEB9853F05242ABB24C5E11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = readdata;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/readdata.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		F3FC6EFF72894547ADBC4444 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/    '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = readdata;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/readdata.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		F63B9012D3FF4C8E86BC4414 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL","-framework OpenCL","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-cl-matrix";
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/test-cl-matrix.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		FB3B2A23387B40BEA76B0CE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/jiang/Desktop/myai/buildxcode/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/opt/homebrew/include,/usr/X11R6/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/     -DNDEBUG '-std=gnu++20' ";
+				OTHER_LDFLAGS = ("-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names","-framework OpenCL",/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = trainmnist;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/jiang/Desktop/myai/buildxcode/build/trainmnist.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A0325DFB85E416D9961D623 /* Build configuration list for PBXNativeTarget "generate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5E38E978138431A9FA64EEB /* Debug */,
+				8311C343844B474D853210F1 /* Release */,
+				03D90CBB66A149A286BF3F1B /* MinSizeRel */,
+				4E32E96EAA904CBBBC5ECD21 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		42633F8D628A4B129EA37DC1 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D213729A9B34DC4B91F7C14 /* Debug */,
+				3368029A732742E895D9099A /* Release */,
+				5CDE582483A54AD9B04931CB /* MinSizeRel */,
+				05A379BE28A844D9A865FE68 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		487690BDAB5A4D568FDDF787 /* Build configuration list for PBXNativeTarget "readdata" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3FC6EFF72894547ADBC4444 /* Debug */,
+				EFEB9853F05242ABB24C5E11 /* Release */,
+				8E5FB4F5C703499789E9F869 /* MinSizeRel */,
+				AEA555955ECE400BB4A20ADE /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		53502D420630445380EAC2D8 /* Build configuration list for PBXNativeTarget "learnpicture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC609346C54D49E983A194EB /* Debug */,
+				DFC20FCB642B47579208B42E /* Release */,
+				0C20925734564864B5D21207 /* MinSizeRel */,
+				0C2C13A4C850471E9175F91C /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5A41C3F18CB74485BC4D8EF4 /* Build configuration list for PBXNativeTarget "train" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D07C018BB130426AB6C2EE6E /* Debug */,
+				7FDC23E067A64A65853F4A99 /* Release */,
+				05FD1B15F9E6412787DCE302 /* MinSizeRel */,
+				0D559D0823B5459CA25FE3BA /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5B9346AC87884D9AB4FA286D /* Build configuration list for PBXNativeTarget "trainmnist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA3F775A4F85467CB2B5CDEC /* Debug */,
+				FB3B2A23387B40BEA76B0CE3 /* Release */,
+				D1FEEA2C126B44B78CE1CABE /* MinSizeRel */,
+				54EB9D92C21B4311B5D95A9F /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9D726DC9CC224273A4E96342 /* Build configuration list for PBXProject "myAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D37FEB4BE87E45FB9A039EE9 /* Debug */,
+				35FB94DC425F4A1A98965EAD /* Release */,
+				1863A44B89FF4D54A6566F19 /* MinSizeRel */,
+				94817A07075B410392A71E5D /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B56ED337A4F6431CB5BAD770 /* Build configuration list for PBXNativeTarget "generateemnist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFF9B2F1587D43449583CFC8 /* Debug */,
+				116C357C268040959AF595A8 /* Release */,
+				004659A8D33B4027BFF2B1D8 /* MinSizeRel */,
+				719FE6720EC147B4A5A5317B /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C70168BCB0E14B129A88C9B6 /* Build configuration list for PBXNativeTarget "trainemnist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08829283AFC24FB79C4999D6 /* Debug */,
+				E0A745D2D9044EF4B343434E /* Release */,
+				B564C85BC7844B90A7846029 /* MinSizeRel */,
+				43E862F78EFA46928A6AFAA7 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DABF2416BE774269902B3B99 /* Build configuration list for PBXNativeTarget "drawdata" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CE3A8B9B9D44222BB161D6D /* Debug */,
+				343213CB5CDD454CAD6FCB1A /* Release */,
+				3FC8EE05AE4749F99327E56C /* MinSizeRel */,
+				2A4DA6739CEB4C378C9E52BA /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DC5210C1B903472CB3400461 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83E92297C876458F9D7788F9 /* Debug */,
+				581EB5ED9C694BEFAA7B6FB2 /* Release */,
+				E81E497C65EB4DA5BB15ACB6 /* MinSizeRel */,
+				36252FF834C8459BB030E05D /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DCE0F1728FDB41C49F41F6CE /* Build configuration list for PBXNativeTarget "test-cl-matrix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBFDC640E94C4D8FBCEADC5C /* Debug */,
+				C1D339E06D0643F2B80CBFE0 /* Release */,
+				F63B9012D3FF4C8E86BC4414 /* MinSizeRel */,
+				7FF3789E64D54BF6AAE8C1D7 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 51EC4008A1334039905CA18A /* Project object */;
+}
