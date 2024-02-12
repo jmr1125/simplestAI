@@ -12,6 +12,7 @@
 #endif
 #include <chrono>
 
+#include "cl-mat.hpp"
 #include "clGetErrorString.hpp"
 #include <random>
 
@@ -22,35 +23,6 @@
   }
 using namespace std;
 
-string Program = R"(
-__kernel void mul(const unsigned int n,
-__global float *a,
-__global float *b,
-__global float *c){
-size_t x=get_global_id(0);
-if(x>=n)return;
-c[x]=a[x]*b[x];
-}
-__kernel void mul_mat(const unsigned int m,
-const unsigned int n,
-const unsigned int k,
-__global float *a, // m*k
-__global float *b, // k*n
-__global float *c  // m*n
-                   ){
-size_t x=get_global_id(0),
-       y=get_global_id(1);
-if(x>=n){return;}
-if(y>=m){return;}
-float res=0.0f;
-for(unsigned int i=0;i<k;++i){
-res+=a[y*k+i]*b[i*n+x];
-//res+=a[y][i]*b[i][x];
-}
-c[y*n+x]=res;
-//1;
-}
-)";
 using std::chrono::high_resolution_clock;
 // using std::chrono::system_clock;
 // #define now() system_clock::now();
@@ -69,165 +41,56 @@ auto rand01() {
   uniform_real_distribution<float> dis(0, 1);
   return dis(generator);
 }
-const int n = 2, m = 3, k = 4;
-float a[m][k], b[k][n], c[m][n], c1[m][n];
 int main() {
-  cout << timeget() << " start" << endl;
-  cl_int ret;
-  vector<cl_platform_id> platforms;
-  platforms.resize(100);
-  cl_uint platform_count;
-  ret = clGetPlatformIDs(1, platforms.data(), &platform_count);
-  right("get platform");
-  cout << "==platform==" << endl;
-  cout << "count: " << platform_count << endl;
-  cl_platform_id default_platform = platforms[0];
-  string platform_name;
-  {
-    size_t len;
-    clGetPlatformInfo(default_platform, CL_PLATFORM_NAME, 0, NULL, &len);
-    platform_name.resize(len);
-    clGetPlatformInfo(default_platform, CL_PLATFORM_NAME, len,
-                      platform_name.data(), NULL);
-  }
-  cout << "name: " << platform_name << endl;
-  cl_device_id device_id;
-  ret =
-      clGetDeviceIDs(default_platform, CL_DEVICE_TYPE_GPU, 1, &device_id, NULL);
-  right("get device");
-  {
-    size_t len;
-    clGetDeviceInfo(device_id, CL_DEVICE_MAX_WORK_ITEM_SIZES, 0, NULL, &len);
-    size_t sizes[len / 8];
-    clGetDeviceInfo(device_id, CL_DEVICE_MAX_WORK_ITEM_SIZES, len, sizes, NULL);
-    cout << "device: sizes: (x y z)" << len << endl;
-    for (int i = 0; i < len / 8; ++i) {
-      cout << sizes[i] << ' ';
-    }
-    cout << dec << endl;
-  }
-  cl_context context = clCreateContext(0, 1, &device_id, NULL, NULL, &ret);
-  right("create context");
-  if (!context) {
-    cout << "error: create context (" << ret << ")" << endl;
-    return 1;
-  }
-  cl_command_queue command = clCreateCommandQueue(context, device_id, 0, &ret);
-  right("create command");
-  if (!command) {
-    cout << "error: create command (" << ret << ")" << endl;
-    return 1;
-  }
-  cl_program program;
-  {
-    const char *p[2] = {Program.data(), NULL};
-    size_t l[2] = {Program.length(), 0};
-    program = clCreateProgramWithSource(context, 1, p, l, &ret);
-  }
-  right("create program");
-  if (!program) {
-    cout << "error: create program (" << ret << ")" << endl;
-    return 1;
-  }
-
-  // build the program
-  ret = clBuildProgram(program, 0, NULL, NULL, NULL, NULL);
-  if (ret != CL_SUCCESS) {
-    string msg;
-    size_t len;
-    cout << "error in program" << endl;
-    clGetProgramBuildInfo(program, device_id, CL_PROGRAM_BUILD_LOG, 0, NULL,
-                          &len);
-    msg.resize(len);
-    clGetProgramBuildInfo(program, device_id, CL_PROGRAM_BUILD_LOG, len,
-                          msg.data(), NULL);
-    right(msg);
-  }
-  cl_kernel kernel = clCreateKernel(program, "mul_mat", &ret);
-  right("create kernel");
-  if (!kernel) {
-    cout << "err in kernel" << endl;
-    return 1;
-  }
-  cout << "[" << timeget() << "] ====init done=====" << endl;
-  cl_mem in_a, in_b, out;
+  init();
+  cout << "[" << timeget() << "] init" << endl;
+  int m, n, k;
+  cin >> m >> n >> k;
+  cout << "[" << timeget() << "] input done" << endl;
+  cout << "[" << timeget() << "] =====test1=====" << endl;
+  matrix a, b, c, c1;
+  a.setn(m);
+  a.setm(k);
+  b.setn(k);
+  b.setm(n);
+  c.setn(m);
+  c.setm(n);
+  c1.setn(m);
+  c1.setm(n);
   for (int i = 0; i < m; ++i) {
     for (int j = 0; j < k; ++j) {
-      a[i][j] = rand01();
+      a(i, j) = rand01();
+      // a(i, j) = i + j;
     }
   }
   for (int i = 0; i < k; ++i) {
     for (int j = 0; j < n; ++j) {
-      b[i][j] = rand01();
+      b(i, j) = rand01();
+      // b(i, j) = i + j;
     }
   }
-  cout << "[" << timeget() << "] ====randomize done=====" << endl;
-  // create args buf
-  in_a = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(float) * m * k, NULL,
-                        &ret);
-  right("create buf a");
-  in_b = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(float) * k * n, NULL,
-                        &ret);
-  right("create buf b");
-  out = clCreateBuffer(context, CL_MEM_READ_WRITE, sizeof(float) * m * n, NULL,
-                       &ret);
-  right("create buf out");
-  // write buf
-  ret = clEnqueueWriteBuffer(command, in_a, CL_TRUE, 0, sizeof(float) * m * k,
-                             a, 0, NULL, NULL);
-  right("write a");
-  ret = clEnqueueWriteBuffer(command, in_b, CL_TRUE, 0, sizeof(float) * k * n,
-                             b, 0, NULL, NULL);
-  right("write b");
-  cout << "[" << timeget() << "] create copy buffer" << endl;
-  // set args
-  ret = clSetKernelArg(kernel, 0, sizeof(unsigned int), &m);
-  right("set arg 0");
-  ret = clSetKernelArg(kernel, 1, sizeof(unsigned int), &n);
-  right("set arg 1");
-  ret = clSetKernelArg(kernel, 2, sizeof(unsigned int), &k);
-  right("set arg 2");
-  ret = clSetKernelArg(kernel, 3, sizeof(cl_mem), &in_a);
-  right("set arg 3");
-  ret = clSetKernelArg(kernel, 4, sizeof(cl_mem), &in_b);
-  right("set arg 4");
-  ret = clSetKernelArg(kernel, 5, sizeof(cl_mem), &out);
-  right("set arg 5");
-  size_t global[2];
-  size_t kernelsize;
-  ret = clGetKernelWorkGroupInfo(kernel, device_id, CL_KERNEL_WORK_GROUP_SIZE,
-                                 sizeof(kernelsize), &kernelsize, NULL);
-  right("get group info");
-  cout << "group size: " << kernelsize << endl;
-  global[0] = m;
-  global[1] = n;
-  cout << "[" << timeget() << "] set args and get group info" << endl;
-  ret = clEnqueueNDRangeKernel(command, kernel, 2, NULL, global, NULL, 0, NULL,
-                               NULL);
-  right("run");
-  clFinish(command);
+  cout << "[" << timeget() << "] randomize" << endl;
+  c = mul_mat(a, b);
   cout << "[" << timeget() << "] done" << endl;
-  ret = clEnqueueReadBuffer(command, out, CL_TRUE, 0, sizeof(float) * m * n, c,
-                            0, NULL, NULL);
-  cout << "[" << timeget() << "] copy done" << endl;
   cout << "[" << timeget() << "] run normal way and check" << endl;
   bool different = false;
-  for (int x = 0; x < m; ++x) { // a:m*k b:k*n
+  for (int x = 0; x < n; ++x) { // a:m*k b:k*n
     if (x * 100 % m == 0) {
       cout << x * 100 / m << "%";
       cout.flush();
     }
-    for (int y = 0; y < n; ++y) {
+    for (int y = 0; y < m; ++y) {
       float res = 0;
       for (unsigned int i = 0; i < k; ++i) {
-        res += a[y][i] * b[i][x];
+        res += a(y, i) * b(i, x);
       }
-      c1[y][x] = res;
-      if (c[y][x] != c1[y][x])
+      c1(y, x) = res;
+      if (c(y, x) != c1(y, x))
         different = true;
     }
   }
-  cout << "[" << timeget() << "] done" << endl
+  cout << endl
+       << "[" << timeget() << "] done" << endl
        << "different: " << different << endl;
   if (m < 10 && n < 10) {
     cout << "a: " << m << "*" << k << endl;
@@ -236,37 +99,67 @@ int main() {
     cout << "a = " << endl;
     for (int i = 0; i < m; ++i) {
       for (int j = 0; j < k; ++j) {
-        cout << a[i][j] << ' ';
+        cout << a(i, j) << ' ';
       }
       cout << endl;
     }
     cout << "b = " << endl;
     for (int i = 0; i < k; ++i) {
       for (int j = 0; j < n; ++j) {
-        cout << b[i][j] << ' ';
+        cout << b(i, j) << ' ';
       }
       cout << endl;
     }
     cout << "c = " << endl;
     for (int i = 0; i < m; ++i) {
       for (int j = 0; j < n; ++j) {
-        cout << c[i][j] << ' ';
+        cout << c(i, j) << ' ';
       }
       cout << endl;
     }
     cout << "c1 = " << endl;
     for (int i = 0; i < m; ++i) {
       for (int j = 0; j < n; ++j) {
-        cout << c1[i][j] << ' ';
+        cout << c1(i, j) << ' ';
       }
       cout << endl;
     }
   }
-  clReleaseMemObject(in_a);
-  clReleaseMemObject(in_b);
-  clReleaseMemObject(out);
-  clReleaseKernel(kernel);
-  clReleaseProgram(program);
-  clReleaseCommandQueue(command);
-  clReleaseContext(context);
+  cout << "[" << timeget() << "] =====test2=====" << endl;
+  VvalT v1, v2;
+  v1.resize(n);
+  v2.resize(n);
+  for (int i = 0; i < n; ++i) {
+    v1[i] = rand01();
+    v2[i] = rand01();
+  }
+  auto res1 = add_vec(v1, v2), res2 = mul_vec(v1, v2);
+  cout << "[" << timeget() << "] done" << endl;
+  if (n < 10) {
+    cout << "v1: " << endl;
+    for (int i = 0; i < n; ++i) {
+      cout << v1[i] << " ";
+    }
+    cout << "v2: " << endl;
+    for (int i = 0; i < n; ++i) {
+      cout << v2[i] << " ";
+    }
+    cout << "res1: " << endl;
+    for (int i = 0; i < n; ++i) {
+      cout << res1[i] << " ";
+    }
+    cout << "res2: " << endl;
+    for (int i = 0; i < n; ++i) {
+      cout << res2[i] << " ";
+    }
+  }
+  cout << "[" << timeget() << "] print vectors" << endl;
+  for (int i = 0; i <= n; ++i) {
+    if (v1[i] + v2[i] != res1[i] || v1[i] * v2[i] != res2[i]) {
+      cout << "different!" << endl;
+      break;
+    }
+  }
+  cout << "[" << timeget() << "] normal way" << endl;
+  teardown();
 }

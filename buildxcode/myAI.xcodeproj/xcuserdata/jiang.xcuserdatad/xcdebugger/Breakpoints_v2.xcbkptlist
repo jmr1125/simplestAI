@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "3E943CBE-D38D-423C-B5A4-955D3BA9EED9"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0A4A794-9E80-4570-BC01-C4D9C294611A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "cl-mat.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "mul_mat(a, b)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "D0A4A794-9E80-4570-BC01-C4D9C294611A - 32cfab0836b509b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mul_mat(matrix const&amp;, matrix const&amp;)"
+                  moduleName = "test-cl-matrix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiang/Desktop/myai/cl-mat.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "3356">
+               </Location>
+               <Location
+                  uuid = "D0A4A794-9E80-4570-BC01-C4D9C294611A - 32cfab0836b50968"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mul_mat(matrix const&amp;, matrix const&amp;)"
+                  moduleName = "test-cl-matrix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiang/Desktop/myai/cl-mat.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "3356">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

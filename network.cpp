@@ -77,7 +77,7 @@ void network::backpropagation(matrix input, VvalT expect, valT rate) {
   delta.resize(layers.size());
   dF.resize(layers.size());
   matrix output = feed_forward(input);
-  for (int i = layers.size() - 1; i >= 0; --i) {
+  for (size_t i = layers.size() - 1; i >= 0; --i) {
     if (i == layers.size() - 1) {
       delta.at(i).setn(layers[i].w.getn());
       delta.at(i).setm(1);

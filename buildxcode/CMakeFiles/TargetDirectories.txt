@@ -1,0 +1,11 @@
+/Users/jiang/Desktop/myai/buildxcode/CMakeFiles/test-cl-matrix.dir
+/Users/jiang/Desktop/myai/buildxcode/CMakeFiles/readdata.dir
+/Users/jiang/Desktop/myai/buildxcode/CMakeFiles/train.dir
+/Users/jiang/Desktop/myai/buildxcode/CMakeFiles/drawdata.dir
+/Users/jiang/Desktop/myai/buildxcode/CMakeFiles/trainmnist.dir
+/Users/jiang/Desktop/myai/buildxcode/CMakeFiles/generate.dir
+/Users/jiang/Desktop/myai/buildxcode/CMakeFiles/trainemnist.dir
+/Users/jiang/Desktop/myai/buildxcode/CMakeFiles/generateemnist.dir
+/Users/jiang/Desktop/myai/buildxcode/CMakeFiles/learnpicture.dir
+/Users/jiang/Desktop/myai/buildxcode/CMakeFiles/ALL_BUILD.dir
+/Users/jiang/Desktop/myai/buildxcode/CMakeFiles/ZERO_CHECK.dir
