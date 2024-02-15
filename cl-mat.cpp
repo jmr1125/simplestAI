@@ -212,13 +212,13 @@ VvalT mul_vec(const VvalT &a, const VvalT &b) {
                              b.data(), 0, NULL, &wrtB);
   right("write b");
 
-  ret = clSetKernelArg(k_mul_mat, 0, sizeof(unsigned int), &n);
+  ret = clSetKernelArg(k_mul_vec, 0, sizeof(unsigned int), &n);
   right("set arg 0");
-  ret = clSetKernelArg(k_mul_mat, 1, sizeof(cl_mem), &in_a);
+  ret = clSetKernelArg(k_mul_vec, 1, sizeof(cl_mem), &in_a);
   right("set arg 1");
-  ret = clSetKernelArg(k_mul_mat, 2, sizeof(cl_mem), &in_b);
+  ret = clSetKernelArg(k_mul_vec, 2, sizeof(cl_mem), &in_b);
   right("set arg 2");
-  ret = clSetKernelArg(k_mul_mat, 3, sizeof(cl_mem), &out);
+  ret = clSetKernelArg(k_mul_vec, 3, sizeof(cl_mem), &out);
   right("set arg 3");
   cl_event waitlist[] = {wrtA, wrtB};
   size_t global[] = {n};
