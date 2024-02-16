@@ -35,6 +35,12 @@ valT &matrix::operator()(size_t x, size_t y) { return m.at(x).at(y); }
 size_t matrix::getn() const { return m.size(); }
 size_t matrix::getm() const { return m[0].size(); }
 void matrix::swap(matrix &tmp) { m.swap(tmp.m); }
+#ifdef USE_OCL
+#include "cl-mat.hpp"
+matrix matrix::operator*(const matrix &m1) const {
+    return mul_mat(*this, m1);
+}
+#else
 matrix matrix::operator*(const matrix &m1) const {
   if (getm() != m1.getn()) {
     throw dimension_error(string("m1 n=" + to_string(m1.getn()) +
@@ -54,6 +60,7 @@ matrix matrix::operator*(const matrix &m1) const {
   }
   return std::move(res);
 };
+#endif
 vector<valT> matrix::operator*(const vector<valT> &vec) const {
   if (vec.size() != getm()) {
     throw dimension_error((string) "m= " + to_string(getn()) +
