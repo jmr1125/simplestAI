@@ -13,7 +13,13 @@ using std::max;
 using std::min;
 const int maxx = 28, maxy = 28;
 char pic[maxx][maxy];
+#ifdef USE_OCL
+#include "cl-mat.hpp"
+#endif
 int main(int argc, char *argv[]) {
+#ifdef USE_OCL
+  init();
+#endif
   network net({}, NULL, NULL);
   {
     ifstream in("handwritemnist.net");
@@ -153,4 +159,7 @@ int main(int argc, char *argv[]) {
   }
   printf("\033[?1003l");
   endwin();
+#ifdef USE_OCL
+  teardown();
+#endif
 }

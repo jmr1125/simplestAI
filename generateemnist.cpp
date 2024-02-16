@@ -17,7 +17,13 @@ string name[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B",
                  "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
                  "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
                  "a", "b", "d", "e", "f", "g", "h", "n", "q", "R", "T"};
+#ifdef USE_OCL
+#include "cl-mat.hpp"
+#endif
 int main(int argc, char *argv[]) {
+#ifdef USE_OCL
+  init();
+#endif
   network net({}, NULL, NULL);
   {
     ifstream in("handwriteemnist.net");
@@ -155,4 +161,7 @@ int main(int argc, char *argv[]) {
   }
   printf("\033[?1003l");
   endwin();
+#ifdef USE_OCL
+  teardown();
+#endif
 }

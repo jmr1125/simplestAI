@@ -88,7 +88,13 @@ void Readall(istream &in) {
     }
   }
 }
+#ifdef USE_OCL
+#include "cl-mat.hpp"
+#endif
 int main() {
+#ifdef USE_OCL
+  init();
+#endif
 #ifdef USE_OMP
   omp_set_dynamic(0);
   // omp_set_nested(1);
@@ -199,4 +205,7 @@ int main() {
     net.save(out);
     out << id << endl << epoch;
   }
+#ifdef USE_OCL
+  teardown();
+#endif
 }
