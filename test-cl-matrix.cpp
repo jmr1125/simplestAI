@@ -46,6 +46,8 @@ int main() {
   cout << "[" << timeget() << "] init" << endl;
   int m, n, k;
   cin >> m >> n >> k;
+//  int n1;
+//  cin >> n1;
   cout << "[" << timeget() << "] input done" << endl;
   cout << "[" << timeget() << "] =====test1=====" << endl;
   matrix a, b, c, c1;
@@ -125,41 +127,41 @@ int main() {
       cout << endl;
     }
   }
-  cout << "[" << timeget() << "] =====test2=====" << endl;
-  VvalT v1, v2;
-  v1.resize(n);
-  v2.resize(n);
-  for (int i = 0; i < n; ++i) {
-    v1[i] = rand01();
-    v2[i] = rand01();
-  }
-  auto res1 = add_vec(v1, v2), res2 = mul_vec(v1, v2);
-  cout << "[" << timeget() << "] done" << endl;
-  if (n < 10) {
-    cout << "v1: " << endl;
-    for (int i = 0; i < n; ++i) {
-      cout << v1[i] << " ";
-    }
-    cout << "v2: " << endl;
-    for (int i = 0; i < n; ++i) {
-      cout << v2[i] << " ";
-    }
-    cout << "res1: " << endl;
-    for (int i = 0; i < n; ++i) {
-      cout << res1[i] << " ";
-    }
-    cout << "res2: " << endl;
-    for (int i = 0; i < n; ++i) {
-      cout << res2[i] << " ";
-    }
-  }
-  cout << "[" << timeget() << "] print vectors" << endl;
-  for (int i = 0; i <= n; ++i) {
-    if (v1[i] + v2[i] != res1[i] || v1[i] * v2[i] != res2[i]) {
-      cout << "different!" << endl;
-      break;
-    }
-  }
-  cout << "[" << timeget() << "] normal way" << endl;
+//  cout << "[" << timeget() << "] =====test2=====" << endl;
+//  VvalT v1, v2;
+//  v1.resize(n1);
+//  v2.resize(n1);
+//  for (int i = 0; i < n1; ++i) {
+//    v1[i] = rand01();
+//    v2[i] = rand01();
+//  }
+//  auto res1 = add_vec(v1, v2), res2 = mul_vec(v1, v2);
+//  cout << "[" << timeget() << "] done" << endl;
+//  if (n < 10) {
+//    cout << "v1: " << endl;
+//    for (int i = 0; i < n1; ++i) {
+//      cout << v1[i] << " ";
+//    }
+//    cout << "v2: " << endl;
+//    for (int i = 0; i < n1; ++i) {
+//      cout << v2[i] << " ";
+//    }
+//    cout << "res1: " << endl;
+//    for (int i = 0; i < n1; ++i) {
+//      cout << res1[i] << " ";
+//    }
+//    cout << "res2: " << endl;
+//    for (int i = 0; i < n1; ++i) {
+//      cout << res2[i] << " ";
+//    }
+//  }
+//  cout << "[" << timeget() << "] print vectors" << endl;
+//  for (int i = 0; i <= n1; ++i) {
+//    if (v1[i] + v2[i] != res1[i] || v1[i] * v2[i] != res2[i]) {
+//      cout << "different!" << endl;
+//      break;
+//    }
+//  }
+//  cout << "[" << timeget() << "] normal way" << endl;
   teardown();
 }

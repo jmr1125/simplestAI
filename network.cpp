@@ -5,6 +5,13 @@
 #include <cstddef>
 #include <fstream>
 
+#ifdef USE_OMP
+#warning omp
+#endif
+#ifdef USE_OCL
+#warning ocl
+#endif
+
 network::network(const vector<int> &sizes, funcT Func, funcT deFunc) {
   if (sizes.size() == 0) {
     return;
@@ -77,7 +84,7 @@ void network::backpropagation(matrix input, VvalT expect, valT rate) {
   delta.resize(layers.size());
   dF.resize(layers.size());
   matrix output = feed_forward(input);
-  for (size_t i = layers.size() - 1; i >= 0; --i) {
+  for (size_t i = layers.size() - 1; i != -1; --i) {
     if (i == layers.size() - 1) {
       delta.at(i).setn(layers[i].w.getn());
       delta.at(i).setm(1);

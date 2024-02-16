@@ -13,6 +13,9 @@
 #ifdef USE_OMP
 #include <omp.h>
 #endif
+#ifdef USE_OCL
+#include "cl-mat.hpp"
+#endif
 using namespace std;
 
 network net({}, NULL, NULL);
@@ -94,6 +97,9 @@ void initnet() {
 
 double result[512][512];
 int main() {
+#ifdef USE_OCL
+  init();
+#endif
 #ifdef USE_OMP
   omp_set_dynamic(1);
 #endif
@@ -104,7 +110,7 @@ int main() {
     cerr << "no display" << endl;
     return 1;
   }
-  int root = XDefaultRootWindow(d);
+  Window root = XDefaultRootWindow(d);
   int defaultScreen = XDefaultScreen(d);
 
   int bitdepth = 24;
@@ -154,7 +160,15 @@ int main() {
                      pixelBits, w * 4);
     int pitch = w * pixelBytes;
     initnet();
+    for (int x = 0; x < h; ++x)
+      for (int y = 0; y < W; ++y) {
+        unsigned int *px =
+            (unsigned int *)(mem + x * pitch + (y + W) * pixelBytes);
+        int p = picture(x, y) * 255;
+        *px = ((p << 16) | (p << 8) | p);
+      }
     while (!stop) {
+      cout << "a";
       cout.flush();
       for (int x = 0; x < h; ++x) {
         for (int y = 0; y < W; ++y) {
@@ -165,12 +179,6 @@ int main() {
         for (int y = 0; y < W; ++y) {
           unsigned int *px = (unsigned int *)(mem + x * pitch + y * pixelBytes);
           int p = result[x][y] * 255;
-          *px = ((p << 16) | (p << 8) | p);
-        }
-        for (int y = 0; y < W; ++y) {
-          unsigned int *px =
-              (unsigned int *)(mem + x * pitch + (y + W) * pixelBytes);
-          int p = picture(x, y) * 255;
           *px = ((p << 16) | (p << 8) | p);
         }
       }
@@ -228,4 +236,7 @@ int main() {
   ofstream ost("picture.net");
   net.save(ost);
   return 0;
+#ifdef USE_OCL
+  teardown();
+#endif
 }
