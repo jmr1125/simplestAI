@@ -175,37 +175,42 @@ int main() {
       train();
       cout << "a";
       cout.flush();
+#if 0
       for (int x = 0; x < h; ++x) {
         cout << setw(5) << x * 100 / h << "% \033[7D";
         cout.flush();
-#if 0
         for (int y = 0; y < W; ++y) {
           result[x][y] = getgen(x, y);
         }
+      }
 #else
-        vector<int> l[8];
-        {
-          int t = W-1;
-          int i = 0;
-          while (t) {
-            l[i++].push_back(t--);
-            i %= 8;
-          }
+      {
+        const int thread_num = 8;
+        vector<int> l[thread_num];
+        int t = h - 1;
+        int i = 0;
+        while (t) {
+          l[i++].push_back(t--);
+          i %= thread_num;
         }
         vector<thread> threads;
-        for (int i = 0; i < 8; ++i) {
+        for (int i = 0; i < thread_num; ++i) {
           threads.push_back(thread(
-              [&](int i) {
-                for (auto y : l[i]) {
-                  result[x][y] = getgen(x, y);
+              [&](int X) {
+                for (int x : l[X]) {
+                  cout.flush();
+                  for (int y = 0; y < W; ++y) {
+                    result[x][y] = getgen(x, y);
+                  }
                 }
               },
               i));
         }
-        for (auto &th : threads)
-          th.join();
-#endif
+        for (auto &thr : threads) {
+          thr.join();
+        }
       }
+#endif
       cout << "b";
       for (int x = 0; x < h; ++x) {
         cout << setw(5) << x * 100 / h << "% \033[7D";
