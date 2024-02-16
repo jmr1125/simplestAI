@@ -6,7 +6,7 @@
 #include <cstddef>
 #include <iostream>
 #ifdef USE_OMP
-// #warning omp
+#warning omp
 #include <omp.h>
 #endif
 #include <vector>

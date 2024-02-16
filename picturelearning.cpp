@@ -8,6 +8,7 @@
 #include <fstream>
 #include <iomanip>
 #include <iostream>
+#include <ncurses.h>
 #include <thread>
 #include <unistd.h>
 #ifdef USE_OMP
@@ -16,29 +17,30 @@
 #ifdef USE_OCL
 #include "cl-mat.hpp"
 #endif
+#include <thread>
 using namespace std;
 
 network net({}, NULL, NULL);
 
 int W = 128, w = W * 2, h = 128;
-int o = 64;
+const int o = 64;
 valT learnrate = 1e-3;
 valT picture(int x, int y) {
-  return (((x + 8) / 16) % 2 && ((y + 8) / 16) % 2) ? 1.0 : 0.5;
-  // return (20 < x && x < 108 && 20 < y && y < 90) ? 1 : 0;
+  return (((x + 8) / 16) % 2 && ((y + 8) / 16) % 2) ? 1.0 : 0;
 }
+#define PI 3.1415936535
 matrix getInput(int x, int y) {
   matrix input;
   input.setn(o * 4 - 2);
   input.setm(1);
   int id = 0;
   for (int i = 1; i < o; ++i) { //(o-1)*2*2+2
-    input(id++, 0) = sin(i * x);
-    input(id++, 0) = cos(i * x);
+    input(id++, 0) = sin(i * x * PI * 2 / h);
+    input(id++, 0) = cos(i * x * PI * 2 / h);
   }
   for (int i = 1; i < o; ++i) {
-    input(id++, 0) = sin(i * y);
-    input(id++, 0) = cos(i * y);
+    input(id++, 0) = sin(i * y * PI * 2 / w);
+    input(id++, 0) = cos(i * y * PI * 2 / w);
   }
   input(id++, 0) = x;
   input(id++, 0) = y;
@@ -105,6 +107,7 @@ int main() {
 #endif
   cout << "learn rate? : ";
   cin >> learnrate;
+  //  learnrate=0.0001;
   Display *d = XOpenDisplay(0);
   if (!d) {
     cerr << "no display" << endl;
@@ -168,14 +171,45 @@ int main() {
         *px = ((p << 16) | (p << 8) | p);
       }
     while (!stop) {
+      cout << "\r";
+      train();
       cout << "a";
       cout.flush();
       for (int x = 0; x < h; ++x) {
+        cout << setw(5) << x * 100 / h << "% \033[7D";
+        cout.flush();
+#if 0
         for (int y = 0; y < W; ++y) {
           result[x][y] = getgen(x, y);
         }
+#else
+        vector<int> l[8];
+        {
+          int t = W-1;
+          int i = 0;
+          while (t) {
+            l[i++].push_back(t--);
+            i %= 8;
+          }
+        }
+        vector<thread> threads;
+        for (int i = 0; i < 8; ++i) {
+          threads.push_back(thread(
+              [&](int i) {
+                for (auto y : l[i]) {
+                  result[x][y] = getgen(x, y);
+                }
+              },
+              i));
+        }
+        for (auto &th : threads)
+          th.join();
+#endif
       }
+      cout << "b";
       for (int x = 0; x < h; ++x) {
+        cout << setw(5) << x * 100 / h << "% \033[7D";
+        cout.flush();
         for (int y = 0; y < W; ++y) {
           unsigned int *px = (unsigned int *)(mem + x * pitch + y * pixelBytes);
           int p = result[x][y] * 255;
@@ -183,7 +217,6 @@ int main() {
         }
       }
       cout << "\r";
-      train();
       valT delta = 0;
       for (int x = 0; x <= h; ++x) {
         for (int y = 0; y <= W; ++y) {
