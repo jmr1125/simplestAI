@@ -206,8 +206,10 @@ int main() {
               },
               i));
         }
-        for (auto &thr : threads) {
-          thr.join();
+        for (int i = 0; i < thread_num; ++i) {
+          threads[i].join();
+          cout << i << "/" << thread_num << "\r";
+          cout.flush();
         }
       }
 #endif
