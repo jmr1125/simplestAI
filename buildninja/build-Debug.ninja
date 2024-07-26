@@ -22,7 +22,7 @@ build train: phony Debug/train
 
 build trainemnist: phony Debug/trainemnist
 
-build trainmnist: phony Debug/trainmnist
+build trainemnistconvolution: phony Debug/trainemnistconvolution
 
 
 #############################################

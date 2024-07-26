@@ -124,14 +124,10 @@ int main() {
       /*randomize net*/
       for (layer &l : net.layers) {
         for (auto &x : l.w.m) { // rand matrix
-          for (auto &x : x) {
             x = (genvalT() - 0.5) * 2 * (1 / sqrt(l.w.getm()));
-          }
         }
         for (auto &x : l.b.m) { // rand basis
-          for (auto &x : x) {
             x = (genvalT() - 0.5) * 2 * (1 / sqrt(l.b.getn()));
-          }
         }
       }
       id = 0;

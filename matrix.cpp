@@ -4,7 +4,6 @@
 #include <stdexcept>
 #include <string>
 using std::endl;
-using std::for_each;
 // using std::move;
 using std::to_string;
 dimension_error::dimension_error(const string &s) : std::runtime_error(s) {}
@@ -12,15 +11,11 @@ const char *dimension_error::what() const throw() {
   return std::runtime_error::what();
 }
 
-void makemat(vector<vector<valT>> &v, size_t n, size_t m) {
+void makemat(vector<valT> &v, size_t n, size_t m) {
   if (n == -1 || m == -1) {
     return;
   }
-  v.resize(n);
-  for_each(v.begin(), v.end(), [=](vector<valT> &v) {
-    v.clear();
-    v.resize(m);
-  });
+  v.resize(n * m);
 }
 void matrix::setn(size_t n) {
   N = n;
@@ -30,15 +25,31 @@ void matrix::setm(size_t m) {
   M = m;
   makemat(this->m, N, M);
 }
-valT matrix::operator()(size_t x, size_t y) const { return m.at(x).at(y); }
-valT &matrix::operator()(size_t x, size_t y) { return m.at(x).at(y); }
-size_t matrix::getn() const { return m.size(); }
-size_t matrix::getm() const { return m[0].size(); }
+valT matrix::operator()(size_t x, size_t y) const { return m.at(x * M + y); }
+valT &matrix::operator()(size_t x, size_t y) { return m.at(x * M + y); }
+size_t matrix::getn() const { return N; }
+size_t matrix::getm() const { return M; }
 void matrix::swap(matrix &tmp) { m.swap(tmp.m); }
 #ifdef USE_OCL
+#warning ocl
 #include "cl-mat.hpp"
 matrix matrix::operator*(const matrix &m1) const {
-    return mul_mat(*this, m1);
+  if (N * M * m1.getm() < 1000) {
+    matrix res;
+    res.setn(getn());
+    res.setm(m1.getm());
+    for (int i = 0; i < getn(); ++i) {
+      for (int j = 0; j < m1.getm(); ++j) {
+        valT tmp = 0;
+        for (int k = 0; k < getm(); ++k) {
+          tmp += (*this)(i, k) * m1(k, j);
+        }
+        res(i, j) = tmp;
+      }
+    }
+    return std::move(res);
+  }
+  return mul_mat(*this, m1);
 }
 #else
 matrix matrix::operator*(const matrix &m1) const {
@@ -77,19 +88,17 @@ vector<valT> matrix::operator*(const vector<valT> &vec) const {
   }
   return res;
 }
-matrix matrix::operator*(const valT v) const {
-  auto m = this->m;
-  for (auto &i : m) {
-    for (auto &j : i) {
-      j *= v;
-    }
-  }
-  matrix M;
-  M.setm(1);
-  M.setn(this->getn());
-  M.m = m;
-  return M;
-}
+// matrix matrix::operator*(const valT v) const {
+//   auto m = this->m;
+//   for (auto &i : m) {
+//       i *= v;
+//   }
+//   matrix M;
+//   M.setm(1);
+//   M.setn(this->getn());
+//   M.m = m;
+//   return M;
+// }
 matrix matrix::operator+(const matrix &m1) const {
   if (m1.getn() != getn() || m1.getm() != getm()) {
     throw dimension_error(string("m1 n,m=") + to_string(m1.getn()) + "," +
@@ -147,12 +156,6 @@ const matrix &matrix::operator=(const vector<valT> &vec) {
   }
   return *this;
 }
-// matrix matrix::operator=(matrix &&m1) {
-//   m = std::move(m1.m);
-//   N = m1.N;
-//   M = m1.M;
-//   return std::move(m1);
-// }
 vector<valT> matrix::getvec() const {
   if (getm() != 1) {
     throw dimension_error((string) "m= " + to_string(getm()));

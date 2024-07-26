@@ -46,56 +46,56 @@ build cmake_object_order_depends_target_test-cl-matrix_RELEASE: phony || CMakeFi
 build CMakeFiles/test-cl-matrix.dir/Release/test-cl-matrix.cpp.o: CXX_COMPILER__test-cl-matrix_unscanned_Release /Users/jiang/Desktop/myAI/test-cl-matrix.cpp || cmake_object_order_depends_target_test-cl-matrix_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/test-cl-matrix.dir/Release/test-cl-matrix.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-cl-matrix.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/test-cl-matrix.dir/Release
 
 build CMakeFiles/test-cl-matrix.dir/Release/matrix.cpp.o: CXX_COMPILER__test-cl-matrix_unscanned_Release /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_test-cl-matrix_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/test-cl-matrix.dir/Release/matrix.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-cl-matrix.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/test-cl-matrix.dir/Release
 
 build CMakeFiles/test-cl-matrix.dir/Release/layer.cpp.o: CXX_COMPILER__test-cl-matrix_unscanned_Release /Users/jiang/Desktop/myAI/layer.cpp || cmake_object_order_depends_target_test-cl-matrix_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/test-cl-matrix.dir/Release/layer.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-cl-matrix.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/test-cl-matrix.dir/Release
 
 build CMakeFiles/test-cl-matrix.dir/Release/network.cpp.o: CXX_COMPILER__test-cl-matrix_unscanned_Release /Users/jiang/Desktop/myAI/network.cpp || cmake_object_order_depends_target_test-cl-matrix_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/test-cl-matrix.dir/Release/network.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-cl-matrix.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/test-cl-matrix.dir/Release
 
 build CMakeFiles/test-cl-matrix.dir/Release/function.cpp.o: CXX_COMPILER__test-cl-matrix_unscanned_Release /Users/jiang/Desktop/myAI/function.cpp || cmake_object_order_depends_target_test-cl-matrix_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/test-cl-matrix.dir/Release/function.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-cl-matrix.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/test-cl-matrix.dir/Release
 
 build CMakeFiles/test-cl-matrix.dir/Release/clGetErrorString.cpp.o: CXX_COMPILER__test-cl-matrix_unscanned_Release /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_test-cl-matrix_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/test-cl-matrix.dir/Release/clGetErrorString.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-cl-matrix.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/test-cl-matrix.dir/Release
 
 build CMakeFiles/test-cl-matrix.dir/Release/cl-mat.cpp.o: CXX_COMPILER__test-cl-matrix_unscanned_Release /Users/jiang/Desktop/myAI/cl-mat.cpp || cmake_object_order_depends_target_test-cl-matrix_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/test-cl-matrix.dir/Release/cl-mat.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-cl-matrix.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/test-cl-matrix.dir/Release
 
@@ -108,8 +108,8 @@ build CMakeFiles/test-cl-matrix.dir/Release/cl-mat.cpp.o: CXX_COMPILER__test-cl-
 # Link the executable Release/test-cl-matrix
 
 build Release/test-cl-matrix: CXX_EXECUTABLE_LINKER__test-cl-matrix_Release CMakeFiles/test-cl-matrix.dir/Release/test-cl-matrix.cpp.o CMakeFiles/test-cl-matrix.dir/Release/matrix.cpp.o CMakeFiles/test-cl-matrix.dir/Release/layer.cpp.o CMakeFiles/test-cl-matrix.dir/Release/network.cpp.o CMakeFiles/test-cl-matrix.dir/Release/function.cpp.o CMakeFiles/test-cl-matrix.dir/Release/clGetErrorString.cpp.o CMakeFiles/test-cl-matrix.dir/Release/cl-mat.cpp.o
-  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
   LINK_LIBRARIES = -framework OpenCL  -framework OpenCL
   OBJECT_DIR = CMakeFiles/test-cl-matrix.dir/Release
   POST_BUILD = :
@@ -129,8 +129,8 @@ build cmake_object_order_depends_target_readdata_RELEASE: phony || CMakeFiles/re
 build CMakeFiles/readdata.dir/Release/readmnist.cpp.o: CXX_COMPILER__readdata_unscanned_Release /Users/jiang/Desktop/myAI/readmnist.cpp || cmake_object_order_depends_target_readdata_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/readdata.dir/Release/readmnist.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/readdata.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/readdata.dir/Release
 
@@ -143,8 +143,8 @@ build CMakeFiles/readdata.dir/Release/readmnist.cpp.o: CXX_COMPILER__readdata_un
 # Link the executable Release/readdata
 
 build Release/readdata: CXX_EXECUTABLE_LINKER__readdata_Release CMakeFiles/readdata.dir/Release/readmnist.cpp.o
-  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
   LINK_LIBRARIES = -framework OpenCL
   OBJECT_DIR = CMakeFiles/readdata.dir/Release
   POST_BUILD = :
@@ -164,56 +164,56 @@ build cmake_object_order_depends_target_train_RELEASE: phony || CMakeFiles/train
 build CMakeFiles/train.dir/Release/train1.cpp.o: CXX_COMPILER__train_unscanned_Release /Users/jiang/Desktop/myAI/train1.cpp || cmake_object_order_depends_target_train_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/train.dir/Release/train1.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/train.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Release
 
 build CMakeFiles/train.dir/Release/matrix.cpp.o: CXX_COMPILER__train_unscanned_Release /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_train_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/train.dir/Release/matrix.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/train.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Release
 
 build CMakeFiles/train.dir/Release/layer.cpp.o: CXX_COMPILER__train_unscanned_Release /Users/jiang/Desktop/myAI/layer.cpp || cmake_object_order_depends_target_train_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/train.dir/Release/layer.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/train.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Release
 
 build CMakeFiles/train.dir/Release/network.cpp.o: CXX_COMPILER__train_unscanned_Release /Users/jiang/Desktop/myAI/network.cpp || cmake_object_order_depends_target_train_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/train.dir/Release/network.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/train.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Release
 
 build CMakeFiles/train.dir/Release/function.cpp.o: CXX_COMPILER__train_unscanned_Release /Users/jiang/Desktop/myAI/function.cpp || cmake_object_order_depends_target_train_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/train.dir/Release/function.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/train.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Release
 
 build CMakeFiles/train.dir/Release/clGetErrorString.cpp.o: CXX_COMPILER__train_unscanned_Release /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_train_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/train.dir/Release/clGetErrorString.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/train.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Release
 
 build CMakeFiles/train.dir/Release/cl-mat.cpp.o: CXX_COMPILER__train_unscanned_Release /Users/jiang/Desktop/myAI/cl-mat.cpp || cmake_object_order_depends_target_train_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/train.dir/Release/cl-mat.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/train.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Release
 
@@ -225,10 +225,10 @@ build CMakeFiles/train.dir/Release/cl-mat.cpp.o: CXX_COMPILER__train_unscanned_R
 #############################################
 # Link the executable Release/train
 
-build Release/train: CXX_EXECUTABLE_LINKER__train_Release CMakeFiles/train.dir/Release/train1.cpp.o CMakeFiles/train.dir/Release/matrix.cpp.o CMakeFiles/train.dir/Release/layer.cpp.o CMakeFiles/train.dir/Release/network.cpp.o CMakeFiles/train.dir/Release/function.cpp.o CMakeFiles/train.dir/Release/clGetErrorString.cpp.o CMakeFiles/train.dir/Release/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
-  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
+build Release/train: CXX_EXECUTABLE_LINKER__train_Release CMakeFiles/train.dir/Release/train1.cpp.o CMakeFiles/train.dir/Release/matrix.cpp.o CMakeFiles/train.dir/Release/layer.cpp.o CMakeFiles/train.dir/Release/network.cpp.o CMakeFiles/train.dir/Release/function.cpp.o CMakeFiles/train.dir/Release/clGetErrorString.cpp.o CMakeFiles/train.dir/Release/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
+  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/train.dir/Release
   POST_BUILD = :
   PRE_LINK = :
@@ -247,8 +247,8 @@ build cmake_object_order_depends_target_drawdata_RELEASE: phony || CMakeFiles/dr
 build CMakeFiles/drawdata.dir/Release/data.cpp.o: CXX_COMPILER__drawdata_unscanned_Release /Users/jiang/Desktop/myAI/data.cpp || cmake_object_order_depends_target_drawdata_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/drawdata.dir/Release/data.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/drawdata.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/drawdata.dir/Release
 
@@ -260,98 +260,15 @@ build CMakeFiles/drawdata.dir/Release/data.cpp.o: CXX_COMPILER__drawdata_unscann
 #############################################
 # Link the executable Release/drawdata
 
-build Release/drawdata: CXX_EXECUTABLE_LINKER__drawdata_Release CMakeFiles/drawdata.dir/Release/data.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
-  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
+build Release/drawdata: CXX_EXECUTABLE_LINKER__drawdata_Release CMakeFiles/drawdata.dir/Release/data.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
+  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/drawdata.dir/Release
   POST_BUILD = :
   PRE_LINK = :
   TARGET_FILE = Release/drawdata
   TARGET_PDB = drawdata.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target trainmnist
-
-
-#############################################
-# Order-only phony target for trainmnist
-
-build cmake_object_order_depends_target_trainmnist_RELEASE: phony || CMakeFiles/trainmnist.dir
-
-build CMakeFiles/trainmnist.dir/Release/train2.cpp.o: CXX_COMPILER__trainmnist_unscanned_Release /Users/jiang/Desktop/myAI/train2.cpp || cmake_object_order_depends_target_trainmnist_RELEASE
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
-  DEP_FILE = CMakeFiles/trainmnist.dir/Release/train2.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
-  OBJECT_DIR = CMakeFiles/trainmnist.dir/Release
-  OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Release
-
-build CMakeFiles/trainmnist.dir/Release/matrix.cpp.o: CXX_COMPILER__trainmnist_unscanned_Release /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_trainmnist_RELEASE
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
-  DEP_FILE = CMakeFiles/trainmnist.dir/Release/matrix.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
-  OBJECT_DIR = CMakeFiles/trainmnist.dir/Release
-  OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Release
-
-build CMakeFiles/trainmnist.dir/Release/layer.cpp.o: CXX_COMPILER__trainmnist_unscanned_Release /Users/jiang/Desktop/myAI/layer.cpp || cmake_object_order_depends_target_trainmnist_RELEASE
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
-  DEP_FILE = CMakeFiles/trainmnist.dir/Release/layer.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
-  OBJECT_DIR = CMakeFiles/trainmnist.dir/Release
-  OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Release
-
-build CMakeFiles/trainmnist.dir/Release/network.cpp.o: CXX_COMPILER__trainmnist_unscanned_Release /Users/jiang/Desktop/myAI/network.cpp || cmake_object_order_depends_target_trainmnist_RELEASE
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
-  DEP_FILE = CMakeFiles/trainmnist.dir/Release/network.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
-  OBJECT_DIR = CMakeFiles/trainmnist.dir/Release
-  OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Release
-
-build CMakeFiles/trainmnist.dir/Release/function.cpp.o: CXX_COMPILER__trainmnist_unscanned_Release /Users/jiang/Desktop/myAI/function.cpp || cmake_object_order_depends_target_trainmnist_RELEASE
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
-  DEP_FILE = CMakeFiles/trainmnist.dir/Release/function.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
-  OBJECT_DIR = CMakeFiles/trainmnist.dir/Release
-  OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Release
-
-build CMakeFiles/trainmnist.dir/Release/clGetErrorString.cpp.o: CXX_COMPILER__trainmnist_unscanned_Release /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_trainmnist_RELEASE
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
-  DEP_FILE = CMakeFiles/trainmnist.dir/Release/clGetErrorString.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
-  OBJECT_DIR = CMakeFiles/trainmnist.dir/Release
-  OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Release
-
-build CMakeFiles/trainmnist.dir/Release/cl-mat.cpp.o: CXX_COMPILER__trainmnist_unscanned_Release /Users/jiang/Desktop/myAI/cl-mat.cpp || cmake_object_order_depends_target_trainmnist_RELEASE
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
-  DEP_FILE = CMakeFiles/trainmnist.dir/Release/cl-mat.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
-  OBJECT_DIR = CMakeFiles/trainmnist.dir/Release
-  OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Release
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target trainmnist
-
-
-#############################################
-# Link the executable Release/trainmnist
-
-build Release/trainmnist: CXX_EXECUTABLE_LINKER__trainmnist_Release CMakeFiles/trainmnist.dir/Release/train2.cpp.o CMakeFiles/trainmnist.dir/Release/matrix.cpp.o CMakeFiles/trainmnist.dir/Release/layer.cpp.o CMakeFiles/trainmnist.dir/Release/network.cpp.o CMakeFiles/trainmnist.dir/Release/function.cpp.o CMakeFiles/trainmnist.dir/Release/clGetErrorString.cpp.o CMakeFiles/trainmnist.dir/Release/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
-  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
-  OBJECT_DIR = CMakeFiles/trainmnist.dir/Release
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = Release/trainmnist
-  TARGET_PDB = trainmnist.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target generate
@@ -365,56 +282,56 @@ build cmake_object_order_depends_target_generate_RELEASE: phony || CMakeFiles/ge
 build CMakeFiles/generate.dir/Release/generate.cpp.o: CXX_COMPILER__generate_unscanned_Release /Users/jiang/Desktop/myAI/generate.cpp || cmake_object_order_depends_target_generate_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generate.dir/Release/generate.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generate.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Release
 
 build CMakeFiles/generate.dir/Release/matrix.cpp.o: CXX_COMPILER__generate_unscanned_Release /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_generate_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generate.dir/Release/matrix.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generate.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Release
 
 build CMakeFiles/generate.dir/Release/layer.cpp.o: CXX_COMPILER__generate_unscanned_Release /Users/jiang/Desktop/myAI/layer.cpp || cmake_object_order_depends_target_generate_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generate.dir/Release/layer.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generate.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Release
 
 build CMakeFiles/generate.dir/Release/network.cpp.o: CXX_COMPILER__generate_unscanned_Release /Users/jiang/Desktop/myAI/network.cpp || cmake_object_order_depends_target_generate_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generate.dir/Release/network.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generate.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Release
 
 build CMakeFiles/generate.dir/Release/function.cpp.o: CXX_COMPILER__generate_unscanned_Release /Users/jiang/Desktop/myAI/function.cpp || cmake_object_order_depends_target_generate_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generate.dir/Release/function.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generate.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Release
 
 build CMakeFiles/generate.dir/Release/clGetErrorString.cpp.o: CXX_COMPILER__generate_unscanned_Release /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_generate_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generate.dir/Release/clGetErrorString.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generate.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Release
 
 build CMakeFiles/generate.dir/Release/cl-mat.cpp.o: CXX_COMPILER__generate_unscanned_Release /Users/jiang/Desktop/myAI/cl-mat.cpp || cmake_object_order_depends_target_generate_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generate.dir/Release/cl-mat.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generate.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Release
 
@@ -426,10 +343,10 @@ build CMakeFiles/generate.dir/Release/cl-mat.cpp.o: CXX_COMPILER__generate_unsca
 #############################################
 # Link the executable Release/generate
 
-build Release/generate: CXX_EXECUTABLE_LINKER__generate_Release CMakeFiles/generate.dir/Release/generate.cpp.o CMakeFiles/generate.dir/Release/matrix.cpp.o CMakeFiles/generate.dir/Release/layer.cpp.o CMakeFiles/generate.dir/Release/network.cpp.o CMakeFiles/generate.dir/Release/function.cpp.o CMakeFiles/generate.dir/Release/clGetErrorString.cpp.o CMakeFiles/generate.dir/Release/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
-  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
+build Release/generate: CXX_EXECUTABLE_LINKER__generate_Release CMakeFiles/generate.dir/Release/generate.cpp.o CMakeFiles/generate.dir/Release/matrix.cpp.o CMakeFiles/generate.dir/Release/layer.cpp.o CMakeFiles/generate.dir/Release/network.cpp.o CMakeFiles/generate.dir/Release/function.cpp.o CMakeFiles/generate.dir/Release/clGetErrorString.cpp.o CMakeFiles/generate.dir/Release/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
+  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/generate.dir/Release
   POST_BUILD = :
   PRE_LINK = :
@@ -448,56 +365,56 @@ build cmake_object_order_depends_target_trainemnist_RELEASE: phony || CMakeFiles
 build CMakeFiles/trainemnist.dir/Release/trainemnist.cpp.o: CXX_COMPILER__trainemnist_unscanned_Release /Users/jiang/Desktop/myAI/trainemnist.cpp || cmake_object_order_depends_target_trainemnist_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Release/trainemnist.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Release
 
 build CMakeFiles/trainemnist.dir/Release/matrix.cpp.o: CXX_COMPILER__trainemnist_unscanned_Release /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_trainemnist_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Release/matrix.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Release
 
 build CMakeFiles/trainemnist.dir/Release/layer.cpp.o: CXX_COMPILER__trainemnist_unscanned_Release /Users/jiang/Desktop/myAI/layer.cpp || cmake_object_order_depends_target_trainemnist_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Release/layer.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Release
 
 build CMakeFiles/trainemnist.dir/Release/network.cpp.o: CXX_COMPILER__trainemnist_unscanned_Release /Users/jiang/Desktop/myAI/network.cpp || cmake_object_order_depends_target_trainemnist_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Release/network.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Release
 
 build CMakeFiles/trainemnist.dir/Release/function.cpp.o: CXX_COMPILER__trainemnist_unscanned_Release /Users/jiang/Desktop/myAI/function.cpp || cmake_object_order_depends_target_trainemnist_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Release/function.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Release
 
 build CMakeFiles/trainemnist.dir/Release/clGetErrorString.cpp.o: CXX_COMPILER__trainemnist_unscanned_Release /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_trainemnist_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Release/clGetErrorString.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Release
 
 build CMakeFiles/trainemnist.dir/Release/cl-mat.cpp.o: CXX_COMPILER__trainemnist_unscanned_Release /Users/jiang/Desktop/myAI/cl-mat.cpp || cmake_object_order_depends_target_trainemnist_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Release/cl-mat.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Release
 
@@ -509,10 +426,10 @@ build CMakeFiles/trainemnist.dir/Release/cl-mat.cpp.o: CXX_COMPILER__trainemnist
 #############################################
 # Link the executable Release/trainemnist
 
-build Release/trainemnist: CXX_EXECUTABLE_LINKER__trainemnist_Release CMakeFiles/trainemnist.dir/Release/trainemnist.cpp.o CMakeFiles/trainemnist.dir/Release/matrix.cpp.o CMakeFiles/trainemnist.dir/Release/layer.cpp.o CMakeFiles/trainemnist.dir/Release/network.cpp.o CMakeFiles/trainemnist.dir/Release/function.cpp.o CMakeFiles/trainemnist.dir/Release/clGetErrorString.cpp.o CMakeFiles/trainemnist.dir/Release/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
-  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
+build Release/trainemnist: CXX_EXECUTABLE_LINKER__trainemnist_Release CMakeFiles/trainemnist.dir/Release/trainemnist.cpp.o CMakeFiles/trainemnist.dir/Release/matrix.cpp.o CMakeFiles/trainemnist.dir/Release/layer.cpp.o CMakeFiles/trainemnist.dir/Release/network.cpp.o CMakeFiles/trainemnist.dir/Release/function.cpp.o CMakeFiles/trainemnist.dir/Release/clGetErrorString.cpp.o CMakeFiles/trainemnist.dir/Release/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
+  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Release
   POST_BUILD = :
   PRE_LINK = :
@@ -531,56 +448,56 @@ build cmake_object_order_depends_target_generateemnist_RELEASE: phony || CMakeFi
 build CMakeFiles/generateemnist.dir/Release/generateemnist.cpp.o: CXX_COMPILER__generateemnist_unscanned_Release /Users/jiang/Desktop/myAI/generateemnist.cpp || cmake_object_order_depends_target_generateemnist_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Release/generateemnist.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Release
 
 build CMakeFiles/generateemnist.dir/Release/matrix.cpp.o: CXX_COMPILER__generateemnist_unscanned_Release /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_generateemnist_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Release/matrix.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Release
 
 build CMakeFiles/generateemnist.dir/Release/layer.cpp.o: CXX_COMPILER__generateemnist_unscanned_Release /Users/jiang/Desktop/myAI/layer.cpp || cmake_object_order_depends_target_generateemnist_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Release/layer.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Release
 
 build CMakeFiles/generateemnist.dir/Release/network.cpp.o: CXX_COMPILER__generateemnist_unscanned_Release /Users/jiang/Desktop/myAI/network.cpp || cmake_object_order_depends_target_generateemnist_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Release/network.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Release
 
 build CMakeFiles/generateemnist.dir/Release/function.cpp.o: CXX_COMPILER__generateemnist_unscanned_Release /Users/jiang/Desktop/myAI/function.cpp || cmake_object_order_depends_target_generateemnist_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Release/function.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Release
 
 build CMakeFiles/generateemnist.dir/Release/clGetErrorString.cpp.o: CXX_COMPILER__generateemnist_unscanned_Release /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_generateemnist_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Release/clGetErrorString.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Release
 
 build CMakeFiles/generateemnist.dir/Release/cl-mat.cpp.o: CXX_COMPILER__generateemnist_unscanned_Release /Users/jiang/Desktop/myAI/cl-mat.cpp || cmake_object_order_depends_target_generateemnist_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Release/cl-mat.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Release
 
@@ -592,15 +509,122 @@ build CMakeFiles/generateemnist.dir/Release/cl-mat.cpp.o: CXX_COMPILER__generate
 #############################################
 # Link the executable Release/generateemnist
 
-build Release/generateemnist: CXX_EXECUTABLE_LINKER__generateemnist_Release CMakeFiles/generateemnist.dir/Release/generateemnist.cpp.o CMakeFiles/generateemnist.dir/Release/matrix.cpp.o CMakeFiles/generateemnist.dir/Release/layer.cpp.o CMakeFiles/generateemnist.dir/Release/network.cpp.o CMakeFiles/generateemnist.dir/Release/function.cpp.o CMakeFiles/generateemnist.dir/Release/clGetErrorString.cpp.o CMakeFiles/generateemnist.dir/Release/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
-  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
+build Release/generateemnist: CXX_EXECUTABLE_LINKER__generateemnist_Release CMakeFiles/generateemnist.dir/Release/generateemnist.cpp.o CMakeFiles/generateemnist.dir/Release/matrix.cpp.o CMakeFiles/generateemnist.dir/Release/layer.cpp.o CMakeFiles/generateemnist.dir/Release/network.cpp.o CMakeFiles/generateemnist.dir/Release/function.cpp.o CMakeFiles/generateemnist.dir/Release/clGetErrorString.cpp.o CMakeFiles/generateemnist.dir/Release/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
+  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Release
   POST_BUILD = :
   PRE_LINK = :
   TARGET_FILE = Release/generateemnist
   TARGET_PDB = generateemnist.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target trainemnistconvolution
+
+
+#############################################
+# Order-only phony target for trainemnistconvolution
+
+build cmake_object_order_depends_target_trainemnistconvolution_RELEASE: phony || CMakeFiles/trainemnistconvolution.dir
+
+build CMakeFiles/trainemnistconvolution.dir/Release/convolution/main.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Release /Users/jiang/Desktop/myAI/convolution/main.cpp || cmake_object_order_depends_target_trainemnistconvolution_RELEASE
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Release/convolution/main.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Release
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Release/convolution
+
+build CMakeFiles/trainemnistconvolution.dir/Release/convolution/convolution.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Release /Users/jiang/Desktop/myAI/convolution/convolution.cpp || cmake_object_order_depends_target_trainemnistconvolution_RELEASE
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Release/convolution/convolution.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Release
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Release/convolution
+
+build CMakeFiles/trainemnistconvolution.dir/Release/matrix.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Release /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_trainemnistconvolution_RELEASE
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Release/matrix.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Release
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Release
+
+build CMakeFiles/trainemnistconvolution.dir/Release/convolution/matrix_layer.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Release /Users/jiang/Desktop/myAI/convolution/matrix_layer.cpp || cmake_object_order_depends_target_trainemnistconvolution_RELEASE
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Release/convolution/matrix_layer.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Release
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Release/convolution
+
+build CMakeFiles/trainemnistconvolution.dir/Release/convolution/bias_layer.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Release /Users/jiang/Desktop/myAI/convolution/bias_layer.cpp || cmake_object_order_depends_target_trainemnistconvolution_RELEASE
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Release/convolution/bias_layer.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Release
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Release/convolution
+
+build CMakeFiles/trainemnistconvolution.dir/Release/convolution/func_layer.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Release /Users/jiang/Desktop/myAI/convolution/func_layer.cpp || cmake_object_order_depends_target_trainemnistconvolution_RELEASE
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Release/convolution/func_layer.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Release
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Release/convolution
+
+build CMakeFiles/trainemnistconvolution.dir/Release/convolution/convolution_layer.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Release /Users/jiang/Desktop/myAI/convolution/convolution_layer.cpp || cmake_object_order_depends_target_trainemnistconvolution_RELEASE
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Release/convolution/convolution_layer.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Release
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Release/convolution
+
+build CMakeFiles/trainemnistconvolution.dir/Release/convolution/NN.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Release /Users/jiang/Desktop/myAI/convolution/NN.cpp || cmake_object_order_depends_target_trainemnistconvolution_RELEASE
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Release/convolution/NN.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Release
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Release/convolution
+
+build CMakeFiles/trainemnistconvolution.dir/Release/cl-mat.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Release /Users/jiang/Desktop/myAI/cl-mat.cpp || cmake_object_order_depends_target_trainemnistconvolution_RELEASE
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Release/cl-mat.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Release
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Release
+
+build CMakeFiles/trainemnistconvolution.dir/Release/clGetErrorString.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Release /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_trainemnistconvolution_RELEASE
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Release/clGetErrorString.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Release
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Release
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target trainemnistconvolution
+
+
+#############################################
+# Link the executable Release/trainemnistconvolution
+
+build Release/trainemnistconvolution: CXX_EXECUTABLE_LINKER__trainemnistconvolution_Release CMakeFiles/trainemnistconvolution.dir/Release/convolution/main.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/convolution/convolution.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/matrix.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/convolution/matrix_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/convolution/bias_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/convolution/func_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/convolution/convolution_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/convolution/NN.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/cl-mat.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/clGetErrorString.cpp.o
+  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  LINK_LIBRARIES = -framework OpenCL
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Release
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Release/trainemnistconvolution
+  TARGET_PDB = trainemnistconvolution.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target learnpicture
@@ -614,56 +638,56 @@ build cmake_object_order_depends_target_learnpicture_RELEASE: phony || CMakeFile
 build CMakeFiles/learnpicture.dir/Release/picturelearning.cpp.o: CXX_COMPILER__learnpicture_unscanned_Release /Users/jiang/Desktop/myAI/picturelearning.cpp || cmake_object_order_depends_target_learnpicture_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/learnpicture.dir/Release/picturelearning.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/learnpicture.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/learnpicture.dir/Release
 
 build CMakeFiles/learnpicture.dir/Release/matrix.cpp.o: CXX_COMPILER__learnpicture_unscanned_Release /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_learnpicture_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/learnpicture.dir/Release/matrix.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/learnpicture.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/learnpicture.dir/Release
 
 build CMakeFiles/learnpicture.dir/Release/layer.cpp.o: CXX_COMPILER__learnpicture_unscanned_Release /Users/jiang/Desktop/myAI/layer.cpp || cmake_object_order_depends_target_learnpicture_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/learnpicture.dir/Release/layer.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/learnpicture.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/learnpicture.dir/Release
 
 build CMakeFiles/learnpicture.dir/Release/network.cpp.o: CXX_COMPILER__learnpicture_unscanned_Release /Users/jiang/Desktop/myAI/network.cpp || cmake_object_order_depends_target_learnpicture_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/learnpicture.dir/Release/network.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/learnpicture.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/learnpicture.dir/Release
 
 build CMakeFiles/learnpicture.dir/Release/function.cpp.o: CXX_COMPILER__learnpicture_unscanned_Release /Users/jiang/Desktop/myAI/function.cpp || cmake_object_order_depends_target_learnpicture_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/learnpicture.dir/Release/function.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/learnpicture.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/learnpicture.dir/Release
 
 build CMakeFiles/learnpicture.dir/Release/clGetErrorString.cpp.o: CXX_COMPILER__learnpicture_unscanned_Release /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_learnpicture_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/learnpicture.dir/Release/clGetErrorString.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/learnpicture.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/learnpicture.dir/Release
 
 build CMakeFiles/learnpicture.dir/Release/cl-mat.cpp.o: CXX_COMPILER__learnpicture_unscanned_Release /Users/jiang/Desktop/myAI/cl-mat.cpp || cmake_object_order_depends_target_learnpicture_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/learnpicture.dir/Release/cl-mat.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/learnpicture.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/learnpicture.dir/Release
 
@@ -676,8 +700,8 @@ build CMakeFiles/learnpicture.dir/Release/cl-mat.cpp.o: CXX_COMPILER__learnpictu
 # Link the executable Release/learnpicture
 
 build Release/learnpicture: CXX_EXECUTABLE_LINKER__learnpicture_Release CMakeFiles/learnpicture.dir/Release/picturelearning.cpp.o CMakeFiles/learnpicture.dir/Release/matrix.cpp.o CMakeFiles/learnpicture.dir/Release/layer.cpp.o CMakeFiles/learnpicture.dir/Release/network.cpp.o CMakeFiles/learnpicture.dir/Release/function.cpp.o CMakeFiles/learnpicture.dir/Release/clGetErrorString.cpp.o CMakeFiles/learnpicture.dir/Release/cl-mat.cpp.o | /opt/homebrew/lib/libSM.dylib /opt/homebrew/lib/libICE.dylib /opt/homebrew/lib/libX11.dylib /opt/homebrew/lib/libXext.dylib
-  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
   LINK_LIBRARIES = -framework OpenCL  /opt/homebrew/lib/libSM.dylib  /opt/homebrew/lib/libICE.dylib  /opt/homebrew/lib/libX11.dylib  /opt/homebrew/lib/libXext.dylib
   OBJECT_DIR = CMakeFiles/learnpicture.dir/Release
   POST_BUILD = :
@@ -701,13 +725,13 @@ build train$:Release: phony Release/train
 
 build trainemnist$:Release: phony Release/trainemnist
 
-build trainmnist$:Release: phony Release/trainmnist
+build trainemnistconvolution$:Release: phony Release/trainemnistconvolution
 
 
 #############################################
 # Folder: /Users/jiang/Desktop/myAI/buildninja
 
-build all$:Release: phony Release/test-cl-matrix Release/readdata Release/train Release/drawdata Release/trainmnist Release/generate Release/trainemnist Release/generateemnist Release/learnpicture
+build all$:Release: phony Release/test-cl-matrix Release/readdata Release/train Release/drawdata Release/generate Release/trainemnist Release/generateemnist Release/trainemnistconvolution Release/learnpicture
 
 
 #############################################

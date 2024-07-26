@@ -71,14 +71,10 @@ int main(int argc, char *argv[]) { // blr?blur?...k
       /*randomize net*/
       for (layer &x : net.layers) {
         for (auto &x : x.w.m) { // rand matrix
-          for (auto &x : x) {
             x = (genvalT() - 0.5);
-          }
         }
         for (auto &x : x.b.m) { // rand basis
-          for (auto &x : x) {
             x = (genvalT() - 0.5);
-          }
         }
       }
     }
