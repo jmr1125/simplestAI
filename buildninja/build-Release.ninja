@@ -22,7 +22,7 @@ build train: phony Release/train
 
 build trainemnist: phony Release/trainemnist
 
-build trainmnist: phony Release/trainmnist
+build trainemnistconvolution: phony Release/trainemnistconvolution
 
 
 #############################################

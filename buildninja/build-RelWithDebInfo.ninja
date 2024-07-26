@@ -22,7 +22,7 @@ build train: phony RelWithDebInfo/train
 
 build trainemnist: phony RelWithDebInfo/trainemnist
 
-build trainmnist: phony RelWithDebInfo/trainmnist
+build trainemnistconvolution: phony RelWithDebInfo/trainemnistconvolution
 
 
 #############################################

@@ -2,10 +2,10 @@
 /Users/jiang/Desktop/myAI/buildninja/CMakeFiles/readdata.dir
 /Users/jiang/Desktop/myAI/buildninja/CMakeFiles/train.dir
 /Users/jiang/Desktop/myAI/buildninja/CMakeFiles/drawdata.dir
-/Users/jiang/Desktop/myAI/buildninja/CMakeFiles/trainmnist.dir
 /Users/jiang/Desktop/myAI/buildninja/CMakeFiles/generate.dir
 /Users/jiang/Desktop/myAI/buildninja/CMakeFiles/trainemnist.dir
 /Users/jiang/Desktop/myAI/buildninja/CMakeFiles/generateemnist.dir
+/Users/jiang/Desktop/myAI/buildninja/CMakeFiles/trainemnistconvolution.dir
 /Users/jiang/Desktop/myAI/buildninja/CMakeFiles/learnpicture.dir
 /Users/jiang/Desktop/myAI/buildninja/CMakeFiles/edit_cache.dir
 /Users/jiang/Desktop/myAI/buildninja/CMakeFiles/rebuild_cache.dir

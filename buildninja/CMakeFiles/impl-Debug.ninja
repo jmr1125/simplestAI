@@ -46,56 +46,56 @@ build cmake_object_order_depends_target_test-cl-matrix_DEBUG: phony || CMakeFile
 build CMakeFiles/test-cl-matrix.dir/Debug/test-cl-matrix.cpp.o: CXX_COMPILER__test-cl-matrix_unscanned_Debug /Users/jiang/Desktop/myAI/test-cl-matrix.cpp || cmake_object_order_depends_target_test-cl-matrix_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-cl-matrix.dir/Debug/test-cl-matrix.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-cl-matrix.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-cl-matrix.dir/Debug
 
 build CMakeFiles/test-cl-matrix.dir/Debug/matrix.cpp.o: CXX_COMPILER__test-cl-matrix_unscanned_Debug /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_test-cl-matrix_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-cl-matrix.dir/Debug/matrix.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-cl-matrix.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-cl-matrix.dir/Debug
 
 build CMakeFiles/test-cl-matrix.dir/Debug/layer.cpp.o: CXX_COMPILER__test-cl-matrix_unscanned_Debug /Users/jiang/Desktop/myAI/layer.cpp || cmake_object_order_depends_target_test-cl-matrix_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-cl-matrix.dir/Debug/layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-cl-matrix.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-cl-matrix.dir/Debug
 
 build CMakeFiles/test-cl-matrix.dir/Debug/network.cpp.o: CXX_COMPILER__test-cl-matrix_unscanned_Debug /Users/jiang/Desktop/myAI/network.cpp || cmake_object_order_depends_target_test-cl-matrix_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-cl-matrix.dir/Debug/network.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-cl-matrix.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-cl-matrix.dir/Debug
 
 build CMakeFiles/test-cl-matrix.dir/Debug/function.cpp.o: CXX_COMPILER__test-cl-matrix_unscanned_Debug /Users/jiang/Desktop/myAI/function.cpp || cmake_object_order_depends_target_test-cl-matrix_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-cl-matrix.dir/Debug/function.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-cl-matrix.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-cl-matrix.dir/Debug
 
 build CMakeFiles/test-cl-matrix.dir/Debug/clGetErrorString.cpp.o: CXX_COMPILER__test-cl-matrix_unscanned_Debug /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_test-cl-matrix_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-cl-matrix.dir/Debug/clGetErrorString.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-cl-matrix.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-cl-matrix.dir/Debug
 
 build CMakeFiles/test-cl-matrix.dir/Debug/cl-mat.cpp.o: CXX_COMPILER__test-cl-matrix_unscanned_Debug /Users/jiang/Desktop/myAI/cl-mat.cpp || cmake_object_order_depends_target_test-cl-matrix_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-cl-matrix.dir/Debug/cl-mat.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-cl-matrix.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-cl-matrix.dir/Debug
 
@@ -108,8 +108,8 @@ build CMakeFiles/test-cl-matrix.dir/Debug/cl-mat.cpp.o: CXX_COMPILER__test-cl-ma
 # Link the executable Debug/test-cl-matrix
 
 build Debug/test-cl-matrix: CXX_EXECUTABLE_LINKER__test-cl-matrix_Debug CMakeFiles/test-cl-matrix.dir/Debug/test-cl-matrix.cpp.o CMakeFiles/test-cl-matrix.dir/Debug/matrix.cpp.o CMakeFiles/test-cl-matrix.dir/Debug/layer.cpp.o CMakeFiles/test-cl-matrix.dir/Debug/network.cpp.o CMakeFiles/test-cl-matrix.dir/Debug/function.cpp.o CMakeFiles/test-cl-matrix.dir/Debug/clGetErrorString.cpp.o CMakeFiles/test-cl-matrix.dir/Debug/cl-mat.cpp.o
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
   LINK_LIBRARIES = -framework OpenCL  -framework OpenCL
   OBJECT_DIR = CMakeFiles/test-cl-matrix.dir/Debug
   POST_BUILD = :
@@ -129,8 +129,8 @@ build cmake_object_order_depends_target_readdata_DEBUG: phony || CMakeFiles/read
 build CMakeFiles/readdata.dir/Debug/readmnist.cpp.o: CXX_COMPILER__readdata_unscanned_Debug /Users/jiang/Desktop/myAI/readmnist.cpp || cmake_object_order_depends_target_readdata_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/readdata.dir/Debug/readmnist.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/readdata.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/readdata.dir/Debug
 
@@ -143,8 +143,8 @@ build CMakeFiles/readdata.dir/Debug/readmnist.cpp.o: CXX_COMPILER__readdata_unsc
 # Link the executable Debug/readdata
 
 build Debug/readdata: CXX_EXECUTABLE_LINKER__readdata_Debug CMakeFiles/readdata.dir/Debug/readmnist.cpp.o
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
   LINK_LIBRARIES = -framework OpenCL
   OBJECT_DIR = CMakeFiles/readdata.dir/Debug
   POST_BUILD = :
@@ -164,56 +164,56 @@ build cmake_object_order_depends_target_train_DEBUG: phony || CMakeFiles/train.d
 build CMakeFiles/train.dir/Debug/train1.cpp.o: CXX_COMPILER__train_unscanned_Debug /Users/jiang/Desktop/myAI/train1.cpp || cmake_object_order_depends_target_train_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/train.dir/Debug/train1.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/train.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Debug
 
 build CMakeFiles/train.dir/Debug/matrix.cpp.o: CXX_COMPILER__train_unscanned_Debug /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_train_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/train.dir/Debug/matrix.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/train.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Debug
 
 build CMakeFiles/train.dir/Debug/layer.cpp.o: CXX_COMPILER__train_unscanned_Debug /Users/jiang/Desktop/myAI/layer.cpp || cmake_object_order_depends_target_train_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/train.dir/Debug/layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/train.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Debug
 
 build CMakeFiles/train.dir/Debug/network.cpp.o: CXX_COMPILER__train_unscanned_Debug /Users/jiang/Desktop/myAI/network.cpp || cmake_object_order_depends_target_train_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/train.dir/Debug/network.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/train.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Debug
 
 build CMakeFiles/train.dir/Debug/function.cpp.o: CXX_COMPILER__train_unscanned_Debug /Users/jiang/Desktop/myAI/function.cpp || cmake_object_order_depends_target_train_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/train.dir/Debug/function.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/train.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Debug
 
 build CMakeFiles/train.dir/Debug/clGetErrorString.cpp.o: CXX_COMPILER__train_unscanned_Debug /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_train_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/train.dir/Debug/clGetErrorString.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/train.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Debug
 
 build CMakeFiles/train.dir/Debug/cl-mat.cpp.o: CXX_COMPILER__train_unscanned_Debug /Users/jiang/Desktop/myAI/cl-mat.cpp || cmake_object_order_depends_target_train_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/train.dir/Debug/cl-mat.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/train.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/train.dir/Debug
 
@@ -225,10 +225,10 @@ build CMakeFiles/train.dir/Debug/cl-mat.cpp.o: CXX_COMPILER__train_unscanned_Deb
 #############################################
 # Link the executable Debug/train
 
-build Debug/train: CXX_EXECUTABLE_LINKER__train_Debug CMakeFiles/train.dir/Debug/train1.cpp.o CMakeFiles/train.dir/Debug/matrix.cpp.o CMakeFiles/train.dir/Debug/layer.cpp.o CMakeFiles/train.dir/Debug/network.cpp.o CMakeFiles/train.dir/Debug/function.cpp.o CMakeFiles/train.dir/Debug/clGetErrorString.cpp.o CMakeFiles/train.dir/Debug/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
+build Debug/train: CXX_EXECUTABLE_LINKER__train_Debug CMakeFiles/train.dir/Debug/train1.cpp.o CMakeFiles/train.dir/Debug/matrix.cpp.o CMakeFiles/train.dir/Debug/layer.cpp.o CMakeFiles/train.dir/Debug/network.cpp.o CMakeFiles/train.dir/Debug/function.cpp.o CMakeFiles/train.dir/Debug/clGetErrorString.cpp.o CMakeFiles/train.dir/Debug/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/train.dir/Debug
   POST_BUILD = :
   PRE_LINK = :
@@ -247,8 +247,8 @@ build cmake_object_order_depends_target_drawdata_DEBUG: phony || CMakeFiles/draw
 build CMakeFiles/drawdata.dir/Debug/data.cpp.o: CXX_COMPILER__drawdata_unscanned_Debug /Users/jiang/Desktop/myAI/data.cpp || cmake_object_order_depends_target_drawdata_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/drawdata.dir/Debug/data.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/drawdata.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/drawdata.dir/Debug
 
@@ -260,98 +260,15 @@ build CMakeFiles/drawdata.dir/Debug/data.cpp.o: CXX_COMPILER__drawdata_unscanned
 #############################################
 # Link the executable Debug/drawdata
 
-build Debug/drawdata: CXX_EXECUTABLE_LINKER__drawdata_Debug CMakeFiles/drawdata.dir/Debug/data.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
+build Debug/drawdata: CXX_EXECUTABLE_LINKER__drawdata_Debug CMakeFiles/drawdata.dir/Debug/data.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/drawdata.dir/Debug
   POST_BUILD = :
   PRE_LINK = :
   TARGET_FILE = Debug/drawdata
   TARGET_PDB = drawdata.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target trainmnist
-
-
-#############################################
-# Order-only phony target for trainmnist
-
-build cmake_object_order_depends_target_trainmnist_DEBUG: phony || CMakeFiles/trainmnist.dir
-
-build CMakeFiles/trainmnist.dir/Debug/train2.cpp.o: CXX_COMPILER__trainmnist_unscanned_Debug /Users/jiang/Desktop/myAI/train2.cpp || cmake_object_order_depends_target_trainmnist_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
-  DEP_FILE = CMakeFiles/trainmnist.dir/Debug/train2.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
-  OBJECT_DIR = CMakeFiles/trainmnist.dir/Debug
-  OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Debug
-
-build CMakeFiles/trainmnist.dir/Debug/matrix.cpp.o: CXX_COMPILER__trainmnist_unscanned_Debug /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_trainmnist_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
-  DEP_FILE = CMakeFiles/trainmnist.dir/Debug/matrix.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
-  OBJECT_DIR = CMakeFiles/trainmnist.dir/Debug
-  OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Debug
-
-build CMakeFiles/trainmnist.dir/Debug/layer.cpp.o: CXX_COMPILER__trainmnist_unscanned_Debug /Users/jiang/Desktop/myAI/layer.cpp || cmake_object_order_depends_target_trainmnist_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
-  DEP_FILE = CMakeFiles/trainmnist.dir/Debug/layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
-  OBJECT_DIR = CMakeFiles/trainmnist.dir/Debug
-  OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Debug
-
-build CMakeFiles/trainmnist.dir/Debug/network.cpp.o: CXX_COMPILER__trainmnist_unscanned_Debug /Users/jiang/Desktop/myAI/network.cpp || cmake_object_order_depends_target_trainmnist_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
-  DEP_FILE = CMakeFiles/trainmnist.dir/Debug/network.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
-  OBJECT_DIR = CMakeFiles/trainmnist.dir/Debug
-  OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Debug
-
-build CMakeFiles/trainmnist.dir/Debug/function.cpp.o: CXX_COMPILER__trainmnist_unscanned_Debug /Users/jiang/Desktop/myAI/function.cpp || cmake_object_order_depends_target_trainmnist_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
-  DEP_FILE = CMakeFiles/trainmnist.dir/Debug/function.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
-  OBJECT_DIR = CMakeFiles/trainmnist.dir/Debug
-  OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Debug
-
-build CMakeFiles/trainmnist.dir/Debug/clGetErrorString.cpp.o: CXX_COMPILER__trainmnist_unscanned_Debug /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_trainmnist_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
-  DEP_FILE = CMakeFiles/trainmnist.dir/Debug/clGetErrorString.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
-  OBJECT_DIR = CMakeFiles/trainmnist.dir/Debug
-  OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Debug
-
-build CMakeFiles/trainmnist.dir/Debug/cl-mat.cpp.o: CXX_COMPILER__trainmnist_unscanned_Debug /Users/jiang/Desktop/myAI/cl-mat.cpp || cmake_object_order_depends_target_trainmnist_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
-  DEP_FILE = CMakeFiles/trainmnist.dir/Debug/cl-mat.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
-  OBJECT_DIR = CMakeFiles/trainmnist.dir/Debug
-  OBJECT_FILE_DIR = CMakeFiles/trainmnist.dir/Debug
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target trainmnist
-
-
-#############################################
-# Link the executable Debug/trainmnist
-
-build Debug/trainmnist: CXX_EXECUTABLE_LINKER__trainmnist_Debug CMakeFiles/trainmnist.dir/Debug/train2.cpp.o CMakeFiles/trainmnist.dir/Debug/matrix.cpp.o CMakeFiles/trainmnist.dir/Debug/layer.cpp.o CMakeFiles/trainmnist.dir/Debug/network.cpp.o CMakeFiles/trainmnist.dir/Debug/function.cpp.o CMakeFiles/trainmnist.dir/Debug/clGetErrorString.cpp.o CMakeFiles/trainmnist.dir/Debug/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
-  OBJECT_DIR = CMakeFiles/trainmnist.dir/Debug
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = Debug/trainmnist
-  TARGET_PDB = trainmnist.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target generate
@@ -365,56 +282,56 @@ build cmake_object_order_depends_target_generate_DEBUG: phony || CMakeFiles/gene
 build CMakeFiles/generate.dir/Debug/generate.cpp.o: CXX_COMPILER__generate_unscanned_Debug /Users/jiang/Desktop/myAI/generate.cpp || cmake_object_order_depends_target_generate_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generate.dir/Debug/generate.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generate.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Debug
 
 build CMakeFiles/generate.dir/Debug/matrix.cpp.o: CXX_COMPILER__generate_unscanned_Debug /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_generate_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generate.dir/Debug/matrix.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generate.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Debug
 
 build CMakeFiles/generate.dir/Debug/layer.cpp.o: CXX_COMPILER__generate_unscanned_Debug /Users/jiang/Desktop/myAI/layer.cpp || cmake_object_order_depends_target_generate_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generate.dir/Debug/layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generate.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Debug
 
 build CMakeFiles/generate.dir/Debug/network.cpp.o: CXX_COMPILER__generate_unscanned_Debug /Users/jiang/Desktop/myAI/network.cpp || cmake_object_order_depends_target_generate_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generate.dir/Debug/network.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generate.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Debug
 
 build CMakeFiles/generate.dir/Debug/function.cpp.o: CXX_COMPILER__generate_unscanned_Debug /Users/jiang/Desktop/myAI/function.cpp || cmake_object_order_depends_target_generate_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generate.dir/Debug/function.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generate.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Debug
 
 build CMakeFiles/generate.dir/Debug/clGetErrorString.cpp.o: CXX_COMPILER__generate_unscanned_Debug /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_generate_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generate.dir/Debug/clGetErrorString.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generate.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Debug
 
 build CMakeFiles/generate.dir/Debug/cl-mat.cpp.o: CXX_COMPILER__generate_unscanned_Debug /Users/jiang/Desktop/myAI/cl-mat.cpp || cmake_object_order_depends_target_generate_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generate.dir/Debug/cl-mat.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generate.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generate.dir/Debug
 
@@ -426,10 +343,10 @@ build CMakeFiles/generate.dir/Debug/cl-mat.cpp.o: CXX_COMPILER__generate_unscann
 #############################################
 # Link the executable Debug/generate
 
-build Debug/generate: CXX_EXECUTABLE_LINKER__generate_Debug CMakeFiles/generate.dir/Debug/generate.cpp.o CMakeFiles/generate.dir/Debug/matrix.cpp.o CMakeFiles/generate.dir/Debug/layer.cpp.o CMakeFiles/generate.dir/Debug/network.cpp.o CMakeFiles/generate.dir/Debug/function.cpp.o CMakeFiles/generate.dir/Debug/clGetErrorString.cpp.o CMakeFiles/generate.dir/Debug/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
+build Debug/generate: CXX_EXECUTABLE_LINKER__generate_Debug CMakeFiles/generate.dir/Debug/generate.cpp.o CMakeFiles/generate.dir/Debug/matrix.cpp.o CMakeFiles/generate.dir/Debug/layer.cpp.o CMakeFiles/generate.dir/Debug/network.cpp.o CMakeFiles/generate.dir/Debug/function.cpp.o CMakeFiles/generate.dir/Debug/clGetErrorString.cpp.o CMakeFiles/generate.dir/Debug/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/generate.dir/Debug
   POST_BUILD = :
   PRE_LINK = :
@@ -448,56 +365,56 @@ build cmake_object_order_depends_target_trainemnist_DEBUG: phony || CMakeFiles/t
 build CMakeFiles/trainemnist.dir/Debug/trainemnist.cpp.o: CXX_COMPILER__trainemnist_unscanned_Debug /Users/jiang/Desktop/myAI/trainemnist.cpp || cmake_object_order_depends_target_trainemnist_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Debug/trainemnist.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Debug
 
 build CMakeFiles/trainemnist.dir/Debug/matrix.cpp.o: CXX_COMPILER__trainemnist_unscanned_Debug /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_trainemnist_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Debug/matrix.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Debug
 
 build CMakeFiles/trainemnist.dir/Debug/layer.cpp.o: CXX_COMPILER__trainemnist_unscanned_Debug /Users/jiang/Desktop/myAI/layer.cpp || cmake_object_order_depends_target_trainemnist_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Debug/layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Debug
 
 build CMakeFiles/trainemnist.dir/Debug/network.cpp.o: CXX_COMPILER__trainemnist_unscanned_Debug /Users/jiang/Desktop/myAI/network.cpp || cmake_object_order_depends_target_trainemnist_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Debug/network.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Debug
 
 build CMakeFiles/trainemnist.dir/Debug/function.cpp.o: CXX_COMPILER__trainemnist_unscanned_Debug /Users/jiang/Desktop/myAI/function.cpp || cmake_object_order_depends_target_trainemnist_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Debug/function.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Debug
 
 build CMakeFiles/trainemnist.dir/Debug/clGetErrorString.cpp.o: CXX_COMPILER__trainemnist_unscanned_Debug /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_trainemnist_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Debug/clGetErrorString.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Debug
 
 build CMakeFiles/trainemnist.dir/Debug/cl-mat.cpp.o: CXX_COMPILER__trainemnist_unscanned_Debug /Users/jiang/Desktop/myAI/cl-mat.cpp || cmake_object_order_depends_target_trainemnist_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnist.dir/Debug/cl-mat.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnist.dir/Debug
 
@@ -509,10 +426,10 @@ build CMakeFiles/trainemnist.dir/Debug/cl-mat.cpp.o: CXX_COMPILER__trainemnist_u
 #############################################
 # Link the executable Debug/trainemnist
 
-build Debug/trainemnist: CXX_EXECUTABLE_LINKER__trainemnist_Debug CMakeFiles/trainemnist.dir/Debug/trainemnist.cpp.o CMakeFiles/trainemnist.dir/Debug/matrix.cpp.o CMakeFiles/trainemnist.dir/Debug/layer.cpp.o CMakeFiles/trainemnist.dir/Debug/network.cpp.o CMakeFiles/trainemnist.dir/Debug/function.cpp.o CMakeFiles/trainemnist.dir/Debug/clGetErrorString.cpp.o CMakeFiles/trainemnist.dir/Debug/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
+build Debug/trainemnist: CXX_EXECUTABLE_LINKER__trainemnist_Debug CMakeFiles/trainemnist.dir/Debug/trainemnist.cpp.o CMakeFiles/trainemnist.dir/Debug/matrix.cpp.o CMakeFiles/trainemnist.dir/Debug/layer.cpp.o CMakeFiles/trainemnist.dir/Debug/network.cpp.o CMakeFiles/trainemnist.dir/Debug/function.cpp.o CMakeFiles/trainemnist.dir/Debug/clGetErrorString.cpp.o CMakeFiles/trainemnist.dir/Debug/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/trainemnist.dir/Debug
   POST_BUILD = :
   PRE_LINK = :
@@ -531,56 +448,56 @@ build cmake_object_order_depends_target_generateemnist_DEBUG: phony || CMakeFile
 build CMakeFiles/generateemnist.dir/Debug/generateemnist.cpp.o: CXX_COMPILER__generateemnist_unscanned_Debug /Users/jiang/Desktop/myAI/generateemnist.cpp || cmake_object_order_depends_target_generateemnist_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Debug/generateemnist.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Debug
 
 build CMakeFiles/generateemnist.dir/Debug/matrix.cpp.o: CXX_COMPILER__generateemnist_unscanned_Debug /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_generateemnist_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Debug/matrix.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Debug
 
 build CMakeFiles/generateemnist.dir/Debug/layer.cpp.o: CXX_COMPILER__generateemnist_unscanned_Debug /Users/jiang/Desktop/myAI/layer.cpp || cmake_object_order_depends_target_generateemnist_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Debug/layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Debug
 
 build CMakeFiles/generateemnist.dir/Debug/network.cpp.o: CXX_COMPILER__generateemnist_unscanned_Debug /Users/jiang/Desktop/myAI/network.cpp || cmake_object_order_depends_target_generateemnist_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Debug/network.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Debug
 
 build CMakeFiles/generateemnist.dir/Debug/function.cpp.o: CXX_COMPILER__generateemnist_unscanned_Debug /Users/jiang/Desktop/myAI/function.cpp || cmake_object_order_depends_target_generateemnist_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Debug/function.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Debug
 
 build CMakeFiles/generateemnist.dir/Debug/clGetErrorString.cpp.o: CXX_COMPILER__generateemnist_unscanned_Debug /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_generateemnist_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Debug/clGetErrorString.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Debug
 
 build CMakeFiles/generateemnist.dir/Debug/cl-mat.cpp.o: CXX_COMPILER__generateemnist_unscanned_Debug /Users/jiang/Desktop/myAI/cl-mat.cpp || cmake_object_order_depends_target_generateemnist_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnist.dir/Debug/cl-mat.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnist.dir/Debug
 
@@ -592,15 +509,122 @@ build CMakeFiles/generateemnist.dir/Debug/cl-mat.cpp.o: CXX_COMPILER__generateem
 #############################################
 # Link the executable Debug/generateemnist
 
-build Debug/generateemnist: CXX_EXECUTABLE_LINKER__generateemnist_Debug CMakeFiles/generateemnist.dir/Debug/generateemnist.cpp.o CMakeFiles/generateemnist.dir/Debug/matrix.cpp.o CMakeFiles/generateemnist.dir/Debug/layer.cpp.o CMakeFiles/generateemnist.dir/Debug/network.cpp.o CMakeFiles/generateemnist.dir/Debug/function.cpp.o CMakeFiles/generateemnist.dir/Debug/clGetErrorString.cpp.o CMakeFiles/generateemnist.dir/Debug/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libform.tbd
+build Debug/generateemnist: CXX_EXECUTABLE_LINKER__generateemnist_Debug CMakeFiles/generateemnist.dir/Debug/generateemnist.cpp.o CMakeFiles/generateemnist.dir/Debug/matrix.cpp.o CMakeFiles/generateemnist.dir/Debug/layer.cpp.o CMakeFiles/generateemnist.dir/Debug/network.cpp.o CMakeFiles/generateemnist.dir/Debug/function.cpp.o CMakeFiles/generateemnist.dir/Debug/clGetErrorString.cpp.o CMakeFiles/generateemnist.dir/Debug/cl-mat.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/generateemnist.dir/Debug
   POST_BUILD = :
   PRE_LINK = :
   TARGET_FILE = Debug/generateemnist
   TARGET_PDB = generateemnist.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target trainemnistconvolution
+
+
+#############################################
+# Order-only phony target for trainemnistconvolution
+
+build cmake_object_order_depends_target_trainemnistconvolution_DEBUG: phony || CMakeFiles/trainemnistconvolution.dir
+
+build CMakeFiles/trainemnistconvolution.dir/Debug/convolution/main.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/convolution/main.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/convolution/main.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug/convolution
+
+build CMakeFiles/trainemnistconvolution.dir/Debug/convolution/convolution.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/convolution/convolution.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/convolution/convolution.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug/convolution
+
+build CMakeFiles/trainemnistconvolution.dir/Debug/matrix.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/matrix.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
+
+build CMakeFiles/trainemnistconvolution.dir/Debug/convolution/matrix_layer.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/convolution/matrix_layer.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/convolution/matrix_layer.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug/convolution
+
+build CMakeFiles/trainemnistconvolution.dir/Debug/convolution/bias_layer.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/convolution/bias_layer.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/convolution/bias_layer.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug/convolution
+
+build CMakeFiles/trainemnistconvolution.dir/Debug/convolution/func_layer.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/convolution/func_layer.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/convolution/func_layer.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug/convolution
+
+build CMakeFiles/trainemnistconvolution.dir/Debug/convolution/convolution_layer.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/convolution/convolution_layer.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/convolution/convolution_layer.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug/convolution
+
+build CMakeFiles/trainemnistconvolution.dir/Debug/convolution/NN.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/convolution/NN.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/convolution/NN.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug/convolution
+
+build CMakeFiles/trainemnistconvolution.dir/Debug/cl-mat.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/cl-mat.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/cl-mat.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
+
+build CMakeFiles/trainemnistconvolution.dir/Debug/clGetErrorString.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/clGetErrorString.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target trainemnistconvolution
+
+
+#############################################
+# Link the executable Debug/trainemnistconvolution
+
+build Debug/trainemnistconvolution: CXX_EXECUTABLE_LINKER__trainemnistconvolution_Debug CMakeFiles/trainemnistconvolution.dir/Debug/convolution/main.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/convolution/convolution.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/matrix.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/convolution/matrix_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/convolution/bias_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/convolution/func_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/convolution/convolution_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/convolution/NN.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/cl-mat.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/clGetErrorString.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  LINK_LIBRARIES = -framework OpenCL
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Debug/trainemnistconvolution
+  TARGET_PDB = trainemnistconvolution.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target learnpicture
@@ -614,56 +638,56 @@ build cmake_object_order_depends_target_learnpicture_DEBUG: phony || CMakeFiles/
 build CMakeFiles/learnpicture.dir/Debug/picturelearning.cpp.o: CXX_COMPILER__learnpicture_unscanned_Debug /Users/jiang/Desktop/myAI/picturelearning.cpp || cmake_object_order_depends_target_learnpicture_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/learnpicture.dir/Debug/picturelearning.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/learnpicture.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/learnpicture.dir/Debug
 
 build CMakeFiles/learnpicture.dir/Debug/matrix.cpp.o: CXX_COMPILER__learnpicture_unscanned_Debug /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_learnpicture_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/learnpicture.dir/Debug/matrix.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/learnpicture.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/learnpicture.dir/Debug
 
 build CMakeFiles/learnpicture.dir/Debug/layer.cpp.o: CXX_COMPILER__learnpicture_unscanned_Debug /Users/jiang/Desktop/myAI/layer.cpp || cmake_object_order_depends_target_learnpicture_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/learnpicture.dir/Debug/layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/learnpicture.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/learnpicture.dir/Debug
 
 build CMakeFiles/learnpicture.dir/Debug/network.cpp.o: CXX_COMPILER__learnpicture_unscanned_Debug /Users/jiang/Desktop/myAI/network.cpp || cmake_object_order_depends_target_learnpicture_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/learnpicture.dir/Debug/network.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/learnpicture.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/learnpicture.dir/Debug
 
 build CMakeFiles/learnpicture.dir/Debug/function.cpp.o: CXX_COMPILER__learnpicture_unscanned_Debug /Users/jiang/Desktop/myAI/function.cpp || cmake_object_order_depends_target_learnpicture_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/learnpicture.dir/Debug/function.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/learnpicture.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/learnpicture.dir/Debug
 
 build CMakeFiles/learnpicture.dir/Debug/clGetErrorString.cpp.o: CXX_COMPILER__learnpicture_unscanned_Debug /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_learnpicture_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/learnpicture.dir/Debug/clGetErrorString.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/learnpicture.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/learnpicture.dir/Debug
 
 build CMakeFiles/learnpicture.dir/Debug/cl-mat.cpp.o: CXX_COMPILER__learnpicture_unscanned_Debug /Users/jiang/Desktop/myAI/cl-mat.cpp || cmake_object_order_depends_target_learnpicture_DEBUG
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/learnpicture.dir/Debug/cl-mat.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/learnpicture.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/learnpicture.dir/Debug
 
@@ -676,8 +700,8 @@ build CMakeFiles/learnpicture.dir/Debug/cl-mat.cpp.o: CXX_COMPILER__learnpicture
 # Link the executable Debug/learnpicture
 
 build Debug/learnpicture: CXX_EXECUTABLE_LINKER__learnpicture_Debug CMakeFiles/learnpicture.dir/Debug/picturelearning.cpp.o CMakeFiles/learnpicture.dir/Debug/matrix.cpp.o CMakeFiles/learnpicture.dir/Debug/layer.cpp.o CMakeFiles/learnpicture.dir/Debug/network.cpp.o CMakeFiles/learnpicture.dir/Debug/function.cpp.o CMakeFiles/learnpicture.dir/Debug/clGetErrorString.cpp.o CMakeFiles/learnpicture.dir/Debug/cl-mat.cpp.o | /opt/homebrew/lib/libSM.dylib /opt/homebrew/lib/libICE.dylib /opt/homebrew/lib/libX11.dylib /opt/homebrew/lib/libXext.dylib
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
-  LINK_FLAGS = -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
   LINK_LIBRARIES = -framework OpenCL  /opt/homebrew/lib/libSM.dylib  /opt/homebrew/lib/libICE.dylib  /opt/homebrew/lib/libX11.dylib  /opt/homebrew/lib/libXext.dylib
   OBJECT_DIR = CMakeFiles/learnpicture.dir/Debug
   POST_BUILD = :
@@ -701,13 +725,13 @@ build train$:Debug: phony Debug/train
 
 build trainemnist$:Debug: phony Debug/trainemnist
 
-build trainmnist$:Debug: phony Debug/trainmnist
+build trainemnistconvolution$:Debug: phony Debug/trainemnistconvolution
 
 
 #############################################
 # Folder: /Users/jiang/Desktop/myAI/buildninja
 
-build all$:Debug: phony Debug/test-cl-matrix Debug/readdata Debug/train Debug/drawdata Debug/trainmnist Debug/generate Debug/trainemnist Debug/generateemnist Debug/learnpicture
+build all$:Debug: phony Debug/test-cl-matrix Debug/readdata Debug/train Debug/drawdata Debug/generate Debug/trainemnist Debug/generateemnist Debug/trainemnistconvolution Debug/learnpicture
 
 
 #############################################

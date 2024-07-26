@@ -4,7 +4,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(ENABLE_PICTURE ON)
 
 set(ENABLE_OMP OFF)
-set(USE_OpenclICD OFF)
 set(USE_Opencl ON)
 project(myAI)
 
@@ -70,17 +69,6 @@ endif()
 set(STANDARD_CPPS "matrix.cpp;layer.cpp;network.cpp;function.cpp")
 
 
-if(USE_OpenclICD)
-  find_package(OpenCLHeaders REQUIRED)
-  find_package(OpenCLICDLoader REQUIRED)
-  list(APPEND STANDARD_CPPS "clGetErrorString.cpp")
-  list(APPEND CMAKE_BUILD_RPATH "./OpenCL-ICD-Loader/build")
-  list(APPEND STANDARD_CPPS "clGetErrorString.cpp")
-  list(APPEND STANDARD_CPPS "cl-mat.cpp")
-  add_executable(test-cl-matrix test-cl-matrix.cpp clGetErrorString.cpp)
-  target_link_libraries(test-cl-matrix PRIVATE OpenCL::Headers OpenCL::OpenCL)
-endif()
-
 #find OpenCL
 if(USE_Opencl)
   find_package(OpenCL REQUIRED)
@@ -99,14 +87,16 @@ if(USE_Opencl)
 endif()
 #end OpenCL
 
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/)
 
 add_executable(readdata readmnist.cpp)
 add_executable(train train1.cpp ${STANDARD_CPPS})
 add_executable(drawdata data.cpp)
-add_executable(trainmnist train2.cpp ${STANDARD_CPPS})
 add_executable(generate generate.cpp ${STANDARD_CPPS})
 add_executable(trainemnist trainemnist.cpp ${STANDARD_CPPS})
 add_executable(generateemnist generateemnist.cpp ${STANDARD_CPPS})
+
+add_executable(trainemnistconvolution convolution/main.cpp convolution/convolution.cpp matrix.cpp convolution/matrix_layer.cpp convolution/bias_layer.cpp convolution/func_layer.cpp convolution/convolution_layer.cpp convolution/NN.cpp cl-mat.cpp clGetErrorString.cpp)
 
 message(STATUS "picture:")
 if(${ENABLE_PICTURE})
@@ -134,6 +124,5 @@ endif()
 target_link_libraries(drawdata ${CURSES_LIBRARIES})
 target_link_libraries(train ${CURSES_LIBRARIES})
 target_link_libraries(generate ${CURSES_LIBRARIES})
-target_link_libraries(trainmnist ${CURSES_LIBRARIES})
 target_link_libraries(generateemnist ${CURSES_LIBRARIES})
 target_link_libraries(trainemnist ${CURSES_LIBRARIES})
