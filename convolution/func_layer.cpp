@@ -1,6 +1,8 @@
 #include "func_layer.hpp"
 #include <algorithm>
 #include <cmath>
+#include <istream>
+#include <ostream>
 functionT funcs[] = {
     f_Identity, f_Binary_step, f_sigmoid, f_tanh, f_ReLU, f_Softplus,
 };
@@ -55,6 +57,25 @@ vector<valT> func_layer::backward(const vector<valT> &grad) {
 }
 void func_layer::update(const vector<valT> &, const vector<valT> &, double) {
   return;
+}
+
+void func_layer::save(std::ostream &o) {
+  o << Isize << std::endl;
+  o << f << std::endl;
+}
+void func_layer::load(std::istream &i) {
+  i >> Isize;
+  Osize = Isize;
+  int x;
+  i >> x;
+  f = x == Identity          ? Identity
+      : x == Binary_step     ? Binary_step
+      : x == sigmoid         ? sigmoid
+      : x == Functions::tanh ? Functions::tanh
+      : x == ReLU            ? ReLU
+      : x == Softplus        ? Softplus
+                             : softmax;
+  set_IOsize(Isize, Osize);
 }
 
 valT f_Identity(valT x) { return x; }

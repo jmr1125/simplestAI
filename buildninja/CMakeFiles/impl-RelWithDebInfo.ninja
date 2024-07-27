@@ -627,6 +627,113 @@ build RelWithDebInfo/trainemnistconvolution: CXX_EXECUTABLE_LINKER__trainemnistc
   TARGET_PDB = trainemnistconvolution.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target generateemnistconvolution
+
+
+#############################################
+# Order-only phony target for generateemnistconvolution
+
+build cmake_object_order_depends_target_generateemnistconvolution_RELWITHDEBINFO: phony || CMakeFiles/generateemnistconvolution.dir
+
+build CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/generate.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_RelWithDebInfo /Users/jiang/Desktop/myAI/convolution/generate.cpp || cmake_object_order_depends_target_generateemnistconvolution_RELWITHDEBINFO
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/generate.cpp.o.d
+  FLAGS = -O2 -g -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution
+
+build CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/convolution.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_RelWithDebInfo /Users/jiang/Desktop/myAI/convolution/convolution.cpp || cmake_object_order_depends_target_generateemnistconvolution_RELWITHDEBINFO
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/convolution.cpp.o.d
+  FLAGS = -O2 -g -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution
+
+build CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/matrix.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_RelWithDebInfo /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_generateemnistconvolution_RELWITHDEBINFO
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/matrix.cpp.o.d
+  FLAGS = -O2 -g -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo
+
+build CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/matrix_layer.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_RelWithDebInfo /Users/jiang/Desktop/myAI/convolution/matrix_layer.cpp || cmake_object_order_depends_target_generateemnistconvolution_RELWITHDEBINFO
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/matrix_layer.cpp.o.d
+  FLAGS = -O2 -g -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution
+
+build CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/bias_layer.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_RelWithDebInfo /Users/jiang/Desktop/myAI/convolution/bias_layer.cpp || cmake_object_order_depends_target_generateemnistconvolution_RELWITHDEBINFO
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/bias_layer.cpp.o.d
+  FLAGS = -O2 -g -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution
+
+build CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/func_layer.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_RelWithDebInfo /Users/jiang/Desktop/myAI/convolution/func_layer.cpp || cmake_object_order_depends_target_generateemnistconvolution_RELWITHDEBINFO
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/func_layer.cpp.o.d
+  FLAGS = -O2 -g -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution
+
+build CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/convolution_layer.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_RelWithDebInfo /Users/jiang/Desktop/myAI/convolution/convolution_layer.cpp || cmake_object_order_depends_target_generateemnistconvolution_RELWITHDEBINFO
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/convolution_layer.cpp.o.d
+  FLAGS = -O2 -g -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution
+
+build CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/NN.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_RelWithDebInfo /Users/jiang/Desktop/myAI/convolution/NN.cpp || cmake_object_order_depends_target_generateemnistconvolution_RELWITHDEBINFO
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/NN.cpp.o.d
+  FLAGS = -O2 -g -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution
+
+build CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/cl-mat.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_RelWithDebInfo /Users/jiang/Desktop/myAI/cl-mat.cpp || cmake_object_order_depends_target_generateemnistconvolution_RELWITHDEBINFO
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/cl-mat.cpp.o.d
+  FLAGS = -O2 -g -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo
+
+build CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/clGetErrorString.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_RelWithDebInfo /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_generateemnistconvolution_RELWITHDEBINFO
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/clGetErrorString.cpp.o.d
+  FLAGS = -O2 -g -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/Users/jiang/Desktop/myAI -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target generateemnistconvolution
+
+
+#############################################
+# Link the executable RelWithDebInfo/generateemnistconvolution
+
+build RelWithDebInfo/generateemnistconvolution: CXX_EXECUTABLE_LINKER__generateemnistconvolution_RelWithDebInfo CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/generate.cpp.o CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/convolution.cpp.o CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/matrix.cpp.o CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/matrix_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/bias_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/func_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/convolution_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/convolution/NN.cpp.o CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/cl-mat.cpp.o CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo/clGetErrorString.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
+  FLAGS = -O2 -g -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
+  OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/RelWithDebInfo
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = RelWithDebInfo/generateemnistconvolution
+  TARGET_PDB = generateemnistconvolution.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target learnpicture
 
 
@@ -715,6 +822,8 @@ build generate$:RelWithDebInfo: phony RelWithDebInfo/generate
 
 build generateemnist$:RelWithDebInfo: phony RelWithDebInfo/generateemnist
 
+build generateemnistconvolution$:RelWithDebInfo: phony RelWithDebInfo/generateemnistconvolution
+
 build learnpicture$:RelWithDebInfo: phony RelWithDebInfo/learnpicture
 
 build readdata$:RelWithDebInfo: phony RelWithDebInfo/readdata
@@ -731,7 +840,7 @@ build trainemnistconvolution$:RelWithDebInfo: phony RelWithDebInfo/trainemnistco
 #############################################
 # Folder: /Users/jiang/Desktop/myAI/buildninja
 
-build all$:RelWithDebInfo: phony RelWithDebInfo/test-cl-matrix RelWithDebInfo/readdata RelWithDebInfo/train RelWithDebInfo/drawdata RelWithDebInfo/generate RelWithDebInfo/trainemnist RelWithDebInfo/generateemnist RelWithDebInfo/trainemnistconvolution RelWithDebInfo/learnpicture
+build all$:RelWithDebInfo: phony RelWithDebInfo/test-cl-matrix RelWithDebInfo/readdata RelWithDebInfo/train RelWithDebInfo/drawdata RelWithDebInfo/generate RelWithDebInfo/trainemnist RelWithDebInfo/generateemnist RelWithDebInfo/trainemnistconvolution RelWithDebInfo/generateemnistconvolution RelWithDebInfo/learnpicture
 
 
 #############################################
