@@ -12,6 +12,8 @@ build generate: phony RelWithDebInfo/generate
 
 build generateemnist: phony RelWithDebInfo/generateemnist
 
+build generateemnistconvolution: phony RelWithDebInfo/generateemnistconvolution
+
 build learnpicture: phony RelWithDebInfo/learnpicture
 
 build readdata: phony RelWithDebInfo/readdata

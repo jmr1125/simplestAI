@@ -97,6 +97,8 @@ add_executable(trainemnist trainemnist.cpp ${STANDARD_CPPS})
 add_executable(generateemnist generateemnist.cpp ${STANDARD_CPPS})
 
 add_executable(trainemnistconvolution convolution/main.cpp convolution/convolution.cpp matrix.cpp convolution/matrix_layer.cpp convolution/bias_layer.cpp convolution/func_layer.cpp convolution/convolution_layer.cpp convolution/NN.cpp cl-mat.cpp clGetErrorString.cpp)
+add_executable(generateemnistconvolution convolution/generate.cpp convolution/convolution.cpp matrix.cpp convolution/matrix_layer.cpp convolution/bias_layer.cpp convolution/func_layer.cpp convolution/convolution_layer.cpp convolution/NN.cpp cl-mat.cpp clGetErrorString.cpp)
+target_link_libraries(generateemnistconvolution ${CURSES_LIBRARIES})
 
 message(STATUS "picture:")
 if(${ENABLE_PICTURE})

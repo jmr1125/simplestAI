@@ -9,5 +9,7 @@ struct bias_layer : public layer {
   virtual vector<valT> backward(const vector<valT> &grad) override;
   virtual void update(const vector<valT> &grad, const vector<valT> &input,
                       double lr) override;
+  virtual void save(std::ostream &) override;
+  virtual void load(std::istream &) override;
   vector<valT> bias;
 };

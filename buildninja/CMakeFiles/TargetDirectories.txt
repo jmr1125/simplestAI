@@ -6,6 +6,7 @@
 /Users/jiang/Desktop/myAI/buildninja/CMakeFiles/trainemnist.dir
 /Users/jiang/Desktop/myAI/buildninja/CMakeFiles/generateemnist.dir
 /Users/jiang/Desktop/myAI/buildninja/CMakeFiles/trainemnistconvolution.dir
+/Users/jiang/Desktop/myAI/buildninja/CMakeFiles/generateemnistconvolution.dir
 /Users/jiang/Desktop/myAI/buildninja/CMakeFiles/learnpicture.dir
 /Users/jiang/Desktop/myAI/buildninja/CMakeFiles/edit_cache.dir
 /Users/jiang/Desktop/myAI/buildninja/CMakeFiles/rebuild_cache.dir

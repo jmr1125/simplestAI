@@ -7,7 +7,6 @@
 #include "clGetErrorString.hpp"
 #include <string>
 
-#include "layer.hpp"
 #include "matrix.hpp"
 void init();
 void teardown();

@@ -12,6 +12,8 @@ build generate: phony Release/generate
 
 build generateemnist: phony Release/generateemnist
 
+build generateemnistconvolution: phony Release/generateemnistconvolution
+
 build learnpicture: phony Release/learnpicture
 
 build readdata: phony Release/readdata

@@ -11,6 +11,8 @@ build generate: phony Debug/generate
 
 build generateemnist: phony Debug/generateemnist
 
+build generateemnistconvolution: phony Debug/generateemnistconvolution
+
 build learnpicture: phony Debug/learnpicture
 
 build readdata: phony Debug/readdata
