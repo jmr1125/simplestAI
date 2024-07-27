@@ -6,23 +6,7 @@
 
 include CMakeFiles/impl-Release.ninja
 
-build drawdata: phony Release/drawdata
-
-build generate: phony Release/generate
-
-build generateemnist: phony Release/generateemnist
-
 build generateemnistconvolution: phony Release/generateemnistconvolution
-
-build learnpicture: phony Release/learnpicture
-
-build readdata: phony Release/readdata
-
-build test-cl-matrix: phony Release/test-cl-matrix
-
-build train: phony Release/train
-
-build trainemnist: phony Release/trainemnist
 
 build trainemnistconvolution: phony Release/trainemnistconvolution
 

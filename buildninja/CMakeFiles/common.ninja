@@ -85,19 +85,19 @@ build CMakeFiles/cmake_byproducts_for_clean_target: phony
 #############################################
 # Clean byproducts.
 
-build CMakeFiles/cmake_byproducts_for_clean_target$:Debug: phony Debug/test-cl-matrix Debug/readdata Debug/train Debug/drawdata Debug/generate Debug/trainemnist Debug/generateemnist Debug/trainemnistconvolution Debug/generateemnistconvolution Debug/learnpicture
+build CMakeFiles/cmake_byproducts_for_clean_target$:Debug: phony Debug/trainemnistconvolution Debug/generateemnistconvolution
 
 
 #############################################
 # Clean byproducts.
 
-build CMakeFiles/cmake_byproducts_for_clean_target$:Release: phony Release/test-cl-matrix Release/readdata Release/train Release/drawdata Release/generate Release/trainemnist Release/generateemnist Release/trainemnistconvolution Release/generateemnistconvolution Release/learnpicture
+build CMakeFiles/cmake_byproducts_for_clean_target$:Release: phony Release/trainemnistconvolution Release/generateemnistconvolution
 
 
 #############################################
 # Clean byproducts.
 
-build CMakeFiles/cmake_byproducts_for_clean_target$:RelWithDebInfo: phony RelWithDebInfo/test-cl-matrix RelWithDebInfo/readdata RelWithDebInfo/train RelWithDebInfo/drawdata RelWithDebInfo/generate RelWithDebInfo/trainemnist RelWithDebInfo/generateemnist RelWithDebInfo/trainemnistconvolution RelWithDebInfo/generateemnistconvolution RelWithDebInfo/learnpicture
+build CMakeFiles/cmake_byproducts_for_clean_target$:RelWithDebInfo: phony RelWithDebInfo/trainemnistconvolution RelWithDebInfo/generateemnistconvolution
 
 
 #############################################
