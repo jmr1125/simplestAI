@@ -6,23 +6,7 @@
 
 include CMakeFiles/impl-RelWithDebInfo.ninja
 
-build drawdata: phony RelWithDebInfo/drawdata
-
-build generate: phony RelWithDebInfo/generate
-
-build generateemnist: phony RelWithDebInfo/generateemnist
-
 build generateemnistconvolution: phony RelWithDebInfo/generateemnistconvolution
-
-build learnpicture: phony RelWithDebInfo/learnpicture
-
-build readdata: phony RelWithDebInfo/readdata
-
-build test-cl-matrix: phony RelWithDebInfo/test-cl-matrix
-
-build train: phony RelWithDebInfo/train
-
-build trainemnist: phony RelWithDebInfo/trainemnist
 
 build trainemnistconvolution: phony RelWithDebInfo/trainemnistconvolution
 

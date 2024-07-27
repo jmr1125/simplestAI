@@ -5,23 +5,7 @@
 
 include CMakeFiles/impl-Debug.ninja
 
-build drawdata: phony Debug/drawdata
-
-build generate: phony Debug/generate
-
-build generateemnist: phony Debug/generateemnist
-
 build generateemnistconvolution: phony Debug/generateemnistconvolution
-
-build learnpicture: phony Debug/learnpicture
-
-build readdata: phony Debug/readdata
-
-build test-cl-matrix: phony Debug/test-cl-matrix
-
-build train: phony Debug/train
-
-build trainemnist: phony Debug/trainemnist
 
 build trainemnistconvolution: phony Debug/trainemnistconvolution
 

@@ -1,167 +1,113 @@
-#include "function.hpp"
-#include "network.hpp"
-#include <algorithm>
-#include <cmath>
+#include "NN.hpp"
+#include "bias_layer.hpp"
+#include "convolution_layer.hpp"
+#include "func_layer.hpp"
+#include "layers.hpp"
+#include "matrix_layer.hpp"
 #include <curses.h>
 #include <fstream>
-#include <ios>
-#include <iostream>
-#include <limits>
 #include <ncurses.h>
-using std::ifstream;
-using std::max;
-using std::min;
+#include <vector>
+using namespace std;
 const int maxx = 28, maxy = 28;
-char pic[maxx][maxy];
+std::vector<valT> pic(maxx *maxy);
 string name[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B",
                  "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
                  "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
                  "a", "b", "d", "e", "f", "g", "h", "n", "q", "R", "T"};
-#ifdef USE_OCL
-#include "cl-mat.hpp"
-#endif
-int main(int argc, char *argv[]) {
-#ifdef USE_OCL
-  init();
-#endif
-  network net({}, NULL, NULL);
+int main() {
+  nnet net;
   {
-    ifstream in("handwriteemnist.net");
-    if (!in) {
-      std::cerr << "handwritemnist.net NOT found\nrun trainemnist first"
-                << std::endl;
-      return 1;
-    }
-    net.load(in);
-    funcT func = funcof(ReLU);
-    funcT defunc = defuncof(ReLU);
-    for (layer &x : net.layers) {
-      x.Funct = func;
-      x.deFunct = defunc;
-    }
+    std::ifstream fin("emnist.net");
+    net.add_layer(new convolution_layer);
+    net.last_layer()->load(fin);
+    net.add_layer(new bias_layer);
+    net.last_layer()->load(fin);
+    net.add_layer(new func_layer);
+    net.last_layer()->load(fin);
+    net.add_layer(new matrix_layer);
+    net.last_layer()->load(fin);
+    net.add_layer(new bias_layer);
+    net.last_layer()->load(fin);
+    net.add_layer(new func_layer);
+    net.last_layer()->load(fin);
+    net.add_layer(new matrix_layer);
+    net.last_layer()->load(fin);
+    net.add_layer(new bias_layer);
+    net.last_layer()->load(fin);
+    net.add_layer(new func_layer);
+    net.last_layer()->load(fin);
   }
-  initscr(), noecho();
-  intrflush(stdscr, FALSE), keypad(stdscr, TRUE);
+  initscr();
+  cbreak();
+  noecho();
+  keypad(stdscr, TRUE);
   mousemask(ALL_MOUSE_EVENTS | REPORT_MOUSE_POSITION, NULL);
   printf("\033[?1003h\n");
-  // mouseinterval(1);
-  mvprintw(0, 0, "train %s", argv[1]);
-  // mouseinterval(0);
   bool quit = false;
-  string res = "";
+  bool color = 0;
   while (!quit) {
-    bool mousestatus = false;
-    bool mousecolor = true;
-    while (true) {
-      int ch = 0;
-      mvprintw(0, 1, "ch=%d status=%d color=%d", ch, mousestatus, mousecolor);
-      clrtoeol();
-      mvprintw(1, 1, "press: 0x%08lx release: 0x%08lx", BUTTON1_PRESSED,
-               BUTTON1_RELEASED);
-      ch = getch();
-      int maxid = 0;
-      {
-        matrix input;
-        input.setn(maxx * maxy);
-        input.setm(1);
-        for (int i = 0; i < maxx; ++i) {
-          for (int j = 0; j < maxy; ++j) {
-            input(i * maxy + j, 0) = pic[i][j];
-          }
+    int ch = wgetch(stdscr);
+    mvaddch(1, 1, ch);
+    if (ch == KEY_MOUSE) {
+      MEVENT evt;
+      if (getmouse(&evt) == OK) {
+        mvprintw(2, 1, "0x%08x %d %d", evt.bstate, evt.x, evt.y);
+        if (evt.bstate == 0x2) {
+          color = 1;
         }
-        auto o = net.feed_forward(input);
-        move(3, 32);
-        valT max = std::numeric_limits<valT>::min();
-        for (int i = 0; i < 47; ++i) {
-          printw("%f ", o(i, 0));
-          if (o(i, 0) > max) {
-            max = o(i, 0);
-            maxid = i;
-          }
+        if (evt.bstate == 0x1) {
+          color = 0;
         }
-        // mvprintw(5, 32, "it is %d %f", maxid, max);
-        mvprintw(5, 32, "it is ");
-        attron(A_BOLD);
-        printw("%d ", maxid);
-        printw("%s ", name[maxid].c_str());
-        attroff(A_BOLD);
-        printw("%f", max);
-        mvprintw(7, 40, "Result: %s", res.c_str());
-      }
-      if (ch == 'c') {
-        mousecolor = !mousecolor;
-      } else if (ch == '\n') {
-        break;
-      } else if (ch == 'q') {
-        quit = true;
-        break;
-      } else if (ch == ' ') {
-        res += ' ';
-      } else if (KEY_MOUSE == ch) {
-        MEVENT evt;
-        if (getmouse(&evt) == OK) {
-          mvprintw(2, 1, "0x%08x %d %d status=%d", evt.bstate, evt.x, evt.y,
-                   mousestatus);
-          clrtoeol();
-          int x = min(max(0, evt.x - 3), maxx - 1),
-              y = min(max(0, evt.y - 3), maxy - 1);
-          if (evt.bstate == BUTTON1_PRESSED) {
-            mousestatus = true;
-          }
-          if (evt.bstate == BUTTON1_RELEASED) {
-            mousestatus = false;
-          }
-          if (evt.bstate & BUTTON1_DOUBLE_CLICKED) {
-            res += name[maxid];
-            break;
-          }
-          if (mousestatus) {
-            bool b[3][3] = {{0, 1, 0}, {1, 1, 1}, {0, 1, 0}};
-            for (int i = 0; i < 3; ++i) {
-              for (int j = 0; j < 3; ++j) {
-                int xx = x + i;
-                int yy = y + j;
-                if (b[i][j])
-                  pic[min(max(0, yy), maxy - 1)][min(max(0, xx), maxx - 1)] =
-                      mousecolor;
-              }
-            }
-            // pic[y][x] = mousecolor;
-          }
-        }
-      }
-      for (int i = 0; i < maxx; ++i) {
-        for (int j = 0; j < maxy; ++j) {
-          if (pic[i][j]) {
-            mvaddch(i + 3, j + 3, '#' | A_REVERSE);
-          } else {
-            mvaddch(i + 3, j + 3, '.' | A_NORMAL);
-          }
+        int x = (evt.x - 3) / 2, y = evt.y - 3;
+        x = min(x, maxx - 1);
+        x = max(0, x);
+        y = min(y, maxy - 1);
+        y = max(0, y);
+        auto draw = [&](int x, int y) {
+          if (x < 0)
+            return;
+          if (y < 0)
+            return;
+          if (x >= maxx)
+            return;
+          if (y >= maxy)
+            return;
+          pic[x + maxx * y] = color;
+        };
+        if (color) {
+          draw(x - 1, y);
+          draw(x, y - 1);
+          draw(x, y);
+          draw(x + 1, y);
+          draw(x, y + 1);
         }
       }
     }
-
-    bool empty = true;
-    for (int i = 0; i < maxx; ++i) {
-      for (int j = 0; j < maxy; ++j) {
-        if (pic[i][j] == true) {
-          empty = false;
-          break;
+    if (ch == 'q')
+      break;
+    if (ch == 'c') {
+      color = !color;
+    }
+    if (ch == 'C') {
+      for (auto &x : pic)
+        x = 0;
+    }
+    for (int i = 0; i < maxx * maxy; ++i) {
+      mvaddch(i / maxx + 3, (i % maxx) * 2 + 3, pic[i] ? 'M' : '.');
+    }
+    {
+      auto out = net.forward(pic);
+      int maxid;
+      valT max = -1;
+      for (int i = 0; i < out.size(); ++i) {
+        if (out[i] > max) {
+          max = out[i], maxid = i;
         }
       }
-      if (!empty) {
-        break;
-      }
+      mvprintw(2, 32, "it is %s", name[maxid].c_str());
     }
-    if (!empty) {
-    } else {
-      mvprintw(2, 20, "pic is empty");
-    }
-    memset(pic, 0, sizeof pic);
   }
-  printf("\033[?1003l");
+  printf("\033[?1003l\n");
   endwin();
-#ifdef USE_OCL
-  teardown();
-#endif
 }

@@ -1,5 +1,5 @@
 #include "cl-mat.hpp"
-#include "layer.hpp"
+#include "layers.hpp"
 #include "matrix.hpp"
 #include <OpenCL/OpenCL.h>
 #include <new>
