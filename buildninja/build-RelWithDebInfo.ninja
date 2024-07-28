@@ -8,6 +8,8 @@ include CMakeFiles/impl-RelWithDebInfo.ninja
 
 build generateemnistconvolution: phony RelWithDebInfo/generateemnistconvolution
 
+build readdata: phony RelWithDebInfo/readdata
+
 build trainemnistconvolution: phony RelWithDebInfo/trainemnistconvolution
 
 

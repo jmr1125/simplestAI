@@ -1,10 +1,12 @@
 #include "convolution_layer.hpp"
 #include "convolution.hpp"
 #include "layers.hpp"
+#include "main.hpp"
 #include <istream>
 #include <ostream>
 #include <random>
 #include <string>
+#include <vector>
 
 convolution_layer::~convolution_layer() {}
 void convolution_layer::init(std::random_device &&rd) {
@@ -35,10 +37,10 @@ vector<valT> convolution_layer::forward(const vector<valT> &input) {
   I.setn(n_in);
   I.setm(m_in);
   I.m = input;
-  auto res = convolution(I, K);
-  return res.m;
+  output = convolution(I, K).m;
+  return output;
 }
-vector<valT> convolution_layer::backward(const vector<valT> &grad) {
+vector<valT> convolution_layer::backward(const vector<valT> &grad) const {
   matrix D;
   D.setn(n_in + nK - 1);
   D.setm(m_in + mK - 1);
@@ -55,8 +57,9 @@ vector<valT> convolution_layer::backward(const vector<valT> &grad) {
   }
   return res.m;
 }
-void convolution_layer::update(const vector<valT> &grad,
-                               const vector<valT> &input, double lr) {
+vector<valT> convolution_layer::update(const vector<valT> &grad,
+                                       const vector<valT> &input,
+                                       double lr) const {
   matrix G;
   G.setn(n_in + nK - 1);
   G.setm(m_in + mK - 1);
@@ -64,14 +67,25 @@ void convolution_layer::update(const vector<valT> &grad,
   matrix I;
   I.setn(n_in);
   I.setm(m_in);
+  vector<valT> res;
+  res.resize(n_in * m_in);
   for (int i = 0; i < nK; ++i)
     for (int j = 0; j < mK; ++j)
       for (int x = i; x < n_in; ++x)
-        for (int y = j; y < m_in; ++y)
-          K(i, j) -= I(x - i, y - j) * G(x, y) * lr;
+        for (int y = j; y < m_in; ++y) {
+          // K(i, j) -= I(x - i, y - j) * G(x, y) * lr;
+          res[i * m_in + j] -= I(x - i, y - j) * G(x, y) * lr;
+        }
+  return std::move(res);
+}
+void convolution_layer::update(vector<valT>::const_iterator &i) {
+  for (auto &x : K.m) {
+    x += (*i);
+    ++i;
+  }
 }
 
-void convolution_layer::save(std::ostream &o) {
+void convolution_layer::save(std::ostream &o) const {
   o << n_in << ' ' << m_in << ' ' << nK << ' ' << mK << std::endl;
   for (auto x : K.m) {
     o << x << ' ';

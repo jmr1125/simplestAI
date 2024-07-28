@@ -5,6 +5,7 @@
 #include "convolution_layer.hpp"
 #include "func_layer.hpp"
 #include "layers.hpp"
+#include "main.hpp"
 #include "matrix_layer.hpp"
 #include <algorithm>
 #include <cassert>
@@ -13,6 +14,8 @@
 #include <ios>
 #include <iostream>
 #include <random>
+#include <string>
+#include <vector>
 using namespace std;
 int main() {
 #ifdef USE_OCL
@@ -20,7 +23,6 @@ int main() {
 #endif
   random_device rd;
   nnet net;
-  int Istart = -1;
   {
     ifstream netin("emnist.net");
     net.add_layer(new convolution_layer);
@@ -55,7 +57,7 @@ int main() {
     if (netin) {
       net.last_layer()->load(netin);
     } else {
-      net.last_layer()->set_IOsize(32 * 32, 80);
+      net.last_layer()->set_IOsize(32 * 32, 128);
       net.last_layer()->init(std::move(rd));
     }
 
@@ -63,7 +65,7 @@ int main() {
     if (netin) {
       net.last_layer()->load(netin);
     } else {
-      net.last_layer()->set_IOsize(80, 80);
+      net.last_layer()->set_IOsize(128, 128);
       net.last_layer()->init(std::move(rd));
     }
 
@@ -72,14 +74,14 @@ int main() {
       net.last_layer()->load(netin);
     } else {
       dynamic_cast<func_layer *>(net.last_layer())->f = ReLU;
-      net.last_layer()->set_IOsize(80, 80);
+      net.last_layer()->set_IOsize(128, 128);
     }
 
     net.add_layer(new matrix_layer);
     if (netin) {
       net.last_layer()->load(netin);
     } else {
-      net.last_layer()->set_IOsize(80, 47);
+      net.last_layer()->set_IOsize(128, 47);
       net.last_layer()->init(std::move(rd));
     }
 
@@ -124,38 +126,65 @@ int main() {
     }
   }
   assert(inputs.size() == outputs.size());
-  valT sum = 0;
   valT lr;
   bool quit = false;
   int times = 0;
+  valT lmin = 100, lmax = 0;
   cout << "learning rate: ";
   cin >> lr;
   cout << "start." << endl;
   mt19937 g(rd());
+  int off = 0;
   for (; !quit;) {
-    shuffle(inputs.begin(), inputs.end(), g);
     const auto N = inputs.size();
-    for (int i = 0; i < N; ++i) {
+    const int batch_size = 32;
+    if (off + batch_size >= N) {
+      off = 0;
+      shuffle(inputs.begin(), inputs.end(), g);
+      lmin = 100, lmax = 0;
+      lr /= 1.01;
+      cout << "lr: " << lr << endl;
+    }
+    vector<valT> d;
+    for (int i = off; i < batch_size + off; ++i) {
       net.forward(inputs[i]);
-      net.update(inputs[i], outputs[i], lr);
-      valT loss = 0;
-      for (int j = 0; j < outputs[i].size(); ++j) {
-        loss += -outputs[i][j] * log(net.last_layer()->output[j]);
-      }
-      sum += loss;
-      if (i % 50 == 0) {
-        cout << times << ", " << i << " : " << sum / 50.0 << endl;
-        sum = 0;
-        if (!times)
-          cin >> times;
-        else
-          --times;
-        if (times <= -1) {
-          quit = 1;
-          Istart = i + 1;
-          break;
+      auto delta = net.update(inputs[i], outputs[i], lr);
+      if (d.size() == 0) {
+        d = delta;
+      } else {
+        for (int i = 0; i < 47; ++i) {
+          d[i] += delta[i];
         }
-        // printf("%d : %f\n", i, sum / 50.0);
+      }
+    }
+    off += batch_size;
+    for (auto &x : d) {
+      x /= batch_size;
+    }
+    net.update(d);
+    {
+      valT loss = 0;
+      for (int j = 0; j < outputs[0].size(); ++j) {
+        loss += -outputs[0][j] * log(net.last_layer()->output[j]);
+      }
+      lmin = min(lmin, loss);
+      lmax = max(lmax, loss);
+      cout << times << " : " << loss << endl;
+      int L = 30;
+      int v = L * (loss - lmin) / (lmax - lmin);
+      cout << lmin << " |" << string(v, '*') << string(L - v, '.') << "| "
+           << lmax << endl;
+    }
+    {
+      double x;
+      if (!times) {
+        cin >> x;
+        times = x * N / batch_size;
+      } else
+        --times;
+      if (times <= -1) {
+        quit = 1;
+        break;
       }
     }
   }
@@ -165,7 +194,6 @@ int main() {
   for (auto l : net.layers) {
     l->save(of);
   }
-  of << Istart;
 #ifdef USE_OCL
   teardown();
 #endif

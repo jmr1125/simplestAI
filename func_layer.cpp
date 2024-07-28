@@ -1,8 +1,10 @@
 #include "func_layer.hpp"
+#include "main.hpp"
 #include <algorithm>
 #include <cmath>
 #include <istream>
 #include <ostream>
+#include <vector>
 functionT funcs[] = {
     f_Identity, f_Binary_step, f_sigmoid, f_tanh, f_ReLU, f_Softplus,
 };
@@ -37,7 +39,7 @@ vector<valT> func_layer::forward(const vector<valT> &input) {
   }
   return output;
 }
-vector<valT> func_layer::backward(const vector<valT> &grad) {
+vector<valT> func_layer::backward(const vector<valT> &grad) const {
   vector<valT> res;
   if (f == softmax) {
     int n = grad.size();
@@ -55,11 +57,13 @@ vector<valT> func_layer::backward(const vector<valT> &grad) {
   }
   return std::move(res);
 }
-void func_layer::update(const vector<valT> &, const vector<valT> &, double) {
-  return;
+vector<valT> func_layer::update(const vector<valT> &, const vector<valT> &,
+                                double) const {
+  return {};
 }
+void func_layer::update(vector<valT>::const_iterator &) { return; }
 
-void func_layer::save(std::ostream &o) {
+void func_layer::save(std::ostream &o) const {
   o << Isize << std::endl;
   o << f << std::endl;
 }

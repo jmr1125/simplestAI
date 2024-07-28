@@ -1,8 +1,10 @@
 #include "bias_layer.hpp"
+#include "main.hpp"
 #include <istream>
 #include <ostream>
 #include <stdexcept>
 #include <string>
+#include <vector>
 
 bias_layer::~bias_layer() {}
 void bias_layer::init(std::random_device &&rd) {
@@ -26,14 +28,26 @@ vector<valT> bias_layer::forward(const vector<valT> &input) {
     output[i] = input[i] + bias[i];
   return output;
 }
-vector<valT> bias_layer::backward(const vector<valT> &grad) { return grad; }
-void bias_layer::update(const vector<valT> &grad, const vector<valT> &input,
-                        double lr) {
-  for (int i = 0; i < grad.size(); i++)
-    bias[i] -= lr * grad[i];
+vector<valT> bias_layer::backward(const vector<valT> &grad) const {
+  return grad;
 }
-
-void bias_layer::save(std::ostream &o) {
+vector<valT> bias_layer::update(const vector<valT> &grad,
+                                const vector<valT> &input, double lr) const {
+  vector<valT> res;
+  res.resize(bias.size());
+  for (int i = 0; i < grad.size(); i++) {
+    // bias[i] -= lr * grad[i];
+    res[i] -= lr * grad[i];
+  }
+  return std::move(res);
+}
+void bias_layer::update(vector<valT>::const_iterator &i) {
+  for (auto &x : bias) {
+    x += (*i);
+    ++i;
+  }
+}
+void bias_layer::save(std::ostream &o) const {
   o << Isize << std::endl;
   for (auto x : bias) {
     o << x << ' ';

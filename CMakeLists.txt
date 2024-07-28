@@ -83,6 +83,8 @@ if(USE_Opencl)
 endif()
 #end OpenCL
 
+add_executable(readdata readmnist.cpp)
+
 list(APPEND STANDARD_CPPS "matrix.cpp")
 list(APPEND STANDARD_CPPS "convolution.cpp")
 list(APPEND STANDARD_CPPS "matrix.cpp")
@@ -90,6 +92,7 @@ list(APPEND STANDARD_CPPS "matrix_layer.cpp")
 list(APPEND STANDARD_CPPS "bias_layer.cpp")
 list(APPEND STANDARD_CPPS "func_layer.cpp")
 list(APPEND STANDARD_CPPS "convolution_layer.cpp")
+list(APPEND STANDARD_CPPS "average_layer.cpp")
 list(APPEND STANDARD_CPPS "NN.cpp")
 
 message(STATUS "standard cpps : ${STANDARD_CPPS}")
