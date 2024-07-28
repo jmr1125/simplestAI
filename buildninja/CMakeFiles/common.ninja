@@ -85,19 +85,19 @@ build CMakeFiles/cmake_byproducts_for_clean_target: phony
 #############################################
 # Clean byproducts.
 
-build CMakeFiles/cmake_byproducts_for_clean_target$:Debug: phony Debug/trainemnistconvolution Debug/generateemnistconvolution
+build CMakeFiles/cmake_byproducts_for_clean_target$:Debug: phony Debug/readdata Debug/trainemnistconvolution Debug/generateemnistconvolution
 
 
 #############################################
 # Clean byproducts.
 
-build CMakeFiles/cmake_byproducts_for_clean_target$:Release: phony Release/trainemnistconvolution Release/generateemnistconvolution
+build CMakeFiles/cmake_byproducts_for_clean_target$:Release: phony Release/readdata Release/trainemnistconvolution Release/generateemnistconvolution
 
 
 #############################################
 # Clean byproducts.
 
-build CMakeFiles/cmake_byproducts_for_clean_target$:RelWithDebInfo: phony RelWithDebInfo/trainemnistconvolution RelWithDebInfo/generateemnistconvolution
+build CMakeFiles/cmake_byproducts_for_clean_target$:RelWithDebInfo: phony RelWithDebInfo/readdata RelWithDebInfo/trainemnistconvolution RelWithDebInfo/generateemnistconvolution
 
 
 #############################################

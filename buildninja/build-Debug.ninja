@@ -8,6 +8,8 @@ include CMakeFiles/impl-Debug.ninja
 
 build generateemnistconvolution: phony Debug/generateemnistconvolution
 
+build readdata: phony Debug/readdata
+
 build trainemnistconvolution: phony Debug/trainemnistconvolution
 
 

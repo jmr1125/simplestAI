@@ -8,6 +8,8 @@ include CMakeFiles/impl-Release.ninja
 
 build generateemnistconvolution: phony Release/generateemnistconvolution
 
+build readdata: phony Release/readdata
+
 build trainemnistconvolution: phony Release/trainemnistconvolution
 
 

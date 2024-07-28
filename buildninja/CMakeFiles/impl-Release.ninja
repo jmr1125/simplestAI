@@ -35,6 +35,41 @@ CONFIGURATION = Release
 include CMakeFiles/common.ninja
 
 # =============================================================================
+# Object build statements for EXECUTABLE target readdata
+
+
+#############################################
+# Order-only phony target for readdata
+
+build cmake_object_order_depends_target_readdata_RELEASE: phony || CMakeFiles/readdata.dir
+
+build CMakeFiles/readdata.dir/Release/readmnist.cpp.o: CXX_COMPILER__readdata_unscanned_Release /Users/jiang/Desktop/myAI/readmnist.cpp || cmake_object_order_depends_target_readdata_RELEASE
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles/readdata.dir/Release/readmnist.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/readdata.dir/Release
+  OBJECT_FILE_DIR = CMakeFiles/readdata.dir/Release
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target readdata
+
+
+#############################################
+# Link the executable Release/readdata
+
+build Release/readdata: CXX_EXECUTABLE_LINKER__readdata_Release CMakeFiles/readdata.dir/Release/readmnist.cpp.o
+  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
+  LINK_LIBRARIES = -framework OpenCL
+  OBJECT_DIR = CMakeFiles/readdata.dir/Release
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Release/readdata
+  TARGET_PDB = readdata.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target trainemnistconvolution
 
 
@@ -115,6 +150,14 @@ build CMakeFiles/trainemnistconvolution.dir/Release/convolution_layer.cpp.o: CXX
   OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Release
 
+build CMakeFiles/trainemnistconvolution.dir/Release/average_layer.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Release /Users/jiang/Desktop/myAI/average_layer.cpp || cmake_object_order_depends_target_trainemnistconvolution_RELEASE
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Release/average_layer.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Release
+  OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Release
+
 build CMakeFiles/trainemnistconvolution.dir/Release/NN.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Release /Users/jiang/Desktop/myAI/NN.cpp || cmake_object_order_depends_target_trainemnistconvolution_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Release/NN.cpp.o.d
@@ -131,7 +174,7 @@ build CMakeFiles/trainemnistconvolution.dir/Release/NN.cpp.o: CXX_COMPILER__trai
 #############################################
 # Link the executable Release/trainemnistconvolution
 
-build Release/trainemnistconvolution: CXX_EXECUTABLE_LINKER__trainemnistconvolution_Release CMakeFiles/trainemnistconvolution.dir/Release/trainemnist.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/clGetErrorString.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/cl-mat.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/matrix.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/convolution.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/matrix_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/bias_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/func_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/convolution_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/NN.cpp.o
+build Release/trainemnistconvolution: CXX_EXECUTABLE_LINKER__trainemnistconvolution_Release CMakeFiles/trainemnistconvolution.dir/Release/trainemnist.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/clGetErrorString.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/cl-mat.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/matrix.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/convolution.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/matrix_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/bias_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/func_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/convolution_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/average_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Release/NN.cpp.o
   FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
   LINK_LIBRARIES = -framework OpenCL
@@ -222,6 +265,14 @@ build CMakeFiles/generateemnistconvolution.dir/Release/convolution_layer.cpp.o: 
   OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/Release
 
+build CMakeFiles/generateemnistconvolution.dir/Release/average_layer.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_Release /Users/jiang/Desktop/myAI/average_layer.cpp || cmake_object_order_depends_target_generateemnistconvolution_RELEASE
+  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles/generateemnistconvolution.dir/Release/average_layer.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
+  OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/Release
+  OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/Release
+
 build CMakeFiles/generateemnistconvolution.dir/Release/NN.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_Release /Users/jiang/Desktop/myAI/NN.cpp || cmake_object_order_depends_target_generateemnistconvolution_RELEASE
   DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/generateemnistconvolution.dir/Release/NN.cpp.o.d
@@ -238,7 +289,7 @@ build CMakeFiles/generateemnistconvolution.dir/Release/NN.cpp.o: CXX_COMPILER__g
 #############################################
 # Link the executable Release/generateemnistconvolution
 
-build Release/generateemnistconvolution: CXX_EXECUTABLE_LINKER__generateemnistconvolution_Release CMakeFiles/generateemnistconvolution.dir/Release/generateemnist.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/clGetErrorString.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/cl-mat.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/matrix.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/convolution.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/matrix_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/bias_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/func_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/convolution_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/NN.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
+build Release/generateemnistconvolution: CXX_EXECUTABLE_LINKER__generateemnistconvolution_Release CMakeFiles/generateemnistconvolution.dir/Release/generateemnist.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/clGetErrorString.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/cl-mat.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/matrix.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/convolution.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/matrix_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/bias_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/func_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/convolution_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/average_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Release/NN.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
   FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
   LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
@@ -250,13 +301,15 @@ build Release/generateemnistconvolution: CXX_EXECUTABLE_LINKER__generateemnistco
 
 build generateemnistconvolution$:Release: phony Release/generateemnistconvolution
 
+build readdata$:Release: phony Release/readdata
+
 build trainemnistconvolution$:Release: phony Release/trainemnistconvolution
 
 
 #############################################
 # Folder: /Users/jiang/Desktop/myAI/buildninja
 
-build all$:Release: phony Release/trainemnistconvolution Release/generateemnistconvolution
+build all$:Release: phony Release/readdata Release/trainemnistconvolution Release/generateemnistconvolution
 
 
 #############################################
