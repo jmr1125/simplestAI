@@ -1,5 +1,5 @@
 #include "layers.hpp"
-struct average_layer : public layer {
+struct average_layer : public layer { // pool with 2x2 average
   virtual ~average_layer() override;
   virtual void init(std::random_device &&) override;
   virtual void set_IOsize(int isize, int osize) override;

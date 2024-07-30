@@ -30,6 +30,8 @@ void convolution_layer::set_IOsize(int isize, int osize) {
                              std::to_string(osize) + " ; " +
                              std::to_string(n_in) + std::to_string(m_in));
   }
+  Isize = isize;
+  Osize = osize;
   return;
 }
 vector<valT> convolution_layer::forward(const vector<valT> &input) {
@@ -90,6 +92,7 @@ void convolution_layer::save(std::ostream &o) const {
   for (auto x : K.m) {
     o << x << ' ';
   }
+  o << std::endl;
 }
 void convolution_layer::load(std::istream &i) {
   i >> n_in >> m_in >> nK >> mK;

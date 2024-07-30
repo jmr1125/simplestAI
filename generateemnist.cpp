@@ -4,6 +4,7 @@
 #include "func_layer.hpp"
 #include "layers.hpp"
 #include "matrix_layer.hpp"
+#include "average_layer.hpp"
 #include <curses.h>
 #include <fstream>
 #include <ncurses.h>
@@ -21,9 +22,15 @@ int main() {
     std::ifstream fin("emnist.net");
     net.add_layer(new convolution_layer);
     net.last_layer()->load(fin);
-    net.add_layer(new bias_layer);
+    net.add_layer(new func_layer);
+    net.last_layer()->load(fin);
+    net.add_layer(new average_layer);
+    net.last_layer()->load(fin);
+    net.add_layer(new convolution_layer);
     net.last_layer()->load(fin);
     net.add_layer(new func_layer);
+    net.last_layer()->load(fin);
+    net.add_layer(new average_layer);
     net.last_layer()->load(fin);
     net.add_layer(new matrix_layer);
     net.last_layer()->load(fin);

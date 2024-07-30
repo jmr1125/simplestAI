@@ -54,7 +54,7 @@ matcd ft_main(const matcd &in, int flag) {
 matrix convolution(const matrix &a, const matrix &b) {
   const int n =
       std::max(std::max(a.getn(), a.getm()), std::max(b.getn(), b.getm()));
-  const int N = (1 << (int)ceil(log2(n)));
+  const int N = (1 << ((int)ceil(log2(n)) + 1));
   matcd A(vector(N, vector<cd>(N)));
   matcd B(vector(N, vector<cd>(N)));
   for (int i = 0; i < N; ++i) {
