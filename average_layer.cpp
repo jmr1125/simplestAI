@@ -17,6 +17,8 @@ void average_layer::set_IOsize(int isize, int osize) {
         std::to_string(i_m));
   }
   output.resize(i_n / 2 * i_m / 2);
+  Isize = isize;
+  Osize = osize;
 }
 VvalT average_layer::forward(const vector<valT> &in) {
   for (int i = 0; i < i_n / 2; ++i) {
@@ -45,5 +47,10 @@ VvalT average_layer::update(const VvalT &, const VvalT &, double lr) const {
 }
 void average_layer::update(VvalT::const_iterator &) { return; }
 
-void average_layer::save(ostream &o) const { o << i_n << " " << i_m << " "; }
-void average_layer::load(std::istream &i) { i >> i_n >> i_m; }
+void average_layer::save(ostream &o) const {
+  o << i_n << " " << i_m << std::endl;
+}
+void average_layer::load(std::istream &i) {
+  i >> i_n >> i_m;
+  set_IOsize(i_n * i_m, i_n / 2 * i_m / 2);
+}

@@ -48,6 +48,7 @@ void matrix_layer::save(std::ostream &o) const {
   for (auto x : M.m) {
     o << x << " ";
   }
+  o << std::endl;
 }
 void matrix_layer::load(std::istream &i) {
   i >> Isize >> Osize;
