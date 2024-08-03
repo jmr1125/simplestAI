@@ -20,6 +20,7 @@ void bias_layer::set_IOsize(int isize, int osize) {
   }
   Isize = isize;
   Osize = osize;
+  Ichannels = Ochannels = 1;
   bias.resize(isize);
   output.resize(osize);
 }

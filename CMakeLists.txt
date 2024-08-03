@@ -93,11 +93,13 @@ list(APPEND STANDARD_CPPS "bias_layer.cpp")
 list(APPEND STANDARD_CPPS "func_layer.cpp")
 list(APPEND STANDARD_CPPS "convolution_layer.cpp")
 list(APPEND STANDARD_CPPS "average_layer.cpp")
+list(APPEND STANDARD_CPPS "max_layer.cpp")
 list(APPEND STANDARD_CPPS "NN.cpp")
 
 message(STATUS "standard cpps : ${STANDARD_CPPS}")
 add_executable(trainemnistconvolution trainemnist.cpp ${STANDARD_CPPS})
 add_executable(generateemnistconvolution generateemnist.cpp ${STANDARD_CPPS})
+target_link_libraries(trainemnistconvolution ${CURSES_LIBRARIES})
 target_link_libraries(generateemnistconvolution ${CURSES_LIBRARIES})
 
 message(STATUS "picture:")

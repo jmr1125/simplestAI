@@ -16,31 +16,39 @@ void average_layer::set_IOsize(int isize, int osize) {
         std::to_string(osize) + " nm: " + std::to_string(i_n) + " , " +
         std::to_string(i_m));
   }
-  output.resize(i_n / 2 * i_m / 2);
+  output.resize(i_n / 2 * i_m / 2 * Ichannels);
   Isize = isize;
   Osize = osize;
 }
 VvalT average_layer::forward(const vector<valT> &in) {
-  for (int i = 0; i < i_n / 2; ++i) {
-    for (int j = 0; j < i_m / 2; ++j) {
-      output[i * i_m / 2 + j] =
-          (in[i * i_m + j] + in[i * i_m + j + 1] + in[(i + 1) * i_m + j] +
-           in[(i + 1) * i_m + j + 1]) /
-          4;
+  const int o_n = i_n / 2;
+  const int o_m = i_m / 2;
+  for (int c = 0; c < Ichannels; ++c)
+    for (int i = 0; i < i_n / 2; ++i) {
+      for (int j = 0; j < i_m / 2; ++j) {
+        output[i * o_m + j + c * o_n * o_m] =
+            (in[i * i_m + j + c * i_n * i_m] +
+             in[i * i_m + (j + 1) + c * i_n * i_m] +
+             in[(i + 1) * i_m + j + c * i_n * i_m] +
+             in[(i + 1) * i_m + (j + 1) + c * i_n * i_m]) /
+            4;
+      }
     }
-  }
   return output;
 }
 VvalT average_layer::backward(const VvalT &grad) const {
-  matrix res;
-  res.setn(i_n);
-  res.setm(i_m);
-  for (int i = 0; i < i_n; ++i) {
-    for (int j = 0; j < i_m; ++j) {
-      res(i, j) = grad[(i / 2) * i_m / 2 + j / 2] / 4;
+  const int o_n = i_n / 2;
+  const int o_m = i_m / 2;
+  VvalT res;
+  res.resize(i_m * i_n * Ichannels);
+  for (int c = 0; c < Ichannels; ++c)
+    for (int i = 0; i < i_n; ++i) {
+      for (int j = 0; j < i_m; ++j) {
+        res[j + i * i_m + c * i_n * i_m] =
+            grad[(i / 2) * o_m + j / 2 + c * o_n * o_m] / 4;
+      }
     }
-  }
-  return res.m;
+  return res;
 }
 VvalT average_layer::update(const VvalT &, const VvalT &, double lr) const {
   return {};
@@ -48,9 +56,10 @@ VvalT average_layer::update(const VvalT &, const VvalT &, double lr) const {
 void average_layer::update(VvalT::const_iterator &) { return; }
 
 void average_layer::save(ostream &o) const {
-  o << i_n << " " << i_m << std::endl;
+  o << i_n << " " << i_m << " " << Ichannels << std::endl;
 }
 void average_layer::load(std::istream &i) {
-  i >> i_n >> i_m;
-  set_IOsize(i_n * i_m, i_n / 2 * i_m / 2);
+  i >> i_n >> i_m >> Ichannels;
+  Ochannels = Ichannels;
+  set_IOsize(i_n * i_m * Ichannels, i_n / 2 * i_m / 2 * Ichannels);
 }
