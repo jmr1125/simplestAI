@@ -21,6 +21,7 @@ void func_layer::set_IOsize(int isize, int osize) {
   }
   Isize = isize;
   Osize = osize;
+  Ichannels = Ochannels = 1;
   output.resize(osize);
 }
 vector<valT> func_layer::forward(const vector<valT> &input) {
@@ -42,7 +43,7 @@ vector<valT> func_layer::forward(const vector<valT> &input) {
 vector<valT> func_layer::backward(const vector<valT> &grad) const {
   vector<valT> res;
   if (f == softmax) {
-    int n = grad.size();
+    size_t n = grad.size();
     res.resize(n);
     for (int j = 0; j < n; ++j) {
       for (int i = 0; i < n; ++i) {

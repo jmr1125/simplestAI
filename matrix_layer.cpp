@@ -16,6 +16,7 @@ void matrix_layer::set_IOsize(int isize, int osize) {
   M.setm(isize);
   Isize = isize;
   Osize = osize;
+  Ichannels = Ochannels = 1;
 }
 vector<valT> matrix_layer::forward(const vector<valT> &input) {
   output = M * input;

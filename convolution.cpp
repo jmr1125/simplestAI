@@ -1,6 +1,8 @@
 #include "convolution.hpp"
+#include "main.hpp"
+#include <algorithm>
 
-typedef std::complex<double> cd;
+typedef std::complex<valT> cd;
 typedef vector<vector<cd>> matcd;
 
 // main for fft and ifft
@@ -8,9 +10,11 @@ matcd ft_main(const matcd &in, int flag) {
   const auto n = in.size();
   if (n == 1)
     return in;
-  matcd a00 = vector(n / 2, vector<cd>(n / 2));
-  auto a10 = a00, a01 = a00, a11 = a00;
-  auto output = vector(n, vector<cd>(n));
+  matcd a00(n / 2, vector<cd>(n / 2));
+  matcd a10(n / 2, vector<cd>(n / 2));
+  matcd a01(n / 2, vector<cd>(n / 2));
+  matcd a11(n / 2, vector<cd>(n / 2));
+  matcd output(n, vector<cd>(n));
   for (int i = 0; i < n / 2; i++) {
     for (int j = 0; j < n / 2; j++) {
       a00[i][j] = in[i * 2 + 0][j * 2 + 0];
@@ -27,12 +31,10 @@ matcd ft_main(const matcd &in, int flag) {
   for (int i = 0; i < n / 2; ++i) {
     for (int j = 0; j < n / 2; ++j) {
       // a00[i][j]*=1;
-      a10[i][j] *=
-          exp(flag * 2 * M_PI * std::complex<double>(0, 1) * (1.0 * i / n));
-      a01[i][j] *=
-          exp(flag * 2 * M_PI * std::complex<double>(0, 1) * (1.0 * j / n));
-      a11[i][j] *= exp(flag * 2 * M_PI * std::complex<double>(0, 1) *
-                       (1.0 * (i + j) / n));
+      a10[i][j] *= exp(flag * 2 * (valT)M_PI * cd(0, 1) * ((valT)1.0 * i / n));
+      a01[i][j] *= exp(flag * 2 * (valT)M_PI * cd(0, 1) * ((valT)1.0 * j / n));
+      a11[i][j] *=
+          exp(flag * 2 * (valT)M_PI * cd(0, 1) * ((valT)1.0 * (i + j) / n));
     }
   }
 
@@ -40,11 +42,12 @@ matcd ft_main(const matcd &in, int flag) {
     for (int j = 0; j < n; ++j) {
       output[i][j] =
           a00[i % (n / 2)][j % (n / 2)] +
-          ((i < n / 2) ? 1.0 : -1.0) * a10[i % (n / 2)][j % (n / 2)] +
-          ((j < n / 2) ? 1.0 : -1.0) * a01[i % (n / 2)][j % (n / 2)] +
-          ((((i < n / 2) && (j < n / 2)) || ((i >= n / 2) && (j >= n / 2)))
-               ? 1.0
-               : -1.0) *
+          (valT)((i < n / 2) ? 1.0 : -1.0) * a10[i % (n / 2)][j % (n / 2)] +
+          (valT)((j < n / 2) ? 1.0 : -1.0) * a01[i % (n / 2)][j % (n / 2)] +
+          (valT)((((i < n / 2) && (j < n / 2)) ||
+                  ((i >= n / 2) && (j >= n / 2)))
+                     ? 1.0
+                     : -1.0) *
               a11[i % (n / 2)][j % (n / 2)];
     }
   }
@@ -52,7 +55,7 @@ matcd ft_main(const matcd &in, int flag) {
 }
 #include <cmath>
 matrix convolution(const matrix &a, const matrix &b) {
-  const int n =
+  const size_t n =
       std::max(std::max(a.getn(), a.getm()), std::max(b.getn(), b.getm()));
   const int N = (1 << ((int)ceil(log2(n)) + 1));
   matcd A(vector(N, vector<cd>(N)));
@@ -83,4 +86,26 @@ matrix convolution(const matrix &a, const matrix &b) {
     }
   }
   return ans;
+}
+
+matrix rotate(matrix x) {
+  // reverse(x.m.begin(), x.m.end());
+  // return std::move(x);
+  size_t n = x.getn(); // 获取行数
+  size_t m = x.getm(); // 获取列数
+
+  // 创建一个临时矩阵用于存储旋转结果
+  matrix rotated;
+  rotated.setn(n);
+  rotated.setm(m);
+  rotated.m.resize(n * m);
+
+  // 进行180度旋转
+  for (size_t i = 0; i < n; ++i) {
+    for (size_t j = 0; j < m; ++j) {
+      rotated(i, j) = x(n - 1 - i, m - 1 - j);
+    }
+  }
+
+  return rotated;
 }

@@ -1,10 +1,7 @@
 #include "layers.hpp"
-#include "matrix.hpp"
-#include <istream>
-#include <random>
-
-struct convolution_layer : public layer {
-  virtual ~convolution_layer() override;
+#include "main.hpp"
+struct max_layer : public layer { // pool with 2x2 average
+  virtual ~max_layer() override;
   virtual void init(std::random_device &&) override;
   virtual void set_IOsize(int isize, int osize) override;
   virtual vector<valT> forward(const vector<valT> &input) override;
@@ -15,7 +12,6 @@ struct convolution_layer : public layer {
   virtual void update(vector<valT>::const_iterator &) override;
   virtual void save(std::ostream &) const override;
   virtual void load(std::istream &) override;
-  vector<vector<matrix>> K; // K [Output] [Input]
-  int nK, mK;
-  int n_in, m_in;
+  int i_n, i_m;
+  VvalT input;
 };

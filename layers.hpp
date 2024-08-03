@@ -17,5 +17,6 @@ struct layer {
   virtual void save(std::ostream &) const = 0;
   virtual void load(std::istream &) = 0;
   vector<valT> output;
+  int Ichannels,Ochannels;
   int Isize, Osize;
 };

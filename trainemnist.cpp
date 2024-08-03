@@ -9,22 +9,21 @@
 #include "main.hpp"
 #include "matrix.hpp"
 #include "matrix_layer.hpp"
+#include "max_layer.hpp"
 #include <algorithm>
 #include <cassert>
 #include <cmath>
+#include <curses.h>
 #include <fstream>
 #include <ios>
 #include <iostream>
+#include <ncurses.h>
 #include <random>
+#include <sstream>
 #include <string>
-#include <sys/signal.h>
+#include <sys/syslimits.h>
 #include <vector>
 using namespace std;
-int times = 0;
-void set_times_to0(int) {
-  cin.clear();
-  times = 0;
-}
 int main() {
 #ifdef USE_OCL
   init();
@@ -42,63 +41,57 @@ int main() {
     if_netin_load else {
       dynamic_cast<convolution_layer *>(net.last_layer())->n_in = 28;
       dynamic_cast<convolution_layer *>(net.last_layer())->m_in = 28;
-      dynamic_cast<convolution_layer *>(net.last_layer())->nK = 5;
-      dynamic_cast<convolution_layer *>(net.last_layer())->mK = 5;
-      net.last_layer()->set_IOsize(28 * 28, 32 * 32);
+      dynamic_cast<convolution_layer *>(net.last_layer())->nK = 3;
+      dynamic_cast<convolution_layer *>(net.last_layer())->mK = 3;
+      net.last_layer()->Ichannels = 1;
+      net.last_layer()->Ochannels = 8;
+      net.last_layer()->set_IOsize(28 * 28, 30 * 30 * 8);
       Init;
     }
 
     net.add_layer(new func_layer);
     if_netin_load else {
       dynamic_cast<func_layer *>(net.last_layer())->f = sigmoid;
-      net.last_layer()->set_IOsize(32 * 32, 32 * 32);
+      net.last_layer()->set_IOsize(30 * 30 * 8, 30 * 30 * 8);
     }
 
-    net.add_layer(new average_layer);
+    net.add_layer(new max_layer);
     if_netin_load else {
-      dynamic_cast<average_layer *>(net.last_layer())->i_n =
-          dynamic_cast<average_layer *>(net.last_layer())->i_m = 32;
-      net.last_layer()->set_IOsize(32 * 32, 16 * 16);
-    }
-
-    net.add_layer(new bias_layer);
-    if_netin_load else {
-      net.last_layer()->set_IOsize(16 * 16, 16 * 16);
-      Init;
+      dynamic_cast<max_layer *>(net.last_layer())->i_n =
+          dynamic_cast<max_layer *>(net.last_layer())->i_m = 30;
+      net.last_layer()->Ichannels = net.last_layer()->Ochannels = 8;
+      net.last_layer()->set_IOsize(30 * 30 * 8, 15 * 15 * 8);
     }
 
     net.add_layer(new convolution_layer);
     if_netin_load else {
-      dynamic_cast<convolution_layer *>(net.last_layer())->n_in = 16;
-      dynamic_cast<convolution_layer *>(net.last_layer())->m_in = 16;
-      dynamic_cast<convolution_layer *>(net.last_layer())->nK = 5;
-      dynamic_cast<convolution_layer *>(net.last_layer())->mK = 5;
-      net.last_layer()->set_IOsize(16 * 16, 20 * 20);
+      dynamic_cast<convolution_layer *>(net.last_layer())->n_in = 15;
+      dynamic_cast<convolution_layer *>(net.last_layer())->m_in = 15;
+      dynamic_cast<convolution_layer *>(net.last_layer())->nK = 4;
+      dynamic_cast<convolution_layer *>(net.last_layer())->mK = 4;
+      net.last_layer()->Ichannels = 8;
+      net.last_layer()->Ochannels = 2;
+      net.last_layer()->set_IOsize(15 * 15 * 8, 18 * 18 * 2);
       Init;
     }
 
     net.add_layer(new func_layer);
     if_netin_load else {
       dynamic_cast<func_layer *>(net.last_layer())->f = sigmoid;
-      net.last_layer()->set_IOsize(20 * 20, 20 * 20);
+      net.last_layer()->set_IOsize(18 * 18 * 2, 18 * 18 * 2);
     }
 
-    net.add_layer(new average_layer);
+    net.add_layer(new max_layer);
     if_netin_load else {
-      dynamic_cast<average_layer *>(net.last_layer())->i_n =
-          dynamic_cast<average_layer *>(net.last_layer())->i_m = 20;
-      net.last_layer()->set_IOsize(20 * 20, 10 * 10);
-    }
-
-    net.add_layer(new bias_layer);
-    if_netin_load else {
-      net.last_layer()->set_IOsize(10 * 10, 10 * 10);
-      Init;
+      dynamic_cast<max_layer *>(net.last_layer())->i_n =
+          dynamic_cast<max_layer *>(net.last_layer())->i_m = 18;
+      net.last_layer()->Ichannels = net.last_layer()->Ochannels = 2;
+      net.last_layer()->set_IOsize(18 * 18 * 2, 9 * 9 * 2);
     }
 
     net.add_layer(new matrix_layer);
     if_netin_load else {
-      net.last_layer()->set_IOsize(10 * 10, 64);
+      net.last_layer()->set_IOsize(81 * 2, 64);
       Init;
     }
 
@@ -114,6 +107,7 @@ int main() {
       net.last_layer()->set_IOsize(64, 64);
       Init;
     }
+
     net.add_layer(new matrix_layer);
     if_netin_load else {
       net.last_layer()->set_IOsize(64, 47);
@@ -160,23 +154,30 @@ int main() {
   }
   assert(inputs.size() == outputs.size());
   valT lr;
+  int total = 0;
   bool quit = false;
-  valT lmin = 0, lmax = 5;
-  valT sum = 0, n = 0;
-  int batch_size = 64;
-  cout << "learning rate: ";
-  cin >> lr;
-  cout << "start." << endl;
+  valT lmin = 0, lmax = 5, scale = 1.0;
+  int batch_size = 1;
   mt19937 g(rd());
   int off = 0;
-  signal(SIGINT, set_times_to0);
+  // int c = 0;
+  vector<int> losses(100);
+  int losses_c = 0;
+  auto save_net = [&net]() {
+    ofstream of("emnist.net");
+    for (auto l : net.layers) {
+      l->save(of);
+    }
+  };
+  initscr();
+  nodelay(stdscr, TRUE);
+  keypad(stdscr, TRUE);
+  noecho();
   for (; !quit;) {
     const auto N = inputs.size();
     if (off + batch_size >= N) {
       off = 0;
       shuffle(inputs.begin(), inputs.end(), g);
-      sum = 0;
-      n = 0;
     }
     vector<valT> d;
     for (int i = off; i < batch_size + off; ++i) {
@@ -186,64 +187,98 @@ int main() {
         d = delta;
       } else {
         for (int i = 0; i < 47; ++i) {
-          d[i] += delta[i];
+          d[i] += delta[i] / batch_size;
         }
       }
     }
     off += batch_size;
-    for (auto &x : d) {
-      x /= batch_size;
-      // valT v = (1.0 * (rd() + rd.min()) / (rd.min() + rd.max()));
-      // x *= pow(v, 2);
-    }
+    // for (auto &x : d) {
+    //   x /= batch_size;
+    //   // valT v = (1.0 * (rd() + rd.min()) / (rd.min() + rd.max()));
+    //   // x *= pow(v, 2);
+    // }
     net.update(d);
     {
       valT loss = 0;
       for (int j = 0; j < outputs[off].size(); ++j) {
         loss += -outputs[off][j] * log(net.last_layer()->output[j]);
       }
-      sum += loss;
-      ++n;
-      cout << times << " : " << loss << "  lr: " << lr << endl;
-      int L = 50;
-      const valT scale=1.0/3;
-      lmin = floor(loss * scale) / scale, lmax = ceil(loss * scale) / scale;
-      int v = L * (loss - lmin) / (lmax - lmin);
-      cout << lmin << " |" << string(v, '*') << string(max(0, L - v), ' ')
-           << "| " << lmax << " avg: " << (n ? sum / n : 0) << endl;
-    }
-    if (!times) {
-      int cmd;
-      cin >> cmd;
-      if (cmd == 0) {
-        cin >> times;
-      } else if (cmd == 1) {
-        double x;
-        cin >> x;
-        times = x * N / batch_size;
-      } else if (cmd == 2) {
-        cin >> lr;
-      } else if (cmd == 3) {
-        cin >> batch_size;
-      } else if (cmd == 4) {
-        break;
-      } else {
-        cout << "?" << endl;
+      if (loss > lmin && loss < lmax) {
+        losses[100 * (loss - lmin) / (lmax - lmin)]++;
       }
+      losses_c++;
+      mvprintw(0, 30, "%f", loss);
+      mvprintw(0, 40, "%d", total++);
     }
-    --times;
-    if (times < 0) {
-      times = 0;
+    if (losses_c == 100) {
+      // ++c;
+      // c %= 36;
+      for (int i = 0; i < losses.size(); ++i) {
+        int h = scale * 1.0 * (LINES - 5) * losses[i] / losses_c;
+        for (int j = 0; j <= h; ++j)
+          mvaddch(1 + j, i, 'M'); //"0123456789abcdefghijklmnopqrstuvwxyz"[c]);
+        for (int j = h + 1; j < LINES; ++j)
+          mvaddch(1 + j, i, ' ');
+      }
+      losses_c = 0;
+      losses.clear();
+      losses.resize(100);
     }
+
+    mvprintw(0, 0, "%f", lmin);
+    mvprintw(0, 10, "%f", lr);
+    mvprintw(0, 20, "%d", losses_c);
+    mvprintw(0, 90, "%f", lmax);
+    refresh();
+    auto C = getch();
+    stringstream ss;
+    auto read_num = [&C, &ss]() {
+      clrtoeol();
+      while (C != '\n') {
+        if (('0' <= C && C <= '9') || C == '.' || C == 'e' || C == '+' ||
+            C == '-')
+          ss << (char)C;
+        C = getch();
+        mvprintw(LINES - 4, 5, "> %s", ss.str().c_str());
+      }
+    };
+    if (C == 'S') {
+      mvprintw(LINES - 4, 0, "save");
+      save_net();
+    } else if (C == 'l') {
+      mvprintw(LINES - 4, 0, "lr");
+      read_num();
+      ss >> lr;
+    } else if (C == 'b') {
+      mvprintw(LINES - 4, 0, "batch");
+      read_num();
+      ss >> batch_size;
+    } else if (C == 'm') {
+      mvprintw(LINES - 4, 0, "mIn,mAx,Scale");
+      while ((C = getch()) == ERR)
+        ;
+      if (C == 'i') {
+        mvprintw(LINES - 4, 0, "min");
+        read_num();
+        ss >> lmin;
+      }
+      if (C == 'a') {
+        mvprintw(LINES - 4, 0, "max");
+        read_num();
+        ss >> lmax;
+      }
+      if (C == 's') {
+        mvprintw(LINES - 4, 0, "scle");
+        read_num();
+        ss >> scale;
+      }
+    } else if (C == 'q')
+      break;
   }
-  cout << "saving..." << endl;
-  cout << lr << endl;
-  ofstream of("emnist.net");
-  for (auto l : net.layers) {
-    l->save(of);
-  }
+  save_net();
 #ifdef USE_OCL
   teardown();
 #endif
+  endwin();
   return 0;
 }
