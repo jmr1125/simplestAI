@@ -1,7 +1,6 @@
 #include "NN.hpp"
 #include "average_layer.hpp"
 #include "bias_layer.hpp"
-#include "ocl.hpp"
 #include "convolution.hpp"
 #include "convolution_layer.hpp"
 #include "func_layer.hpp"
@@ -10,6 +9,7 @@
 #include "matrix.hpp"
 #include "matrix_layer.hpp"
 #include "max_layer.hpp"
+#include "ocl.hpp"
 #include <algorithm>
 #include <cassert>
 #include <cmath>
@@ -153,7 +153,7 @@ int main() {
     }
   }
   assert(inputs.size() == outputs.size());
-  valT lr=.0001;
+  valT lr = .0001;
   int total = 0;
   bool quit = false;
   valT lmin = 0, lmax = 5, scale = 1.0;
@@ -183,7 +183,7 @@ int main() {
     for (int i = off; i < batch_size + off; ++i) {
       net.forward(inputs[i]);
       auto delta = net.update(inputs[i], outputs[i], lr);
-      if (d.size() == 0) {
+      if (i == off) {
         d = delta;
       } else {
         for (int i = 0; i < 47; ++i) {
