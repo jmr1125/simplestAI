@@ -190,3 +190,15 @@
 544	586	1722834430753494757	RelWithDebInfo/test-ocl-conv	fbb30a7d13d11186
 545	586	1722834430754363431	RelWithDebInfo/trainemnistconvolution	f2b45ea100c09f14
 546	586	1722834430755155105	RelWithDebInfo/generateemnistconvolution	4216ac8757d1c246
+14	870	1722839224482766640	CMakeFiles/trainemnistconvolution.dir/Release/trainemnist.cpp.o	69ca5cbbf17578a3
+870	972	1722839225339170975	Release/trainemnistconvolution	b3e53f94d2652ff3
+6	601	1722839225454276005	CMakeFiles/trainemnistconvolution.dir/Debug/trainemnist.cpp.o	e7987e03a36488bd
+601	636	1722839226049134333	Debug/trainemnistconvolution	7c90cec390aa6e36
+7	742	1722839226097392989	CMakeFiles/trainemnistconvolution.dir/RelWithDebInfo/trainemnist.cpp.o	3f6597ce901fcd0d
+742	776	1722839226832345263	RelWithDebInfo/trainemnistconvolution	f2b45ea100c09f14
+10	806	1722839383103942625	CMakeFiles/trainemnistconvolution.dir/Release/trainemnist.cpp.o	69ca5cbbf17578a3
+806	843	1722839383900217578	Release/trainemnistconvolution	b3e53f94d2652ff3
+7	598	1722839383950089326	CMakeFiles/trainemnistconvolution.dir/Debug/trainemnist.cpp.o	e7987e03a36488bd
+598	633	1722839384540888717	Debug/trainemnistconvolution	7c90cec390aa6e36
+7	755	1722839384587606157	CMakeFiles/trainemnistconvolution.dir/RelWithDebInfo/trainemnist.cpp.o	3f6597ce901fcd0d
+755	789	1722839385335570120	RelWithDebInfo/trainemnistconvolution	f2b45ea100c09f14
