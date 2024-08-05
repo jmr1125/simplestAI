@@ -68,7 +68,7 @@ vector<valT> convolution_layer::forward(const vector<valT> &input) {
       I.setm(m_in);
       I.m = vector(input.begin() + Ic * n_in * m_in,
                    input.begin() + (Ic + 1) * n_in * m_in);
-      auto res = convolution(I, K[Oc][Ic]).m;
+      auto res = convolution(I, K[Oc][Ic]);
       tmp_out = tmp_out + res;
     }
     for (auto x : tmp_out.m) {
@@ -156,7 +156,8 @@ void convolution_layer::update(vector<valT>::const_iterator &i) {
 }
 
 void convolution_layer::save(std::ostream &o) const {
-  o << n_in << ' ' << m_in << ' ' << nK << ' ' << mK << std::endl;
+  o << n_in << ' ' << m_in << ' ' << nK << ' ' << mK << " " << Ichannels << " "
+    << Ochannels << std::endl;
   for (auto &x1 : K)
     for (auto &x2 : x1)
       for (auto x : x2.m) {
@@ -165,8 +166,9 @@ void convolution_layer::save(std::ostream &o) const {
   o << std::endl;
 }
 void convolution_layer::load(std::istream &i) {
-  i >> n_in >> m_in >> nK >> mK;
-  set_IOsize(n_in * m_in, (n_in + nK - 1) * (m_in + mK - 1));
+  i >> n_in >> m_in >> nK >> mK >> Ichannels >> Ochannels;
+  set_IOsize(n_in * m_in * Ichannels,
+             (n_in + nK - 1) * (m_in + mK - 1) * Ochannels);
   for (auto &x1 : K)
     for (auto &x2 : x1)
       for (auto &x : x2.m) {

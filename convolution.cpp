@@ -54,38 +54,49 @@ matcd ft_main(const matcd &in, int flag) {
   return output;
 }
 #include <cmath>
+#ifdef USE_OCL
+#warning ocl
+#include "ocl.hpp"
+#endif
 matrix convolution(const matrix &a, const matrix &b) {
-  const size_t n =
-      std::max(std::max(a.getn(), a.getm()), std::max(b.getn(), b.getm()));
-  const int N = (1 << ((int)ceil(log2(n)) + 1));
-  matcd A(vector(N, vector<cd>(N)));
-  matcd B(vector(N, vector<cd>(N)));
-  for (int i = 0; i < N; ++i) {
-    for (int j = 0; j < N; ++j) {
-      A[i][j] = (i < a.getn() && j < a.getm()) ? a(i, j) : 0.0;
-      B[i][j] = (i < b.getn() && j < b.getm()) ? b(i, j) : 0.0;
+#ifdef USE_OCL
+  if (b.getn() * b.getm() < 100) {
+    return conv2d(a, b);
+  } else
+#endif
+  {
+    const size_t n =
+        std::max(std::max(a.getn(), a.getm()), std::max(b.getn(), b.getm()));
+    const int N = (1 << ((int)ceil(log2(n)) + 1));
+    matcd A(vector(N, vector<cd>(N)));
+    matcd B(vector(N, vector<cd>(N)));
+    for (int i = 0; i < N; ++i) {
+      for (int j = 0; j < N; ++j) {
+        A[i][j] = (i < a.getn() && j < a.getm()) ? a(i, j) : 0.0;
+        B[i][j] = (i < b.getn() && j < b.getm()) ? b(i, j) : 0.0;
+      }
     }
-  }
-  A = ft_main(A, 1); // before -1 -1 1
-  B = ft_main(B, 1);
-  matcd C = vector(N, vector<cd>(N));
-  for (int i = 0; i < N; ++i) {
-    for (int j = 0; j < N; ++j) {
-      C[i][j] = A[i][j] * B[i][j];
+    A = ft_main(A, 1); // before -1 -1 1
+    B = ft_main(B, 1);
+    matcd C = vector(N, vector<cd>(N));
+    for (int i = 0; i < N; ++i) {
+      for (int j = 0; j < N; ++j) {
+        C[i][j] = A[i][j] * B[i][j];
+      }
     }
-  }
-  C = ft_main(C, -1);
-  matrix ans;
-  ans.setn(a.getn() + b.getn() - 1);
-  ans.setm(a.getm() + b.getm() - 1);
-  // ans.setn(a.getn());
-  // ans.setm(a.getm());
-  for (int i = 0; i < ans.getn(); ++i) {
-    for (int j = 0; j < ans.getm(); ++j) {
-      ans(i, j) = C[i][j].real() / (N * N);
+    C = ft_main(C, -1);
+    matrix ans;
+    ans.setn(a.getn() + b.getn() - 1);
+    ans.setm(a.getm() + b.getm() - 1);
+    // ans.setn(a.getn());
+    // ans.setm(a.getm());
+    for (int i = 0; i < ans.getn(); ++i) {
+      for (int j = 0; j < ans.getm(); ++j) {
+        ans(i, j) = C[i][j].real() / (N * N);
+      }
     }
+    return ans;
   }
-  return ans;
 }
 
 matrix rotate(matrix x) {

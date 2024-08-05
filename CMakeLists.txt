@@ -79,7 +79,7 @@ if(USE_Opencl)
   include_directories(${OpenCL_INCLUDE_DIRS})
   link_libraries(${OpenCL_LIBRARY})
   list(APPEND STANDARD_CPPS "clGetErrorString.cpp")
-  list(APPEND STANDARD_CPPS "cl-mat.cpp")
+  list(APPEND STANDARD_CPPS "ocl.cpp")
 endif()
 #end OpenCL
 
@@ -99,6 +99,7 @@ list(APPEND STANDARD_CPPS "NN.cpp")
 message(STATUS "standard cpps : ${STANDARD_CPPS}")
 add_executable(trainemnistconvolution trainemnist.cpp ${STANDARD_CPPS})
 add_executable(generateemnistconvolution generateemnist.cpp ${STANDARD_CPPS})
+add_executable(test-ocl-conv test-ocl-conv.cpp ${STANDARD_CPPS})
 target_link_libraries(trainemnistconvolution ${CURSES_LIBRARIES})
 target_link_libraries(generateemnistconvolution ${CURSES_LIBRARIES})
 

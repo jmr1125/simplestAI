@@ -10,6 +10,8 @@ build generateemnistconvolution: phony RelWithDebInfo/generateemnistconvolution
 
 build readdata: phony RelWithDebInfo/readdata
 
+build test-ocl-conv: phony RelWithDebInfo/test-ocl-conv
+
 build trainemnistconvolution: phony RelWithDebInfo/trainemnistconvolution
 
 
