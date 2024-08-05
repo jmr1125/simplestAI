@@ -9,6 +9,8 @@ build generateemnistconvolution: phony Debug/generateemnistconvolution
 
 build readdata: phony Debug/readdata
 
+build test-ocl-conv: phony Debug/test-ocl-conv
+
 build trainemnistconvolution: phony Debug/trainemnistconvolution
 
 

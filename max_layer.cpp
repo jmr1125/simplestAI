@@ -10,7 +10,8 @@ max_layer::~max_layer() {}
 
 void max_layer::init(std::random_device &&) {}
 void max_layer::set_IOsize(int isize, int osize) {
-  if (i_n * i_m * Ichannels != isize || (i_n / 2) * (i_m / 2) * Ochannels != osize) {
+  if (i_n * i_m * Ichannels != isize ||
+      (i_n / 2) * (i_m / 2) * Ochannels != osize) {
     throw std::runtime_error("init max_layer : io: " + std::to_string(isize) +
                              " , " + std::to_string(osize) + " nm: " +
                              std::to_string(i_n) + " , " + std::to_string(i_m));
@@ -62,5 +63,6 @@ void max_layer::save(ostream &o) const {
 }
 void max_layer::load(std::istream &i) {
   i >> i_n >> i_m >> Ichannels;
+  Ochannels = Ichannels;
   set_IOsize(i_n * i_m * Ichannels, i_n / 2 * i_m / 2 * Ichannels);
 }

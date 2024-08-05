@@ -10,6 +10,8 @@ build generateemnistconvolution: phony Release/generateemnistconvolution
 
 build readdata: phony Release/readdata
 
+build test-ocl-conv: phony Release/test-ocl-conv
+
 build trainemnistconvolution: phony Release/trainemnistconvolution
 
 

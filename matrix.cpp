@@ -32,7 +32,7 @@ size_t matrix::getm() const { return M; }
 void matrix::swap(matrix &tmp) { m.swap(tmp.m); }
 #ifdef USE_OCL
 #warning ocl
-#include "cl-mat.hpp"
+#include "ocl.hpp"
 matrix matrix::operator*(const matrix &m1) const {
   if (N * M * m1.getm() < 1000) {
     matrix res;

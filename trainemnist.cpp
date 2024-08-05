@@ -1,7 +1,7 @@
 #include "NN.hpp"
 #include "average_layer.hpp"
 #include "bias_layer.hpp"
-#include "cl-mat.hpp"
+#include "ocl.hpp"
 #include "convolution.hpp"
 #include "convolution_layer.hpp"
 #include "func_layer.hpp"
@@ -153,7 +153,7 @@ int main() {
     }
   }
   assert(inputs.size() == outputs.size());
-  valT lr;
+  valT lr=.0001;
   int total = 0;
   bool quit = false;
   valT lmin = 0, lmax = 5, scale = 1.0;
