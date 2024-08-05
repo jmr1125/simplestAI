@@ -789,3 +789,63 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/FindOpenMP.cmake:420 (try_compile)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/FindOpenMP.cmake:560 (_OPENMP_GET_SPEC_DATE)"
+      - "CMakeLists.txt:29 (find_package)"
+    description: "Detecting C OpenMP version"
+    directories:
+      source: "/Users/jiang/Desktop/myAI/buildninja/CMakeFiles/CMakeScratch/TryCompile-R8idun"
+      binary: "/Users/jiang/Desktop/myAI/buildninja/CMakeFiles/CMakeScratch/TryCompile-R8idun"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: "-L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk"
+    buildResult:
+      variable: "OpenMP_SPECTEST_C_"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/jiang/Desktop/myAI/buildninja/CMakeFiles/CMakeScratch/TryCompile-R8idun'
+        
+        Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_4330d
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -DCMAKE_INTDIR=\\"Debug\\"  -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -MD -MT CMakeFiles/cmTC_4330d.dir/Debug/OpenMPCheckVersion.c.o -MF CMakeFiles/cmTC_4330d.dir/Debug/OpenMPCheckVersion.c.o.d -o CMakeFiles/cmTC_4330d.dir/Debug/OpenMPCheckVersion.c.o -c /Users/jiang/Desktop/myAI/buildninja/CMakeFiles/CMakeScratch/TryCompile-R8idun/OpenMPCheckVersion.c
+        [2/2] : && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib CMakeFiles/cmTC_4330d.dir/Debug/OpenMPCheckVersion.c.o -o Debug/cmTC_4330d   && :
+        ld: warning: reexported library with install name '/opt/homebrew/opt/llvm@15/lib/libunwind.1.dylib' found at '/opt/homebrew/Cellar/llvm@15/15.0.7/lib/libunwind.1.0.dylib' couldn't be matched with any parent library and will be linked directly
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/FindOpenMP.cmake:420 (try_compile)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/FindOpenMP.cmake:560 (_OPENMP_GET_SPEC_DATE)"
+      - "CMakeLists.txt:29 (find_package)"
+    description: "Detecting CXX OpenMP version"
+    directories:
+      source: "/Users/jiang/Desktop/myAI/buildninja/CMakeFiles/CMakeScratch/TryCompile-mR9Sva"
+      binary: "/Users/jiang/Desktop/myAI/buildninja/CMakeFiles/CMakeScratch/TryCompile-mR9Sva"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: "-L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk"
+    buildResult:
+      variable: "OpenMP_SPECTEST_CXX_"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/jiang/Desktop/myAI/buildninja/CMakeFiles/CMakeScratch/TryCompile-mR9Sva'
+        
+        Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_3abf2
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DCMAKE_INTDIR=\\"Debug\\"  -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -MD -MT CMakeFiles/cmTC_3abf2.dir/Debug/OpenMPCheckVersion.cpp.o -MF CMakeFiles/cmTC_3abf2.dir/Debug/OpenMPCheckVersion.cpp.o.d -o CMakeFiles/cmTC_3abf2.dir/Debug/OpenMPCheckVersion.cpp.o -c /Users/jiang/Desktop/myAI/buildninja/CMakeFiles/CMakeScratch/TryCompile-mR9Sva/OpenMPCheckVersion.cpp
+        [2/2] : && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib CMakeFiles/cmTC_3abf2.dir/Debug/OpenMPCheckVersion.cpp.o -o Debug/cmTC_3abf2   && :
+        ld: warning: reexported library with install name '/opt/homebrew/opt/llvm@15/lib/libunwind.1.dylib' found at '/opt/homebrew/Cellar/llvm@15/15.0.7/lib/libunwind.1.0.dylib' couldn't be matched with any parent library and will be linked directly
+        
+      exitCode: 0
+...

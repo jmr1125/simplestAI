@@ -26,7 +26,7 @@
 using namespace std;
 int main() {
 #ifdef USE_OCL
-  //init();
+  init();
 #endif
   random_device rd;
   nnet net;
@@ -330,7 +330,7 @@ int main() {
   }
   save_net();
 #ifdef USE_OCL
-  //teardown();
+  teardown();
 #endif
   endwin();
   return 0;
