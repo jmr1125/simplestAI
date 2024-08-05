@@ -26,8 +26,7 @@ void convolution_layer::set_IOsize(int isize, int osize) {
         "init convolution_layer: nK: " + std::to_string(nK) +
         " ; nK: " + std::to_string(nK));
   }
-  if (isize != n_in * m_in * Ichannels ||
-      osize != (n_in + nK - 1) * (m_in + mK - 1) * Ochannels) {
+  if (isize != n_in * m_in * Ichannels || osize != n_in * m_in * Ochannels) {
     throw std::runtime_error("init convolution_layer: isize , osize " +
                              std::to_string(isize) + " ; " +
                              std::to_string(osize) + " ; " +
@@ -57,11 +56,11 @@ void convolution_layer::set_IOsize(int isize, int osize) {
 }
 vector<valT> convolution_layer::forward(const vector<valT> &input) {
   output.clear();
-  output.reserve(Ochannels * (n_in + nK - 1) * (m_in + mK - 1));
+  output.reserve(Ochannels * n_in * m_in);
   for (int Oc = 0; Oc < Ochannels; ++Oc) {
     matrix tmp_out;
-    tmp_out.setn(n_in + nK - 1);
-    tmp_out.setm(m_in + mK - 1);
+    tmp_out.setn(n_in);
+    tmp_out.setm(m_in);
     for (int Ic = 0; Ic < Ichannels; ++Ic) {
       matrix I;
       I.setn(n_in);
@@ -69,7 +68,9 @@ vector<valT> convolution_layer::forward(const vector<valT> &input) {
       I.m = vector(input.begin() + Ic * n_in * m_in,
                    input.begin() + (Ic + 1) * n_in * m_in);
       auto res = convolution(I, K[Oc][Ic]);
-      tmp_out = tmp_out + res;
+      for (int i = 0; i < n_in; ++i)
+        for (int j = 0; j < m_in; ++j)
+          tmp_out(i, j) += res(i, j);
     }
     for (auto x : tmp_out.m) {
       output.push_back(x);
@@ -90,8 +91,6 @@ vector<valT> convolution_layer::backward(const vector<valT> &grad) const {
   //   }
   // }
   // return res.m;
-  const int o_n = n_in + nK - 1;
-  const int o_m = m_in + mK - 1;
 
   VvalT output;
   output.reserve(Ichannels * n_in * m_in);
@@ -101,10 +100,10 @@ vector<valT> convolution_layer::backward(const vector<valT> &grad) const {
     t.setm(m_in);
     for (int Oc = 0; Oc < Ochannels; ++Oc) {
       matrix D;
-      D.setn(o_n);
-      D.setm(o_m);
-      D.m = vector(grad.begin() + Oc * o_n * o_m,
-                   grad.begin() + (Oc + 1) * o_n * o_m);
+      D.setn(n_in);
+      D.setm(m_in);
+      D.m = vector(grad.begin() + Oc * n_in * m_in,
+                   grad.begin() + (Oc + 1) * n_in * m_in);
       matrix res = convolution(D, rotate(K[Oc][Ic]));
       for (int i = 0; i < n_in; ++i)
         for (int j = 0; j < m_in; ++j)
@@ -112,23 +111,20 @@ vector<valT> convolution_layer::backward(const vector<valT> &grad) const {
     }
     copy(t.m.begin(), t.m.end(), std::back_inserter(output));
   }
-  return output;
+  return std::move(output);
 }
 vector<valT> convolution_layer::update(const vector<valT> &grad,
-                                       const vector<valT> &input,
-                                       double lr) const {
-  const int o_n = n_in + nK - 1;
-  const int o_m = m_in + mK - 1;
+                                       const vector<valT> &input) const {
   vector<valT> res;
   res.reserve(Ichannels * Ochannels * nK * mK);
   for (int Oc = 0; Oc < Ochannels; ++Oc) {
     for (int Ic = 0; Ic < Ichannels; ++Ic) {
       matrix G;
-      G.setn(o_n);
-      G.setm(o_m);
+      G.setn(n_in);
+      G.setm(m_in);
 
-      G.m = vector(grad.begin() + Oc * o_n * o_m,
-                   grad.begin() + (Oc + 1) * o_n * o_m);
+      G.m = vector(grad.begin() + Oc * n_in * m_in,
+                   grad.begin() + (Oc + 1) * n_in * m_in);
 
       matrix I;
       I.setn(n_in);
@@ -167,11 +163,14 @@ void convolution_layer::save(std::ostream &o) const {
 }
 void convolution_layer::load(std::istream &i) {
   i >> n_in >> m_in >> nK >> mK >> Ichannels >> Ochannels;
-  set_IOsize(n_in * m_in * Ichannels,
-             (n_in + nK - 1) * (m_in + mK - 1) * Ochannels);
+  set_IOsize(n_in * m_in * Ichannels, n_in * m_in * Ochannels);
   for (auto &x1 : K)
     for (auto &x2 : x1)
       for (auto &x : x2.m) {
         i >> x;
       }
+}
+
+size_t convolution_layer::get_varnum() const {
+  return Ichannels * Ochannels * nK * mK;
 }

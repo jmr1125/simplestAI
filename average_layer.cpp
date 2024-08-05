@@ -50,9 +50,7 @@ VvalT average_layer::backward(const VvalT &grad) const {
     }
   return res;
 }
-VvalT average_layer::update(const VvalT &, const VvalT &, double lr) const {
-  return {};
-}
+VvalT average_layer::update(const VvalT &, const VvalT &) const { return {}; }
 void average_layer::update(VvalT::const_iterator &) { return; }
 
 void average_layer::save(ostream &o) const {
@@ -63,3 +61,5 @@ void average_layer::load(std::istream &i) {
   Ochannels = Ichannels;
   set_IOsize(i_n * i_m * Ichannels, i_n / 2 * i_m / 2 * Ichannels);
 }
+
+size_t average_layer::get_varnum() const { return 0; }

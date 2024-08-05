@@ -2,6 +2,7 @@
 #include "main.hpp"
 #include <algorithm>
 #include <cmath>
+#include <cstddef>
 #include <istream>
 #include <ostream>
 #include <vector>
@@ -58,8 +59,8 @@ vector<valT> func_layer::backward(const vector<valT> &grad) const {
   }
   return std::move(res);
 }
-vector<valT> func_layer::update(const vector<valT> &, const vector<valT> &,
-                                double) const {
+vector<valT> func_layer::update(const vector<valT> &,
+                                const vector<valT> &) const {
   return {};
 }
 void func_layer::update(vector<valT>::const_iterator &) { return; }
@@ -82,6 +83,8 @@ void func_layer::load(std::istream &i) {
                              : softmax;
   set_IOsize(Isize, Osize);
 }
+
+size_t func_layer::get_varnum() const { return 0; }
 
 valT f_Identity(valT x) { return x; }
 valT df_Identity(valT) { return 1; }

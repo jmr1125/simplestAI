@@ -1,5 +1,6 @@
 #pragma once
 #include "main.hpp"
+#include <cstddef>
 #include <fstream>
 #include <istream>
 #include <random>
@@ -12,11 +13,12 @@ struct layer {
   virtual vector<valT> forward(const vector<valT> &input) = 0;
   virtual vector<valT> backward(const vector<valT> &grad) const = 0;
   virtual vector<valT> update(const vector<valT> &grad,
-                              const vector<valT> &input, double lr) const = 0;
+                              const vector<valT> &input) const = 0;
   virtual void update(vector<valT>::const_iterator &) = 0;
   virtual void save(std::ostream &) const = 0;
   virtual void load(std::istream &) = 0;
+  virtual size_t get_varnum() const = 0;
   vector<valT> output;
-  int Ichannels,Ochannels;
+  int Ichannels, Ochannels;
   int Isize, Osize;
 };

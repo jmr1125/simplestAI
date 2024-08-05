@@ -53,9 +53,7 @@ VvalT max_layer::backward(const VvalT &grad) const {
     }
   return res;
 }
-VvalT max_layer::update(const VvalT &, const VvalT &, double lr) const {
-  return {};
-}
+VvalT max_layer::update(const VvalT &, const VvalT &) const { return {}; }
 void max_layer::update(VvalT::const_iterator &) { return; }
 
 void max_layer::save(ostream &o) const {
@@ -66,3 +64,5 @@ void max_layer::load(std::istream &i) {
   Ochannels = Ichannels;
   set_IOsize(i_n * i_m * Ichannels, i_n / 2 * i_m / 2 * Ichannels);
 }
+
+size_t max_layer::get_varnum() const { return 0; }

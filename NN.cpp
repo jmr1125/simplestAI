@@ -2,6 +2,7 @@
 #include "layers.hpp"
 #include "main.hpp"
 #include <algorithm>
+#include <cstddef>
 #include <vector>
 
 void nnet::add_layer(layer *l) { layers.push_back({l}); }
@@ -12,8 +13,8 @@ vector<valT> nnet::forward(vector<valT> input) {
   }
   return std::move(input);
 }
-vector<valT> nnet::update(const vector<valT> &input, const vector<valT> &expect,
-                          double lr) const {
+vector<valT> nnet::update(const vector<valT> &input,
+                          const vector<valT> &expect) const {
   auto n = expect.size();
   vector<valT> res;
   vector<valT> delta(n);
@@ -26,8 +27,7 @@ vector<valT> nnet::update(const vector<valT> &input, const vector<valT> &expect,
     }
   }
   for (size_t i = layers.size() - 1; i != -1; --i) {
-    auto x =
-        layers[i]->update(delta, (i == 0 ? input : layers[i - 1]->output), lr);
+    auto x = layers[i]->update(delta, (i == 0 ? input : layers[i - 1]->output));
     delta = layers[i]->backward(delta);
     for (auto v : x) {
       res.push_back(v);
@@ -45,4 +45,11 @@ nnet::~nnet() {
   for (auto l : layers) {
     delete l;
   }
+}
+size_t nnet::get_varnum() {
+  size_t res = 0;
+  for (auto l : layers) {
+    res += l->get_varnum();
+  }
+  return res;
 }

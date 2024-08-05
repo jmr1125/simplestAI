@@ -1,5 +1,6 @@
 #include "matrix_layer.hpp"
 #include "main.hpp"
+#include "matrix.hpp"
 #include <istream>
 #include <ostream>
 #include <random>
@@ -26,13 +27,13 @@ vector<valT> matrix_layer::backward(const vector<valT> &grad) const {
   return M.T() * grad;
 }
 vector<valT> matrix_layer::update(const vector<valT> &grad,
-                                  const vector<valT> &input, double lr) const {
+                                  const vector<valT> &input) const {
   vector<valT> res;
   res.resize(M.getm() * M.getn());
   for (int i = 0; i < M.getn(); i++)
     for (int j = 0; j < M.getm(); j++) {
       // M(i, j) -= lr * grad[i] * input[j];
-      res[i * M.getm() + j] -= lr * grad[i] * input[j];
+      res[i * M.getm() + j] += grad[i] * input[j];
     }
   return std::move(res);
 }
@@ -58,3 +59,5 @@ void matrix_layer::load(std::istream &i) {
     i >> x;
   }
 }
+
+size_t matrix_layer::get_varnum() const { return M.m.size(); }
