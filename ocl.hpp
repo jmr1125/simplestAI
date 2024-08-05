@@ -8,8 +8,8 @@
 #include <string>
 
 #include "matrix.hpp"
-// void init();
-// void teardown();
+void init();
+void teardown();
 
 matrix mul_mat(const matrix &a, const matrix &b);
 // VvalT mul_vec(const VvalT &a, const VvalT &b);

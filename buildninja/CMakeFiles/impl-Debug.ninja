@@ -44,9 +44,9 @@ include CMakeFiles/common.ninja
 build cmake_object_order_depends_target_readdata_DEBUG: phony || CMakeFiles/readdata.dir
 
 build CMakeFiles/readdata.dir/Debug/readmnist.cpp.o: CXX_COMPILER__readdata_unscanned_Debug /Users/jiang/Desktop/myAI/readmnist.cpp || cmake_object_order_depends_target_readdata_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/readdata.dir/Debug/readmnist.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/readdata.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/readdata.dir/Debug
@@ -60,7 +60,7 @@ build CMakeFiles/readdata.dir/Debug/readmnist.cpp.o: CXX_COMPILER__readdata_unsc
 # Link the executable Debug/readdata
 
 build Debug/readdata: CXX_EXECUTABLE_LINKER__readdata_Debug CMakeFiles/readdata.dir/Debug/readmnist.cpp.o
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
   LINK_LIBRARIES = -framework OpenCL
   OBJECT_DIR = CMakeFiles/readdata.dir/Debug
@@ -79,97 +79,97 @@ build Debug/readdata: CXX_EXECUTABLE_LINKER__readdata_Debug CMakeFiles/readdata.
 build cmake_object_order_depends_target_trainemnistconvolution_DEBUG: phony || CMakeFiles/trainemnistconvolution.dir
 
 build CMakeFiles/trainemnistconvolution.dir/Debug/trainemnist.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/trainemnist.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/trainemnist.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
 
 build CMakeFiles/trainemnistconvolution.dir/Debug/clGetErrorString.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/clGetErrorString.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
 
 build CMakeFiles/trainemnistconvolution.dir/Debug/ocl.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/ocl.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/ocl.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
 
 build CMakeFiles/trainemnistconvolution.dir/Debug/matrix.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/matrix.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
 
 build CMakeFiles/trainemnistconvolution.dir/Debug/convolution.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/convolution.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/convolution.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
 
 build CMakeFiles/trainemnistconvolution.dir/Debug/matrix_layer.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/matrix_layer.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/matrix_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
 
 build CMakeFiles/trainemnistconvolution.dir/Debug/bias_layer.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/bias_layer.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/bias_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
 
 build CMakeFiles/trainemnistconvolution.dir/Debug/func_layer.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/func_layer.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/func_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
 
 build CMakeFiles/trainemnistconvolution.dir/Debug/convolution_layer.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/convolution_layer.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/convolution_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
 
 build CMakeFiles/trainemnistconvolution.dir/Debug/average_layer.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/average_layer.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/average_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
 
 build CMakeFiles/trainemnistconvolution.dir/Debug/max_layer.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/max_layer.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/max_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
 
 build CMakeFiles/trainemnistconvolution.dir/Debug/NN.cpp.o: CXX_COMPILER__trainemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/NN.cpp || cmake_object_order_depends_target_trainemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/trainemnistconvolution.dir/Debug/NN.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
@@ -182,10 +182,10 @@ build CMakeFiles/trainemnistconvolution.dir/Debug/NN.cpp.o: CXX_COMPILER__traine
 #############################################
 # Link the executable Debug/trainemnistconvolution
 
-build Debug/trainemnistconvolution: CXX_EXECUTABLE_LINKER__trainemnistconvolution_Debug CMakeFiles/trainemnistconvolution.dir/Debug/trainemnist.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/clGetErrorString.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/ocl.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/matrix.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/convolution.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/matrix_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/bias_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/func_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/convolution_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/average_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/max_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/NN.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+build Debug/trainemnistconvolution: CXX_EXECUTABLE_LINKER__trainemnistconvolution_Debug CMakeFiles/trainemnistconvolution.dir/Debug/trainemnist.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/clGetErrorString.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/ocl.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/matrix.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/convolution.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/matrix_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/bias_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/func_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/convolution_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/average_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/max_layer.cpp.o CMakeFiles/trainemnistconvolution.dir/Debug/NN.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd /opt/homebrew/opt/libomp/lib/libomp.dylib
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
+  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd  /opt/homebrew/opt/libomp/lib/libomp.dylib
   OBJECT_DIR = CMakeFiles/trainemnistconvolution.dir/Debug
   POST_BUILD = :
   PRE_LINK = :
@@ -202,97 +202,97 @@ build Debug/trainemnistconvolution: CXX_EXECUTABLE_LINKER__trainemnistconvolutio
 build cmake_object_order_depends_target_generateemnistconvolution_DEBUG: phony || CMakeFiles/generateemnistconvolution.dir
 
 build CMakeFiles/generateemnistconvolution.dir/Debug/generateemnist.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/generateemnist.cpp || cmake_object_order_depends_target_generateemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnistconvolution.dir/Debug/generateemnist.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
 
 build CMakeFiles/generateemnistconvolution.dir/Debug/clGetErrorString.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_generateemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnistconvolution.dir/Debug/clGetErrorString.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
 
 build CMakeFiles/generateemnistconvolution.dir/Debug/ocl.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/ocl.cpp || cmake_object_order_depends_target_generateemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnistconvolution.dir/Debug/ocl.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
 
 build CMakeFiles/generateemnistconvolution.dir/Debug/matrix.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_generateemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnistconvolution.dir/Debug/matrix.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
 
 build CMakeFiles/generateemnistconvolution.dir/Debug/convolution.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/convolution.cpp || cmake_object_order_depends_target_generateemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnistconvolution.dir/Debug/convolution.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
 
 build CMakeFiles/generateemnistconvolution.dir/Debug/matrix_layer.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/matrix_layer.cpp || cmake_object_order_depends_target_generateemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnistconvolution.dir/Debug/matrix_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
 
 build CMakeFiles/generateemnistconvolution.dir/Debug/bias_layer.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/bias_layer.cpp || cmake_object_order_depends_target_generateemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnistconvolution.dir/Debug/bias_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
 
 build CMakeFiles/generateemnistconvolution.dir/Debug/func_layer.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/func_layer.cpp || cmake_object_order_depends_target_generateemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnistconvolution.dir/Debug/func_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
 
 build CMakeFiles/generateemnistconvolution.dir/Debug/convolution_layer.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/convolution_layer.cpp || cmake_object_order_depends_target_generateemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnistconvolution.dir/Debug/convolution_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
 
 build CMakeFiles/generateemnistconvolution.dir/Debug/average_layer.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/average_layer.cpp || cmake_object_order_depends_target_generateemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnistconvolution.dir/Debug/average_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
 
 build CMakeFiles/generateemnistconvolution.dir/Debug/max_layer.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/max_layer.cpp || cmake_object_order_depends_target_generateemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnistconvolution.dir/Debug/max_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
 
 build CMakeFiles/generateemnistconvolution.dir/Debug/NN.cpp.o: CXX_COMPILER__generateemnistconvolution_unscanned_Debug /Users/jiang/Desktop/myAI/NN.cpp || cmake_object_order_depends_target_generateemnistconvolution_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/generateemnistconvolution.dir/Debug/NN.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
@@ -305,10 +305,10 @@ build CMakeFiles/generateemnistconvolution.dir/Debug/NN.cpp.o: CXX_COMPILER__gen
 #############################################
 # Link the executable Debug/generateemnistconvolution
 
-build Debug/generateemnistconvolution: CXX_EXECUTABLE_LINKER__generateemnistconvolution_Debug CMakeFiles/generateemnistconvolution.dir/Debug/generateemnist.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/clGetErrorString.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/ocl.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/matrix.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/convolution.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/matrix_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/bias_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/func_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/convolution_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/average_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/max_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/NN.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+build Debug/generateemnistconvolution: CXX_EXECUTABLE_LINKER__generateemnistconvolution_Debug CMakeFiles/generateemnistconvolution.dir/Debug/generateemnist.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/clGetErrorString.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/ocl.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/matrix.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/convolution.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/matrix_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/bias_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/func_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/convolution_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/average_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/max_layer.cpp.o CMakeFiles/generateemnistconvolution.dir/Debug/NN.cpp.o | /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd /opt/homebrew/opt/libomp/lib/libomp.dylib
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd
+  LINK_LIBRARIES = -framework OpenCL  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libcurses.tbd  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libform.tbd  /opt/homebrew/opt/libomp/lib/libomp.dylib
   OBJECT_DIR = CMakeFiles/generateemnistconvolution.dir/Debug
   POST_BUILD = :
   PRE_LINK = :
@@ -325,97 +325,97 @@ build Debug/generateemnistconvolution: CXX_EXECUTABLE_LINKER__generateemnistconv
 build cmake_object_order_depends_target_test-ocl-conv_DEBUG: phony || CMakeFiles/test-ocl-conv.dir
 
 build CMakeFiles/test-ocl-conv.dir/Debug/test-ocl-conv.cpp.o: CXX_COMPILER__test-ocl-conv_unscanned_Debug /Users/jiang/Desktop/myAI/test-ocl-conv.cpp || cmake_object_order_depends_target_test-ocl-conv_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-ocl-conv.dir/Debug/test-ocl-conv.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-ocl-conv.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-ocl-conv.dir/Debug
 
 build CMakeFiles/test-ocl-conv.dir/Debug/clGetErrorString.cpp.o: CXX_COMPILER__test-ocl-conv_unscanned_Debug /Users/jiang/Desktop/myAI/clGetErrorString.cpp || cmake_object_order_depends_target_test-ocl-conv_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-ocl-conv.dir/Debug/clGetErrorString.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-ocl-conv.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-ocl-conv.dir/Debug
 
 build CMakeFiles/test-ocl-conv.dir/Debug/ocl.cpp.o: CXX_COMPILER__test-ocl-conv_unscanned_Debug /Users/jiang/Desktop/myAI/ocl.cpp || cmake_object_order_depends_target_test-ocl-conv_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-ocl-conv.dir/Debug/ocl.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-ocl-conv.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-ocl-conv.dir/Debug
 
 build CMakeFiles/test-ocl-conv.dir/Debug/matrix.cpp.o: CXX_COMPILER__test-ocl-conv_unscanned_Debug /Users/jiang/Desktop/myAI/matrix.cpp || cmake_object_order_depends_target_test-ocl-conv_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-ocl-conv.dir/Debug/matrix.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-ocl-conv.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-ocl-conv.dir/Debug
 
 build CMakeFiles/test-ocl-conv.dir/Debug/convolution.cpp.o: CXX_COMPILER__test-ocl-conv_unscanned_Debug /Users/jiang/Desktop/myAI/convolution.cpp || cmake_object_order_depends_target_test-ocl-conv_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-ocl-conv.dir/Debug/convolution.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-ocl-conv.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-ocl-conv.dir/Debug
 
 build CMakeFiles/test-ocl-conv.dir/Debug/matrix_layer.cpp.o: CXX_COMPILER__test-ocl-conv_unscanned_Debug /Users/jiang/Desktop/myAI/matrix_layer.cpp || cmake_object_order_depends_target_test-ocl-conv_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-ocl-conv.dir/Debug/matrix_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-ocl-conv.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-ocl-conv.dir/Debug
 
 build CMakeFiles/test-ocl-conv.dir/Debug/bias_layer.cpp.o: CXX_COMPILER__test-ocl-conv_unscanned_Debug /Users/jiang/Desktop/myAI/bias_layer.cpp || cmake_object_order_depends_target_test-ocl-conv_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-ocl-conv.dir/Debug/bias_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-ocl-conv.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-ocl-conv.dir/Debug
 
 build CMakeFiles/test-ocl-conv.dir/Debug/func_layer.cpp.o: CXX_COMPILER__test-ocl-conv_unscanned_Debug /Users/jiang/Desktop/myAI/func_layer.cpp || cmake_object_order_depends_target_test-ocl-conv_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-ocl-conv.dir/Debug/func_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-ocl-conv.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-ocl-conv.dir/Debug
 
 build CMakeFiles/test-ocl-conv.dir/Debug/convolution_layer.cpp.o: CXX_COMPILER__test-ocl-conv_unscanned_Debug /Users/jiang/Desktop/myAI/convolution_layer.cpp || cmake_object_order_depends_target_test-ocl-conv_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-ocl-conv.dir/Debug/convolution_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-ocl-conv.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-ocl-conv.dir/Debug
 
 build CMakeFiles/test-ocl-conv.dir/Debug/average_layer.cpp.o: CXX_COMPILER__test-ocl-conv_unscanned_Debug /Users/jiang/Desktop/myAI/average_layer.cpp || cmake_object_order_depends_target_test-ocl-conv_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-ocl-conv.dir/Debug/average_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-ocl-conv.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-ocl-conv.dir/Debug
 
 build CMakeFiles/test-ocl-conv.dir/Debug/max_layer.cpp.o: CXX_COMPILER__test-ocl-conv_unscanned_Debug /Users/jiang/Desktop/myAI/max_layer.cpp || cmake_object_order_depends_target_test-ocl-conv_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-ocl-conv.dir/Debug/max_layer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-ocl-conv.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-ocl-conv.dir/Debug
 
 build CMakeFiles/test-ocl-conv.dir/Debug/NN.cpp.o: CXX_COMPILER__test-ocl-conv_unscanned_Debug /Users/jiang/Desktop/myAI/NN.cpp || cmake_object_order_depends_target_test-ocl-conv_DEBUG
-  DEFINES = -DUSE_OCL -DCMAKE_INTDIR=\"Debug\"
+  DEFINES = -DUSE_OCL -DUSE_OMP -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles/test-ocl-conv.dir/Debug/NN.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -I/opt/homebrew/include -I/usr/X11R6/include
   OBJECT_DIR = CMakeFiles/test-ocl-conv.dir/Debug
   OBJECT_FILE_DIR = CMakeFiles/test-ocl-conv.dir/Debug
@@ -428,10 +428,10 @@ build CMakeFiles/test-ocl-conv.dir/Debug/NN.cpp.o: CXX_COMPILER__test-ocl-conv_u
 #############################################
 # Link the executable Debug/test-ocl-conv
 
-build Debug/test-ocl-conv: CXX_EXECUTABLE_LINKER__test-ocl-conv_Debug CMakeFiles/test-ocl-conv.dir/Debug/test-ocl-conv.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/clGetErrorString.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/ocl.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/matrix.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/convolution.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/matrix_layer.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/bias_layer.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/func_layer.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/convolution_layer.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/average_layer.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/max_layer.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/NN.cpp.o
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+build Debug/test-ocl-conv: CXX_EXECUTABLE_LINKER__test-ocl-conv_Debug CMakeFiles/test-ocl-conv.dir/Debug/test-ocl-conv.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/clGetErrorString.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/ocl.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/matrix.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/convolution.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/matrix_layer.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/bias_layer.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/func_layer.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/convolution_layer.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/average_layer.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/max_layer.cpp.o CMakeFiles/test-ocl-conv.dir/Debug/NN.cpp.o | /opt/homebrew/opt/libomp/lib/libomp.dylib
+  FLAGS = -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include/ -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   LINK_FLAGS = -L/opt/homebrew/Cellar/libxpm/3.5.17/lib -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lXpm -lX11 -L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/opt/llvm@15/lib
-  LINK_LIBRARIES = -framework OpenCL
+  LINK_LIBRARIES = -framework OpenCL  /opt/homebrew/opt/libomp/lib/libomp.dylib
   OBJECT_DIR = CMakeFiles/test-ocl-conv.dir/Debug
   POST_BUILD = :
   PRE_LINK = :

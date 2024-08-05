@@ -118,6 +118,9 @@ vector<valT> convolution_layer::update(const vector<valT> &grad,
   vector<valT> res;
   res.reserve(Ichannels * Ochannels * nK * mK);
   for (int Oc = 0; Oc < Ochannels; ++Oc) {
+#ifdef USE_OMP
+#pragma omp for
+#endif
     for (int Ic = 0; Ic < Ichannels; ++Ic) {
       matrix G;
       G.setn(n_in);
