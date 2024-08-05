@@ -1,5 +1,6 @@
 #include "bias_layer.hpp"
 #include "main.hpp"
+#include <cstddef>
 #include <istream>
 #include <ostream>
 #include <stdexcept>
@@ -33,12 +34,12 @@ vector<valT> bias_layer::backward(const vector<valT> &grad) const {
   return grad;
 }
 vector<valT> bias_layer::update(const vector<valT> &grad,
-                                const vector<valT> &input, double lr) const {
+                                const vector<valT> &input) const {
   vector<valT> res;
   res.resize(bias.size());
   for (int i = 0; i < grad.size(); i++) {
     // bias[i] -= lr * grad[i];
-    res[i] -= lr * grad[i];
+    res[i] += grad[i];
   }
   return std::move(res);
 }
@@ -63,3 +64,4 @@ void bias_layer::load(std::istream &i) {
     i >> x;
   }
 }
+size_t bias_layer::get_varnum() const { return bias.size(); }

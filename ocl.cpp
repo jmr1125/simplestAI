@@ -4,6 +4,7 @@
 #include <OpenCL/OpenCL.h>
 #include <cstddef>
 #include <cstdio>
+#include <mutex>
 #include <new>
 #include <stdexcept>
 #include <string>
@@ -74,13 +75,18 @@ output[x*(m_a+m_b-1)+y]=res;
     printf("ERR: " #s " : %s (%d)", clGetErrorString(ret), ret);               \
     exit(1);                                                                   \
   }
-cl_int ret;
-cl_kernel k_mul_mat, k_mul_vec, k_add_vec, k_conv2d;
-
-cl_context context;
-cl_command_queue command;
-cl_program program;
-void init() {
+mutex contextM;
+#define Init()                                                                 \
+  cl_int ret;                                                                  \
+  cl_kernel k_mul_mat, k_mul_vec, k_add_vec, k_conv2d;                         \
+  cl_context context;                                                          \
+  cl_command_queue command;                                                    \
+  cl_program program;                                                          \
+  init(ret, k_mul_mat, k_mul_vec, k_add_vec, k_conv2d, context, command,       \
+       program)
+void init(cl_int &ret, cl_kernel &k_mul_mat, cl_kernel &k_mul_vec,
+          cl_kernel &k_add_vec, cl_kernel &k_conv2d, cl_context &context,
+          cl_command_queue &command, cl_program program) {
   vector<cl_platform_id> platforms;
   platforms.resize(100);
   cl_uint platform_count;
@@ -119,8 +125,11 @@ void init() {
 #endif
 
   right("get device");
-  context = clCreateContext(0, 1, &device_id, NULL, NULL, &ret);
-  right("create context");
+  {
+    lock_guard lock(contextM);
+    context = clCreateContext(0, 1, &device_id, NULL, NULL, &ret);
+    right("create context");
+  }
   command = clCreateCommandQueue(context, device_id, 0, &ret);
   right("create command");
   {
@@ -152,7 +161,11 @@ void init() {
   k_conv2d = clCreateKernel(program, "conv2d", &ret);
   right("create kernel conv2d");
 }
-void teardown() {
+#define Teardown()                                                             \
+  teardown(k_mul_mat, k_mul_vec, k_add_vec, k_conv2d, context, command, program)
+void teardown(cl_kernel &k_mul_mat, cl_kernel &k_mul_vec, cl_kernel &k_add_vec,
+              cl_kernel &k_conv2d, cl_context &context,
+              cl_command_queue &command, cl_program program) {
   clReleaseKernel(k_mul_mat);
   clReleaseKernel(k_mul_vec);
   clReleaseKernel(k_add_vec);
@@ -167,6 +180,7 @@ matrix mul_mat(const matrix &a, const matrix &b) {
     throw dimension_error("a.m = " + to_string(a.getm()) +
                           "and b.n = " + to_string(b.getn()));
   }
+  Init();
   auto m = a.getn(), k = a.getm(), n = b.getm();
   cl_mem in_a, in_b, out;
   in_a = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(valT) * m * k, NULL,
@@ -241,122 +255,130 @@ matrix mul_mat(const matrix &a, const matrix &b) {
   clReleaseMemObject(in_a);
   clReleaseMemObject(in_b);
   clReleaseMemObject(out);
+  Teardown();
   return res;
 }
 
-VvalT mul_vec(const VvalT &a, const VvalT &b) {
-  if (a.size() != b.size()) {
-    throw dimension_error("a.m = " + to_string(a.size()) +
-                          "and b.n = " + to_string(b.size()));
-  }
-  auto n = b.size();
-  cl_mem in_a, in_b, out;
-  in_a =
-      clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(valT) * n, NULL, &ret);
-  right("create buf a");
-  in_b =
-      clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(valT) * n, NULL, &ret);
-  right("create buf b");
-  out =
-      clCreateBuffer(context, CL_MEM_READ_WRITE, sizeof(valT) * n, NULL, &ret);
-  right("create buf out");
+// VvalT mul_vec(const VvalT &a, const VvalT &b) {
+//   if (a.size() != b.size()) {
+//     throw dimension_error("a.m = " + to_string(a.size()) +
+//                           "and b.n = " + to_string(b.size()));
+//   }
+//   auto n = b.size();
+//   cl_mem in_a, in_b, out;
+//   in_a =
+//       clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(valT) * n, NULL,
+//       &ret);
+//   right("create buf a");
+//   in_b =
+//       clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(valT) * n, NULL,
+//       &ret);
+//   right("create buf b");
+//   out =
+//       clCreateBuffer(context, CL_MEM_READ_WRITE, sizeof(valT) * n, NULL,
+//       &ret);
+//   right("create buf out");
 
-  cl_event wrtA = clCreateUserEvent(context, &ret);
-  right("create event A");
-  cl_event wrtB = clCreateUserEvent(context, &ret);
-  right("create event B");
-  cl_event computed = clCreateUserEvent(context, &ret);
-  right("create event done");
-  ret = clEnqueueWriteBuffer(command, in_a, CL_FALSE, 0, sizeof(valT) * n,
-                             a.data(), 0, NULL, &wrtA);
-  right("write a");
-  ret = clEnqueueWriteBuffer(command, in_b, CL_FALSE, 0, sizeof(valT) * n,
-                             b.data(), 0, NULL, &wrtB);
-  right("write b");
+//   cl_event wrtA = clCreateUserEvent(context, &ret);
+//   right("create event A");
+//   cl_event wrtB = clCreateUserEvent(context, &ret);
+//   right("create event B");
+//   cl_event computed = clCreateUserEvent(context, &ret);
+//   right("create event done");
+//   ret = clEnqueueWriteBuffer(command, in_a, CL_FALSE, 0, sizeof(valT) * n,
+//                              a.data(), 0, NULL, &wrtA);
+//   right("write a");
+//   ret = clEnqueueWriteBuffer(command, in_b, CL_FALSE, 0, sizeof(valT) * n,
+//                              b.data(), 0, NULL, &wrtB);
+//   right("write b");
 
-  ret = clSetKernelArg(k_mul_vec, 0, sizeof(unsigned int), &n);
-  right("set arg 0");
-  ret = clSetKernelArg(k_mul_vec, 1, sizeof(cl_mem), &in_a);
-  right("set arg 1");
-  ret = clSetKernelArg(k_mul_vec, 2, sizeof(cl_mem), &in_b);
-  right("set arg 2");
-  ret = clSetKernelArg(k_mul_vec, 3, sizeof(cl_mem), &out);
-  right("set arg 3");
-  cl_event waitlist[] = {wrtA, wrtB};
-  size_t global[] = {n};
-  ret = clEnqueueNDRangeKernel(command, k_mul_vec, 1, NULL, global, NULL, 2,
-                               waitlist, &computed);
-  right("run");
-  waitlist[0] = computed;
-  waitlist[1] = NULL;
-  VvalT res;
-  res.resize(n);
-  ret = clEnqueueReadBuffer(command, out, CL_TRUE, 0, sizeof(valT) * n,
-                            res.data(), 1, waitlist, NULL);
-  right("read buffer");
-  clReleaseMemObject(in_a);
-  clReleaseMemObject(in_b);
-  clReleaseMemObject(out);
-  return res;
-}
+//   ret = clSetKernelArg(k_mul_vec, 0, sizeof(unsigned int), &n);
+//   right("set arg 0");
+//   ret = clSetKernelArg(k_mul_vec, 1, sizeof(cl_mem), &in_a);
+//   right("set arg 1");
+//   ret = clSetKernelArg(k_mul_vec, 2, sizeof(cl_mem), &in_b);
+//   right("set arg 2");
+//   ret = clSetKernelArg(k_mul_vec, 3, sizeof(cl_mem), &out);
+//   right("set arg 3");
+//   cl_event waitlist[] = {wrtA, wrtB};
+//   size_t global[] = {n};
+//   ret = clEnqueueNDRangeKernel(command, k_mul_vec, 1, NULL, global, NULL, 2,
+//                                waitlist, &computed);
+//   right("run");
+//   waitlist[0] = computed;
+//   waitlist[1] = NULL;
+//   VvalT res;
+//   res.resize(n);
+//   ret = clEnqueueReadBuffer(command, out, CL_TRUE, 0, sizeof(valT) * n,
+//                             res.data(), 1, waitlist, NULL);
+//   right("read buffer");
+//   clReleaseMemObject(in_a);
+//   clReleaseMemObject(in_b);
+//   clReleaseMemObject(out);
+//   return res;
+// }
 
-VvalT add_vec(const VvalT &a, const VvalT &b) {
-  if (a.size() != b.size()) {
-    throw dimension_error("a.m = " + to_string(a.size()) +
-                          "and b.n = " + to_string(b.size()));
-  }
-  auto n = b.size();
-  cl_mem in_a, in_b, out;
-  in_a =
-      clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(valT) * n, NULL, &ret);
-  right("create buf a");
-  in_b =
-      clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(valT) * n, NULL, &ret);
-  right("create buf b");
-  out =
-      clCreateBuffer(context, CL_MEM_READ_WRITE, sizeof(valT) * n, NULL, &ret);
-  right("create buf out");
+// VvalT add_vec(const VvalT &a, const VvalT &b) {
+//   if (a.size() != b.size()) {
+//     throw dimension_error("a.m = " + to_string(a.size()) +
+//                           "and b.n = " + to_string(b.size()));
+//   }
+//   auto n = b.size();
+//   cl_mem in_a, in_b, out;
+//   in_a =
+//       clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(valT) * n, NULL,
+//       &ret);
+//   right("create buf a");
+//   in_b =
+//       clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(valT) * n, NULL,
+//       &ret);
+//   right("create buf b");
+//   out =
+//       clCreateBuffer(context, CL_MEM_READ_WRITE, sizeof(valT) * n, NULL,
+//       &ret);
+//   right("create buf out");
 
-  cl_event wrtA = clCreateUserEvent(context, &ret);
-  right("create event A");
-  cl_event wrtB = clCreateUserEvent(context, &ret);
-  right("create event B");
-  cl_event computed = clCreateUserEvent(context, &ret);
-  right("create event done");
-  ret = clEnqueueWriteBuffer(command, in_a, CL_FALSE, 0, sizeof(valT) * n,
-                             a.data(), 0, NULL, &wrtA);
-  right("write a");
-  ret = clEnqueueWriteBuffer(command, in_b, CL_FALSE, 0, sizeof(valT) * n,
-                             b.data(), 0, NULL, &wrtB);
-  right("write b");
+//   cl_event wrtA = clCreateUserEvent(context, &ret);
+//   right("create event A");
+//   cl_event wrtB = clCreateUserEvent(context, &ret);
+//   right("create event B");
+//   cl_event computed = clCreateUserEvent(context, &ret);
+//   right("create event done");
+//   ret = clEnqueueWriteBuffer(command, in_a, CL_FALSE, 0, sizeof(valT) * n,
+//                              a.data(), 0, NULL, &wrtA);
+//   right("write a");
+//   ret = clEnqueueWriteBuffer(command, in_b, CL_FALSE, 0, sizeof(valT) * n,
+//                              b.data(), 0, NULL, &wrtB);
+//   right("write b");
 
-  ret = clSetKernelArg(k_add_vec, 0, sizeof(unsigned int), &n);
-  right("set arg 0");
-  ret = clSetKernelArg(k_add_vec, 1, sizeof(cl_mem), &in_a);
-  right("set arg 1");
-  ret = clSetKernelArg(k_add_vec, 2, sizeof(cl_mem), &in_b);
-  right("set arg 2");
-  ret = clSetKernelArg(k_add_vec, 3, sizeof(cl_mem), &out);
-  right("set arg 3");
-  cl_event waitlist[] = {wrtA, wrtB};
-  size_t global[] = {n};
-  ret = clEnqueueNDRangeKernel(command, k_add_vec, 1, NULL, global, NULL, 2,
-                               waitlist, &computed);
-  right("run");
-  waitlist[0] = computed;
-  waitlist[1] = NULL;
-  VvalT res;
-  res.resize(n);
-  ret = clEnqueueReadBuffer(command, out, CL_TRUE, 0, sizeof(valT) * n,
-                            res.data(), 1, waitlist, NULL);
-  right("read buffer");
-  clReleaseMemObject(in_a);
-  clReleaseMemObject(in_b);
-  clReleaseMemObject(out);
-  return res;
-}
+//   ret = clSetKernelArg(k_add_vec, 0, sizeof(unsigned int), &n);
+//   right("set arg 0");
+//   ret = clSetKernelArg(k_add_vec, 1, sizeof(cl_mem), &in_a);
+//   right("set arg 1");
+//   ret = clSetKernelArg(k_add_vec, 2, sizeof(cl_mem), &in_b);
+//   right("set arg 2");
+//   ret = clSetKernelArg(k_add_vec, 3, sizeof(cl_mem), &out);
+//   right("set arg 3");
+//   cl_event waitlist[] = {wrtA, wrtB};
+//   size_t global[] = {n};
+//   ret = clEnqueueNDRangeKernel(command, k_add_vec, 1, NULL, global, NULL, 2,
+//                                waitlist, &computed);
+//   right("run");
+//   waitlist[0] = computed;
+//   waitlist[1] = NULL;
+//   VvalT res;
+//   res.resize(n);
+//   ret = clEnqueueReadBuffer(command, out, CL_TRUE, 0, sizeof(valT) * n,
+//                             res.data(), 1, waitlist, NULL);
+//   right("read buffer");
+//   clReleaseMemObject(in_a);
+//   clReleaseMemObject(in_b);
+//   clReleaseMemObject(out);
+//   return res;
+// }
 
 matrix conv2d(const matrix &a, const matrix &b) {
+  Init();
   int n_a = a.getn();
   int m_a = a.getm();
   int n_b = b.getn();
@@ -438,5 +460,6 @@ matrix conv2d(const matrix &a, const matrix &b) {
   clReleaseMemObject(in_a);
   clReleaseMemObject(in_b);
   clReleaseMemObject(out);
-  return res;
+  Teardown();
+  return std::move(res);
 }
