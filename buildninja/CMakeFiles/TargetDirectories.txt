@@ -1,6 +1,0 @@
-/Users/jiang/Desktop/myAI/buildninja/CMakeFiles/readdata.dir
-/Users/jiang/Desktop/myAI/buildninja/CMakeFiles/trainemnistconvolution.dir
-/Users/jiang/Desktop/myAI/buildninja/CMakeFiles/generateemnistconvolution.dir
-/Users/jiang/Desktop/myAI/buildninja/CMakeFiles/test-ocl-conv.dir
-/Users/jiang/Desktop/myAI/buildninja/CMakeFiles/edit_cache.dir
-/Users/jiang/Desktop/myAI/buildninja/CMakeFiles/rebuild_cache.dir

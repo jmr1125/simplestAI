@@ -72,26 +72,18 @@ vector<valT> convolution_layer::forward(const vector<valT> &input) {
         for (int j = 0; j < m_in; ++j)
           tmp_out(i, j) += res(i, j);
     }
-    for (auto x : tmp_out.m) {
-      output.push_back(x);
-    }
+    copy(tmp_out.m.begin(), tmp_out.m.end(), std::back_inserter(output));
   }
   return output;
 }
+#ifdef USE_OCL
+#include "ocl.hpp"
+#endif
 vector<valT> convolution_layer::backward(const vector<valT> &grad) const {
-  // matrix res;
-  // res.setn(n_in);
-  // res.setm(m_in);
-  // for (int i = 0; i < n_in; ++i) {
-  //   for (int j = 0; j < m_in; ++j) {
-  //     res(i, j) = 0;
-  //     for (int x = i; x < i + nK; ++x)
-  //       for (int y = j; y < j + mK; ++y)
-  //         res(i, j) += K(x - i, y - j) * D(x, y);
-  //   }
-  // }
-  // return res.m;
-
+#ifdef USE_OCL
+  // #if 0
+  return conv_l_backward(*this, grad);
+#else
   VvalT output;
   output.reserve(Ichannels * n_in * m_in);
   for (int Ic = 0; Ic < Ichannels; ++Ic) {
@@ -112,15 +104,16 @@ vector<valT> convolution_layer::backward(const vector<valT> &grad) const {
     copy(t.m.begin(), t.m.end(), std::back_inserter(output));
   }
   return std::move(output);
+#endif
 }
 vector<valT> convolution_layer::update(const vector<valT> &grad,
                                        const vector<valT> &input) const {
+#if 0
+
+#else
   vector<valT> res;
   res.reserve(Ichannels * Ochannels * nK * mK);
   for (int Oc = 0; Oc < Ochannels; ++Oc) {
-#ifdef USE_OMP
-#pragma omp for
-#endif
     for (int Ic = 0; Ic < Ichannels; ++Ic) {
       matrix G;
       G.setn(n_in);
@@ -144,6 +137,7 @@ vector<valT> convolution_layer::update(const vector<valT> &grad,
     }
   }
   return std::move(res);
+#endif
 }
 void convolution_layer::update(vector<valT>::const_iterator &i) {
   for (auto &x1 : K)
