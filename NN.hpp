@@ -8,6 +8,6 @@ struct nnet {
   vector<valT> forward(vector<valT>);
   vector<valT> update(const vector<valT> &, const vector<valT> &) const;
   void update(vector<valT>);
-  size_t get_varnum();
+  size_t get_varnum()const;
   vector<layer *> layers;
 };

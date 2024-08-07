@@ -15,3 +15,6 @@ matrix mul_mat(const matrix &a, const matrix &b);
 // VvalT mul_vec(const VvalT &a, const VvalT &b);
 // VvalT add_vec(const VvalT &a, const VvalT &b);
 matrix conv2d(const matrix &a, const matrix &b);
+
+#include "convolution_layer.hpp"
+VvalT conv_l_backward(const convolution_layer &l, const vector<valT> &grad);

@@ -1,3 +1,4 @@
+#pragma once
 #include "layers.hpp"
 #include "matrix.hpp"
 #include <istream>

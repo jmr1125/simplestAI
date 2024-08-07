@@ -44,29 +44,28 @@ int main() {
       dynamic_cast<convolution_layer *>(net.last_layer())->nK = 5;
       dynamic_cast<convolution_layer *>(net.last_layer())->mK = 5;
       net.last_layer()->Ichannels = 1;
-      net.last_layer()->Ochannels = 32;
-      net.last_layer()->set_IOsize(28 * 28, 28 * 28 * 32);
+      net.last_layer()->Ochannels = 16;
+      net.last_layer()->set_IOsize(28 * 28, 28 * 28 * 16);
       Init;
     }
 
     net.add_layer(new bias_layer);
     if_netin_load else {
-      net.last_layer()->Isize = net.last_layer()->Osize = 28 * 28 * 32;
-      net.last_layer()->set_IOsize(28 * 28 * 32, 28 * 28 * 32);
+      net.last_layer()->set_IOsize(28 * 28 * 16, 28 * 28 * 16);
     }
 
     net.add_layer(new func_layer);
     if_netin_load else {
       dynamic_cast<func_layer *>(net.last_layer())->f = Functions::tanh;
-      net.last_layer()->set_IOsize(28 * 28 * 32, 28 * 28 * 32);
+      net.last_layer()->set_IOsize(28 * 28 * 16, 28 * 28 * 16);
     }
 
     net.add_layer(new max_layer);
     if_netin_load else {
       dynamic_cast<max_layer *>(net.last_layer())->i_n =
           dynamic_cast<max_layer *>(net.last_layer())->i_m = 28;
-      net.last_layer()->Ichannels = net.last_layer()->Ochannels = 32;
-      net.last_layer()->set_IOsize(28 * 28 * 32, 14 * 14 * 32);
+      net.last_layer()->Ichannels = net.last_layer()->Ochannels = 16;
+      net.last_layer()->set_IOsize(28 * 28 * 16, 14 * 14 * 16);
     }
 
     net.add_layer(new convolution_layer);
@@ -75,103 +74,93 @@ int main() {
       dynamic_cast<convolution_layer *>(net.last_layer())->m_in = 14;
       dynamic_cast<convolution_layer *>(net.last_layer())->nK = 3;
       dynamic_cast<convolution_layer *>(net.last_layer())->mK = 3;
-      net.last_layer()->Ichannels = 32;
-      net.last_layer()->Ochannels = 48;
-      net.last_layer()->set_IOsize(14 * 14 * 32, 14 * 14 * 48);
+      net.last_layer()->Ichannels = 16;
+      net.last_layer()->Ochannels = 24;
+      net.last_layer()->set_IOsize(14 * 14 * 16, 14 * 14 * 24);
       Init;
     }
     net.add_layer(new bias_layer);
     if_netin_load else {
-      net.last_layer()->Isize = net.last_layer()->Osize = 14 * 14 * 48;
-      net.last_layer()->set_IOsize(14 * 14 * 48, 14 * 14 * 48);
+      net.last_layer()->set_IOsize(14 * 14 * 24, 14 * 14 * 24);
     }
 
     net.add_layer(new func_layer);
     if_netin_load else {
-      dynamic_cast<func_layer *>(net.last_layer())->f = sigmoid;
-      net.last_layer()->set_IOsize(14 * 14 * 48, 14 * 14 * 48);
-    }
-
-    net.add_layer(new max_layer);
-    if_netin_load else {
-      dynamic_cast<max_layer *>(net.last_layer())->i_n =
-          dynamic_cast<max_layer *>(net.last_layer())->i_m = 14;
-      net.last_layer()->Ichannels = net.last_layer()->Ochannels = 48;
-      net.last_layer()->set_IOsize(14 * 14 * 48, 7 * 7 * 48);
+      dynamic_cast<func_layer *>(net.last_layer())->f = Functions::tanh;
+      net.last_layer()->set_IOsize(14 * 14 * 24, 14 * 14 * 24);
     }
 
     net.add_layer(new convolution_layer);
     if_netin_load else {
-      dynamic_cast<convolution_layer *>(net.last_layer())->n_in = 7;
-      dynamic_cast<convolution_layer *>(net.last_layer())->m_in = 7;
+      dynamic_cast<convolution_layer *>(net.last_layer())->n_in = 14;
+      dynamic_cast<convolution_layer *>(net.last_layer())->m_in = 14;
       dynamic_cast<convolution_layer *>(net.last_layer())->nK = 3;
       dynamic_cast<convolution_layer *>(net.last_layer())->mK = 3;
-      net.last_layer()->Ichannels = 48;
-      net.last_layer()->Ochannels = 64;
-      net.last_layer()->set_IOsize(7 * 7 * 48, 7 * 7 * 64);
+      net.last_layer()->Ichannels = 24;
+      net.last_layer()->Ochannels = 12;
+      net.last_layer()->set_IOsize(14 * 14 * 24, 14 * 14 * 12);
       Init;
     }
     net.add_layer(new bias_layer);
     if_netin_load else {
-      net.last_layer()->Isize = net.last_layer()->Osize = 7 * 7 * 64;
-      net.last_layer()->set_IOsize(7 * 7 * 64, 7 * 7 * 64);
+      net.last_layer()->set_IOsize(14 * 14 * 12, 14 * 14 * 12);
     }
 
     net.add_layer(new func_layer);
     if_netin_load else {
-      dynamic_cast<func_layer *>(net.last_layer())->f = sigmoid;
-      net.last_layer()->set_IOsize(7 * 7 * 64, 7 * 7 * 64);
+      dynamic_cast<func_layer *>(net.last_layer())->f = Functions::tanh;
+      net.last_layer()->set_IOsize(14 * 14 * 12, 14 * 14 * 12);
     }
 
     net.add_layer(new max_layer);
     if_netin_load else {
       dynamic_cast<max_layer *>(net.last_layer())->i_n =
           dynamic_cast<max_layer *>(net.last_layer())->i_m = 14;
-      net.last_layer()->Ichannels = net.last_layer()->Ochannels = 64;
-      net.last_layer()->set_IOsize(14 * 14 * 64, 7 * 7 * 64);
+      net.last_layer()->Ichannels = net.last_layer()->Ochannels = 12;
+      net.last_layer()->set_IOsize(14 * 14 * 12, 7 * 7 * 12);
     }
 
     net.add_layer(new matrix_layer);
     if_netin_load else {
-      net.last_layer()->set_IOsize(7 * 7 * 64, 512);
+      net.last_layer()->set_IOsize(7 * 7 * 12, 1024);
       Init;
     }
 
     net.add_layer(new bias_layer);
     if_netin_load else {
-      net.last_layer()->set_IOsize(512, 512);
+      net.last_layer()->set_IOsize(1024, 1024);
+      Init;
+    }
+
+    net.add_layer(new func_layer);
+    if_netin_load else {
+      dynamic_cast<func_layer *>(net.last_layer())->f = Functions::ReLU;
+      net.last_layer()->set_IOsize(1024, 1024);
+      Init;
+    }
+
+    net.add_layer(new matrix_layer);
+    if_netin_load else {
+      net.last_layer()->set_IOsize(1024, 128);
+      Init;
+    }
+
+    net.add_layer(new bias_layer);
+    if_netin_load else {
+      net.last_layer()->set_IOsize(128, 128);
       Init;
     }
 
     net.add_layer(new func_layer);
     if_netin_load else {
       dynamic_cast<func_layer *>(net.last_layer())->f = Functions::tanh;
-      net.last_layer()->set_IOsize(512, 512);
+      net.last_layer()->set_IOsize(128, 128);
       Init;
     }
 
     net.add_layer(new matrix_layer);
     if_netin_load else {
-      net.last_layer()->set_IOsize(512, 84);
-      Init;
-    }
-
-    net.add_layer(new bias_layer);
-    if_netin_load else {
-      net.last_layer()->set_IOsize(84, 84);
-      Init;
-    }
-
-    net.add_layer(new func_layer);
-    if_netin_load else {
-      dynamic_cast<func_layer *>(net.last_layer())->f = Functions::tanh;
-      net.last_layer()->set_IOsize(84, 84);
-      Init;
-    }
-
-    net.add_layer(new matrix_layer);
-    if_netin_load else {
-      net.last_layer()->set_IOsize(84, 47);
+      net.last_layer()->set_IOsize(128, 47);
       Init;
     }
 
@@ -228,16 +217,17 @@ int main() {
       l->save(of);
     }
   };
-  initscr();
-  nodelay(stdscr, TRUE);
-  keypad(stdscr, TRUE);
-  noecho();
   valT lr = .001;
   const double beta1 = 0.9, beta2 = 0.999, epsilon = 1e-8;
   net.forward(inputs[0]);
   auto grad_size = net.get_varnum();
   VvalT m(grad_size, 0), v(grad_size, 0), vh(grad_size, 0), mh(grad_size, 0),
       d(grad_size, 0);
+  cout << "total " << grad_size << " varibles" << endl;
+  initscr();
+  nodelay(stdscr, TRUE);
+  keypad(stdscr, TRUE);
+  noecho();
   for (; !quit;) {
     const auto N = inputs.size();
     if (off >= N) {
