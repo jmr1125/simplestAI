@@ -69,3 +69,7 @@ void matrix_layer::load(std::istream &i) {
 }
 
 size_t matrix_layer::get_varnum() const { return M.m.size(); }
+
+std::shared_ptr<layer> matrix_layer::clone() const {
+  return std::make_shared<matrix_layer>(*this);
+}

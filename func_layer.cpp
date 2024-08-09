@@ -85,6 +85,9 @@ void func_layer::load(std::istream &i) {
 }
 
 size_t func_layer::get_varnum() const { return 0; }
+std::shared_ptr<layer> func_layer::clone() const {
+  return std::make_shared<func_layer>(*this);
+}
 
 valT f_Identity(valT x) { return x; }
 valT df_Identity(valT) { return 1; }

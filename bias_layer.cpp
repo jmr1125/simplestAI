@@ -2,6 +2,7 @@
 #include "main.hpp"
 #include <cstddef>
 #include <istream>
+#include <memory>
 #include <ostream>
 #include <stdexcept>
 #include <string>
@@ -65,3 +66,7 @@ void bias_layer::load(std::istream &i) {
   }
 }
 size_t bias_layer::get_varnum() const { return bias.size(); }
+
+std::shared_ptr<layer> bias_layer::clone() const {
+  return std::make_shared<bias_layer>(*this);
+}

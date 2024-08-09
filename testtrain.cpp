@@ -8,6 +8,7 @@
 #include "max_layer.hpp"
 #include <fstream>
 #include <iostream>
+#include <memory>
 #include <random>
 #ifdef USE_OCL
 #include "ocl.hpp"
@@ -19,50 +20,53 @@ int main() {
 #endif
   std::random_device rd;
   nnet target;
-  target.add_layer(new convolution_layer);
-  dynamic_cast<convolution_layer *>(target.last_layer())->nK =
-      dynamic_cast<convolution_layer *>(target.last_layer())->mK = 3;
-  dynamic_cast<convolution_layer *>(target.last_layer())->n_in =
-      dynamic_cast<convolution_layer *>(target.last_layer())->m_in = 10;
+  target.add_layer(make_shared<convolution_layer>());
+  dynamic_cast<convolution_layer *>(target.last_layer().get())->nK =
+      dynamic_cast<convolution_layer *>(target.last_layer().get())->mK = 3;
+  dynamic_cast<convolution_layer *>(target.last_layer().get())->n_in =
+      dynamic_cast<convolution_layer *>(target.last_layer().get())->m_in = 10;
   target.last_layer()->Ichannels = 1;
   target.last_layer()->Ochannels = 4;
   target.last_layer()->set_IOsize(100, 10 * 10 * 4);
   for (int c = 0; c < 4; ++c) {
     for (int i = 0; i < 3; ++i) {
       for (int j = 0; j < 3; ++j) {
-        dynamic_cast<convolution_layer *>(target.last_layer())->K[c][0](i, j) =
-            1.0 * c / 4 + (sin(i) + cos(j));
+        dynamic_cast<convolution_layer *>(target.last_layer().get())
+            ->K[c][0](i, j) = 1.0 * c / 4 + (sin(i) + cos(j));
       }
     }
   }
-  target.add_layer(new max_layer);
+  target.add_layer(make_shared<max_layer>());
   target.last_layer()->Ichannels = target.last_layer()->Ochannels = 4;
-  dynamic_cast<max_layer *>(target.last_layer())->i_n =
-      dynamic_cast<max_layer *>(target.last_layer())->i_m = 10;
+  dynamic_cast<max_layer *>(target.last_layer().get())->i_n =
+      dynamic_cast<max_layer *>(target.last_layer().get())->i_m = 10;
   target.last_layer()->set_IOsize(10 * 10 * 4, 5 * 5 * 4);
-  target.add_layer(new matrix_layer);
+  target.add_layer(make_shared<matrix_layer>());
   target.last_layer()->set_IOsize(100, 50);
   for (int i = 0; i < 50; ++i)
     for (int j = 0; j < 100; ++j)
-      dynamic_cast<matrix_layer *>(target.last_layer())->M(i, j) = sin(i + j);
-  target.add_layer(new bias_layer);
+      dynamic_cast<matrix_layer *>(target.last_layer().get())->M(i, j) =
+          sin(i + j);
+  target.add_layer(make_shared<bias_layer>());
   target.last_layer()->set_IOsize(50, 50);
   for (int i = 0; i < 50; ++i)
-    dynamic_cast<bias_layer *>(target.last_layer())->bias[i] = 2 * cos(i);
-  target.add_layer(new func_layer);
-  dynamic_cast<func_layer *>(target.last_layer())->f = Functions::sigmoid;
+    dynamic_cast<bias_layer *>(target.last_layer().get())->bias[i] = 2 * cos(i);
+  target.add_layer(make_shared<func_layer>());
+  dynamic_cast<func_layer *>(target.last_layer().get())->f = Functions::sigmoid;
   target.last_layer()->set_IOsize(50, 50);
-  target.add_layer(new matrix_layer);
+  target.add_layer(make_shared<matrix_layer>());
   target.last_layer()->set_IOsize(50, 50);
   for (int i = 0; i < 50; ++i)
     for (int j = 0; j < 50; ++j)
-      dynamic_cast<matrix_layer *>(target.last_layer())->M(i, j) = sin(i * j);
-  target.add_layer(new bias_layer);
+      dynamic_cast<matrix_layer *>(target.last_layer().get())->M(i, j) =
+          sin(i * j);
+  target.add_layer(make_shared<bias_layer>());
   target.last_layer()->set_IOsize(50, 50);
   for (int i = 0; i < 50; ++i)
-    dynamic_cast<bias_layer *>(target.last_layer())->bias[i] = cos(2 * i) / 2;
-  target.add_layer(new func_layer);
-  dynamic_cast<func_layer *>(target.last_layer())->f = Functions::softmax;
+    dynamic_cast<bias_layer *>(target.last_layer().get())->bias[i] =
+        cos(2 * i) / 2;
+  target.add_layer(make_shared<func_layer>());
+  dynamic_cast<func_layer *>(target.last_layer().get())->f = Functions::softmax;
   target.last_layer()->set_IOsize(50, 50);
 
   nnet to_be_trained;
@@ -72,55 +76,55 @@ int main() {
     to_be_trained.last_layer()->load(ifs);                                     \
   } else
 
-  to_be_trained.add_layer(new convolution_layer);
+  to_be_trained.add_layer(make_shared<convolution_layer>());
   if_ifs_load {
-    dynamic_cast<convolution_layer *>(to_be_trained.last_layer())->nK =
-        dynamic_cast<convolution_layer *>(to_be_trained.last_layer())->mK = 3;
-    dynamic_cast<convolution_layer *>(to_be_trained.last_layer())->n_in =
-        dynamic_cast<convolution_layer *>(to_be_trained.last_layer())->m_in =
+    dynamic_cast<convolution_layer *>(to_be_trained.last_layer().get())->nK =
+        dynamic_cast<convolution_layer *>(to_be_trained.last_layer().get())->mK = 3;
+    dynamic_cast<convolution_layer *>(to_be_trained.last_layer().get())->n_in =
+        dynamic_cast<convolution_layer *>(to_be_trained.last_layer().get())->m_in =
             10;
     to_be_trained.last_layer()->Ichannels = 1;
     to_be_trained.last_layer()->Ochannels = 4;
     to_be_trained.last_layer()->set_IOsize(100, 10 * 10 * 4);
     to_be_trained.last_layer()->init(std::move(rd));
   }
-  to_be_trained.add_layer(new max_layer);
+  to_be_trained.add_layer(make_shared<max_layer>());
   if_ifs_load {
     to_be_trained.last_layer()->Ichannels =
         to_be_trained.last_layer()->Ochannels = 4;
-    dynamic_cast<max_layer *>(to_be_trained.last_layer())->i_n =
-        dynamic_cast<max_layer *>(to_be_trained.last_layer())->i_m = 10;
+    dynamic_cast<max_layer *>(to_be_trained.last_layer().get())->i_n =
+        dynamic_cast<max_layer *>(to_be_trained.last_layer().get())->i_m = 10;
     to_be_trained.last_layer()->set_IOsize(10 * 10 * 4, 5 * 5 * 4);
   }
-  to_be_trained.add_layer(new matrix_layer);
+  to_be_trained.add_layer(make_shared<matrix_layer>());
   if_ifs_load {
     to_be_trained.last_layer()->set_IOsize(100, 50);
     to_be_trained.last_layer()->init(std::move(rd));
   }
-  to_be_trained.add_layer(new bias_layer);
+  to_be_trained.add_layer(make_shared<bias_layer>());
   if_ifs_load {
     to_be_trained.last_layer()->set_IOsize(50, 50);
     to_be_trained.last_layer()->init(std::move(rd));
   }
-  to_be_trained.add_layer(new func_layer);
+  to_be_trained.add_layer(make_shared<func_layer>());
   if_ifs_load {
-    dynamic_cast<func_layer *>(to_be_trained.last_layer())->f =
+    dynamic_cast<func_layer *>(to_be_trained.last_layer().get())->f =
         Functions::sigmoid;
     to_be_trained.last_layer()->set_IOsize(50, 50);
   }
-  to_be_trained.add_layer(new matrix_layer);
+  to_be_trained.add_layer(make_shared<matrix_layer>());
   if_ifs_load {
     to_be_trained.last_layer()->set_IOsize(50, 50);
     to_be_trained.last_layer()->init(std::move(rd));
   }
-  to_be_trained.add_layer(new bias_layer);
+  to_be_trained.add_layer(make_shared<bias_layer>());
   if_ifs_load {
     to_be_trained.last_layer()->set_IOsize(50, 50);
     to_be_trained.last_layer()->init(std::move(rd));
   }
-  to_be_trained.add_layer(new func_layer);
+  to_be_trained.add_layer(make_shared<func_layer>());
   if_ifs_load {
-    dynamic_cast<func_layer *>(to_be_trained.last_layer())->f =
+    dynamic_cast<func_layer *>(to_be_trained.last_layer().get())->f =
         Functions::softmax;
     to_be_trained.last_layer()->set_IOsize(50, 50);
   }

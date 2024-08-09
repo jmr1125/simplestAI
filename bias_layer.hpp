@@ -16,5 +16,6 @@ struct bias_layer : public layer {
   virtual void save(std::ostream &) const override;
   virtual void load(std::istream &) override;
   virtual size_t get_varnum() const override;
+  virtual std::shared_ptr<layer> clone() const override;
   vector<valT> bias;
 };
