@@ -17,6 +17,7 @@
 #include <fstream>
 #include <ios>
 #include <iostream>
+#include <memory>
 #include <ncurses.h>
 #include <random>
 #include <sstream>
@@ -38,120 +39,121 @@ int main() {
     net.last_layer()->load(netin);                                             \
   }
 #define Init net.last_layer()->init(std::move(rd))
-    net.add_layer(new convolution_layer);
+    net.add_layer(make_shared<convolution_layer>());
     if_netin_load else {
-      dynamic_cast<convolution_layer *>(net.last_layer())->n_in = 28;
-      dynamic_cast<convolution_layer *>(net.last_layer())->m_in = 28;
-      dynamic_cast<convolution_layer *>(net.last_layer())->nK = 3;
-      dynamic_cast<convolution_layer *>(net.last_layer())->mK = 3;
+      dynamic_cast<convolution_layer *>(net.last_layer().get())->n_in = 28;
+      dynamic_cast<convolution_layer *>(net.last_layer().get())->m_in = 28;
+      dynamic_cast<convolution_layer *>(net.last_layer().get())->nK = 3;
+      dynamic_cast<convolution_layer *>(net.last_layer().get())->mK = 3;
       net.last_layer()->Ichannels = 1;
       net.last_layer()->Ochannels = 8;
       net.last_layer()->set_IOsize(28 * 28, 28 * 28 * 8);
       Init;
     }
 
-    net.add_layer(new bias_layer);
+    net.add_layer(make_shared<bias_layer>());
     if_netin_load else {
       net.last_layer()->set_IOsize(28 * 28 * 8, 28 * 28 * 8);
     }
 
-    net.add_layer(new func_layer);
+    net.add_layer(make_shared<func_layer>());
     if_netin_load else {
-      dynamic_cast<func_layer *>(net.last_layer())->f = Functions::tanh;
+      dynamic_cast<func_layer *>(net.last_layer().get())->f = Functions::tanh;
       net.last_layer()->set_IOsize(28 * 28 * 8, 28 * 28 * 8);
     }
 
-    net.add_layer(new max_layer);
+    net.add_layer(make_shared<max_layer>());
     if_netin_load else {
-      dynamic_cast<max_layer *>(net.last_layer())->i_n =
-          dynamic_cast<max_layer *>(net.last_layer())->i_m = 28;
+      dynamic_cast<max_layer *>(net.last_layer().get())->i_n =
+          dynamic_cast<max_layer *>(net.last_layer().get())->i_m = 28;
       net.last_layer()->Ichannels = net.last_layer()->Ochannels = 8;
       net.last_layer()->set_IOsize(28 * 28 * 8, 14 * 14 * 8);
     }
 
-    net.add_layer(new convolution_layer);
+    net.add_layer(make_shared<convolution_layer>());
     if_netin_load else {
-      dynamic_cast<convolution_layer *>(net.last_layer())->n_in = 14;
-      dynamic_cast<convolution_layer *>(net.last_layer())->m_in = 14;
-      dynamic_cast<convolution_layer *>(net.last_layer())->nK = 3;
-      dynamic_cast<convolution_layer *>(net.last_layer())->mK = 3;
+      dynamic_cast<convolution_layer *>(net.last_layer().get())->n_in = 14;
+      dynamic_cast<convolution_layer *>(net.last_layer().get())->m_in = 14;
+      dynamic_cast<convolution_layer *>(net.last_layer().get())->nK = 3;
+      dynamic_cast<convolution_layer *>(net.last_layer().get())->mK = 3;
       net.last_layer()->Ichannels = 8;
       net.last_layer()->Ochannels = 16;
       net.last_layer()->set_IOsize(14 * 14 * 8, 14 * 14 * 16);
       Init;
     }
-    net.add_layer(new bias_layer);
+    net.add_layer(make_shared<bias_layer>());
     if_netin_load else {
       net.last_layer()->set_IOsize(14 * 14 * 16, 14 * 14 * 16);
     }
 
-    net.add_layer(new func_layer);
+    net.add_layer(make_shared<func_layer>());
     if_netin_load else {
-      dynamic_cast<func_layer *>(net.last_layer())->f = Functions::tanh;
+      dynamic_cast<func_layer *>(net.last_layer().get())->f = Functions::tanh;
       net.last_layer()->set_IOsize(14 * 14 * 16, 14 * 14 * 16);
     }
 
-    net.add_layer(new max_layer);
+    net.add_layer(make_shared<max_layer>());
     if_netin_load else {
-      dynamic_cast<max_layer *>(net.last_layer())->i_n =
-          dynamic_cast<max_layer *>(net.last_layer())->i_m = 14;
+      dynamic_cast<max_layer *>(net.last_layer().get())->i_n =
+          dynamic_cast<max_layer *>(net.last_layer().get())->i_m = 14;
       net.last_layer()->Ichannels = net.last_layer()->Ochannels = 16;
       net.last_layer()->set_IOsize(14 * 14 * 16, 7 * 7 * 16);
     }
 
-    net.add_layer(new matrix_layer);
+    net.add_layer(make_shared<matrix_layer>());
     if_netin_load else {
       net.last_layer()->set_IOsize(7 * 7 * 16, 512);
       Init;
     }
 
-    net.add_layer(new bias_layer);
+    net.add_layer(make_shared<bias_layer>());
     if_netin_load else {
       net.last_layer()->set_IOsize(512, 512);
       Init;
     }
 
-    net.add_layer(new func_layer);
+    net.add_layer(make_shared<func_layer>());
     if_netin_load else {
-      dynamic_cast<func_layer *>(net.last_layer())->f = Functions::ReLU;
+      dynamic_cast<func_layer *>(net.last_layer().get())->f = Functions::ReLU;
       net.last_layer()->set_IOsize(512, 512);
       Init;
     }
 
-    net.add_layer(new matrix_layer);
+    net.add_layer(make_shared<matrix_layer>());
     if_netin_load else {
       net.last_layer()->set_IOsize(512, 64);
       Init;
     }
 
-    net.add_layer(new bias_layer);
+    net.add_layer(make_shared<bias_layer>());
     if_netin_load else {
       net.last_layer()->set_IOsize(64, 64);
       Init;
     }
 
-    net.add_layer(new func_layer);
+    net.add_layer(make_shared<func_layer>());
     if_netin_load else {
-      dynamic_cast<func_layer *>(net.last_layer())->f = Functions::sigmoid;
+      dynamic_cast<func_layer *>(net.last_layer().get())->f =
+          Functions::sigmoid;
       net.last_layer()->set_IOsize(64, 64);
       Init;
     }
 
-    net.add_layer(new matrix_layer);
+    net.add_layer(make_shared<matrix_layer>());
     if_netin_load else {
       net.last_layer()->set_IOsize(64, 47);
       Init;
     }
 
-    net.add_layer(new bias_layer);
+    net.add_layer(make_shared<bias_layer>());
     if_netin_load else {
       net.last_layer()->set_IOsize(47, 47);
       Init;
     }
 
-    net.add_layer(new func_layer);
+    net.add_layer(make_shared<func_layer>());
     if_netin_load else {
-      dynamic_cast<func_layer *>(net.last_layer())->f = softmax;
+      dynamic_cast<func_layer *>(net.last_layer().get())->f = softmax;
       // dynamic_cast<func_layer *>(net.last_layer())->f =  ReLU;
       net.last_layer()->set_IOsize(47, 47);
       Init;

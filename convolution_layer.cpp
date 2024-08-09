@@ -171,3 +171,7 @@ void convolution_layer::load(std::istream &i) {
 size_t convolution_layer::get_varnum() const {
   return Ichannels * Ochannels * nK * mK;
 }
+
+std::shared_ptr<layer> convolution_layer::clone() const {
+  return std::make_shared<convolution_layer>(*this);
+}

@@ -12,6 +12,8 @@ struct max_layer : public layer { // pool with 2x2 average
   virtual void save(std::ostream &) const override;
   virtual void load(std::istream &) override;
   virtual size_t get_varnum() const override;
+  virtual std::shared_ptr<layer> clone() const override;
   int i_n, i_m;
+  int size;
   VvalT input;
 };
