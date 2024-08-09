@@ -30,7 +30,15 @@ vector<valT> matrix_layer::update(const vector<valT> &grad,
                                   const vector<valT> &input) const {
   vector<valT> res;
   res.resize(M.getm() * M.getn());
+#ifdef USE_OMP
+#warning omp
+#pragma omp parallel for
+#endif
   for (int i = 0; i < M.getn(); i++)
+#ifdef USE_OMP
+#warning omp
+#pragma omp parallel for
+#endif
     for (int j = 0; j < M.getm(); j++) {
       // M(i, j) -= lr * grad[i] * input[j];
       res[i * M.getm() + j] += grad[i] * input[j];

@@ -38,9 +38,21 @@ matrix matrix::operator*(const matrix &m1) const {
     matrix res;
     res.setn(getn());
     res.setm(m1.getm());
+#ifdef USE_OMP
+#warning omp
+#pragma omp parallel for
+#endif
     for (int i = 0; i < getn(); ++i) {
+#ifdef USE_OMP
+#warning omp
+#pragma omp parallel for
+#endif
       for (int j = 0; j < m1.getm(); ++j) {
         valT tmp = 0;
+#ifdef USE_OMP
+#warning omp
+#pragma omp parallel for
+#endif
         for (int k = 0; k < getm(); ++k) {
           tmp += (*this)(i, k) * m1(k, j);
         }
