@@ -494,11 +494,25 @@ VvalT conv_l_backward(const convolution_layer &l, const vector<valT> &G) {
   auto vKs = new valT[l.Ichannels * l.Ochannels * l.nK * l.mK];
   const valT *vgrad = G.data();
 
+#ifdef USE_OMP
+#warning omp
+#pragma omp parallel for
+#endif
   for (int i = 0; i < l.Ochannels; ++i) {
+#ifdef USE_OMP
+#warning omp
+#pragma omp parallel for
+#endif
     for (int j = 0; j < l.Ichannels; ++j) {
-#pragma parallel for
+#ifdef USE_OMP
+#warning omp
+#pragma omp parallel for
+#endif
       for (int x = 0; x < l.nK; ++x) {
-#pragma parallel for
+#ifdef USE_OMP
+#warning omp
+#pragma omp parallel for
+#endif
         for (int y = 0; y < l.mK; ++y) {
           vKs[i * l.Ichannels * l.nK * l.mK] = l.K[i][j](x, y);
         }
