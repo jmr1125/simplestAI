@@ -93,6 +93,7 @@ list(APPEND STANDARD_CPPS "average_layer.cpp")
 list(APPEND STANDARD_CPPS "max_layer.cpp")
 list(APPEND STANDARD_CPPS "NN.cpp")
 list(APPEND STANDARD_CPPS "ocl.cpp")
+list(APPEND STANDARD_CPPS "adam.cpp")
 
 message(STATUS "standard cpps : ${STANDARD_CPPS}")
 add_executable(trainemnistconvolution trainemnist.cpp ${STANDARD_CPPS})

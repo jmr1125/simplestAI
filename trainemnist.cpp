@@ -1,4 +1,5 @@
 #include "NN.hpp"
+#include "adam.hpp"
 #include "average_layer.hpp"
 #include "bias_layer.hpp"
 #include "convolution.hpp"
@@ -11,6 +12,7 @@
 #include "max_layer.hpp"
 #include "ocl.hpp"
 #include <algorithm>
+#include <array>
 #include <cassert>
 #include <cmath>
 #include <curses.h>
@@ -22,7 +24,6 @@
 #include <random>
 #include <sstream>
 #include <string>
-#include <sys/syslimits.h>
 #include <vector>
 using namespace std;
 int main() {
@@ -34,135 +35,99 @@ int main() {
   int total = 0;
   {
     ifstream netin("emnist.net");
-#define if_netin_load                                                          \
+#define if_netin_load(type)                                                    \
   if (netin) {                                                                 \
+    net.add_layer(make_shared<type>());                                        \
     net.last_layer()->load(netin);                                             \
   }
 #define Init net.last_layer()->init(std::move(rd))
-    net.add_layer(make_shared<convolution_layer>());
-    if_netin_load else {
-      dynamic_cast<convolution_layer *>(net.last_layer().get())->n_in = 28;
-      dynamic_cast<convolution_layer *>(net.last_layer().get())->m_in = 28;
-      dynamic_cast<convolution_layer *>(net.last_layer().get())->nK = 3;
-      dynamic_cast<convolution_layer *>(net.last_layer().get())->mK = 3;
-      net.last_layer()->Ichannels = 1;
-      net.last_layer()->Ochannels = 8;
-      net.last_layer()->set_IOsize(28 * 28, 28 * 28 * 8);
+    if_netin_load(convolution_layer) else {
+      net.add_convolution_layer({1, 8}, 28, 28, 3, 3);
       Init;
     }
 
-    net.add_layer(make_shared<bias_layer>());
-    if_netin_load else {
-      net.last_layer()->set_IOsize(28 * 28 * 8, 28 * 28 * 8);
-    }
-
-    net.add_layer(make_shared<func_layer>());
-    if_netin_load else {
-      dynamic_cast<func_layer *>(net.last_layer().get())->f = Functions::tanh;
-      net.last_layer()->set_IOsize(28 * 28 * 8, 28 * 28 * 8);
-    }
-
-    net.add_layer(make_shared<max_layer>());
-    if_netin_load else {
-      dynamic_cast<max_layer *>(net.last_layer().get())->i_n =
-          dynamic_cast<max_layer *>(net.last_layer().get())->i_m = 28;
-      net.last_layer()->Ichannels = net.last_layer()->Ochannels = 8;
-      net.last_layer()->set_IOsize(28 * 28 * 8, 14 * 14 * 8);
-    }
-
-    net.add_layer(make_shared<convolution_layer>());
-    if_netin_load else {
-      dynamic_cast<convolution_layer *>(net.last_layer().get())->n_in = 14;
-      dynamic_cast<convolution_layer *>(net.last_layer().get())->m_in = 14;
-      dynamic_cast<convolution_layer *>(net.last_layer().get())->nK = 3;
-      dynamic_cast<convolution_layer *>(net.last_layer().get())->mK = 3;
-      net.last_layer()->Ichannels = 8;
-      net.last_layer()->Ochannels = 16;
-      net.last_layer()->set_IOsize(14 * 14 * 8, 14 * 14 * 16);
-      Init;
-    }
-    net.add_layer(make_shared<bias_layer>());
-    if_netin_load else {
-      net.last_layer()->set_IOsize(14 * 14 * 16, 14 * 14 * 16);
-    }
-
-    net.add_layer(make_shared<func_layer>());
-    if_netin_load else {
-      dynamic_cast<func_layer *>(net.last_layer().get())->f = Functions::tanh;
-      net.last_layer()->set_IOsize(14 * 14 * 16, 14 * 14 * 16);
-    }
-
-    net.add_layer(make_shared<max_layer>());
-    if_netin_load else {
-      dynamic_cast<max_layer *>(net.last_layer().get())->i_n =
-          dynamic_cast<max_layer *>(net.last_layer().get())->i_m = 14;
-      net.last_layer()->Ichannels = net.last_layer()->Ochannels = 16;
-      net.last_layer()->set_IOsize(14 * 14 * 16, 7 * 7 * 16);
-    }
-
-    net.add_layer(make_shared<matrix_layer>());
-    if_netin_load else {
-      net.last_layer()->set_IOsize(7 * 7 * 16, 512);
+    if_netin_load(bias_layer) else {
+      net.add_bias_layer({8, 8}, 28 * 28);
       Init;
     }
 
-    net.add_layer(make_shared<bias_layer>());
-    if_netin_load else {
-      net.last_layer()->set_IOsize(512, 512);
+    if_netin_load(func_layer) else {
+      net.add_func_layer({8, 8}, 28 * 28, Functions::tanh);
       Init;
     }
 
-    net.add_layer(make_shared<func_layer>());
-    if_netin_load else {
-      dynamic_cast<func_layer *>(net.last_layer().get())->f = Functions::ReLU;
-      net.last_layer()->set_IOsize(512, 512);
+    if_netin_load(max_layer) else {
+      net.add_max_layer({8, 8}, 28, 28, 2);
       Init;
     }
 
-    net.add_layer(make_shared<matrix_layer>());
-    if_netin_load else {
-      net.last_layer()->set_IOsize(512, 64);
+    if_netin_load(convolution_layer) else {
+      net.add_convolution_layer({8, 16}, 14, 14, 3, 3);
+      Init;
+    }
+    if_netin_load(bias_layer) else {
+      net.add_bias_layer({16, 16}, 14 * 14);
       Init;
     }
 
-    net.add_layer(make_shared<bias_layer>());
-    if_netin_load else {
-      net.last_layer()->set_IOsize(64, 64);
+    if_netin_load(func_layer) else {
+      net.add_func_layer({16, 16}, 14 * 14, Functions::tanh);
       Init;
     }
 
-    net.add_layer(make_shared<func_layer>());
-    if_netin_load else {
-      dynamic_cast<func_layer *>(net.last_layer().get())->f =
-          Functions::sigmoid;
-      net.last_layer()->set_IOsize(64, 64);
+    if_netin_load(max_layer) else {
+      net.add_max_layer({16, 16}, 14, 14, 2);
       Init;
     }
 
-    net.add_layer(make_shared<matrix_layer>());
-    if_netin_load else {
-      net.last_layer()->set_IOsize(64, 47);
+    if_netin_load(matrix_layer) else {
+      net.add_matrix_layer({16, 1}, 7 * 7, 512);
       Init;
     }
 
-    net.add_layer(make_shared<bias_layer>());
-    if_netin_load else {
-      net.last_layer()->set_IOsize(47, 47);
+    if_netin_load(bias_layer) else {
+      net.add_bias_layer({1, 1}, 512);
       Init;
     }
 
-    net.add_layer(make_shared<func_layer>());
-    if_netin_load else {
-      dynamic_cast<func_layer *>(net.last_layer().get())->f = softmax;
-      // dynamic_cast<func_layer *>(net.last_layer())->f =  ReLU;
-      net.last_layer()->set_IOsize(47, 47);
+    if_netin_load(func_layer) else {
+      net.add_func_layer({1, 1}, 512, Functions::ReLU);
+      Init;
+    }
+
+    if_netin_load(matrix_layer) else {
+      net.add_matrix_layer({1, 1}, 512, 64);
+      Init;
+    }
+
+    if_netin_load(bias_layer) else {
+      net.add_bias_layer({1, 1}, 64);
+      Init;
+    }
+
+    if_netin_load(func_layer) else {
+      net.add_func_layer({1, 1}, 64, Functions::sigmoid);
+      Init;
+    }
+
+    if_netin_load(matrix_layer) else {
+      net.add_matrix_layer({1, 1}, 64, 47);
+      Init;
+    }
+
+    if_netin_load(bias_layer) else {
+      net.add_bias_layer({1, 1}, 47);
+      Init;
+    }
+
+    if_netin_load(func_layer) else {
+      net.add_func_layer({1, 1}, 47, Functions::softmax);
       Init;
     }
     netin >> total;
   }
 
-  vector<vector<valT>> inputs;
-  vector<vector<valT>> outputs;
+  vector<pair<vector<valT>, vector<valT>>> instance;
 
   cout << "reading..." << endl;
   {
@@ -175,16 +140,16 @@ int main() {
         fin >> C;
         tmp.push_back(C - '0');
       }
-      inputs.push_back(std::move(tmp));
+      instance.push_back(make_pair<VvalT, VvalT>({}, {}));
+      instance.back().first = (std::move(tmp));
       int x;
       fin >> x;
       vector<valT> t1;
       t1.resize(47);
       t1[x] = 1;
-      outputs.push_back(std::move(t1));
+      instance.back().second = (std::move(t1));
     }
   }
-  assert(inputs.size() == outputs.size());
   bool quit = false;
   valT lmin = 0, lmax = 5, scale = 1.0;
   mt19937 g(rd());
@@ -201,64 +166,65 @@ int main() {
   };
   valT lr = .001;
   const double beta1 = 0.9, beta2 = 0.999, epsilon = 1e-8;
-  net.forward(inputs[0]);
+  net.forward(instance[0].first);
   auto grad_size = net.get_varnum();
-  VvalT m(grad_size, 0), v(grad_size, 0), vh(grad_size, 0), mh(grad_size, 0),
-      d(grad_size, 0);
+  adam A(grad_size);
   cout << "total " << grad_size << " varibles" << endl;
   initscr();
-  nodelay(stdscr, TRUE);
-  keypad(stdscr, TRUE);
   noecho();
+  keypad(stdscr, TRUE);
+  mousemask(ALL_MOUSE_EVENTS | REPORT_MOUSE_POSITION, NULL);
+  nodelay(stdscr, TRUE);
   for (; !quit;) {
-    const auto N = inputs.size();
+    const auto N = instance.size();
     if (off >= N) {
       off = 0;
-      shuffle(inputs.begin(), inputs.end(), g);
+      shuffle(instance.begin(), instance.end(), g);
     }
-    net.forward(inputs[off]);
-    auto g = net.update(inputs[off], outputs[off]);
+    net.forward(instance[off].first);
+    constexpr int batch_size = 1; // 6;
+    array<nnet, batch_size> nets;
+    for (int i = 0; i < batch_size; ++i)
+      nets[i] = net;
+    array<VvalT, batch_size> g;
+    #pragma omp parallel for
+    for (int i = 0; i < batch_size; ++i) {
+      nets[i].forward(instance[off].first);
+      g[i] = nets[i].update(instance[off].first, instance[off].second);
+      ++off;
+    }
+    #pragma omp parallel for
     for (int i = 0; i < grad_size; ++i) {
-      m[i] = beta1 * m[i] + (1 - beta1) * g[i];
-      v[i] = beta2 * v[i] + (1 - beta2) * g[i] * g[i];
-      mh[i] = m[i] / (1 - pow(beta1, 1 + total));
-      vh[i] = v[i] / (1 - pow(beta2, 1 + total));
-      d[i] = -lr / (sqrt(vh[i]) + epsilon) * mh[i];
-    }
-    off++;
-    {
-      valT loss1 = 0;
-      for (int j = 0; j < outputs[off].size(); ++j) {
-        loss1 += -outputs[off][j] * log(net.last_layer()->output[j]);
+      for (int j = 1; j < batch_size; ++j) {
+        g[0][i] += g[j][i];
       }
-      mvprintw(0, 41, "%.5f", loss1);
+      g[0][i] /= batch_size;
+    }
+    auto d = A.update(g[0], lr, total + 1);
+    {
       net.update(d);
-      net.forward(inputs[off]);
+      net.forward(instance[off].first);
       valT loss = 0;
-      for (int j = 0; j < outputs[off].size(); ++j) {
-        loss += -outputs[off][j] * log(net.last_layer()->output[j]);
+      for (int j = 0; j < instance[off].second.size(); ++j) {
+        loss += -instance[off].second[j] * log(net.last_layer()->output[j]);
       }
       if (loss > lmin && loss < lmax) {
         losses[100 * (loss - lmin) / (lmax - lmin)]++;
       }
       losses_c++;
-      mvprintw(0, 30, "%.5f <= ", loss);
-      mvprintw(0, 50, "%.5f", loss1 - loss);
+      mvprintw(0, 30, "%f", loss);
       mvprintw(0, 60, "%d", total++);
     }
     if (losses_c == 100) {
-      // ++c;
-      // c %= 36;
       for (int i = 0; i < losses.size(); ++i) {
         int h = scale * 1.0 * (LINES - 5) * losses[i] / losses_c;
         for (int j = 0; j <= h; ++j)
-          mvaddch(1 + j, i, 'M'); //"0123456789abcdefghijklmnopqrstuvwxyz"[c]);
+          mvaddch(1 + j, i, 'M');
         for (int j = h + 1; j < LINES; ++j)
           mvaddch(1 + j, i, ' ');
       }
       losses_c = 0;
-      losses.clear();
-      losses.resize(100);
+      fill(losses.begin(), losses.end(), 0);
     }
 
     mvprintw(0, 0, "%f", lmin);
@@ -286,7 +252,7 @@ int main() {
       read_num();
       ss >> lr;
     } else if (C == 'm') {
-      mvprintw(LINES - 4, 0, "mIn,mAx,Scale");
+      mvprintw(LINES - 4, 0, "mIn,mAx,Scale,Query");
       while ((C = getch()) == ERR)
         ;
       if (C == 'i') {
@@ -303,6 +269,15 @@ int main() {
         mvprintw(LINES - 4, 0, "scle");
         read_num();
         ss >> scale;
+      }
+      if (C == 'q') {
+        while ((C = getch()) != KEY_MOUSE)
+          ;
+        MEVENT mouseevt;
+        if (getmouse(&mouseevt) == OK) {
+          mvprintw(mouseevt.y, mouseevt.x, "%f",
+                   (1.0 * mouseevt.x / losses.size()) * (lmax - lmin) + lmin);
+        }
       }
     } else if (C == 'q')
       break;

@@ -6,6 +6,8 @@
 #include <vector>
 struct nnet {
   virtual ~nnet();
+  nnet() = default;
+  nnet(const nnet &);
   nnet operator=(const nnet &other);
   void add_layer(std::shared_ptr<layer>);
   void add_average_layer(std::pair<int, int> channel, int i_n, int i_m,
