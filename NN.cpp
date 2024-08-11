@@ -44,13 +44,21 @@ void nnet::update(vector<valT> d) {
     layers[i]->update(I);
   }
 }
-nnet::~nnet() {}
+nnet::~nnet() {
+  for (auto x : layers) {
+    x.reset();
+  }
+}
+void copy(nnet &a, const nnet &b) {
+  a.layers.clear();
+  for (auto x : b.layers) {
+    a.layers.push_back(x->clone());
+  }
+}
+nnet::nnet(const nnet &x) { copy(*this, x); }
 nnet nnet::operator=(const nnet &other) {
   if (this != &other) {
-    layers.clear();
-    for (auto x : other.layers) {
-      layers.push_back(x->clone());
-    }
+    copy(*this, other);
   }
   return *this;
 }
@@ -119,12 +127,10 @@ void nnet::add_func_layer(std::pair<int, int> channel, int size, Functions f) {
   dynamic_cast<func_layer *>(last_layer().get())->Ochannels = channel.second;
   dynamic_cast<func_layer *>(last_layer().get())->Isize = channel.first * size;
   dynamic_cast<func_layer *>(last_layer().get())->Osize = channel.second * size;
+  last_layer()->set_IOsize(last_layer()->Isize, last_layer()->Osize);
 }
 #include "matrix_layer.hpp"
 void nnet::add_matrix_layer(std::pair<int, int> channel, int isize, int osize) {
-  if (channel.first != channel.second) {
-    throw std::runtime_error("add_matrix_layer IOchannel");
-  }
   add_layer(std::make_shared<matrix_layer>());
   dynamic_cast<matrix_layer *>(last_layer().get())->Ichannels = channel.first;
   dynamic_cast<matrix_layer *>(last_layer().get())->Ochannels = channel.second;
@@ -132,6 +138,7 @@ void nnet::add_matrix_layer(std::pair<int, int> channel, int isize, int osize) {
       channel.first * isize;
   dynamic_cast<matrix_layer *>(last_layer().get())->Osize =
       channel.second * osize;
+  last_layer()->set_IOsize(last_layer()->Isize, last_layer()->Osize);
 }
 #include "max_layer.hpp"
 void nnet::add_max_layer(std::pair<int, int> channel, int i_n, int i_m,
