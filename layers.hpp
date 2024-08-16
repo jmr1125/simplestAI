@@ -19,6 +19,7 @@ struct layer {
   virtual void load(std::istream &) = 0;
   virtual size_t get_varnum() const = 0;
   virtual std::shared_ptr<layer> clone() const = 0;
+  virtual void randomize_nan(std::random_device &&) = 0;
   vector<valT> output;
   int Ichannels, Ochannels;
   int Isize, Osize;

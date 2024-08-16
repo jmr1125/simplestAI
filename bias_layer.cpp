@@ -4,6 +4,7 @@
 #include <istream>
 #include <memory>
 #include <ostream>
+#include <random>
 #include <stdexcept>
 #include <string>
 #include <vector>
@@ -11,7 +12,7 @@
 bias_layer::~bias_layer() {}
 void bias_layer::init(std::random_device &&rd) {
   for (valT &x : bias) {
-    x = ((rd() + rd.min()) * 1.0 / (rd.max() - rd.min()) * 2 - 1) / sqrt(Isize);
+    x = rand01(rd) * 2 - 1; // / sqrt(Isize);
   }
 }
 void bias_layer::set_IOsize(int isize, int osize) {
@@ -69,4 +70,10 @@ size_t bias_layer::get_varnum() const { return bias.size(); }
 
 std::shared_ptr<layer> bias_layer::clone() const {
   return std::make_shared<bias_layer>(*this);
+}
+void bias_layer::randomize_nan(std::random_device &&rd) {
+  for (auto &x : bias) {
+    if (isnan(x))
+      x = rand01(rd) * 2 - 1;
+  }
 }
