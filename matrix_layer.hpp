@@ -17,5 +17,6 @@ struct matrix_layer : public layer {
   virtual void load(std::istream &) override;
   virtual size_t get_varnum() const override;
   virtual std::shared_ptr<layer> clone() const override;
+  virtual void randomize_nan(std::random_device &&) override;
   matrix M;
 };

@@ -1,12 +1,16 @@
 #include "NN.hpp"
+#include "average_layer.hpp"
 #include "bias_layer.hpp"
 #include "convolution_layer.hpp"
 #include "func_layer.hpp"
 #include "layers.hpp"
+#include "matrix.hpp"
 #include "matrix_layer.hpp"
-#include "average_layer.hpp"
+#include "max_layer.hpp"
+#include "ocl.hpp"
 #include <curses.h>
 #include <fstream>
+#include <iostream>
 #include <ncurses.h>
 #include <vector>
 using namespace std;
@@ -17,33 +21,37 @@ string name[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B",
                  "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
                  "a", "b", "d", "e", "f", "g", "h", "n", "q", "R", "T"};
 int main() {
+#ifdef USE_OCL
+  init();
+#endif
   nnet net;
   {
     std::ifstream fin("emnist.net");
-    // net.add_layer(new convolution_layer);  TODO...
-    // net.last_layer()->load(fin);
-    // net.add_layer(new func_layer);
-    // net.last_layer()->load(fin);
-    // net.add_layer(new average_layer);
-    // net.last_layer()->load(fin);
-    // net.add_layer(new convolution_layer);
-    // net.last_layer()->load(fin);
-    // net.add_layer(new func_layer);
-    // net.last_layer()->load(fin);
-    // net.add_layer(new average_layer);
-    // net.last_layer()->load(fin);
-    // net.add_layer(new matrix_layer);
-    // net.last_layer()->load(fin);
-    // net.add_layer(new bias_layer);
-    // net.last_layer()->load(fin);
-    // net.add_layer(new func_layer);
-    // net.last_layer()->load(fin);
-    // net.add_layer(new matrix_layer);
-    // net.last_layer()->load(fin);
-    // net.add_layer(new bias_layer);
-    // net.last_layer()->load(fin);
-    // net.add_layer(new func_layer);
-    // net.last_layer()->load(fin);
+#define netin_load(type)                                                       \
+  if (fin) {                                                                   \
+    net.add_layer(make_shared<type>());                                        \
+    net.last_layer()->load(fin);                                               \
+  } else {                                                                     \
+    cerr << "error loading emnist.net" << endl;                                \
+    return 1;                                                                  \
+  }
+    netin_load(convolution_layer);
+    netin_load(bias_layer);
+    netin_load(func_layer);
+    netin_load(max_layer);
+    netin_load(convolution_layer);
+    netin_load(bias_layer);
+    netin_load(func_layer);
+    netin_load(max_layer);
+    netin_load(matrix_layer);
+    netin_load(bias_layer);
+    netin_load(func_layer);
+    netin_load(matrix_layer);
+    netin_load(bias_layer);
+    netin_load(func_layer);
+    netin_load(matrix_layer);
+    netin_load(bias_layer);
+    netin_load(func_layer);
   }
   initscr();
   cbreak();
@@ -107,6 +115,12 @@ int main() {
       auto out = net.forward(pic);
       int maxid;
       valT max = -1;
+      for (int x = 0; x < 5; ++x) {
+        move(3 + x, 60);
+        for (int i = 10 * x; i < min((size_t)10 * x + 10, out.size()); ++i) {
+          printw("%.3f ", out[i]);
+        }
+      }
       for (int i = 0; i < out.size(); ++i) {
         if (out[i] > max) {
           max = out[i], maxid = i;
@@ -115,6 +129,9 @@ int main() {
       mvprintw(2, 32, "it is %s", name[maxid].c_str());
     }
   }
+#ifdef USE_OCL
+  teardown();
+#endif
   printf("\033[?1003l\n");
   endwin();
 }

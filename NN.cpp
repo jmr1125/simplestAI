@@ -5,6 +5,7 @@
 #include <cstddef>
 #include <iterator>
 #include <memory>
+#include <random>
 #include <stdexcept>
 #include <vector>
 
@@ -16,18 +17,26 @@ vector<valT> nnet::forward(vector<valT> input) {
   }
   return std::move(input);
 }
-vector<valT> nnet::update(const vector<valT> &input,
-                          const vector<valT> &expect) const {
+vector<valT> nnet::update(const vector<valT> &input, const vector<valT> &expect,
+                          train_method m) const {
   auto n = expect.size();
   vector<valT> res;
   res.reserve(get_varnum());
   vector<valT> delta(n);
   {
-    for (int i = 0; i < n; ++i) {
-      delta[i] =
-          -expect[i] /
-          last_layer()->output[i]; // the last layer must only has one : softmax
-      // delta[i] = layers.back()->output[i] - expect[i];
+    if (m == loss) {
+      for (int i = 0; i < n; ++i) {
+        delta[i] = -expect[i] / last_layer()->output[i];
+        // delta[i] = layers.back()->output[i] - expect[i];
+      }
+    } else if (m == l2) {
+      for (int i = 0; i < n; ++i) {
+        delta[i] = layers.back()->output[i] - expect[i];
+      }
+    } else if (m == l1) {
+      for (int i = 0; i < n; ++i) {
+        delta[i] = (layers.back()->output[i] > expect[i] ? 1 : -1);
+      }
     }
   }
   for (size_t i = layers.size() - 1; i != -1; --i) {
@@ -38,7 +47,7 @@ vector<valT> nnet::update(const vector<valT> &input,
   }
   return std::move(res);
 }
-void nnet::update(vector<valT> d) {
+void nnet::update(const vector<valT> &d) {
   auto I = d.cbegin();
   for (size_t i = layers.size() - 1; i != -1; --i) {
     layers[i]->update(I);
@@ -156,4 +165,8 @@ void nnet::add_max_layer(std::pair<int, int> channel, int i_n, int i_m,
   last_layer()->Ichannels = channel.first;
   last_layer()->Ochannels = channel.second;
   last_layer()->set_IOsize(last_layer()->Isize, last_layer()->Osize);
+}
+void nnet::randomize_nan(std::random_device &&rd) {
+  for (auto &l : layers)
+    l->randomize_nan(std::move(rd));
 }

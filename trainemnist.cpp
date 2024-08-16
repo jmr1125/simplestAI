@@ -42,41 +42,37 @@ int main() {
   }
 #define Init net.last_layer()->init(std::move(rd))
     if_netin_load(convolution_layer) else {
-      net.add_convolution_layer({1, 8}, 28, 28, 3, 3);
-      Init;
-    }
-
-    if_netin_load(bias_layer) else {
-      net.add_bias_layer({8, 8}, 28 * 28);
+      net.add_convolution_layer({1, 6}, 28, 28, 5, 5);
       Init;
     }
 
     if_netin_load(func_layer) else {
-      net.add_func_layer({8, 8}, 28 * 28, Functions::tanh);
+      net.add_func_layer({6, 6}, 28 * 28, Functions::ReLU);
       Init;
     }
 
     if_netin_load(max_layer) else {
-      net.add_max_layer({8, 8}, 28, 28, 2);
+      net.add_max_layer({6, 6}, 28, 28, 2);
       Init;
     }
 
     if_netin_load(convolution_layer) else {
-      net.add_convolution_layer({8, 16}, 14, 14, 3, 3);
-      Init;
-    }
-    if_netin_load(bias_layer) else {
-      net.add_bias_layer({16, 16}, 14 * 14);
+      net.add_convolution_layer({6, 16}, 14, 14, 5, 5);
       Init;
     }
 
     if_netin_load(func_layer) else {
-      net.add_func_layer({16, 16}, 14 * 14, Functions::tanh);
+      net.add_func_layer({16, 16}, 14 * 14, Functions::ReLU);
       Init;
     }
 
     if_netin_load(max_layer) else {
       net.add_max_layer({16, 16}, 14, 14, 2);
+      Init;
+    }
+
+    if_netin_load(func_layer) else {
+      net.add_func_layer({16, 16}, 7 * 7, Functions::tanh);
       Init;
     }
 
@@ -106,7 +102,7 @@ int main() {
     }
 
     if_netin_load(func_layer) else {
-      net.add_func_layer({1, 1}, 64, Functions::sigmoid);
+      net.add_func_layer({1, 1}, 64, Functions::ReLU);
       Init;
     }
 
@@ -181,32 +177,27 @@ int main() {
       off = 0;
       shuffle(instance.begin(), instance.end(), g);
     }
-    net.forward(instance[off].first);
-    constexpr int batch_size = 1; // 6;
-    array<nnet, batch_size> nets;
-    for (int i = 0; i < batch_size; ++i)
-      nets[i] = net;
-    array<VvalT, batch_size> g;
-    #pragma omp parallel for
-    for (int i = 0; i < batch_size; ++i) {
-      nets[i].forward(instance[off].first);
-      g[i] = nets[i].update(instance[off].first, instance[off].second);
-      ++off;
-    }
-    #pragma omp parallel for
-    for (int i = 0; i < grad_size; ++i) {
-      for (int j = 1; j < batch_size; ++j) {
-        g[0][i] += g[j][i];
-      }
-      g[0][i] /= batch_size;
-    }
-    auto d = A.update(g[0], lr, total + 1);
+    auto out = net.forward(instance[off].first);
+    // {
+    //   for (int x = 0; x < 5; ++x) {
+    //     move(3 + x, 60);
+    //     for (int i = 10 * x; i < min((size_t)10 * x + 10, out.size()); ++i) {
+    //       printw("%.3f ", out[i]);
+    //     }
+    //   }
+    //   for (int x = 0; x < 5; ++x) {
+    //     move(8 + x, 60);
+    //     for (int i = 10 * x;
+    //          i < min((size_t)10 * x + 10, instance[off].second.size()); ++i)
+    //          {
+    //       printw("%.3f ", instance[off].second[i]);
+    //     }
+    //   }
+    // }
     {
-      net.update(d);
-      net.forward(instance[off].first);
       valT loss = 0;
       for (int j = 0; j < instance[off].second.size(); ++j) {
-        loss += -instance[off].second[j] * log(net.last_layer()->output[j]);
+        loss += -instance[off].second[j] * log(out[j]);
       }
       if (loss > lmin && loss < lmax) {
         losses[100 * (loss - lmin) / (lmax - lmin)]++;
@@ -215,6 +206,16 @@ int main() {
       mvprintw(0, 30, "%f", loss);
       mvprintw(0, 60, "%d", total++);
     }
+    auto g = net.update(instance[off].first, instance[off].second,
+                        train_method::loss);
+    auto d = A.update(g, lr, total + 1);
+    // for (auto &x : g)
+    //   x *= -lr;
+    // net.update(g);
+    net.update(d);
+#if 1
+    net.randomize_nan(std::move(rd));
+#endif
     if (losses_c == 100) {
       for (int i = 0; i < losses.size(); ++i) {
         int h = scale * 1.0 * (LINES - 5) * losses[i] / losses_c;
@@ -226,11 +227,20 @@ int main() {
       losses_c = 0;
       fill(losses.begin(), losses.end(), 0);
     }
+#if 0
+    for (int x = 0; x < 5; ++x) {
+      move(LINES - 5 + x, 60);
+      for (int i = 10 * x; i < min((size_t)10 * x + 10, out.size()); ++i) {
+        printw("%.3f ", out[i]);
+      }
+    }
+#endif
 
     mvprintw(0, 0, "%f", lmin);
     mvprintw(0, 10, "%f", lr);
     mvprintw(0, 20, "%d", losses_c);
     mvprintw(0, 90, "%f", lmax);
+    ++off;
     refresh();
     auto C = getch();
     stringstream ss;

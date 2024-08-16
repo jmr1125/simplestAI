@@ -4,6 +4,9 @@
 #include <memory>
 #include <utility>
 #include <vector>
+enum train_method {
+  loss,l1,l2
+};
 struct nnet {
   virtual ~nnet();
   nnet() = default;
@@ -20,8 +23,9 @@ struct nnet {
   void add_max_layer(std::pair<int, int> channel, int i_n, int i_m, int size);
   std::shared_ptr<layer> last_layer() const;
   vector<valT> forward(vector<valT>);
-  vector<valT> update(const vector<valT> &, const vector<valT> &) const;
-  void update(vector<valT>);
+  vector<valT> update(const vector<valT> &, const vector<valT> &,train_method m=loss) const;
+  void update(const vector<valT> &);
   size_t get_varnum() const;
+  void randomize_nan(std::random_device &&);
   vector<std::shared_ptr<layer>> layers;
 };

@@ -9,7 +9,7 @@
 matrix_layer::~matrix_layer() {}
 void matrix_layer::init(std::random_device &&rd) {
   for (valT &x : M.m) {
-    x = ((rd() + rd.min()) * 1.0 / (rd.max() - rd.min()) * 2 - 1) / sqrt(Isize);
+    x = (rand01(rd) * 2 - 1) / sqrt(Isize);
   }
 }
 void matrix_layer::set_IOsize(int isize, int osize) {
@@ -72,4 +72,10 @@ size_t matrix_layer::get_varnum() const { return M.m.size(); }
 
 std::shared_ptr<layer> matrix_layer::clone() const {
   return std::make_shared<matrix_layer>(*this);
+}
+void matrix_layer::randomize_nan(std::random_device &&rd) {
+  for (auto &x : M.m) {
+    if (isnan(x))
+      x = (rand01(rd) * 2 - 1) / sqrt(Isize);
+  }
 }
