@@ -108,7 +108,7 @@ void nnet::add_bias_layer(std::pair<int, int> channel, int size) {
 }
 #include "convolution_layer.hpp"
 void nnet::add_convolution_layer(std::pair<int, int> channel, int i_n, int i_m,
-                                 int nK, int mK) {
+                                 int nK, int mK, int pad) {
   add_layer(std::make_shared<convolution_layer>());
   dynamic_cast<convolution_layer *>(last_layer().get())->Ichannels =
       channel.first;
@@ -118,11 +118,12 @@ void nnet::add_convolution_layer(std::pair<int, int> channel, int i_n, int i_m,
   dynamic_cast<convolution_layer *>(last_layer().get())->mK = mK;
   dynamic_cast<convolution_layer *>(last_layer().get())->n_in = i_n;
   dynamic_cast<convolution_layer *>(last_layer().get())->m_in = i_m;
+  dynamic_cast<convolution_layer *>(last_layer().get())->pad = pad;
   dynamic_cast<convolution_layer *>(last_layer().get())->Isize =
       channel.first * i_n * i_m;
 
   dynamic_cast<convolution_layer *>(last_layer().get())->Osize =
-      channel.second * i_n * i_m;
+      channel.second * (i_n - nK + 1 + pad * 2) * (i_m - mK + 1 + pad * 2);
   last_layer()->set_IOsize(last_layer()->Isize, last_layer()->Osize);
 }
 #include "func_layer.hpp"

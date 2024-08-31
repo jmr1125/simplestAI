@@ -80,28 +80,36 @@ for(int i=0;i<n_b;++i){
 output[x*(m_a+m_b-1)+y]=res;
 }
 
+
+#define o_n (n - nK + 1 + pad * 2)
+#define o_m (m - mK + 1 + pad * 2)
+
 __kernel void conv_l_backward(
-int Ich,int Och,
+int Ich,int Och,int pad,
 int nK,int mK,__global valT *Ks,
 int n,int m,__global valT *grad,
 __global valT *output) {
-  int x  = get_global_id(0);
-  int y  = get_global_id(1);
+  int x  = get_global_id(0);// of input
+  int y  = get_global_id(1);// of input
   int Ic = get_global_id(2);
   if(x<0||x>=n||y<0||y>=m||Ic<0||Ic>=Ich)
     return;
   valT res=0;
   for(int Oc=0;Oc<Och;++Oc){
     for(int i=0;i<nK;++i){
-      if(x+i>=n)
+      if(x+i-pad>=o_n)
+        continue;
+      if(x+i-pad<0)
         continue;
       for(int j=0;j<mK;++j){
-        if(y+j>=m)
+        if(y+j-pad>=o_m)
+          continue;
+        if(y+j-pad<0)
           continue;
         res+= // k[i][j][Ic][Oc] * grad[x+i][y+j][Oc]
               Ks[(Oc*Ich+Ic)*nK*mK+i*mK+j]
               *
-              grad[Oc*n*m+(x+i)*m+(y+j)];
+              grad[Oc*n*m+(x+i-(nK-1-pad))*m+(y+j-(nK-1-pad))];
       }
     }
   }
@@ -110,13 +118,13 @@ __global valT *output) {
 }
 
 __kernel void conv_l_update(
-int Ich,int Och,
+int Ich,int Och,int pad,
 int nK,int mK,__global valT *input,
 int n,int m,__global valT *grad,
 __global valT *output
 ){
-int i = get_global_id(0);
-int j = get_global_id(1);
+int i = get_global_id(0); // of kernel
+int j = get_global_id(1); // of kernel
 int Ic= get_global_id(2);
 
   if(i<0||i>=nK||j<0||j>=mK||Ic<0||Ic>=Ich)
@@ -124,18 +132,22 @@ int Ic= get_global_id(2);
 
 for(int Oc=0;Oc<Och;++Oc){
   valT res=0;
-  for(int x=i;x<n;++x){
-    if(x-i>=n) continue;
-    for(int y=j;y<m;++y){
-      if(y-j>=m) continue;
+  for(int x=0;x<o_n;++x){
+    int xi=x+(nK-1-pad)-i;
+    if(xi>=o_n) continue;
+    if(xi<0) continue;
+    for(int y=0;y<o_m;++y){
+      int yi=y+(mK-1-pad)-j;
+      if(yi>=o_m) continue;
+      if(yi<0) continue;
       res+=
       grad[Oc*n*m+x*m+y]
       *
-      input[Ic*n*m+(x-i)*m+y-j];
+      input[Ic*n*m+xi*m+yi];
     }
   }
   output[(Oc*Ich+Ic)*nK*mK+i*mK+j]=res;
-}
+} // for Oc
 
 }
 )";
@@ -149,10 +161,10 @@ cl::compatibility::make_kernel<unsigned int, unsigned int, unsigned int,
 cl::compatibility::make_kernel<cl::Buffer, int, int, cl::Buffer, int, int,
                                cl::Buffer>
     k_conv2d(program, "conv2d");
-cl::compatibility::make_kernel<int, int, int, int, cl::Buffer, int, int,
+cl::compatibility::make_kernel<int, int, int, int, int, cl::Buffer, int, int,
                                cl::Buffer, cl::Buffer>
     k_conv_l_backward(program, "conv_l_backward");
-cl::compatibility::make_kernel<int, int, int, int, cl::Buffer, int, int,
+cl::compatibility::make_kernel<int, int, int, int, int, cl::Buffer, int, int,
                                cl::Buffer, cl::Buffer>
     k_conv_l_update(program, "conv_l_update");
 
@@ -223,7 +235,8 @@ VvalT conv_l_backward(const convolution_layer &l, const vector<valT> &G) {
       cl::EnqueueArgs(queue, {static_cast<cl::size_type>(l.n_in),
                               static_cast<cl::size_type>(l.m_in),
                               static_cast<cl::size_type>(l.Ichannels)}),
-      l.Ichannels, l.Ochannels, l.nK, l.mK, Ks, l.n_in, l.m_in, grad, out);
+      l.Ichannels, l.Ochannels, l.pad, l.nK, l.mK, Ks, l.n_in, l.m_in, grad,
+      out);
   queue.finish();
   VvalT res;
   res.resize(l.Ichannels * l.n_in * l.m_in);
@@ -241,7 +254,8 @@ VvalT conv_l_update(const convolution_layer &l, const vector<valT> &G,
       cl::EnqueueArgs(queue, {static_cast<cl::size_type>(l.nK),
                               static_cast<cl::size_type>(l.mK),
                               static_cast<cl::size_type>(l.Ichannels)}),
-      l.Ichannels, l.Ochannels, l.nK, l.mK, I, l.n_in, l.m_in, grad, out);
+      l.Ichannels, l.Ochannels, l.pad, l.nK, l.mK, I, l.n_in, l.m_in, grad,
+      out);
   queue.finish();
   VvalT res;
   res.resize(l.Ochannels * l.Ichannels * l.n_in * l.m_in);

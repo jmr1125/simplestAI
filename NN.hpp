@@ -17,7 +17,7 @@ struct nnet {
                          int size);
   void add_bias_layer(std::pair<int, int> channel, int size);
   void add_convolution_layer(std::pair<int, int> channel, int i_n, int i_m,
-                             int nK, int mK);
+                             int nK, int mK,int pad);
   void add_func_layer(std::pair<int, int> channel, int size, Functions);
   void add_matrix_layer(std::pair<int, int> channel, int isize, int osize);
   void add_max_layer(std::pair<int, int> channel, int i_n, int i_m, int size);

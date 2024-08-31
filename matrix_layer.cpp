@@ -9,7 +9,7 @@
 matrix_layer::~matrix_layer() {}
 void matrix_layer::init(std::random_device &&rd) {
   for (valT &x : M.m) {
-    x = (rand01(rd) * 2 - 1) / sqrt(Isize);
+    x = (rand01(rd) * 2 - 1) / Isize;
   }
 }
 void matrix_layer::set_IOsize(int isize, int osize) {
