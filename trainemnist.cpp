@@ -42,12 +42,12 @@ int main() {
   }
 #define Init net.last_layer()->init(std::move(rd))
     if_netin_load(convolution_layer) else {
-      net.add_convolution_layer({1, 6}, 28, 28, 5, 5);
+      net.add_convolution_layer({1, 6}, 28, 28, 5, 5, 2);
       Init;
     }
 
     if_netin_load(func_layer) else {
-      net.add_func_layer({6, 6}, 28 * 28, Functions::ReLU);
+      net.add_func_layer({6, 6}, 28 * 28, Functions::sigmoid);
       Init;
     }
 
@@ -57,57 +57,47 @@ int main() {
     }
 
     if_netin_load(convolution_layer) else {
-      net.add_convolution_layer({6, 16}, 14, 14, 5, 5);
+      net.add_convolution_layer({6, 16}, 14, 14, 5, 5, 0);
       Init;
     }
 
     if_netin_load(func_layer) else {
-      net.add_func_layer({16, 16}, 14 * 14, Functions::ReLU);
+      net.add_func_layer({16, 16}, 10 * 10, Functions::ReLU);
       Init;
     }
 
     if_netin_load(max_layer) else {
-      net.add_max_layer({16, 16}, 14, 14, 2);
+      net.add_max_layer({16, 16}, 10, 10, 2);
+      Init;
+    }
+
+    if_netin_load(convolution_layer) else {
+      net.add_convolution_layer({16, 120}, 5, 5, 5, 5, 0);
       Init;
     }
 
     if_netin_load(func_layer) else {
-      net.add_func_layer({16, 16}, 7 * 7, Functions::tanh);
+      net.add_func_layer({120, 120}, 5 * 5, Functions::ReLU);
       Init;
     }
 
     if_netin_load(matrix_layer) else {
-      net.add_matrix_layer({16, 1}, 7 * 7, 512);
+      net.add_matrix_layer({120, 1}, 5 * 5, 84);
       Init;
     }
 
     if_netin_load(bias_layer) else {
-      net.add_bias_layer({1, 1}, 512);
+      net.add_bias_layer({1, 1}, 84);
       Init;
     }
 
     if_netin_load(func_layer) else {
-      net.add_func_layer({1, 1}, 512, Functions::ReLU);
+      net.add_func_layer({1, 1}, 84, Functions::ReLU);
       Init;
     }
 
     if_netin_load(matrix_layer) else {
-      net.add_matrix_layer({1, 1}, 512, 64);
-      Init;
-    }
-
-    if_netin_load(bias_layer) else {
-      net.add_bias_layer({1, 1}, 64);
-      Init;
-    }
-
-    if_netin_load(func_layer) else {
-      net.add_func_layer({1, 1}, 64, Functions::ReLU);
-      Init;
-    }
-
-    if_netin_load(matrix_layer) else {
-      net.add_matrix_layer({1, 1}, 64, 47);
+      net.add_matrix_layer({1, 1}, 84, 47);
       Init;
     }
 
@@ -120,6 +110,7 @@ int main() {
       net.add_func_layer({1, 1}, 47, Functions::softmax);
       Init;
     }
+
     netin >> total;
   }
 

@@ -1,21 +1,24 @@
 #include "NN.hpp"
 #include "adam.hpp"
 #include "convolution_layer.hpp"
+#include "ocl.hpp"
 #include <iostream>
 #include <random>
 using namespace std;
 int main() {
+  init();
   std::random_device rd;
   nnet target;
-  target.add_func_layer({1, 1}, 10, Functions::softmax);
-  // target.add_bias_layer({1, 1}, 10);
-  //  ?target.add_max_layer({2, 2}, 8, 9, 3);
-  //  target.add_max_layer({2, 2}, 9, 9, 3);
-  //    target.add_max_layer({2, 2}, 8, 8, 2);
-  //   target.add_average_layer({2, 2}, 9, 9, 3);
-  //    target.add_average_layer({2, 2}, 8, 8, 2);
-  //     target.add_convolution_layer({2, 3}, 8, 8, 3, 3);
-  //     target.add_matrix_layer({1, 1}, 4, 8);
+  // target.add_func_layer({1, 1}, 10, Functions::softmax);
+  //  target.add_bias_layer({1, 1}, 10);
+  //   ?target.add_max_layer({2, 2}, 8, 9, 3);
+  //   target.add_max_layer({2, 2}, 9, 9, 3);
+  //     target.add_max_layer({2, 2}, 8, 8, 2);
+  //    target.add_average_layer({2, 2}, 9, 9, 3);
+  //     target.add_average_layer({2, 2}, 8, 8, 2);
+  // target.add_convolution_layer({2, 3}, 8, 8, 3, 3);
+  target.add_convolution_layer({2, 3}, 8, 8, 5, 5, 2);
+  // target.add_matrix_layer({1, 1}, 4, 8);
   target.last_layer()->init(std::move(rd));
   nnet test = target;
   test.last_layer()->init(std::move(rd));
@@ -61,6 +64,7 @@ int main() {
           delta[i] =
               test.last_layer()->output[i] - target.last_layer()->output[i];
           l2 += delta[i] * delta[i];
+          delta[i] = delta[i] < 0 ? -1 : 1;
         }
         VvalT d = test.last_layer()->backward(delta);
         for (int i = 0; i < test.layers[0]->Isize; ++i)
