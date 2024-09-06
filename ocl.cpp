@@ -1,4 +1,5 @@
 #include "ocl.hpp"
+#include "convolution_layer.hpp"
 #include "layers.hpp"
 #include "main.hpp"
 #include "matrix.hpp"
@@ -81,22 +82,49 @@ output[x*(m_a+m_b-1)+y]=res;
 }
 
 
-#define o_n (n - nK + 1 + pad * 2)
-#define o_m (m - mK + 1 + pad * 2)
+#define o_n (n_in - nK + 1 + pad * 2)
+#define o_m (m_in - mK + 1 + pad * 2)
+
+__kernel void conv_l_forward(
+int Ich,int Och,int pad,
+int nK   ,int mK   ,__global valT *Ks,
+int n_in ,int m_in ,__global valT *input,
+__global valT *output) {
+  int ox= get_global_id(0);
+  int oy= get_global_id(1);
+  int Oc= get_global_id(2);
+printf("%d %d %d\n",ox,oy,Oc);
+  if(ox<0||ox>=o_n||oy<0||oy>=o_m||Oc<0||Oc>=Och)
+    return;
+  valT res=0;
+  for(int Ic=0;Ic<Ich;++Ic){
+    for(int ix=0;ix<n_in;++ix){
+      for(int iy=0;iy<m_in;++iy){
+        int kx=ox-1-pad-ix+nK;
+        int ky=oy-1-pad-iy+mK;
+        if(kx<0||kx>=nK)continue;
+        if(ky<0||ky>=mK)continue;
+        res+=Ks[(Oc*Ich+Ic)*nK*mK+kx*mK+ky]*input[Ic*n_in*m_in+ix*m_in+iy];
+      }
+    }
+  }
+  output[Oc*o_n*o_m+ox*o_m+oy]=res;
+}
 
 __kernel void conv_l_backward(
 int Ich,int Och,int pad,
-int nK,int mK,__global valT *Ks,
-int n,int m,__global valT *grad,
+int nK   ,int mK   ,__global valT *Ks,
+int n_in ,int m_in ,__global valT *grad,
 __global valT *output) {
-  int x  = get_global_id(0);// of input
-  int y  = get_global_id(1);// of input
+  int xi = get_global_id(0);// of input
+  int yi = get_global_id(1);// of input
   int Ic = get_global_id(2);
-  if(x<0||x>=n||y<0||y>=m||Ic<0||Ic>=Ich)
+  if(xi<0||xi>=n_in||yi<0||yi>=m_in||Ic<0||Ic>=Ich)
     return;
   valT res=0;
   for(int Oc=0;Oc<Och;++Oc){
-    for(int i=0;i<nK;++i){
+
+/*    for(int i=0;i<nK;++i){
       if(x+i-pad>=o_n)
         continue;
       if(x+i-pad<0)
@@ -111,27 +139,38 @@ __global valT *output) {
               *
               grad[Oc*n*m+(x+i-(nK-1-pad))*m+(y+j-(nK-1-pad))];
       }
+    }*/
+
+    for(int xk=0;xk<nK;++xk){
+      for(int yk=0;yk<mK;++yk){
+        int xo=xi-nK+pad+xk+1;
+        int yo=yi-mK+pad+yk+1;
+        if(xo<0||xo>=o_n)continue;
+        if(yo<0||yo>=o_m)continue;
+        res+=Ks[(Oc*Ich+Ic)*nK*mK+xk*mK+yk]*grad[Oc*o_n*o_m+xo*o_m+yo];
+      }
     }
   }
   // output [x][y][Ic]
-  output[Ic*n*m+x*m+y]=res;
+  output[Ic*n_in*m_in+xi*m_in+yi]=res;
 }
 
 __kernel void conv_l_update(
 int Ich,int Och,int pad,
 int nK,int mK,__global valT *input,
-int n,int m,__global valT *grad,
+int n_in,int m_in,__global valT *grad,
 __global valT *output
 ){
-int i = get_global_id(0); // of kernel
-int j = get_global_id(1); // of kernel
-int Ic= get_global_id(2);
+int xk = get_global_id(0); // of kernel
+int yk = get_global_id(1); // of kernel
+int Ic = get_global_id(2);
 
-  if(i<0||i>=nK||j<0||j>=mK||Ic<0||Ic>=Ich)
+  if(xk<0||xk>=nK||yk<0||yk>=mK||Ic<0||Ic>=Ich)
     return;
 
 for(int Oc=0;Oc<Och;++Oc){
   valT res=0;
+/*
   for(int x=0;x<o_n;++x){
     int xi=x+(nK-1-pad)-i;
     if(xi>=o_n) continue;
@@ -145,8 +184,20 @@ for(int Oc=0;Oc<Och;++Oc){
       *
       input[Ic*n*m+xi*m+yi];
     }
+  }*/
+
+  for(int xo=0;xo<o_n;++xo){
+    for(int yo=0;yo<o_m;++yo){
+      int xi = nK + xo - pad - xk - 1;
+      int yi = mK + yo - pad - yk - 1;
+      if (xi < 0 || xi >= n_in)
+        continue;
+      if (yi < 0 || yi >= m_in)
+        continue;
+      res+=grad[Oc*o_n*o_m+xo*o_m+yo]*input[Ic*n_in*m_in+xi*m_in+yi];
+    }
   }
-  output[(Oc*Ich+Ic)*nK*mK+i*mK+j]=res;
+  output[(Oc*Ich+Ic)*nK*mK+xk*mK+yk]=res;
 } // for Oc
 
 }
@@ -161,6 +212,9 @@ cl::compatibility::make_kernel<unsigned int, unsigned int, unsigned int,
 cl::compatibility::make_kernel<cl::Buffer, int, int, cl::Buffer, int, int,
                                cl::Buffer>
     k_conv2d(program, "conv2d");
+cl::compatibility::make_kernel<int, int, int, int, int, cl::Buffer, int, int,
+                               cl::Buffer, cl::Buffer>
+    k_conv_l_forward(program, "conv_l_forward");
 cl::compatibility::make_kernel<int, int, int, int, int, cl::Buffer, int, int,
                                cl::Buffer, cl::Buffer>
     k_conv_l_backward(program, "conv_l_backward");
@@ -216,6 +270,31 @@ matrix conv2d(const matrix &a, const matrix &b) {
   res.setn(n_o);
   res.setm(m_o);
   cl::copy(queue, out, res.m.begin(), res.m.end());
+  return std::move(res);
+}
+VvalT conv_l_forward(const convolution_layer &l, const vector<valT> &input) {
+  vector<valT> k;
+  k.reserve(l.Ichannels * l.Ochannels * l.nK * l.mK);
+  for (auto line : l.K) {
+    for (auto ker : line) {
+      copy(ker.m.begin(), ker.m.end(), back_inserter(k));
+    }
+  }
+  cl::Buffer Ks(context, k.begin(), k.end(), true),
+      in(input.begin(), input.end(), true),
+      out(context, CL_MEM_READ_WRITE,
+          sizeof(valT) * (l.n_in - l.nK + 1 + l.pad * 2) *
+              (l.m_in - l.mK + 1 + l.pad * 2));
+  k_conv_l_forward(
+      cl::EnqueueArgs(
+          queue, {static_cast<cl::size_type>((l.n_in - l.nK + 1 + l.pad * 2)),
+                  static_cast<cl::size_type>((l.m_in - l.mK + 1 + l.pad * 2)),
+                  static_cast<cl::size_type>(l.Ochannels)}),
+      l.Ichannels, l.Ochannels, l.pad, l.nK, l.mK, Ks, l.n_in, l.m_in, in, out);
+  queue.finish();
+  VvalT res;
+  res.resize((l.n_in - l.nK + 1 + l.pad * 2) * (l.m_in - l.mK + 1 + l.pad * 2));
+  cl::copy(queue, out, res.begin(), res.end());
   return std::move(res);
 }
 

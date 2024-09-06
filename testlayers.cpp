@@ -17,12 +17,12 @@ int main() {
   //    target.add_average_layer({2, 2}, 9, 9, 3);
   //     target.add_average_layer({2, 2}, 8, 8, 2);
   // target.add_convolution_layer({2, 3}, 8, 8, 3, 3);
-  target.add_convolution_layer({2, 3}, 8, 8, 5, 5, 2);
+  target.add_convolution_layer({3, 2}, 8, 8, 5, 5, 2);
   // target.add_matrix_layer({1, 1}, 4, 8);
   target.last_layer()->init(std::move(rd));
   nnet test = target;
   test.last_layer()->init(std::move(rd));
-#if 1
+#if 1 // test update
   {
     adam A(test.get_varnum());
     valT lr = 0.001;
@@ -39,13 +39,12 @@ int main() {
           }
           cout << "l2: " << l2 << endl;
         }
-        test.update(
-            A.update(test.update(in, output, train_method::l2), 0.001, i));
+        test.update(A.update(test.update(in, output, train_method::l2), lr, i));
       }
     }
   }
 #endif
-#if 1
+#if 1 // test backward
   {
     test = target;
     VvalT input_target(target.layers[0]->Isize);
@@ -59,17 +58,17 @@ int main() {
       for (int i = 0; i < 1000; ++i) {
         test.forward(input_test);
         VvalT delta(test.last_layer()->Osize);
-        valT l2 = 0;
+        valT l1 = 0;
         for (int i = 0; i < test.last_layer()->Osize; ++i) {
           delta[i] =
               test.last_layer()->output[i] - target.last_layer()->output[i];
-          l2 += delta[i] * delta[i];
+          l1 += delta[i] * delta[i];
           delta[i] = delta[i] < 0 ? -1 : 1;
         }
         VvalT d = test.last_layer()->backward(delta);
         for (int i = 0; i < test.layers[0]->Isize; ++i)
           input_test[i] -= lr * d[i];
-        cout << "l2: " << l2 << endl;
+        cout << "l1: " << l1 << endl;
       }
     }
   }
