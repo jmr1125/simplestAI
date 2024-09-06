@@ -12,7 +12,7 @@
 bias_layer::~bias_layer() {}
 void bias_layer::init(std::random_device &&rd) {
   for (valT &x : bias) {
-    x = rand01(rd) * 2 - 1; // / sqrt(Isize);
+    x = (rand01(rd) * 2 - 1) / sqrt(Isize); // / sqrt(Isize);
   }
 }
 void bias_layer::set_IOsize(int isize, int osize) {

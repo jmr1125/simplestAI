@@ -42,47 +42,62 @@ int main() {
   }
 #define Init net.last_layer()->init(std::move(rd))
     if_netin_load(convolution_layer) else {
-      net.add_convolution_layer({1, 6}, 28, 28, 5, 5, 2);
+      net.add_convolution_layer({1, 16}, 28, 28, 5, 5, 2);
       Init;
     }
 
     if_netin_load(func_layer) else {
-      net.add_func_layer({6, 6}, 28 * 28, Functions::sigmoid);
+      net.add_func_layer({16, 16}, 28 * 28, Functions::tanh);
       Init;
     }
 
     if_netin_load(max_layer) else {
-      net.add_max_layer({6, 6}, 28, 28, 2);
+      net.add_max_layer({16, 16}, 28, 28, 2);
       Init;
     }
 
     if_netin_load(convolution_layer) else {
-      net.add_convolution_layer({6, 16}, 14, 14, 5, 5, 0);
+      net.add_convolution_layer({16, 24}, 14, 14, 5, 5, 2);
       Init;
     }
 
     if_netin_load(func_layer) else {
-      net.add_func_layer({16, 16}, 10 * 10, Functions::ReLU);
+      net.add_func_layer({24, 24}, 14 * 14, Functions::tanh);
       Init;
     }
 
     if_netin_load(max_layer) else {
-      net.add_max_layer({16, 16}, 10, 10, 2);
+      net.add_max_layer({24, 24}, 14, 14, 2);
       Init;
     }
 
     if_netin_load(convolution_layer) else {
-      net.add_convolution_layer({16, 120}, 5, 5, 5, 5, 0);
+      net.add_convolution_layer({24, 32}, 7, 7, 5, 5, 2);
       Init;
     }
 
     if_netin_load(func_layer) else {
-      net.add_func_layer({120, 120}, 5 * 5, Functions::ReLU);
+      net.add_func_layer({32, 32}, 7 * 7, Functions::tanh);
       Init;
     }
 
     if_netin_load(matrix_layer) else {
-      net.add_matrix_layer({120, 1}, 5 * 5, 84);
+      net.add_matrix_layer({32, 1}, 7 * 7, 512);
+      Init;
+    }
+
+    if_netin_load(bias_layer) else {
+      net.add_bias_layer({1, 1}, 512);
+      Init;
+    }
+
+    if_netin_load(func_layer) else {
+      net.add_func_layer({1, 1}, 512, Functions::tanh);
+      Init;
+    }
+
+    if_netin_load(matrix_layer) else {
+      net.add_matrix_layer({1, 1}, 512, 84);
       Init;
     }
 
@@ -92,7 +107,7 @@ int main() {
     }
 
     if_netin_load(func_layer) else {
-      net.add_func_layer({1, 1}, 84, Functions::ReLU);
+      net.add_func_layer({1, 1}, 84, Functions::tanh);
       Init;
     }
 
@@ -137,6 +152,19 @@ int main() {
       instance.back().second = (std::move(t1));
     }
   }
+  // sort(instance.begin(), instance.end(),
+  //      [](pair<vector<valT>, vector<valT>> a,
+  //         pair<vector<valT>, vector<valT>> b) -> bool {
+  //        return a.second < b.second;
+  //      });
+  // instance = [&]() -> vector<pair<vector<valT>, vector<valT>>> {
+  //   vector<pair<vector<valT>, vector<valT>>> tmp;
+  //   tmp.resize(instance.size());
+  //   for (int i = 0; i < tmp.size(); ++i) {
+  //     tmp[i] = instance[(i % 47) * 2400 + i / 47];
+  //   }
+  //   return tmp;
+  // }();
   bool quit = false;
   valT lmin = 0, lmax = 5, scale = 1.0;
   mt19937 g(rd());
@@ -169,22 +197,33 @@ int main() {
       shuffle(instance.begin(), instance.end(), g);
     }
     auto out = net.forward(instance[off].first);
-    // {
-    //   for (int x = 0; x < 5; ++x) {
-    //     move(3 + x, 60);
-    //     for (int i = 10 * x; i < min((size_t)10 * x + 10, out.size()); ++i) {
-    //       printw("%.3f ", out[i]);
-    //     }
-    //   }
-    //   for (int x = 0; x < 5; ++x) {
-    //     move(8 + x, 60);
-    //     for (int i = 10 * x;
-    //          i < min((size_t)10 * x + 10, instance[off].second.size()); ++i)
-    //          {
-    //       printw("%.3f ", instance[off].second[i]);
-    //     }
-    //   }
-    // }
+#if 0
+    {
+      for (int x = 0; x < 5; ++x) {
+        move(3 + x, 60);
+        for (int i = 10 * x; i < min((size_t)10 * x + 10, out.size()); ++i) {
+          printw("%.3f ", out[i]);
+        }
+      }
+      for (int x = 0; x < 5; ++x) {
+        move(8 + x, 60);
+        for (int i = 10 * x;
+             i < min((size_t)10 * x + 10, instance[off].second.size()); ++i) {
+          printw("%.3f ", instance[off].second[i]);
+        }
+      }
+    }
+#endif
+#if 0
+    {
+      for (int i = 0; i < 28; ++i) {
+        move(3 + i, 0);
+        for (int j = 0; j < 28; ++j) {
+          printw("%.0f", instance[off].first.at(i * 28 + j));
+        }
+      }
+    }
+#endif
     {
       valT loss = 0;
       for (int j = 0; j < instance[off].second.size(); ++j) {
@@ -204,7 +243,7 @@ int main() {
     //   x *= -lr;
     // net.update(g);
     net.update(d);
-#if 1
+#if 0
     net.randomize_nan(std::move(rd));
 #endif
     if (losses_c == 100) {
