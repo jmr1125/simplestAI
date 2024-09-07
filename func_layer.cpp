@@ -4,6 +4,7 @@
 #include <cmath>
 #include <cstddef>
 #include <istream>
+#include <limits>
 #include <ostream>
 #include <vector>
 functionT funcs[] = {
@@ -28,11 +29,14 @@ void func_layer::set_IOsize(int isize, int osize) {
 vector<valT> func_layer::forward(const vector<valT> &input) {
   if (f == softmax) {
     valT sum = 0;
+    valT maxv = -std::numeric_limits<valT>::max();
+    std::for_each(input.begin(), input.end(),
+                  [&maxv](valT v) { maxv = std::max(maxv, v); });
     for (auto x : input) {
-      sum += exp(x);
+      sum += exp(x - maxv);
     }
     for (int i = 0; i < input.size(); ++i) {
-      output[i] = exp(input[i]) / sum;
+      output[i] = exp(input[i] - maxv) / sum;
     }
   } else {
     for (int i = 0; i < input.size(); ++i) {

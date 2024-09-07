@@ -17,7 +17,8 @@ matrix mul_mat(const matrix &a, const matrix &b);
 matrix conv2d(const matrix &a, const matrix &b);
 
 #include "convolution_layer.hpp"
-//VvalT conv_l_forward(const convolution_layer &l, const vector<valT> &input);
+// VvalT conv_l_forward(const convolution_layer &l, const vector<valT> &input);
 VvalT conv_l_backward(const convolution_layer &l, const vector<valT> &grad);
 VvalT conv_l_update(const convolution_layer &l, const vector<valT> &G,
                     const vector<valT> &input);
+VvalT conv_l_forward(const convolution_layer &l, const vector<valT> &input);

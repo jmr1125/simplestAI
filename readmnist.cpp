@@ -10,7 +10,7 @@
     x = f(x);                                                                  \
   }
 #define freadint32_t(x, fp) freadint_t(x, fp, reverse32);
-#define freadint8_t(x, fp) freadint_t(x, fp, reverse8);
+#define freadint8_t(x, fp) freadint_t(x, fp, uint8_t); // reverse8);
 using namespace std;
 int32_t reverse32(int32_t x) {
   const int16_t x1 = (x & 0x000000FF) >> 0;
@@ -19,13 +19,13 @@ int32_t reverse32(int32_t x) {
   const int16_t x4 = (x & 0xFF000000) >> 24;
   return x1 << 24 | x2 << 16 | x3 << 8 | x4;
 }
-int32_t reverse8(int8_t x) {
-  const int16_t x1 = (x & 0x00FF) >> 0;
-  const int16_t x2 = (x & 0xFF00) >> 8;
-  return x1 << 8 | x2;
-}
+// int32_t reverse8(uint8_t x) {
+//   const int16_t x1 = (x & 0x00FF) >> 0;
+//   const int16_t x2 = (x & 0xFF00) >> 8;
+//   return x1 << 8 | x2;
+// }
 bool swapFlag = false;
-void process_label(FILE *fp, vector<int8_t> &v) {
+void process_label(FILE *fp, vector<uint8_t> &v) {
   int32_t num;
   fread(&num, 1, sizeof num, fp);
   num = reverse32(num);
@@ -42,19 +42,19 @@ void process_label(FILE *fp, vector<int8_t> &v) {
   }
   printf("-- range: %d ~ %d\n", l, r);
 }
-void process_image(FILE *fp, vector<vector<vector<int8_t>>> &v) {
+void process_image(FILE *fp, vector<vector<vector<uint8_t>>> &v) {
   int32_t num;
   int32_t rows, cols;
   freadint32_t(num, fp);
   printf("-- %d images\n", num);
   freadint32_t(rows, fp);
   freadint32_t(cols, fp);
-  v = vector(num, vector(cols, vector(rows, (int8_t)0)));
+  v = vector(num, vector(cols, vector(rows, (uint8_t)0)));
   printf("-- %d x %d\n", rows, cols);
   for (int n = 0; n < num; ++n) {
     for (int i = 0; i < cols; ++i) {
       for (int j = 0; j < rows; ++j) {
-        int8_t x;
+        uint8_t x;
         freadint8_t(x, fp);
         if (!swapFlag) {
           v[n][i][j] = x;
@@ -65,8 +65,8 @@ void process_image(FILE *fp, vector<vector<vector<int8_t>>> &v) {
     }
   }
 }
-void process_file(string filename, vector<vector<vector<int8_t>>> &pics,
-                  vector<int8_t> &labels) {
+void process_file(string filename, vector<vector<vector<uint8_t>>> &pics,
+                  vector<uint8_t> &labels) {
   int32_t magicnumber;
   FILE *fp = fopen(filename.c_str(), "rb");
   if (!fp) {
@@ -88,8 +88,8 @@ void process_file(string filename, vector<vector<vector<int8_t>>> &pics,
   }
   fclose(fp);
 };
-vector<vector<vector<int8_t>>> pics;
-vector<int8_t> labels;
+vector<vector<vector<uint8_t>>> pics;
+vector<uint8_t> labels;
 int main(int argc, char *argv[]) {
   if (argc < 3) {
     fprintf(stderr, "usage: %s <file-image> <file-label> [--swap]\n", argv[0]);
@@ -108,11 +108,7 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < n; ++i) {
       for (const auto X : pics[i]) {
         for (const auto x : X) {
-          if (((int)x + 256) % 256 > 128) {
-            fprintf(fp, "1");
-          } else {
-            fprintf(fp, "0");
-          }
+          fprintf(fp, "%f ", 1.0 / 255 * x);
         }
         fprintf(fp, "\n");
       }
