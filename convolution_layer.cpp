@@ -63,9 +63,9 @@ void convolution_layer::set_IOsize(int isize, int osize) {
 #include "ocl.hpp"
 #endif
 vector<valT> convolution_layer::forward(const vector<valT> &input) {
-  // #ifdef USE_OCL
-  //   output = conv_l_forward(*this, input);
-  // #else
+#ifdef USE_OCL
+  output = conv_l_forward(*this, input);
+#else
   output.clear();
   output.reserve(Ochannels * o_n * o_m);
   for (int Oc = 0; Oc < Ochannels; ++Oc) {
@@ -85,7 +85,7 @@ vector<valT> convolution_layer::forward(const vector<valT> &input) {
     }
     copy(tmp_out.m.begin(), tmp_out.m.end(), std::back_inserter(output));
   }
-  // #endif
+#endif
   return output;
 }
 vector<valT> convolution_layer::backward(const vector<valT> &grad) const {

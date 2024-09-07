@@ -33,6 +33,7 @@ int main() {
   random_device rd;
   nnet net;
   int total = 0;
+  valT lr = .001;
   {
     ifstream netin("emnist.net");
 #define if_netin_load(type)                                                    \
@@ -42,47 +43,47 @@ int main() {
   }
 #define Init net.last_layer()->init(std::move(rd))
     if_netin_load(convolution_layer) else {
-      net.add_convolution_layer({1, 16}, 28, 28, 5, 5, 2);
+      net.add_convolution_layer({1, 128}, 28, 28, 5, 5, 2);
+      Init;
+    }
+
+    if_netin_load(bias_layer) else {
+      net.add_bias_layer({128, 128}, 28 * 28);
       Init;
     }
 
     if_netin_load(func_layer) else {
-      net.add_func_layer({16, 16}, 28 * 28, Functions::tanh);
+      net.add_func_layer({128, 128}, 28 * 28, Functions::ReLU);
       Init;
     }
 
     if_netin_load(max_layer) else {
-      net.add_max_layer({16, 16}, 28, 28, 2);
+      net.add_max_layer({128, 128}, 28, 28, 2);
       Init;
     }
 
     if_netin_load(convolution_layer) else {
-      net.add_convolution_layer({16, 24}, 14, 14, 5, 5, 2);
+      net.add_convolution_layer({128, 64}, 14, 14, 5, 5, 2);
+      Init;
+    }
+
+    if_netin_load(bias_layer) else {
+      net.add_bias_layer({64, 64}, 14 * 14);
       Init;
     }
 
     if_netin_load(func_layer) else {
-      net.add_func_layer({24, 24}, 14 * 14, Functions::tanh);
+      net.add_func_layer({64, 64}, 14 * 14, Functions::ReLU);
       Init;
     }
 
     if_netin_load(max_layer) else {
-      net.add_max_layer({24, 24}, 14, 14, 2);
-      Init;
-    }
-
-    if_netin_load(convolution_layer) else {
-      net.add_convolution_layer({24, 32}, 7, 7, 5, 5, 2);
-      Init;
-    }
-
-    if_netin_load(func_layer) else {
-      net.add_func_layer({32, 32}, 7 * 7, Functions::tanh);
+      net.add_max_layer({64, 64}, 14, 14, 2);
       Init;
     }
 
     if_netin_load(matrix_layer) else {
-      net.add_matrix_layer({32, 1}, 7 * 7, 512);
+      net.add_matrix_layer({64, 1}, 7 * 7, 512);
       Init;
     }
 
@@ -97,22 +98,7 @@ int main() {
     }
 
     if_netin_load(matrix_layer) else {
-      net.add_matrix_layer({1, 1}, 512, 84);
-      Init;
-    }
-
-    if_netin_load(bias_layer) else {
-      net.add_bias_layer({1, 1}, 84);
-      Init;
-    }
-
-    if_netin_load(func_layer) else {
-      net.add_func_layer({1, 1}, 84, Functions::tanh);
-      Init;
-    }
-
-    if_netin_load(matrix_layer) else {
-      net.add_matrix_layer({1, 1}, 84, 47);
+      net.add_matrix_layer({1, 1}, 512, 47);
       Init;
     }
 
@@ -127,6 +113,7 @@ int main() {
     }
 
     netin >> total;
+    netin >> lr;
   }
 
   vector<pair<vector<valT>, vector<valT>>> instance;
@@ -138,9 +125,9 @@ int main() {
     for (i = 0; fin; ++i) {
       vector<valT> tmp;
       for (int c = 0; c < 28 * 28; ++c) {
-        char C;
+        valT C;
         fin >> C;
-        tmp.push_back(C - '0');
+        tmp.push_back(C);
       }
       instance.push_back(make_pair<VvalT, VvalT>({}, {}));
       instance.back().first = (std::move(tmp));
@@ -171,15 +158,16 @@ int main() {
   int off = 0;
   // int c = 0;
   vector<int> losses(100);
+  int accurate_num = 0;
   int losses_c = 0;
-  auto save_net = [&net, &total]() {
+  auto save_net = [&net, &total, &lr]() {
     ofstream of("emnist.net");
     for (auto l : net.layers) {
       l->save(of);
     }
-    of << total;
+    of << total << endl;
+    of << lr;
   };
-  valT lr = .001;
   const double beta1 = 0.9, beta2 = 0.999, epsilon = 1e-8;
   net.forward(instance[0].first);
   auto grad_size = net.get_varnum();
@@ -224,6 +212,7 @@ int main() {
       }
     }
 #endif
+    bool right = false;
     {
       valT loss = 0;
       for (int j = 0; j < instance[off].second.size(); ++j) {
@@ -235,17 +224,36 @@ int main() {
       losses_c++;
       mvprintw(0, 30, "%f", loss);
       mvprintw(0, 60, "%d", total++);
+      int correct = -1;
+      for (int i = 0; i < instance[off].second.size(); ++i) {
+        if (instance[off].second[i] > 0.9) {
+          correct = i;
+          break;
+        }
+      }
+      if (correct != -1) {
+        for (int i = 0; i < out.size(); ++i) {
+          if (out[i] > out[correct]) {
+            right = true;
+            break;
+          }
+        }
+        if (right)
+          ++accurate_num;
+      }
     }
-    auto g = net.update(instance[off].first, instance[off].second,
-                        train_method::loss);
-    auto d = A.update(g, lr, total + 1);
-    // for (auto &x : g)
-    //   x *= -lr;
-    // net.update(g);
-    net.update(d);
-#if 0
-    net.randomize_nan(std::move(rd));
+    if (!right) {
+      auto g = net.update(instance[off].first, instance[off].second,
+                          train_method::loss);
+      auto d = A.update(g, lr, total / instance.size() + 1);
+      // for (auto &x : g)
+      //   x *= -lr;
+      // net.update(g);
+      net.update(d);
+#if 1
+      net.randomize_nan(std::move(rd));
 #endif
+    }
     if (losses_c == 100) {
       for (int i = 0; i < losses.size(); ++i) {
         int h = scale * 1.0 * (LINES - 5) * losses[i] / losses_c;
@@ -256,6 +264,9 @@ int main() {
       }
       losses_c = 0;
       fill(losses.begin(), losses.end(), 0);
+      mvprintw(LINES - 5, 3, "accurate: %f",
+               accurate_num * 1.0 / losses.size());
+      accurate_num = 0;
     }
 #if 0
     for (int x = 0; x < 5; ++x) {

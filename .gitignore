@@ -2,3 +2,4 @@ build*/
 OpenCL-Headers/
 OpenCL-ICD-Loader/
 build/
+traindata.txt

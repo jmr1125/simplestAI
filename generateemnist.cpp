@@ -49,9 +49,6 @@ int main() {
     netin_load(matrix_layer);
     netin_load(bias_layer);
     netin_load(func_layer);
-    netin_load(matrix_layer);
-    netin_load(bias_layer);
-    netin_load(func_layer);
   }
   initscr();
   cbreak();
@@ -91,11 +88,11 @@ int main() {
           pic[x + maxx * y] = color;
         };
         if (color) {
-          draw(x - 1, y);
-          draw(x, y - 1);
+          // draw(x - 1, y);
+          // draw(x, y - 1);
           draw(x, y);
-          draw(x + 1, y);
-          draw(x, y + 1);
+          // draw(x + 1, y);
+          // draw(x, y + 1);
         }
       }
     }
@@ -111,7 +108,7 @@ int main() {
     for (int i = 0; i < maxx * maxy; ++i) {
       mvaddch(i / maxx + 3, (i % maxx) * 2 + 3, pic[i] ? 'M' : '.');
     }
-    {
+    if (ch == ' ') {
       auto out = net.forward(pic);
       int maxid;
       valT max = -1;
