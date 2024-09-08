@@ -63,7 +63,7 @@ int main() {
     }
 
     if_netin_load(convolution_layer) else {
-      net.add_convolution_layer({128, 64}, 14, 14, 5, 5, 2);
+      net.add_convolution_layer({128, 64}, 14, 14, 3, 3, 1);
       Init;
     }
 
@@ -83,22 +83,22 @@ int main() {
     }
 
     if_netin_load(matrix_layer) else {
-      net.add_matrix_layer({64, 1}, 7 * 7, 512);
+      net.add_matrix_layer({64, 1}, 7 * 7, 128);
       Init;
     }
 
     if_netin_load(bias_layer) else {
-      net.add_bias_layer({1, 1}, 512);
+      net.add_bias_layer({1, 1}, 128);
       Init;
     }
 
     if_netin_load(func_layer) else {
-      net.add_func_layer({1, 1}, 512, Functions::tanh);
+      net.add_func_layer({1, 1}, 128, Functions::tanh);
       Init;
     }
 
     if_netin_load(matrix_layer) else {
-      net.add_matrix_layer({1, 1}, 512, 47);
+      net.add_matrix_layer({1, 1}, 128, 47);
       Init;
     }
 
@@ -212,7 +212,7 @@ int main() {
       }
     }
 #endif
-    bool right = false;
+    bool right = true;
     {
       valT loss = 0;
       for (int j = 0; j < instance[off].second.size(); ++j) {
@@ -234,7 +234,7 @@ int main() {
       if (correct != -1) {
         for (int i = 0; i < out.size(); ++i) {
           if (out[i] > out[correct]) {
-            right = true;
+            right = false;
             break;
           }
         }
@@ -242,7 +242,8 @@ int main() {
           ++accurate_num;
       }
     }
-    if (!right) {
+    // if (!right)
+      {
       auto g = net.update(instance[off].first, instance[off].second,
                           train_method::loss);
       auto d = A.update(g, lr, total / instance.size() + 1);

@@ -10,6 +10,7 @@
 #include "ocl.hpp"
 #include <curses.h>
 #include <fstream>
+#include <functional>
 #include <iostream>
 #include <ncurses.h>
 #include <vector>
@@ -20,6 +21,8 @@ string name[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B",
                  "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
                  "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
                  "a", "b", "d", "e", "f", "g", "h", "n", "q", "R", "T"};
+const string grey =
+    R"($@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,"^`'. )";
 int main() {
 #ifdef USE_OCL
   init();
@@ -76,7 +79,7 @@ int main() {
         x = max(0, x);
         y = min(y, maxy - 1);
         y = max(0, y);
-        auto draw = [&](int x, int y) {
+        auto draw = [&](int x, int y, valT c) {
           if (x < 0)
             return;
           if (y < 0)
@@ -85,14 +88,16 @@ int main() {
             return;
           if (y >= maxy)
             return;
-          pic[x + maxx * y] = color;
+          pic[x + maxx * y] += color * c;
+          pic[x + maxx * y] = min(valT(1), pic[x + maxx * y]);
+          pic[x + maxx * y] = max(valT(0), pic[x + maxx * y]);
         };
         if (color) {
-          // draw(x - 1, y);
-          // draw(x, y - 1);
-          draw(x, y);
-          // draw(x + 1, y);
-          // draw(x, y + 1);
+          draw(x - 1, y, 0.25);
+          draw(x, y - 1, 0.25);
+          draw(x, y, 0.5);
+          draw(x + 1, y, 0.25);
+          draw(x, y + 1, 0.25);
         }
       }
     }
@@ -106,24 +111,31 @@ int main() {
         x = 0;
     }
     for (int i = 0; i < maxx * maxy; ++i) {
-      mvaddch(i / maxx + 3, (i % maxx) * 2 + 3, pic[i] ? 'M' : '.');
+      mvaddch(i / maxx + 3, (i % maxx) * 2 + 3,
+              *(grey.rbegin() + int(min((valT)1, pic[i]) * 69)));
     }
-    if (ch == ' ') {
-      auto out = net.forward(pic);
-      int maxid;
-      valT max = -1;
-      for (int x = 0; x < 5; ++x) {
-        move(3 + x, 60);
-        for (int i = 10 * x; i < min((size_t)10 * x + 10, out.size()); ++i) {
-          printw("%.3f ", out[i]);
+    // if (ch == ' ')
+    {
+      auto out = net.forward([&]() {
+        auto tmp = pic;
+        for (int i = 0; i < 28; ++i) {
+          for (int j = 0; j < 28; ++j) {
+            tmp[i * 28 + j] = pic[j * 28 + i];
+          }
         }
-      }
+        return tmp;
+      }());
+
+      vector<pair<valT, string>> result;
       for (int i = 0; i < out.size(); ++i) {
-        if (out[i] > max) {
-          max = out[i], maxid = i;
-        }
+        result.push_back({out[i], name[i]});
       }
-      mvprintw(2, 32, "it is %s", name[maxid].c_str());
+      sort(result.begin(), result.end(),
+           [](pair<valT, string> a, pair<valT, string> b) { return a > b; });
+      for (int i = 0; i <= 10; ++i) {
+        mvprintw(3 + i, 60, "%s : %f", result[i].second.c_str(),
+                 result[i].first);
+      }
     }
   }
 #ifdef USE_OCL
