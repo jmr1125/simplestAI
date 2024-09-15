@@ -39,11 +39,9 @@ int main() {
     return 1;                                                                  \
   }
     netin_load(convolution_layer);
-    netin_load(bias_layer);
     netin_load(func_layer);
     netin_load(max_layer);
     netin_load(convolution_layer);
-    netin_load(bias_layer);
     netin_load(func_layer);
     netin_load(max_layer);
     netin_load(matrix_layer);
@@ -93,11 +91,11 @@ int main() {
           pic[x + maxx * y] = max(valT(0), pic[x + maxx * y]);
         };
         if (color) {
-          draw(x - 1, y, 0.25);
-          draw(x, y - 1, 0.25);
-          draw(x, y, 0.5);
-          draw(x + 1, y, 0.25);
-          draw(x, y + 1, 0.25);
+          draw(x - 1, y, 0.3);
+          draw(x, y - 1, 0.3);
+          draw(x, y, 1);
+          draw(x + 1, y, 0.3);
+          draw(x, y + 1, 0.3);
         }
       }
     }
@@ -106,7 +104,7 @@ int main() {
     if (ch == 'c') {
       color = !color;
     }
-    if (ch == 'C') {
+    if (ch == ' ') {
       for (auto &x : pic)
         x = 0;
     }
@@ -116,15 +114,21 @@ int main() {
     }
     // if (ch == ' ')
     {
-      auto out = net.forward([&]() {
-        auto tmp = pic;
-        for (int i = 0; i < 28; ++i) {
-          for (int j = 0; j < 28; ++j) {
-            tmp[i * 28 + j] = pic[j * 28 + i];
-          }
-        }
-        return tmp;
-      }());
+      auto out = net.forward(
+#if 1
+          pic
+#else
+          [&]() {
+            auto tmp = pic;
+            for (int i = 0; i < 28; ++i) {
+              for (int j = 0; j < 28; ++j) {
+                tmp[i * 28 + j] = pic[j * 28 + i];
+              }
+            }
+            return tmp;
+          }()
+#endif
+      );
 
       vector<pair<valT, string>> result;
       for (int i = 0; i < out.size(); ++i) {
