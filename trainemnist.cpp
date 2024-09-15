@@ -34,6 +34,8 @@ int main() {
   nnet net;
   int total = 0;
   valT lr = .001;
+  valT grad_size;
+  adam A;
   {
     ifstream netin("emnist.net");
 #define if_netin_load(type)                                                    \
@@ -44,11 +46,6 @@ int main() {
 #define Init net.last_layer()->init(std::move(rd))
     if_netin_load(convolution_layer) else {
       net.add_convolution_layer({1, 128}, 28, 28, 5, 5, 2);
-      Init;
-    }
-
-    if_netin_load(bias_layer) else {
-      net.add_bias_layer({128, 128}, 28 * 28);
       Init;
     }
 
@@ -64,11 +61,6 @@ int main() {
 
     if_netin_load(convolution_layer) else {
       net.add_convolution_layer({128, 64}, 14, 14, 3, 3, 1);
-      Init;
-    }
-
-    if_netin_load(bias_layer) else {
-      net.add_bias_layer({64, 64}, 14 * 14);
       Init;
     }
 
@@ -114,6 +106,19 @@ int main() {
 
     netin >> total;
     netin >> lr;
+    grad_size = net.get_varnum();
+    cout << "total " << grad_size << " varibles" << endl;
+    A = adam(grad_size);
+    if (netin) {
+      for (auto &x : A.m)
+        netin >> x;
+      for (auto &x : A.mh)
+        netin >> x;
+      for (auto &x : A.v)
+        netin >> x;
+      for (auto &x : A.vh)
+        netin >> x;
+    }
   }
 
   vector<pair<vector<valT>, vector<valT>>> instance;
@@ -160,19 +165,28 @@ int main() {
   vector<int> losses(100);
   int accurate_num = 0;
   int losses_c = 0;
-  auto save_net = [&net, &total, &lr]() {
+  const double beta1 = 0.9, beta2 = 0.999, epsilon = 1e-8;
+  net.forward(instance[0].first);
+  auto save_net = [&net, &total, &lr, &A]() {
     ofstream of("emnist.net");
     for (auto l : net.layers) {
       l->save(of);
     }
     of << total << endl;
     of << lr;
+    for (auto x : A.m) {
+      of << x << ' ';
+    }
+    for (auto x : A.mh) {
+      of << x << ' ';
+    }
+    for (auto x : A.v) {
+      of << x << ' ';
+    }
+    for (auto x : A.vh) {
+      of << x << ' ';
+    }
   };
-  const double beta1 = 0.9, beta2 = 0.999, epsilon = 1e-8;
-  net.forward(instance[0].first);
-  auto grad_size = net.get_varnum();
-  adam A(grad_size);
-  cout << "total " << grad_size << " varibles" << endl;
   initscr();
   noecho();
   keypad(stdscr, TRUE);
@@ -243,7 +257,7 @@ int main() {
       }
     }
     // if (!right)
-      {
+    {
       auto g = net.update(instance[off].first, instance[off].second,
                           train_method::loss);
       auto d = A.update(g, lr, total / instance.size() + 1);

@@ -92,10 +92,10 @@ vector<vector<vector<uint8_t>>> pics;
 vector<uint8_t> labels;
 int main(int argc, char *argv[]) {
   if (argc < 3) {
-    fprintf(stderr, "usage: %s <file-image> <file-label> [--swap]\n", argv[0]);
+    fprintf(stderr, "usage: %s <file-image> <file-label> [--swapxy]\n", argv[0]);
     return 1;
   }
-  if (argc == 4 && !strcmp(argv[3], "--swap")) {
+  if (argc == 4 && !strcmp(argv[3], "--swapxy")) {
     swapFlag = true;
     printf("-- swap xy\n");
   }
