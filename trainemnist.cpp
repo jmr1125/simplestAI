@@ -118,10 +118,16 @@ int main() {
         netin >> x;
       for (auto &x : A.vh)
         netin >> x;
+      if (!netin.good()) {
+        fill(A.m.begin(), A.m.end(), 0);
+        fill(A.mh.begin(), A.mh.end(), 0);
+        fill(A.v.begin(), A.v.end(), 0);
+        fill(A.vh.begin(), A.vh.end(), 0);
+      }
     }
   }
 
-  vector<pair<vector<valT>, vector<valT>>> instance;
+  vector<pair<vector<valT>, pair<vector<valT>, int>>> instance;
 
   cout << "reading..." << endl;
   {
@@ -134,33 +140,34 @@ int main() {
         fin >> C;
         tmp.push_back(C);
       }
-      instance.push_back(make_pair<VvalT, VvalT>({}, {}));
+      instance.push_back(make_pair<VvalT, pair<VvalT, valT>>(
+          {}, make_pair<VvalT, valT>({}, 0)));
       instance.back().first = (std::move(tmp));
       int x;
       fin >> x;
       vector<valT> t1;
       t1.resize(47);
       t1[x] = 1;
-      instance.back().second = (std::move(t1));
+      instance.back().second.first = (std::move(t1));
+      instance.back().second.second = x;
+      if (i % 10000 == 0)
+        cout << i / 10000 << "0k " << flush;
     }
   }
-  // sort(instance.begin(), instance.end(),
-  //      [](pair<vector<valT>, vector<valT>> a,
-  //         pair<vector<valT>, vector<valT>> b) -> bool {
-  //        return a.second < b.second;
-  //      });
-  // instance = [&]() -> vector<pair<vector<valT>, vector<valT>>> {
-  //   vector<pair<vector<valT>, vector<valT>>> tmp;
-  //   tmp.resize(instance.size());
-  //   for (int i = 0; i < tmp.size(); ++i) {
-  //     tmp[i] = instance[(i % 47) * 2400 + i / 47];
-  //   }
-  //   return tmp;
-  // }();
+  sort(instance.begin(), instance.end(),
+       [](const pair<vector<valT>, pair<vector<valT>, int>> &a,
+          const pair<vector<valT>, pair<vector<valT>, int>> &b) -> bool {
+         return a.second.second < b.second.second;
+       });
+  vector<pair<int, int>> classify(47, {instance.size(), 0});
+  for (int i = 0; i < instance.size(); ++i) {
+    classify[instance[i].second.second].first =
+        min(classify[instance[i].second.second].first, i);
+    classify[instance[i].second.second].second++;
+  }
   bool quit = false;
   valT lmin = 0, lmax = 5, scale = 1.0;
   mt19937 g(rd());
-  int off = 0;
   // int c = 0;
   vector<int> losses(100);
   int accurate_num = 0;
@@ -194,10 +201,11 @@ int main() {
   nodelay(stdscr, TRUE);
   for (; !quit;) {
     const auto N = instance.size();
-    if (off >= N) {
-      off = 0;
-      shuffle(instance.begin(), instance.end(), g);
-    }
+    int off = 0;
+    std::uniform_int_distribution<int> r_class(0, 46);
+    int classs = r_class(rd);
+    std::uniform_int_distribution<int> r_num(0, classify[classs].second - 1);
+    off = classify[classs].first + r_num(rd);
     auto out = net.forward(instance[off].first);
 #if 0
     {
@@ -229,18 +237,20 @@ int main() {
     bool right = true;
     {
       valT loss = 0;
-      for (int j = 0; j < instance[off].second.size(); ++j) {
-        loss += -instance[off].second[j] * log(out[j]);
+      for (int j = 0; j < instance[off].second.first.size(); ++j) {
+        loss += -instance[off].second.first[j] * log(out[j]);
       }
       if (loss > lmin && loss < lmax) {
         losses[100 * (loss - lmin) / (lmax - lmin)]++;
       }
+      if (isnan(loss))
+        continue;
       losses_c++;
       mvprintw(0, 30, "%f", loss);
       mvprintw(0, 60, "%d", total++);
       int correct = -1;
-      for (int i = 0; i < instance[off].second.size(); ++i) {
-        if (instance[off].second[i] > 0.9) {
+      for (int i = 0; i < instance[off].second.first.size(); ++i) {
+        if (instance[off].second.first[i] > 0.9) {
           correct = i;
           break;
         }
@@ -258,7 +268,7 @@ int main() {
     }
     // if (!right)
     {
-      auto g = net.update(instance[off].first, instance[off].second,
+      auto g = net.update(instance[off].first, instance[off].second.first,
                           train_method::loss);
       auto d = A.update(g, lr, total / instance.size() + 1);
       // for (auto &x : g)
